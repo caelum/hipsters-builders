@@ -1,0 +1,82 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+
+export async function getStaticPaths() {
+  const episodes = await getCollection('episodes');
+  return episodes.map(ep => ({ params: { slug: ep.id }, props: { episode: ep } }));
+}
+
+const { episode } = Astro.props;
+const { Content } = await render(episode);
+const { title, description, podcast, episodeNumber, pubDate, sourceUrl, authors, tags, quotes } = episode.data;
+const dateStr = pubDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav slot="nav" />
+
+  <article class="max-w-3xl mx-auto">
+    <div class="mb-8">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-sm font-medium px-3 py-1 rounded-full bg-brand/15 text-brand-light">
+          {podcast}{episodeNumber ? ` #${episodeNumber}` : ''}
+        </span>
+        <span class="text-sm text-text-muted">{dateStr}</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-bold text-text-primary mb-4">{title}</h1>
+      <p class="text-lg text-text-secondary mb-4">{description}</p>
+
+      {authors.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-4">
+          {authors.map(a => (
+            <span class="text-sm px-2 py-0.5 rounded bg-surface-overlay text-text-secondary">{a}</span>
+          ))}
+        </div>
+      )}
+
+      <a
+        href={sourceUrl}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 text-sm text-brand-light hover:text-brand font-medium"
+      >
+        🎧 Ouvir episódio completo →
+      </a>
+    </div>
+
+    {quotes.length > 0 && (
+      <section class="mb-10">
+        <h2 class="text-xl font-semibold text-text-primary mb-4">Destaques</h2>
+        <div class="space-y-4">
+          {quotes.map(q => (
+            <blockquote class="border-l-3 border-brand/40 pl-4 py-2">
+              <p class="text-text-primary leading-relaxed">"{q.text}"</p>
+              <footer class="mt-2 text-sm text-text-muted">
+                — <span class="text-brand-light font-medium">{q.speaker}</span>
+                {q.timestamp && <span> ({q.timestamp})</span>}
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="prose prose-invert max-w-none
+      prose-headings:text-text-primary prose-p:text-text-secondary
+      prose-blockquote:border-brand/30 prose-blockquote:text-text-secondary
+      prose-strong:text-text-primary prose-a:text-brand-light">
+      <Content />
+    </section>
+
+    {tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mt-8 pt-6 border-t border-surface-overlay">
+        {tags.map(tag => (
+          <span class="text-sm px-2 py-1 rounded bg-surface-overlay text-text-muted">{tag}</span>
+        ))}
+      </div>
+    )}
+  </article>
+</BaseLayout>

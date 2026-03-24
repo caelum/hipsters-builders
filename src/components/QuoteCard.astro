@@ -1,0 +1,40 @@
+---
+interface Props {
+  quote: string;
+  speaker: string;
+  context: string;
+  sourceType: 'podcast' | 'whatsapp';
+  sourceUrl?: string;
+  tags?: string[];
+  size?: '1x1' | '2x1';
+}
+
+import BentoCard from './BentoCard.astro';
+
+const { quote, speaker, context, sourceType, sourceUrl, tags = [], size = '1x1' } = Astro.props;
+
+const icon = sourceType === 'podcast' ? '🎙' : '💬';
+const truncatedQuote = quote.length > 200 ? quote.slice(0, 200) + '…' : quote;
+---
+
+<BentoCard size={size} href={sourceUrl}>
+  <div class="flex items-start gap-3 h-full">
+    <span class="text-2xl shrink-0 mt-0.5">{icon}</span>
+    <div class="min-w-0">
+      <blockquote class="text-sm text-text-primary leading-relaxed mb-3 line-clamp-4">
+        "{truncatedQuote}"
+      </blockquote>
+      <div class="flex items-center gap-2">
+        <span class="text-sm font-medium text-brand-light">{speaker}</span>
+        <span class="text-xs text-text-muted">· {context}</span>
+      </div>
+      {tags.length > 0 && (
+        <div class="flex flex-wrap gap-1 mt-2">
+          {tags.slice(0, 3).map(tag => (
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-surface-overlay text-text-muted">{tag}</span>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</BentoCard>

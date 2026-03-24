@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-brand: #6366f1;
+  --color-brand-light: #818cf8;
+  --color-brand-dark: #4f46e5;
+  --color-surface: #0f0f13;
+  --color-surface-raised: #1a1a23;
+  --color-surface-overlay: #25252f;
+  --color-text-primary: #f0f0f5;
+  --color-text-secondary: #9898a6;
+  --color-text-muted: #6b6b7b;
+  --color-accent-pink: #ec4899;
+  --color-accent-green: #10b981;
+  --color-accent-amber: #f59e0b;
+  --font-family-sans: 'Inter', 'system-ui', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+body {
+  @apply bg-surface text-text-primary font-sans antialiased;
+}
+
+a {
+  @apply text-brand-light hover:text-brand transition-colors;
+}
+
+::selection {
+  @apply bg-brand/30;
+}

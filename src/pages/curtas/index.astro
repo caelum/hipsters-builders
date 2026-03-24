@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import QuoteCard from '../../components/QuoteCard.astro';
+
+const curtas = (await getCollection('curtas'))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+const podcasts = curtas.filter(c => c.data.sourceType === 'podcast');
+const whatsapp = curtas.filter(c => c.data.sourceType === 'whatsapp');
+---
+
+<BaseLayout title="Curtas" description="Quotes e insights dos podcasts e comunidades Hipsters">
+  <Nav slot="nav" />
+
+  <h1 class="text-3xl font-bold text-text-primary mb-2">Curtas</h1>
+  <p class="text-text-secondary mb-8">
+    {curtas.length} quotes e insights extraídos dos podcasts e comunidades
+  </p>
+
+  {podcasts.length > 0 && (
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold text-text-primary mb-4">🎙 Dos Podcasts</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {podcasts.map((c, i) => (
+          <QuoteCard
+            quote={c.data.quote}
+            speaker={c.data.speaker}
+            context={c.data.context}
+            sourceType={c.data.sourceType}
+            sourceUrl={c.data.sourceUrl}
+            tags={c.data.tags}
+            size={i === 0 ? '2x1' : '1x1'}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  {whatsapp.length > 0 && (
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold text-text-primary mb-4">💬 Da Comunidade</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {whatsapp.map((c, i) => (
+          <QuoteCard
+            quote={c.data.quote}
+            speaker={c.data.speaker}
+            context={c.data.context}
+            sourceType={c.data.sourceType}
+            tags={c.data.tags}
+            size={i === 0 ? '2x1' : '1x1'}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+</BaseLayout>

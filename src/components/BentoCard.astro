@@ -1,0 +1,31 @@
+---
+interface Props {
+  size?: '1x1' | '2x1' | '1x2' | '2x2';
+  href?: string;
+  class?: string;
+}
+
+const { size = '1x1', href, class: className } = Astro.props;
+
+const sizeClasses: Record<string, string> = {
+  '1x1': '',
+  '2x1': 'md:col-span-2',
+  '1x2': 'md:row-span-2',
+  '2x2': 'md:col-span-2 md:row-span-2',
+};
+
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag
+  href={href}
+  class:list={[
+    'group block rounded-2xl bg-surface-raised border border-surface-overlay p-5',
+    'transition-all duration-200',
+    href && 'hover:border-brand/40 hover:bg-surface-overlay hover:shadow-lg hover:shadow-brand/5',
+    sizeClasses[size],
+    className,
+  ]}
+>
+  <slot />
+</Tag>

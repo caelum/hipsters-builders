@@ -1,0 +1,63 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  podcast: string;
+  episodeNumber?: number;
+  pubDate: Date;
+  authors: string[];
+  tags: string[];
+  quotes: { text: string; speaker: string; timestamp?: string }[];
+  size?: '1x1' | '2x1' | '2x2';
+}
+
+import BentoCard from './BentoCard.astro';
+
+const { slug, title, description, podcast, episodeNumber, pubDate, authors, tags, quotes, size = '1x1' } = Astro.props;
+
+const dateStr = pubDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+const podcastLabel = podcast === 'Hipsters Ponto Tech' ? 'Hipsters' : podcast;
+const firstQuote = quotes[0];
+const isLarge = size === '2x1' || size === '2x2';
+---
+
+<BentoCard size={size} href={`/episodios/${slug}`}>
+  <div class="flex items-center gap-2 mb-3">
+    <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-brand/15 text-brand-light">
+      {podcastLabel}{episodeNumber ? ` #${episodeNumber}` : ''}
+    </span>
+    <span class="text-xs text-text-muted">{dateStr}</span>
+  </div>
+
+  <h3 class:list={[
+    'font-semibold text-text-primary group-hover:text-brand-light transition-colors mb-2 line-clamp-2',
+    isLarge ? 'text-lg' : 'text-base',
+  ]}>
+    {title}
+  </h3>
+
+  {isLarge && firstQuote && (
+    <blockquote class="border-l-2 border-brand/30 pl-3 my-3 text-sm text-text-secondary italic line-clamp-3">
+      "{firstQuote.text}"
+      <span class="block text-xs text-text-muted mt-1 not-italic">— {firstQuote.speaker}</span>
+    </blockquote>
+  )}
+
+  <p class:list={[
+    'text-text-secondary text-sm',
+    isLarge ? 'line-clamp-3' : 'line-clamp-2',
+  ]}>
+    {description}
+  </p>
+
+  {tags.length > 0 && (
+    <div class="flex flex-wrap gap-1.5 mt-3">
+      {tags.slice(0, isLarge ? 5 : 3).map(tag => (
+        <span class="text-[11px] px-1.5 py-0.5 rounded bg-surface-overlay text-text-muted">
+          {tag}
+        </span>
+      ))}
+    </div>
+  )}
+</BentoCard>

@@ -1,0 +1,27 @@
+---
+// Newsletter signup form — Resend integration (Phase 2)
+// For now, just the UI with a placeholder action
+---
+
+<div class="rounded-2xl bg-gradient-to-br from-brand/10 to-accent-pink/10 border border-brand/20 p-6">
+  <h3 class="text-lg font-semibold text-text-primary mb-2">Newsletter semanal</h3>
+  <p class="text-sm text-text-secondary mb-4">
+    Receba toda quarta-feira um resumo curado dos melhores episódios e discussões da comunidade.
+  </p>
+  <form class="flex gap-2" action="/api/subscribe" method="POST">
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="seu@email.com"
+      class="flex-1 px-4 py-2 rounded-lg bg-surface text-text-primary border border-surface-overlay placeholder:text-text-muted text-sm focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/30"
+    />
+    <button
+      type="submit"
+      class="px-5 py-2 rounded-lg bg-brand text-white text-sm font-medium hover:bg-brand-dark transition-colors shrink-0"
+    >
+      Assinar
+    </button>
+  </form>
+  <p class="text-xs text-text-muted mt-2">Sem spam. Cancelamento com 1 clique.</p>
+</div>

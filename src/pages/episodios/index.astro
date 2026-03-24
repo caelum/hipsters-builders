@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import EpisodeCard from '../../components/EpisodeCard.astro';
+
+const episodes = (await getCollection('episodes'))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+// Group by month
+const byMonth = new Map<string, typeof episodes>();
+for (const ep of episodes) {
+  const d = new Date(ep.data.pubDate);
+  const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+  const arr = byMonth.get(key) ?? [];
+  arr.push(ep);
+  byMonth.set(key, arr);
+}
+
+function monthLabel(key: string): string {
+  const [year, month] = key.split('-');
+  const d = new Date(parseInt(year), parseInt(month) - 1);
+  return d.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
+}
+---
+
+<BaseLayout title="Episódios" description="Todos os episódios de podcast da Hipsters Network">
+  <Nav slot="nav" />
+
+  <h1 class="text-3xl font-bold text-text-primary mb-2">Episódios</h1>
+  <p class="text-text-secondary mb-8">{episodes.length} episódios de Hipsters Ponto Tech e IA Sob Controle</p>
+
+  {[...byMonth.entries()].map(([key, eps]) => (
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-text-secondary mb-4 capitalize">{monthLabel(key)}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {eps.map(ep => (
+          <EpisodeCard
+            slug={ep.id}
+            title={ep.data.title}
+            description={ep.data.description}
+            podcast={ep.data.podcast}
+            episodeNumber={ep.data.episodeNumber}
+            pubDate={ep.data.pubDate}
+            authors={ep.data.authors}
+            tags={ep.data.tags}
+            quotes={ep.data.quotes}
+          />
+        ))}
+      </div>
+    </section>
+  ))}
+</BaseLayout>

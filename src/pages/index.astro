@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import EpisodeCard from '../components/EpisodeCard.astro';
+import QuoteCard from '../components/QuoteCard.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+
+const episodes = (await getCollection('episodes'))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+const curtas = (await getCollection('curtas'))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+const recentEpisodes = episodes.slice(0, 12);
+const recentCurtas = curtas.slice(0, 8);
+
+// Assign sizes: first episode is 2x2, every 5th is 2x1
+function episodeSize(i: number): '1x1' | '2x1' | '2x2' {
+  if (i === 0) return '2x2';
+  if (i % 5 === 0) return '2x1';
+  return '1x1';
+}
+---
+
+<BaseLayout title="Home">
+  <Nav slot="nav" />
+
+  <section class="mb-12">
+    <div class="mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-text-primary mb-3">
+        Hipsters<span class="text-brand-light">.builders</span>
+      </h1>
+      <p class="text-lg text-text-secondary max-w-2xl">
+        Os melhores momentos dos podcasts e comunidades da Hipsters Network — episódios, quotes e discussões que importam.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
+      {recentEpisodes.map((ep, i) => (
+        <EpisodeCard
+          slug={ep.id}
+          title={ep.data.title}
+          description={ep.data.description}
+          podcast={ep.data.podcast}
+          episodeNumber={ep.data.episodeNumber}
+          pubDate={ep.data.pubDate}
+          authors={ep.data.authors}
+          tags={ep.data.tags}
+          quotes={ep.data.quotes}
+          size={episodeSize(i)}
+        />
+      ))}
+    </div>
+
+    <div class="mt-6 text-center">
+      <a href="/episodios" class="text-sm text-brand-light hover:text-brand font-medium">
+        Ver todos os {episodes.length} episódios →
+      </a>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold text-text-primary mb-6">Curtas</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {recentCurtas.map((c, i) => (
+        <QuoteCard
+          quote={c.data.quote}
+          speaker={c.data.speaker}
+          context={c.data.context}
+          sourceType={c.data.sourceType}
+          sourceUrl={c.data.sourceUrl}
+          tags={c.data.tags}
+          size={i === 0 ? '2x1' : '1x1'}
+        />
+      ))}
+    </div>
+
+    <div class="mt-6 text-center">
+      <a href="/curtas" class="text-sm text-brand-light hover:text-brand font-medium">
+        Ver todas as {curtas.length} curtas →
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-xl mx-auto mb-12">
+    <NewsletterForm />
+  </section>
+</BaseLayout>

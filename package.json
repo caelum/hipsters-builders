@@ -1,0 +1,27 @@
+{
+  "name": "hipsters-builders",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev --port 4321",
+    "build": "npm run sync && astro build",
+    "preview": "astro preview",
+    "sync": "tsx scripts/sync-content.ts",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^6.0.8",
+    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/rss": "^4.0.17",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "tailwindcss": "^4.1.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

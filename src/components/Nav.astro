@@ -1,0 +1,35 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/episodios', label: 'Episódios' },
+  { href: '/curtas', label: 'Curtas' },
+  { href: '/newsletter', label: 'Newsletter' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="border-b border-surface-overlay bg-surface/80 backdrop-blur-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-2 text-text-primary hover:text-brand-light transition-colors">
+        <span class="text-xl font-bold">Hipsters<span class="text-brand-light">.builders</span></span>
+      </a>
+      <div class="flex items-center gap-6">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class:list={[
+              'text-sm font-medium transition-colors',
+              currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+                ? 'text-brand-light'
+                : 'text-text-secondary hover:text-text-primary',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</nav>

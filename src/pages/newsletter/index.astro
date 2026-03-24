@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
+import BentoCard from '../../components/BentoCard.astro';
+
+const newsletters = (await getCollection('newsletters'))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+---
+
+<BaseLayout title="Newsletter" description="Arquivo da newsletter Hipsters Builders">
+  <Nav slot="nav" />
+
+  <div class="max-w-2xl mx-auto">
+    <h1 class="text-3xl font-bold text-text-primary mb-2">Newsletter</h1>
+    <p class="text-text-secondary mb-8">
+      Resumo semanal curado dos melhores episódios e discussões da comunidade.
+    </p>
+
+    <div class="mb-10">
+      <NewsletterForm />
+    </div>
+
+    <h2 class="text-xl font-semibold text-text-primary mb-4">Edições anteriores</h2>
+    <div class="space-y-4">
+      {newsletters.map(nl => {
+        const dateStr = new Date(nl.data.pubDate).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+        return (
+          <BentoCard href={`/newsletter/${nl.id}`}>
+            <div class="flex items-center gap-3">
+              <span class="text-sm font-mono text-brand-light">#{nl.data.editionNumber}</span>
+              <div>
+                <h3 class="font-medium text-text-primary group-hover:text-brand-light transition-colors">
+                  {nl.data.subject}
+                </h3>
+                <span class="text-sm text-text-muted">{dateStr}</span>
+              </div>
+            </div>
+          </BentoCard>
+        );
+      })}
+    </div>
+
+    {newsletters.length === 0 && (
+      <p class="text-text-muted text-center py-8">Nenhuma edição publicada ainda. Assine para receber a primeira!</p>
+    )}
+  </div>
+</BaseLayout>
