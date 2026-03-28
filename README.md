@@ -1,8 +1,10 @@
 # Hipsters.builders
 
-Community portal for the **Hipsters Network** (Alura podcasts + community). Publishes episode summaries with quotes, short-form "curtas", and a weekly newsletter. All content comes from the [Stromae vault](https://github.com/caelum/stromae-vault-alura) at build time.
+O **Hipsters Builders** deixa mais explicito o que estamos falando em cada episodio dos podcasts da Hipsters Network. Alem disso, traz comentarios da comunidade Hipsters (WhatsApp Builders, Clauders e outros canais) para dentro de uma pagina, criando uma verdadeira conversa entre as pessoas da comunidade.
 
-**Live site**: https://hipsters.builders
+Na pratica: episodios com destaques e quotes, curtas com as melhores frases, e uma newsletter semanal. Todo conteudo vem do [Stromae vault](https://github.com/caelum/stromae-vault-alura) no build.
+
+**Site**: https://hipsters.builders
 
 ## Quick start
 
