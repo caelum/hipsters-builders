@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Nav from '../../components/Nav.astro';
+import EditorialLayout from '../../layouts/EditorialLayout.astro';
+import { renderInlineMd } from '../../utils/render-inline-md';
 
 export async function getStaticPaths() {
   const episodes = await getCollection('episodes');
@@ -10,73 +10,391 @@ export async function getStaticPaths() {
 
 const { episode } = Astro.props;
 const { Content } = await render(episode);
-const { title, description, podcast, episodeNumber, pubDate, sourceUrl, authors, tags, quotes } = episode.data;
+const { title, description, podcast, episodeNumber, pubDate, sourceUrl, authors, tags, quotes, segmentCount } = episode.data;
 const dateStr = pubDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+
+function podcastLabel(p: string): string {
+  if (p === 'Hipsters Ponto Tech') return 'Hipsters';
+  if (p === 'IA Sob Controle') return 'IA Sob Controle';
+  return p;
+}
+
+function podcastAccentClass(p: string): string {
+  if (p === 'Hipsters Ponto Tech') return 'ed-label--hipsters';
+  if (p === 'IA Sob Controle') return 'ed-label--ia';
+  if (p === 'Like a Boss') return 'ed-label--boss';
+  if (p === 'Mesa de Produto') return 'ed-label--mesa';
+  return 'ed-label--default';
+}
+
+// Spotify embed: convert podcasters.spotify.com URLs to embed format
+function spotifyEmbedUrl(url: string): string | null {
+  const match = url.match(/^https:\/\/podcasters\.spotify\.com\/pod\/show\/([^/]+)\/episodes\/(.+)$/);
+  if (!match) return null;
+  return `https://podcasters.spotify.com/pod/show/${match[1]}/embed/episodes/${match[2]}`;
+}
+
+const embedUrl = spotifyEmbedUrl(sourceUrl);
+const hasTranscription = quotes.length > 0 || segmentCount > 0;
 ---
 
-<BaseLayout title={title} description={description}>
-  <Nav slot="nav" />
-
-  <article class="max-w-3xl mx-auto">
-    <div class="mb-8">
-      <div class="flex items-center gap-2 mb-4">
-        <span class="text-sm font-medium px-3 py-1 rounded-full bg-brand/15 text-brand-light">
-          {podcast}{episodeNumber ? ` #${episodeNumber}` : ''}
+<EditorialLayout title={title} description={description} activeNav="episodios">
+  <article class="ep-detail">
+    <!-- Header -->
+    <header class="ep-detail__header">
+      <div class="ep-detail__meta">
+        <span class={`ed-label ${podcastAccentClass(podcast)}`}>
+          {podcastLabel(podcast)}{episodeNumber ? ` #${episodeNumber}` : ''}
         </span>
-        <span class="text-sm text-text-muted">{dateStr}</span>
+        <time class="ed-meta-date" datetime={pubDate.toISOString()}>{dateStr}</time>
       </div>
-
-      <h1 class="text-3xl sm:text-4xl font-bold text-text-primary mb-4">{title}</h1>
-      <p class="text-lg text-text-secondary mb-4">{description}</p>
+      <h1 class="ep-detail__title">{title}</h1>
+      <p class="ep-detail__description">{description}</p>
 
       {authors.length > 0 && (
-        <div class="flex flex-wrap gap-2 mb-4">
-          {authors.map(a => (
-            <span class="text-sm px-2 py-0.5 rounded bg-surface-overlay text-text-secondary">{a}</span>
-          ))}
+        <div class="ep-detail__authors">
+          {authors.join(', ')}
         </div>
       )}
 
-      <a
-        href={sourceUrl}
-        target="_blank"
-        rel="noopener"
-        class="inline-flex items-center gap-2 text-sm text-brand-light hover:text-brand font-medium"
-      >
-        🎧 Ouvir episódio completo →
-      </a>
-    </div>
+      {/* Spotify embed for podcasters.spotify.com episodes */}
+      {embedUrl ? (
+        <div class="ep-detail__player">
+          <iframe
+            src={embedUrl}
+            width="100%"
+            height="152"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            style="border-radius: 4px;"
+          ></iframe>
+        </div>
+      ) : (
+        <a href={sourceUrl} target="_blank" rel="noopener" class="ep-detail__listen">
+          <svg class="ep-detail__listen-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          Ouvir episodio completo
+        </a>
+      )}
+    </header>
 
+    <!-- No transcription notice -->
+    {!hasTranscription && (
+      <div class="ep-detail__wip">
+        <svg class="ep-detail__wip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <p>Estamos trabalhando na transcricao e quotes desse episodio!</p>
+      </div>
+    )}
+
+    <!-- Quotes / Pull Quotes -->
     {quotes.length > 0 && (
-      <section class="mb-10">
-        <h2 class="text-xl font-semibold text-text-primary mb-4">Destaques</h2>
-        <div class="space-y-4">
-          {quotes.map(q => (
-            <blockquote class="border-l-3 border-brand/40 pl-4 py-2">
-              <p class="text-text-primary leading-relaxed">"{q.text}"</p>
-              <footer class="mt-2 text-sm text-text-muted">
-                — <span class="text-brand-light font-medium">{q.speaker}</span>
-                {q.timestamp && <span> ({q.timestamp})</span>}
-              </footer>
+      <section class="ep-detail__quotes">
+        <div class="ed-section__label">Destaques</div>
+        <div class="ep-quotes-list">
+          {quotes.map((q, i) => (
+            <blockquote class="ep-quote">
+              <div class="ep-quote__number">{String(i + 1).padStart(2, '0')}</div>
+              <div class="ep-quote__body">
+                <div class="ep-quote__mark" aria-hidden="true">&ldquo;</div>
+                <p class="ep-quote__text" set:html={renderInlineMd(q.text)} />
+                <footer class="ep-quote__attribution">
+                  <cite class="ep-quote__speaker">{q.speaker}</cite>
+                  {q.timestamp && <span class="ep-quote__time">{q.timestamp}</span>}
+                </footer>
+              </div>
             </blockquote>
           ))}
         </div>
       </section>
     )}
 
-    <section class="prose prose-invert max-w-none
-      prose-headings:text-text-primary prose-p:text-text-secondary
-      prose-blockquote:border-brand/30 prose-blockquote:text-text-secondary
-      prose-strong:text-text-primary prose-a:text-brand-light">
+    <!-- Markdown content -->
+    <section class="ed-prose">
       <Content />
     </section>
 
+    <!-- Tags -->
     {tags.length > 0 && (
-      <div class="flex flex-wrap gap-2 mt-8 pt-6 border-t border-surface-overlay">
+      <footer class="ep-detail__tags">
         {tags.map(tag => (
-          <span class="text-sm px-2 py-1 rounded bg-surface-overlay text-text-muted">{tag}</span>
+          <span class="ed-tag">{tag}</span>
         ))}
-      </div>
+      </footer>
     )}
+
+    <!-- Back link -->
+    <div class="ep-detail__back">
+      <a href="/episodios">&larr; Todos os episodios</a>
+    </div>
   </article>
-</BaseLayout>
+</EditorialLayout>
+
+<style>
+  .ep-detail {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  .ep-detail__header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .ep-detail__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .ep-detail__title {
+    font-family: var(--ed-serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--ed-ink);
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .ep-detail__title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .ep-detail__description {
+    font-family: var(--ed-serif);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--ed-ink-secondary);
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .ep-detail__description {
+      font-size: 1.125rem;
+    }
+  }
+
+  .ep-detail__authors {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ed-ink-muted);
+    margin-bottom: 1rem;
+  }
+
+  /* Spotify player */
+  .ep-detail__player {
+    margin-top: 1.25rem;
+  }
+
+  /* Listen link (non-Spotify) */
+  .ep-detail__listen {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--ed-accent);
+    border: 1.5px solid var(--ed-accent);
+    border-radius: 3px;
+    letter-spacing: 0.01em;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .ep-detail__listen:hover {
+    background: var(--ed-accent);
+    color: #fff !important;
+  }
+
+  .ep-detail__listen-icon {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+  }
+
+  /* Work in progress notice */
+  .ep-detail__wip {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    background: var(--ed-bg-warm);
+    border-left: 3px solid var(--ed-accent);
+    margin-bottom: 2rem;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .ep-detail__wip-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    color: var(--ed-accent);
+    margin-top: 0.125rem;
+  }
+
+  .ep-detail__wip p {
+    font-family: var(--ed-serif);
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: var(--ed-ink-secondary);
+    line-height: 1.5;
+  }
+
+  /* Quotes section */
+  .ep-detail__quotes {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .ep-quotes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ep-quote {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0.75rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--ed-rule);
+    margin: 0;
+  }
+
+  .ep-quote:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .ep-quote:first-child {
+    padding-top: 0;
+  }
+
+  @media (min-width: 640px) {
+    .ep-quote {
+      grid-template-columns: 2.5rem 1fr;
+      gap: 1rem;
+    }
+  }
+
+  .ep-quote__number {
+    font-family: var(--ed-serif);
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--ed-ink-faint);
+    line-height: 1;
+    padding-top: 0.5rem;
+  }
+
+  .ep-quote__body {
+    position: relative;
+  }
+
+  .ep-quote__mark {
+    font-family: var(--ed-serif);
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--ed-accent);
+    opacity: 0.3;
+    position: absolute;
+    top: -0.5rem;
+    left: -0.25rem;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .ep-quote__text {
+    font-family: var(--ed-serif);
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ed-ink);
+    padding-left: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .ep-quote__text {
+      font-size: 1.0625rem;
+    }
+  }
+
+  .ep-quote__attribution {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.625rem;
+    padding-left: 1rem;
+  }
+
+  .ep-quote__speaker {
+    font-family: var(--ed-sans);
+    font-style: normal;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--ed-ink);
+  }
+
+  .ep-quote__time {
+    font-size: 0.75rem;
+    color: var(--ed-ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ep-quote__time::before {
+    content: '\b7\a0';
+  }
+
+  /* Inline markdown in quotes */
+  .ep-quote__text :global(strong) {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--ed-ink);
+  }
+
+  .ep-quote__text :global(em) {
+    font-style: italic;
+  }
+
+  .ep-quote__text :global(a) {
+    color: var(--ed-accent);
+    border-bottom: 1px solid var(--ed-rule);
+    word-break: break-all;
+  }
+
+  .ep-quote__text :global(a:hover) {
+    border-bottom-color: var(--ed-accent);
+  }
+
+  /* Tags */
+  .ep-detail__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--ed-rule);
+  }
+
+  /* Back link */
+  .ep-detail__back {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--ed-rule);
+  }
+
+  .ep-detail__back a {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ed-accent);
+  }
+
+  .ep-detail__back a:hover {
+    color: var(--ed-accent-hover);
+  }
+</style>

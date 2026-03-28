@@ -1,0 +1,486 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  activeNav?: string;
+}
+
+const { title, description = 'Comunidade Hipsters Network — episodios, quotes e newsletter sobre tech', activeNav } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const navLinks = [
+  { href: '/episodios', label: 'Episodios', key: 'episodios' },
+  { href: '/curtas', label: 'Curtas', key: 'curtas' },
+  { href: '/newsletter', label: 'Newsletter', key: 'newsletter' },
+];
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" type="application/rss+xml" title="Hipsters Builders RSS" href="/rss.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <title>{title} | Hipsters Builders</title>
+  </head>
+  <body class="ed-page">
+    <!-- HEADER -->
+    <header class="ed-header">
+      <div class="ed-header__inner">
+        <div class="ed-header__brand">
+          <a href="/" class="ed-header__logo">
+            <span class="ed-header__logo-h">Hipsters</span><span class="ed-header__logo-dot">.</span><span class="ed-header__logo-b">builders</span>
+          </a>
+          <p class="ed-header__tagline">Os melhores momentos da Hipsters Network</p>
+        </div>
+        <nav class="ed-header__nav">
+          {navLinks.map(link => (
+            <a
+              href={link.href}
+              class:list={['ed-header__nav-link', { 'ed-header__nav-link--active': activeNav === link.key }]}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+      <div class="ed-header__rule"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="ed-main">
+      <slot />
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="ed-footer">
+      <div class="ed-footer__inner">
+        <p>Hipsters Builders &mdash; parte da <a href="https://hipsters.tech">Hipsters Network</a> &middot; <a href="https://alura.com.br">Alura</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  /* =========================================
+     EDITORIAL DESIGN SYSTEM
+     Shared across all editorial pages
+     ========================================= */
+
+  /* --- Reset / Base --- */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    background: #faf9f7 !important;
+    color: #1a1a1a !important;
+  }
+
+  ::selection {
+    background: rgba(196, 52, 45, 0.2);
+  }
+
+  .ed-page {
+    --ed-bg: #faf9f7;
+    --ed-bg-warm: #f5f3ef;
+    --ed-ink: #1a1a1a;
+    --ed-ink-secondary: #4a4a4a;
+    --ed-ink-muted: #8a8a8a;
+    --ed-ink-faint: #b5b5b5;
+    --ed-rule: #d4d0c8;
+    --ed-rule-strong: #1a1a1a;
+    --ed-accent: #c4342d;
+    --ed-accent-hover: #a02a24;
+    --ed-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --ed-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    background: var(--ed-bg);
+    color: var(--ed-ink);
+    font-family: var(--ed-sans);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .ed-page a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .ed-page a:hover {
+    color: var(--ed-accent);
+  }
+
+  /* --- HEADER --- */
+  .ed-header {
+    padding: 2rem 1.5rem 0;
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  .ed-header__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .ed-header__inner {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+
+  .ed-header__brand {
+    text-align: center;
+  }
+
+  @media (min-width: 640px) {
+    .ed-header__brand {
+      text-align: left;
+    }
+  }
+
+  .ed-header__logo {
+    display: inline-block;
+    font-family: var(--ed-serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ed-ink);
+  }
+
+  .ed-header__logo:hover {
+    color: var(--ed-ink) !important;
+  }
+
+  .ed-header__logo-h {
+    color: var(--ed-ink);
+  }
+
+  .ed-header__logo-dot {
+    color: var(--ed-accent);
+  }
+
+  .ed-header__logo-b {
+    color: var(--ed-ink-secondary);
+    font-weight: 400;
+  }
+
+  .ed-header__tagline {
+    font-size: 0.8125rem;
+    color: var(--ed-ink-muted);
+    margin-top: 0.125rem;
+    letter-spacing: 0.02em;
+  }
+
+  .ed-header__nav {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .ed-header__nav {
+      gap: 1.75rem;
+    }
+  }
+
+  .ed-header__nav-link {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--ed-ink-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: color 0.15s;
+    padding: 0.25rem 0;
+  }
+
+  @media (min-width: 640px) {
+    .ed-header__nav-link {
+      font-size: 0.8125rem;
+    }
+  }
+
+  .ed-header__nav-link:hover {
+    color: var(--ed-accent);
+  }
+
+  .ed-header__nav-link--active {
+    color: var(--ed-accent);
+  }
+
+  .ed-header__rule {
+    height: 3px;
+    background: var(--ed-rule-strong);
+    margin-top: 0;
+  }
+
+  .ed-header__rule::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: var(--ed-rule);
+    margin-top: 3px;
+  }
+
+  /* --- MAIN --- */
+  .ed-main {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .ed-main {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  /* --- FOOTER --- */
+  .ed-footer {
+    border-top: 2px solid var(--ed-rule-strong);
+    padding: 2rem 1.5rem;
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  .ed-footer__inner {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--ed-ink-muted);
+  }
+
+  .ed-footer__inner a {
+    color: var(--ed-ink-secondary);
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .ed-footer__inner a:hover {
+    color: var(--ed-accent);
+    border-bottom-color: var(--ed-accent);
+  }
+
+  /* =========================================
+     SHARED COMPONENTS
+     ========================================= */
+
+  /* --- Section --- */
+  .ed-section__label {
+    font-family: var(--ed-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ed-accent);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .ed-section__subtitle {
+    font-family: var(--ed-serif);
+    font-size: 1.0625rem;
+    color: var(--ed-ink-secondary);
+    margin-top: -0.75rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  /* --- Labels (podcast badges) --- */
+  .ed-label {
+    display: inline-block;
+    font-family: var(--ed-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.1875rem 0.5rem;
+    border-radius: 2px;
+  }
+
+  .ed-label--sm {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.375rem;
+  }
+
+  .ed-label--hipsters {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  .ed-label--ia {
+    background: #fce7f3;
+    color: #9d174d;
+  }
+
+  .ed-label--boss {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  .ed-label--mesa {
+    background: #d1fae5;
+    color: #065f46;
+  }
+
+  .ed-label--default {
+    background: #f3f4f6;
+    color: #374151;
+  }
+
+  /* --- Meta date --- */
+  .ed-meta-date {
+    font-size: 0.75rem;
+    color: var(--ed-ink-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* --- Tags --- */
+  .ed-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    color: var(--ed-ink-muted);
+    border: 1px solid var(--ed-rule);
+    padding: 0.125rem 0.5rem;
+    border-radius: 2px;
+    letter-spacing: 0.01em;
+  }
+
+  .ed-tag--sm {
+    font-size: 0.625rem;
+    padding: 0.0625rem 0.375rem;
+  }
+
+  /* --- Divider --- */
+  .ed-divider {
+    border: none;
+    border-top: 1px solid var(--ed-rule);
+    margin: 0;
+  }
+
+  /* --- Pull quotes --- */
+  .ed-pullquote {
+    margin: 0;
+  }
+
+  .ed-pullquote p {
+    font-family: var(--ed-serif);
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--ed-ink);
+  }
+
+  .ed-pullquote footer {
+    margin-top: 0.625rem;
+    font-size: 0.8125rem;
+  }
+
+  .ed-pullquote cite {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--ed-ink);
+  }
+
+  .ed-pullquote__time {
+    color: var(--ed-ink-faint);
+    margin-left: 0.5rem;
+  }
+
+  /* --- Prose (editorial article content) --- */
+  .ed-prose {
+    font-family: var(--ed-serif);
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--ed-ink-secondary);
+  }
+
+  .ed-prose h2 {
+    font-family: var(--ed-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ed-ink);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .ed-prose h3 {
+    font-family: var(--ed-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ed-ink);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .ed-prose p {
+    margin-bottom: 1.25rem;
+  }
+
+  .ed-prose strong {
+    color: var(--ed-ink);
+    font-weight: 600;
+  }
+
+  .ed-prose a {
+    color: var(--ed-accent);
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .ed-prose a:hover {
+    border-bottom-color: var(--ed-accent);
+  }
+
+  .ed-prose blockquote {
+    border-left: 3px solid var(--ed-accent);
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--ed-ink);
+  }
+
+  .ed-prose ul, .ed-prose ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .ed-prose li {
+    margin-bottom: 0.5rem;
+  }
+
+  .ed-prose code {
+    font-size: 0.9em;
+    background: var(--ed-bg-warm);
+    padding: 0.125rem 0.375rem;
+    border-radius: 2px;
+  }
+
+  .ed-prose pre {
+    background: var(--ed-ink);
+    color: var(--ed-bg);
+    padding: 1.25rem;
+    border-radius: 3px;
+    overflow-x: auto;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .ed-prose pre code {
+    background: transparent;
+    padding: 0;
+  }
+</style>

@@ -29,10 +29,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <slot />
     </main>
-    <footer class="border-t border-surface-overlay mt-16 py-8 text-center text-text-muted text-sm">
-      <div class="max-w-7xl mx-auto px-4">
-        <p>Hipsters Builders — parte da <a href="https://hipsters.tech" class="text-text-secondary hover:text-brand-light">Hipsters Network</a> · <a href="https://alura.com.br" class="text-text-secondary hover:text-brand-light">Alura</a></p>
-      </div>
-    </footer>
+    <slot name="footer">
+      <footer class="border-t border-surface-overlay mt-16 py-8 text-center text-text-muted text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+          <p>Hipsters Builders — parte da <a href="https://hipsters.tech" class="text-text-secondary hover:text-brand-light">Hipsters Network</a> · <a href="https://alura.com.br" class="text-text-secondary hover:text-brand-light">Alura</a></p>
+        </div>
+      </footer>
+    </slot>
   </body>
 </html>

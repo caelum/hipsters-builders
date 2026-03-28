@@ -1,49 +1,209 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Nav from '../../components/Nav.astro';
-import NewsletterForm from '../../components/NewsletterForm.astro';
-import BentoCard from '../../components/BentoCard.astro';
+import EditorialLayout from '../../layouts/EditorialLayout.astro';
 
 const newsletters = (await getCollection('newsletters'))
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+function formatDate(date: Date): string {
+  return new Date(date).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+}
 ---
 
-<BaseLayout title="Newsletter" description="Arquivo da newsletter Hipsters Builders">
-  <Nav slot="nav" />
-
-  <div class="max-w-2xl mx-auto">
-    <h1 class="text-3xl font-bold text-text-primary mb-2">Newsletter</h1>
-    <p class="text-text-secondary mb-8">
-      Resumo semanal curado dos melhores episódios e discussões da comunidade.
+<EditorialLayout title="Newsletter" description="Arquivo da newsletter Hipsters Builders" activeNav="newsletter">
+  <div class="nl-page">
+    <div class="ed-section__label">Newsletter</div>
+    <p class="nl-subtitle">
+      Resumo semanal curado dos melhores episodios e discussoes da comunidade. Direto no seu e-mail, sem ruido.
     </p>
 
-    <div class="mb-10">
-      <NewsletterForm />
+    <!-- Subscribe form -->
+    <div class="nl-subscribe">
+      <form class="nl-form" action="/api/subscribe" method="POST">
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="seu@email.com"
+          class="nl-form__input"
+        />
+        <button type="submit" class="nl-form__btn">Assinar</button>
+      </form>
+      <p class="nl-form__fine">Sem spam. Cancelamento com 1 clique.</p>
     </div>
 
-    <h2 class="text-xl font-semibold text-text-primary mb-4">Edições anteriores</h2>
-    <div class="space-y-4">
-      {newsletters.map(nl => {
-        const dateStr = new Date(nl.data.pubDate).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
-        return (
-          <BentoCard href={`/newsletter/${nl.id}`}>
-            <div class="flex items-center gap-3">
-              <span class="text-sm font-mono text-brand-light">#{nl.data.editionNumber}</span>
-              <div>
-                <h3 class="font-medium text-text-primary group-hover:text-brand-light transition-colors">
-                  {nl.data.subject}
+    <!-- Archive -->
+    {newsletters.length > 0 && (
+      <section class="nl-archive">
+        <h2 class="nl-archive__title">Edicoes anteriores</h2>
+        <div class="nl-archive-list">
+          {newsletters.map(nl => (
+            <article class="nl-archive-row">
+              <div class="nl-archive-row__number">#{nl.data.editionNumber}</div>
+              <div class="nl-archive-row__content">
+                <h3 class="nl-archive-row__subject">
+                  <a href={`/newsletter/${nl.id}`}>{nl.data.subject}</a>
                 </h3>
-                <span class="text-sm text-text-muted">{dateStr}</span>
+                <time class="ed-meta-date" datetime={new Date(nl.data.pubDate).toISOString()}>
+                  {formatDate(nl.data.pubDate)}
+                </time>
               </div>
-            </div>
-          </BentoCard>
-        );
-      })}
-    </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
 
     {newsletters.length === 0 && (
-      <p class="text-text-muted text-center py-8">Nenhuma edição publicada ainda. Assine para receber a primeira!</p>
+      <p class="nl-empty">Nenhuma edicao publicada ainda. Assine para receber a primeira!</p>
     )}
   </div>
-</BaseLayout>
+</EditorialLayout>
+
+<style>
+  .nl-page {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  .nl-subtitle {
+    font-family: var(--ed-serif);
+    font-size: 1.0625rem;
+    color: var(--ed-ink-secondary);
+    margin-top: -0.75rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* Subscribe form */
+  .nl-subscribe {
+    background: var(--ed-bg-warm);
+    padding: 1.75rem;
+    border-radius: 3px;
+    margin-bottom: 3rem;
+  }
+
+  .nl-form {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    .nl-form {
+      flex-direction: column;
+    }
+  }
+
+  .nl-form__input {
+    flex: 1;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    font-family: var(--ed-sans);
+    border: 1px solid var(--ed-rule);
+    border-radius: 3px;
+    background: #fff;
+    color: var(--ed-ink);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .nl-form__input::placeholder {
+    color: var(--ed-ink-faint);
+  }
+
+  .nl-form__input:focus {
+    border-color: var(--ed-accent);
+    box-shadow: 0 0 0 2px rgba(196, 52, 45, 0.1);
+  }
+
+  .nl-form__btn {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    font-family: var(--ed-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--ed-accent);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+
+  .nl-form__btn:hover {
+    background: var(--ed-accent-hover);
+  }
+
+  .nl-form__fine {
+    font-size: 0.6875rem;
+    color: var(--ed-ink-muted);
+    margin-top: 0.75rem;
+  }
+
+  /* Archive */
+  .nl-archive__title {
+    font-family: var(--ed-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ed-ink-muted);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--ed-rule);
+    margin-bottom: 0;
+  }
+
+  .nl-archive-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nl-archive-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .nl-archive-row:last-child {
+    border-bottom: none;
+  }
+
+  .nl-archive-row__number {
+    font-family: var(--ed-serif);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ed-accent);
+    white-space: nowrap;
+    min-width: 2.5rem;
+  }
+
+  .nl-archive-row__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .nl-archive-row__subject {
+    font-family: var(--ed-serif);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ed-ink);
+  }
+
+  .nl-archive-row__subject a:hover {
+    color: var(--ed-accent);
+  }
+
+  .nl-empty {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--ed-ink-muted);
+    padding: 3rem 0;
+  }
+</style>

@@ -1,15 +1,23 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Nav from '../../components/Nav.astro';
-import EpisodeCard from '../../components/EpisodeCard.astro';
+import EditorialLayout from '../../layouts/EditorialLayout.astro';
+import { renderInlineMd } from '../../utils/render-inline-md';
 
 const episodes = (await getCollection('episodes'))
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
 
-// Group by month
+const allCurtas = (await getCollection('curtas'))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+const curtas = allCurtas.slice(0, 4);
+const totalCurtas = allCurtas.length;
+
+// Split: first 6 featured, then the rest
+const featured = episodes.slice(0, 6);
+const remaining = episodes.slice(6);
+
+// Group remaining by month
 const byMonth = new Map<string, typeof episodes>();
-for (const ep of episodes) {
+for (const ep of remaining) {
   const d = new Date(ep.data.pubDate);
   const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
   const arr = byMonth.get(key) ?? [];
@@ -22,32 +30,359 @@ function monthLabel(key: string): string {
   const d = new Date(parseInt(year), parseInt(month) - 1);
   return d.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
 }
+
+function formatDateShort(date: Date): string {
+  return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
+}
+
+function podcastLabel(podcast: string): string {
+  if (podcast === 'Hipsters Ponto Tech') return 'Hipsters';
+  if (podcast === 'IA Sob Controle') return 'IA Sob Controle';
+  return podcast;
+}
+
+function podcastAccentClass(podcast: string): string {
+  if (podcast === 'Hipsters Ponto Tech') return 'ed-label--hipsters';
+  if (podcast === 'IA Sob Controle') return 'ed-label--ia';
+  if (podcast === 'Like a Boss') return 'ed-label--boss';
+  if (podcast === 'Mesa de Produto') return 'ed-label--mesa';
+  return 'ed-label--default';
+}
 ---
 
-<BaseLayout title="Episódios" description="Todos os episódios de podcast da Hipsters Network">
-  <Nav slot="nav" />
+<EditorialLayout title="Episodios" description="Todos os episodios de podcast da Hipsters Network" activeNav="episodios">
+  <!-- Featured episodes -->
+  <div class="ed-section__label">Destaques Recentes</div>
+  <div class="ep-featured">
+    {featured.map(ep => (
+      <article class="ep-featured-row">
+        <div class="ep-featured-row__meta">
+          <span class={`ed-label ed-label--sm ${podcastAccentClass(ep.data.podcast)}`}>
+            {podcastLabel(ep.data.podcast)}{ep.data.episodeNumber ? ` #${ep.data.episodeNumber}` : ''}
+          </span>
+          <time class="ed-meta-date" datetime={ep.data.pubDate.toISOString()}>
+            {formatDateShort(ep.data.pubDate)}
+          </time>
+        </div>
+        <h3 class="ep-featured-row__title">
+          <a href={`/episodios/${ep.id}`}>{ep.data.title}</a>
+        </h3>
+        <p class="ep-featured-row__desc">{ep.data.description}</p>
+        <div class="ep-featured-row__authors">
+          {ep.data.authors.slice(0, 3).join(', ')}
+        </div>
+      </article>
+    ))}
+  </div>
 
-  <h1 class="text-3xl font-bold text-text-primary mb-2">Episódios</h1>
-  <p class="text-text-secondary mb-8">{episodes.length} episódios de Hipsters Ponto Tech e IA Sob Controle</p>
+  <!-- Curtas interlude -->
+  {curtas.length > 0 && (
+    <section class="ep-curtas-break">
+      <div class="ed-section__label">Curtas</div>
+      <p class="ep-curtas-break__subtitle">Frases que marcaram as conversas recentes</p>
+      <div class="ep-curtas-grid">
+        {curtas.slice(0, 4).map(c => (
+          <article class="ep-curta-card">
+            <blockquote class="ep-curta-card__quote">
+              <p set:html={renderInlineMd(c.data.quote)} />
+            </blockquote>
+            <footer class="ep-curta-card__footer">
+              <cite class="ep-curta-card__speaker">{c.data.speaker}</cite>
+              <span class="ep-curta-card__context">{c.data.context}</span>
+            </footer>
+          </article>
+        ))}
+      </div>
+      <div class="ep-curtas-break__more">
+        <a href="/curtas">Ver todas as {totalCurtas} curtas &rarr;</a>
+      </div>
+    </section>
+  )}
+
+  <!-- Remaining episodes by month -->
+  <div class="ed-section__label">Todos os Episodios</div>
+  <p class="ep-count">{episodes.length} episodios da Hipsters Network</p>
 
   {[...byMonth.entries()].map(([key, eps]) => (
-    <section class="mb-10">
-      <h2 class="text-lg font-semibold text-text-secondary mb-4 capitalize">{monthLabel(key)}</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <section class="ep-month-group">
+      <h2 class="ep-month-label">{monthLabel(key)}</h2>
+      <div class="ep-list">
         {eps.map(ep => (
-          <EpisodeCard
-            slug={ep.id}
-            title={ep.data.title}
-            description={ep.data.description}
-            podcast={ep.data.podcast}
-            episodeNumber={ep.data.episodeNumber}
-            pubDate={ep.data.pubDate}
-            authors={ep.data.authors}
-            tags={ep.data.tags}
-            quotes={ep.data.quotes}
-          />
+          <article class="ep-row">
+            <div class="ep-row__meta">
+              <span class={`ed-label ed-label--sm ${podcastAccentClass(ep.data.podcast)}`}>
+                {podcastLabel(ep.data.podcast)}{ep.data.episodeNumber ? ` #${ep.data.episodeNumber}` : ''}
+              </span>
+              <time class="ed-meta-date" datetime={ep.data.pubDate.toISOString()}>
+                {formatDateShort(ep.data.pubDate)}
+              </time>
+            </div>
+            <h3 class="ep-row__title">
+              <a href={`/episodios/${ep.id}`}>{ep.data.title}</a>
+            </h3>
+            <p class="ep-row__desc">{ep.data.description}</p>
+            <div class="ep-row__authors">
+              {ep.data.authors.slice(0, 3).join(', ')}
+            </div>
+          </article>
         ))}
       </div>
     </section>
   ))}
-</BaseLayout>
+</EditorialLayout>
+
+<style>
+  /* ======= FEATURED EPISODES ======= */
+  .ep-featured {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+  }
+
+  .ep-featured-row {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .ep-featured-row:last-child {
+    border-bottom: 2px solid var(--ed-rule-strong);
+  }
+
+  .ep-featured-row__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .ep-featured-row__title {
+    font-family: var(--ed-serif);
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ed-ink);
+    margin-bottom: 0.375rem;
+  }
+
+  @media (min-width: 640px) {
+    .ep-featured-row__title {
+      font-size: 1.25rem;
+    }
+  }
+
+  .ep-featured-row__title a:hover {
+    color: var(--ed-accent);
+  }
+
+  .ep-featured-row__desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--ed-ink-secondary);
+    margin-bottom: 0.375rem;
+  }
+
+  .ep-featured-row__authors {
+    font-size: 0.75rem;
+    color: var(--ed-ink-muted);
+  }
+
+  /* ======= CURTAS INTERLUDE ======= */
+  .ep-curtas-break {
+    margin-bottom: 2.5rem;
+    padding: 2rem 0;
+  }
+
+  .ep-curtas-break__subtitle {
+    font-family: var(--ed-serif);
+    font-size: 1rem;
+    color: var(--ed-ink-secondary);
+    margin-top: -0.75rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .ep-curtas-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--ed-rule);
+    border: 1px solid var(--ed-rule);
+  }
+
+  @media (min-width: 640px) {
+    .ep-curtas-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .ep-curta-card {
+    background: var(--ed-bg);
+    padding: 1.25rem;
+  }
+
+  .ep-curta-card__quote {
+    margin: 0 0 0.75rem;
+  }
+
+  .ep-curta-card__quote p {
+    font-family: var(--ed-serif);
+    font-size: 0.9375rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--ed-ink);
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .ep-curta-card__quote p::before {
+    content: '\201C';
+    font-size: 1.4em;
+    line-height: 0;
+    vertical-align: -0.2em;
+    color: var(--ed-accent);
+    margin-right: 0.1em;
+  }
+
+  /* Inline markdown in curtas interlude */
+  .ep-curta-card__quote :global(strong) {
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .ep-curta-card__quote :global(em) {
+    font-style: italic;
+  }
+
+  .ep-curta-card__quote :global(a) {
+    color: var(--ed-accent);
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .ep-curta-card__quote :global(.quote-img) {
+    display: none; /* hide images in preview cards */
+  }
+
+  .ep-curta-card__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .ep-curta-card__speaker {
+    font-style: normal;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--ed-ink);
+  }
+
+  .ep-curta-card__context {
+    font-size: 0.6875rem;
+    color: var(--ed-ink-muted);
+  }
+
+  .ep-curtas-break__more {
+    margin-top: 1rem;
+  }
+
+  .ep-curtas-break__more a {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ed-accent);
+  }
+
+  .ep-curtas-break__more a:hover {
+    color: var(--ed-accent-hover);
+  }
+
+  /* ======= REMAINING EPISODES ======= */
+  .ep-count {
+    font-family: var(--ed-serif);
+    font-size: 1.0625rem;
+    color: var(--ed-ink-secondary);
+    margin-top: -0.75rem;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+  }
+
+  .ep-month-group {
+    margin-bottom: 2.5rem;
+  }
+
+  .ep-month-label {
+    font-family: var(--ed-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ed-ink-muted);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--ed-rule);
+    margin-bottom: 0;
+  }
+
+  .ep-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ep-row {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .ep-row:last-child {
+    border-bottom: none;
+  }
+
+  .ep-row__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .ep-row__title {
+    font-family: var(--ed-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ed-ink);
+    margin-bottom: 0.375rem;
+  }
+
+  @media (min-width: 640px) {
+    .ep-row__title {
+      font-size: 1.125rem;
+    }
+  }
+
+  .ep-row__title a:hover {
+    color: var(--ed-accent);
+  }
+
+  .ep-row__desc {
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--ed-ink-secondary);
+    margin-bottom: 0.375rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @media (min-width: 640px) {
+    .ep-row__desc {
+      font-size: 0.875rem;
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+  }
+
+  .ep-row__authors {
+    font-size: 0.75rem;
+    color: var(--ed-ink-muted);
+  }
+</style>

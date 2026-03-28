@@ -1,0 +1,833 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const episodes = (await getCollection('episodes'))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+const curtas = (await getCollection('curtas'))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+// Featured: latest episode with quotes
+const featured = episodes.find(ep => ep.data.quotes.length > 0) || episodes[0];
+
+// Split by podcast
+const hipsters = episodes.filter(ep => ep.data.podcast === 'Hipsters Ponto Tech').slice(0, 8);
+const iaSobControle = episodes.filter(ep => ep.data.podcast === 'IA Sob Controle').slice(0, 8);
+
+// Best curtas: pick ones with shorter, punchier quotes
+const bestCurtas = curtas.slice(0, 6);
+
+function formatDate(date: Date): string {
+  return new Date(date).toLocaleDateString('pt-BR', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+function truncate(text: string, maxLen: number): string {
+  if (text.length <= maxLen) return text;
+  return text.slice(0, maxLen).replace(/\s+\S*$/, '') + '...';
+}
+
+function podcastInitials(name: string): string {
+  return name.split(' ').map(w => w[0]).filter(c => c === c.toUpperCase()).join('').slice(0, 3);
+}
+---
+
+<BaseLayout title="Magazine" description="Hipsters Builders -- os melhores momentos dos podcasts da Hipsters Network">
+  <Fragment slot="nav"><!-- no nav on this design --></Fragment>
+
+  <style>
+    /* ---- Override BaseLayout constraints for full-bleed ---- */
+    /* The BaseLayout <main> wraps our content with max-w/px constraints.
+       We break out of it using the .v3-page container. */
+    .v3-page {
+      margin-left: calc(-50vw + 50%);
+      width: 100vw;
+      overflow-x: hidden;
+    }
+
+    /* Also hide the BaseLayout footer since we have our own */
+    body > footer {
+      display: none;
+    }
+
+    /* ---- Warm dark palette ---- */
+    .v3-page {
+      --v3-bg: #1c1917;
+      --v3-bg-raised: #292524;
+      --v3-bg-card: #292524;
+      --v3-bg-card-hover: #33302d;
+      --v3-text: #fafaf9;
+      --v3-text-secondary: #a8a29e;
+      --v3-text-muted: #78716c;
+      --v3-amber: #f59e0b;
+      --v3-amber-dim: #b45309;
+      --v3-hipsters-from: #6366f1;
+      --v3-hipsters-to: #4338ca;
+      --v3-ia-from: #10b981;
+      --v3-ia-to: #047857;
+
+      background: var(--v3-bg);
+      color: var(--v3-text);
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- Hero ---- */
+    .v3-hero {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 3rem 2rem;
+      overflow: hidden;
+    }
+
+    .v3-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .v3-hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #292524 0%, #1c1917 40%, #44403c 70%, #292524 100%);
+    }
+
+    .v3-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 30%, rgba(245, 158, 11, 0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+    }
+
+    .v3-hero-gradient {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(to top, var(--v3-bg) 0%, transparent 100%);
+      z-index: 1;
+    }
+
+    .v3-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 56rem;
+    }
+
+    .v3-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
+    }
+
+    .v3-hero-badge--hipsters {
+      background: rgba(99, 102, 241, 0.2);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .v3-hero-badge--ia {
+      background: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .v3-hero-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      color: var(--v3-text);
+    }
+
+    .v3-hero-desc {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: var(--v3-text-secondary);
+      max-width: 40rem;
+      margin-bottom: 2rem;
+    }
+
+    .v3-hero-quote {
+      border-left: 3px solid var(--v3-amber);
+      padding-left: 1.25rem;
+      margin-bottom: 1.5rem;
+      max-width: 36rem;
+    }
+
+    .v3-hero-quote blockquote {
+      font-size: 1.125rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--v3-text);
+      margin: 0 0 0.5rem 0;
+    }
+
+    .v3-hero-quote cite {
+      font-size: 0.875rem;
+      font-style: normal;
+      color: var(--v3-amber);
+      font-weight: 500;
+    }
+
+    .v3-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: var(--v3-text-muted);
+    }
+
+    .v3-hero-meta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.5rem;
+      background: var(--v3-amber);
+      color: #1c1917;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .v3-hero-meta a:hover {
+      background: #fbbf24;
+      color: #1c1917;
+      transform: translateY(-1px);
+    }
+
+    /* ---- Brand header ---- */
+    .v3-brand {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      z-index: 10;
+    }
+
+    .v3-brand a {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--v3-text);
+      text-decoration: none;
+    }
+
+    .v3-brand a span {
+      color: var(--v3-amber);
+    }
+
+    /* ---- Sections ---- */
+    .v3-section {
+      padding: 4rem 2rem;
+    }
+
+    .v3-section-inner {
+      max-width: 80rem;
+      margin: 0 auto;
+    }
+
+    .v3-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .v3-section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--v3-text);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .v3-section-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .v3-section-dot--hipsters {
+      background: var(--v3-hipsters-from);
+    }
+
+    .v3-section-dot--ia {
+      background: var(--v3-ia-from);
+    }
+
+    .v3-section-link {
+      font-size: 0.875rem;
+      color: var(--v3-amber);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .v3-section-link:hover {
+      color: #fbbf24;
+    }
+
+    /* ---- Carousel ---- */
+    .v3-carousel {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 0 2rem;
+      padding-bottom: 1rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--v3-bg-card) transparent;
+    }
+
+    .v3-carousel::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .v3-carousel::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .v3-carousel::-webkit-scrollbar-thumb {
+      background: var(--v3-bg-card-hover);
+      border-radius: 3px;
+    }
+
+    /* ---- Episode card (carousel) ---- */
+    .v3-ep-card {
+      flex: 0 0 320px;
+      scroll-snap-align: start;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: var(--v3-bg-card);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .v3-ep-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+      color: inherit;
+    }
+
+    .v3-ep-card-art {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .v3-ep-card-art--hipsters {
+      background: linear-gradient(135deg, var(--v3-hipsters-from), var(--v3-hipsters-to));
+    }
+
+    .v3-ep-card-art--ia {
+      background: linear-gradient(135deg, var(--v3-ia-from), var(--v3-ia-to));
+    }
+
+    .v3-ep-card-art-initials {
+      font-size: 3rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.15);
+      letter-spacing: 0.05em;
+      position: absolute;
+    }
+
+    .v3-ep-card-art-number {
+      font-size: 5rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .v3-ep-card-art-play {
+      position: absolute;
+      bottom: 0.75rem;
+      right: 0.75rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.25s, transform 0.25s;
+    }
+
+    .v3-ep-card:hover .v3-ep-card-art-play {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .v3-ep-card-art-play svg {
+      width: 14px;
+      height: 14px;
+      fill: white;
+      margin-left: 2px;
+    }
+
+    .v3-ep-card-body {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .v3-ep-card-podcast {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .v3-ep-card-podcast--hipsters {
+      color: #a5b4fc;
+    }
+
+    .v3-ep-card-podcast--ia {
+      color: #6ee7b7;
+    }
+
+    .v3-ep-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--v3-text);
+      margin-bottom: 0.75rem;
+    }
+
+    .v3-ep-card-quote {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--v3-text-secondary);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+      flex: 1;
+      /* no truncation */
+    }
+
+    .v3-ep-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--v3-text-muted);
+    }
+
+    /* ---- Insights / Pull-quotes ---- */
+    .v3-insights {
+      background:
+        linear-gradient(180deg, var(--v3-bg) 0%, #1a1614 50%, var(--v3-bg) 100%);
+    }
+
+    .v3-quotes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      max-width: 64rem;
+      margin: 0 auto;
+    }
+
+    .v3-pullquote {
+      padding: 2.5rem;
+      border-radius: 1.25rem;
+      background: var(--v3-bg-card);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .v3-pullquote:hover {
+      transform: scale(1.01);
+    }
+
+    .v3-pullquote::before {
+      content: '\201C';
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--v3-amber);
+      opacity: 0.25;
+      font-family: Georgia, serif;
+    }
+
+    .v3-pullquote:nth-child(even) {
+      margin-left: auto;
+    }
+
+    .v3-pullquote:nth-child(odd) {
+      margin-right: auto;
+    }
+
+    .v3-pullquote-text {
+      font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--v3-text);
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .v3-pullquote-speaker {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--v3-amber);
+    }
+
+    .v3-pullquote-context {
+      font-size: 0.8rem;
+      color: var(--v3-text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* ---- Newsletter ---- */
+    .v3-newsletter {
+      background:
+        linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(180, 83, 9, 0.04) 100%);
+      border-top: 1px solid rgba(245, 158, 11, 0.15);
+    }
+
+    .v3-newsletter-inner {
+      max-width: 36rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .v3-newsletter-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--v3-text);
+      margin-bottom: 0.75rem;
+    }
+
+    .v3-newsletter-desc {
+      font-size: 1rem;
+      color: var(--v3-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .v3-newsletter-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 28rem;
+      margin: 0 auto;
+    }
+
+    .v3-newsletter-input {
+      flex: 1;
+      padding: 0.75rem 1.25rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      background: var(--v3-bg-card);
+      color: var(--v3-text);
+      font-size: 0.9375rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .v3-newsletter-input::placeholder {
+      color: var(--v3-text-muted);
+    }
+
+    .v3-newsletter-input:focus {
+      border-color: var(--v3-amber);
+    }
+
+    .v3-newsletter-btn {
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      background: var(--v3-amber);
+      color: #1c1917;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+
+    .v3-newsletter-btn:hover {
+      background: #fbbf24;
+      transform: translateY(-1px);
+    }
+
+    /* ---- Footer ---- */
+    .v3-footer {
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--v3-text-muted);
+    }
+
+    .v3-footer a {
+      color: var(--v3-text-secondary);
+      text-decoration: none;
+    }
+
+    .v3-footer a:hover {
+      color: var(--v3-amber);
+    }
+
+    /* ---- Responsive ---- */
+    @media (min-width: 640px) {
+      .v3-hero {
+        padding: 4rem 3rem;
+        min-height: 85vh;
+      }
+      .v3-brand {
+        top: 2.5rem;
+        left: 3rem;
+      }
+      .v3-section {
+        padding: 4rem 3rem;
+      }
+      .v3-quotes-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .v3-pullquote:nth-child(even) {
+        margin-left: 0;
+        margin-top: 3rem;
+      }
+      .v3-pullquote:nth-child(odd) {
+        margin-right: 0;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .v3-hero {
+        padding: 5rem 4rem;
+      }
+      .v3-brand {
+        left: 4rem;
+        top: 3rem;
+      }
+      .v3-section {
+        padding: 5rem 4rem;
+      }
+    }
+
+    @media (max-width: 639px) {
+      .v3-carousel {
+        flex-direction: column;
+        overflow-x: visible;
+        scroll-snap-type: none;
+      }
+      .v3-ep-card {
+        flex: none;
+        width: 100%;
+      }
+      .v3-ep-card-art {
+        height: 140px;
+      }
+      .v3-newsletter-form {
+        flex-direction: column;
+      }
+      .v3-pullquote {
+        padding: 1.75rem;
+      }
+    }
+  </style>
+
+  <div class="v3-page">
+    <!-- Brand -->
+    <div class="v3-brand">
+      <a href="/">Hipsters<span>.builders</span></a>
+    </div>
+
+    <!-- Hero: Featured Episode -->
+    <section class="v3-hero">
+      <div class="v3-hero-bg"></div>
+      <div class="v3-hero-gradient"></div>
+      <div class="v3-hero-content">
+        <span class={`v3-hero-badge ${featured.data.podcast === 'Hipsters Ponto Tech' ? 'v3-hero-badge--hipsters' : 'v3-hero-badge--ia'}`}>
+          {featured.data.podcast}
+          {featured.data.episodeNumber && ` #${featured.data.episodeNumber}`}
+        </span>
+
+        <h1 class="v3-hero-title">{featured.data.title}</h1>
+
+        <p class="v3-hero-desc">{truncate(featured.data.description, 200)}</p>
+
+        {featured.data.quotes.length > 0 && (
+          <div class="v3-hero-quote">
+            <blockquote>{truncate(featured.data.quotes[0].text, 180)}</blockquote>
+            <cite>-- {featured.data.quotes[0].speaker}</cite>
+          </div>
+        )}
+
+        <div class="v3-hero-meta">
+          <a href={`/episodios/${featured.id}`}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            Ouvir episodio
+          </a>
+          <span>{formatDate(featured.data.pubDate)}</span>
+          {featured.data.authors.length > 0 && (
+            <span>{featured.data.authors.slice(0, 3).join(', ')}</span>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <!-- Hipsters Ponto Tech Carousel -->
+    {hipsters.length > 0 && (
+      <section class="v3-section">
+        <div class="v3-section-inner">
+          <div class="v3-section-header">
+            <h2 class="v3-section-title">
+              <span class="v3-section-dot v3-section-dot--hipsters"></span>
+              Hipsters Ponto Tech
+            </h2>
+            <a href="/episodios" class="v3-section-link">Ver todos &rarr;</a>
+          </div>
+          <div class="v3-carousel">
+            {hipsters.map(ep => (
+              <a href={`/episodios/${ep.id}`} class="v3-ep-card">
+                <div class="v3-ep-card-art v3-ep-card-art--hipsters">
+                  <span class="v3-ep-card-art-initials">HPT</span>
+                  {ep.data.episodeNumber && (
+                    <span class="v3-ep-card-art-number">#{ep.data.episodeNumber}</span>
+                  )}
+                  <div class="v3-ep-card-art-play">
+                    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                  </div>
+                </div>
+                <div class="v3-ep-card-body">
+                  <span class="v3-ep-card-podcast v3-ep-card-podcast--hipsters">Hipsters Ponto Tech</span>
+                  <h3 class="v3-ep-card-title">{truncate(ep.data.title, 70)}</h3>
+                  {ep.data.quotes.length > 0 && (
+                    <p class="v3-ep-card-quote">"{truncate(ep.data.quotes[0].text, 120)}"</p>
+                  )}
+                  <div class="v3-ep-card-footer">
+                    <span>{formatDate(ep.data.pubDate)}</span>
+                    {ep.data.authors.length > 0 && (
+                      <span>{ep.data.authors[0]}</span>
+                    )}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- IA Sob Controle Carousel -->
+    {iaSobControle.length > 0 && (
+      <section class="v3-section">
+        <div class="v3-section-inner">
+          <div class="v3-section-header">
+            <h2 class="v3-section-title">
+              <span class="v3-section-dot v3-section-dot--ia"></span>
+              IA Sob Controle
+            </h2>
+            <a href="/episodios" class="v3-section-link">Ver todos &rarr;</a>
+          </div>
+          <div class="v3-carousel">
+            {iaSobControle.map(ep => (
+              <a href={`/episodios/${ep.id}`} class="v3-ep-card">
+                <div class="v3-ep-card-art v3-ep-card-art--ia">
+                  <span class="v3-ep-card-art-initials">IASC</span>
+                  {ep.data.episodeNumber && (
+                    <span class="v3-ep-card-art-number">#{ep.data.episodeNumber}</span>
+                  )}
+                  <div class="v3-ep-card-art-play">
+                    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                  </div>
+                </div>
+                <div class="v3-ep-card-body">
+                  <span class="v3-ep-card-podcast v3-ep-card-podcast--ia">IA Sob Controle</span>
+                  <h3 class="v3-ep-card-title">{truncate(ep.data.title, 70)}</h3>
+                  {ep.data.quotes.length > 0 && (
+                    <p class="v3-ep-card-quote">"{truncate(ep.data.quotes[0].text, 120)}"</p>
+                  )}
+                  <div class="v3-ep-card-footer">
+                    <span>{formatDate(ep.data.pubDate)}</span>
+                    {ep.data.authors.length > 0 && (
+                      <span>{ep.data.authors[0]}</span>
+                    )}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Insights da Comunidade -->
+    <section class="v3-section v3-insights">
+      <div class="v3-section-inner">
+        <div class="v3-section-header">
+          <h2 class="v3-section-title">
+            Insights da Comunidade
+          </h2>
+          <a href="/curtas" class="v3-section-link">Ver todas &rarr;</a>
+        </div>
+        <div class="v3-quotes-grid">
+          {bestCurtas.map((c) => (
+            <div class="v3-pullquote">
+              <p class="v3-pullquote-text">{truncate(c.data.quote, 200)}</p>
+              <span class="v3-pullquote-speaker">{c.data.speaker}</span>
+              <p class="v3-pullquote-context">{c.data.context}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="v3-section v3-newsletter">
+      <div class="v3-newsletter-inner">
+        <h2 class="v3-newsletter-title">Fique por dentro</h2>
+        <p class="v3-newsletter-desc">
+          Receba os melhores momentos dos podcasts, quotes e discussoes da comunidade Hipsters direto no seu email.
+        </p>
+        <form class="v3-newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/hipsters-builders" method="post" target="_blank">
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="seu@email.com"
+            class="v3-newsletter-input"
+          />
+          <button type="submit" class="v3-newsletter-btn">Assinar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="v3-footer">
+      <p>Hipsters Builders -- parte da <a href="https://hipsters.tech">Hipsters Network</a> &middot; <a href="https://alura.com.br">Alura</a></p>
+    </footer>
+  </div>
+</BaseLayout>

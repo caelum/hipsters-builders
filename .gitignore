@@ -21,6 +21,12 @@ src/content/episodes/
 src/content/curtas/
 src/content/newsletters/
 
+# generated media (re-sync from vault)
+public/media/whatsapp/
+
+# vault (local copy of stromae-vault-alura, 383MB+)
+vault/
+
 # macOS-specific files
 .DS_Store
 

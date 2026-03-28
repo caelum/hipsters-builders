@@ -76,6 +76,211 @@ interface Quote {
   timestamp?: string;
 }
 
+// --- Quote quality ---
+
+/** Patterns that indicate low-quality quotes (greetings, meta-commentary, filler) */
+/** Patterns that HARD-REJECT a quote regardless of length */
+const HARD_REJECT_PATTERNS = [
+  // Opening greetings that dominate the first 60 chars
+  /^(salve|fala|oi|olá|e aí|ei|boa noite|bom dia|boa tarde|tudo bem|tudo ótimo|tudo certo|tudo bom)[,!.\s]/i,
+  // "Tá no ar mais um episódio", "seja bem vindo"
+  /\b(t[áa] no ar|mais um epis[óo]dio|bem[- ]?vind[oa]s?|seu podcast favorito)\b/i,
+  // Self-intros: "eu sou fulano", "meu nome é", "tudo bem com você", "bom estar aqui"
+  /\b(eu sou .{2,20}(seu host|seu apresentador|host)|meu nome [eé]|tudo bem com voc[eê]|prazer em estar|prazer estar aqui|bom estar aqui)\b/i,
+  // Host introducing guests: "tenho o prazer de chamar", "quem tá aqui com a gente"
+  /\b(tenho o prazer de|prazer de chamar|quem t[aá] aqui com|quem est[aá] aqui com|chamo aqui|convido aqui|nosso[a]? convidado[a]? de hoje|terceiro[a]? convidado[a])\b/i,
+  // "Tudo bem contigo?", "Como é que você tá?"
+  /\b(tudo bem contigo|tudo bem com ele|como [eé] que voc[eê])\b/i,
+  // Closings
+  /\b(obrigad[oa] pela? |valeu pela?|até a próxima|até mais|tchau|falou pessoal)\b/i,
+  // Pure filler
+  /^(e aí|tudo bem|como vai|beleza|vamos lá|bora)[?.!]?$/i,
+  // Promotion ("acabei de descobrir que fui promovida" — inside joke, not insightful)
+  /\b(acabei de descobrir que fui promovid)\b/i,
+  // Support/help questions (not insights)
+  /\b(me tirar d[uú]vida|algu[eé]m (sabe|pode|consegue) me (ajudar|dizer|explicar)|como (fa[cç]o|configuro|instalo)|n[aã]o (consigo|sei como|manjo))\b/i,
+  // Begging/gratitude filler
+  /\b(agrade[cç]o d\+|por favor me ajud|sei que posso pesquisar)\b/i,
+  // Job seeking / personal requests in community groups
+  /\b(aceito indica[çc][oõ]es|n[aã]o tenho emprego|procurando (vaga|emprego|oportunidade)|me desculpa usar o grupo|[eé] urgente)\b/i,
+  // Event announcements without substance
+  /\b(pessoal amanh[aã]|teremos (uma|um)|particip[ae]m|inscrevam|link de inscri)\b/i,
+];
+
+/** Patterns that penalize score but don't hard-reject */
+const LOW_QUALITY_PATTERNS = [
+  // Greetings mixed with content (less severe)
+  /\b(bom dia|boa tarde|boa noite|olá|oi pessoal|oi gente|fala pessoal|e aí pessoal|fala[, ]galera)\b/i,
+  // Guest intros
+  /\b(quem t[aá] aqui com|super empolgad[ao]|animad[ao] com esse papo)\b/i,
+  // Meta-commentary
+  /\b(como a gente falou|voltando ao assunto|como eu disse|a gente já conversou|como eu falei|retomando aqui|deixa eu falar)\b/i,
+  // Filler transitions
+  /\b(vamos lá|é isso aí|é isso mesmo|brincadeiras à parte)\b/i,
+];
+
+/** Tech product/tool names → **bold** */
+const TECH_PRODUCTS = [
+  'ChatGPT', 'GPT-4', 'GPT-4o', 'GPT-3', 'GPT',
+  'Claude', 'Claude Code', 'Gemini', 'Copilot', 'GitHub Copilot',
+  'Cursor', 'Windsurf', 'Bolt', 'Lovable', 'Replit', 'v0',
+  'OpenAI', 'Anthropic', 'Google', 'Meta', 'Microsoft', 'Apple',
+  'React', 'Next.js', 'Vue', 'Angular', 'Svelte', 'Astro',
+  'Python', 'JavaScript', 'TypeScript', 'Java', 'Kotlin', 'Swift', 'Rust', 'Go',
+  'Docker', 'Kubernetes', 'AWS', 'Azure', 'GCP',
+  'TensorFlow', 'PyTorch', 'LangChain', 'LlamaIndex',
+  'Whisper', 'Midjourney', 'DALL-E', 'Stable Diffusion', 'Sora',
+  'Linux', 'Git', 'GitHub', 'VS Code', 'Node.js',
+  'Figma', 'Notion', 'Slack', 'Discord',
+  'PostgreSQL', 'MongoDB', 'Redis', 'Elasticsearch',
+  'Spring Boot', 'Django', 'FastAPI', 'Rails',
+  'Vercel', 'Netlify', 'Fly.io', 'Heroku',
+  'DeepSeek', 'Llama', 'Mistral', 'Groq', 'Perplexity',
+  'OpenClaw', 'Devin', 'SWE-bench',
+  'Alura', 'FIAP', 'Hipsters',
+];
+
+/** Concept terms → *italic* */
+const TECH_CONCEPTS = [
+  'machine learning', 'deep learning', 'inteligência artificial',
+  'vibe coding', 'pair programming', 'code review',
+  'agentes', 'agentic', 'multi-agentes',
+  'embeddings', 'fine-tuning', 'fine tuning',
+  'prompt engineering', 'chain of thought', 'few-shot',
+  'RAG', 'retrieval augmented generation',
+  'large language model', 'LLM', 'LLMs',
+  'transformer', 'transformers', 'attention mechanism',
+  'API', 'APIs', 'microserviços', 'microsserviços',
+  'DevOps', 'CI/CD', 'deploy contínuo',
+  'refatoração', 'refactoring', 'clean code', 'code smell',
+  'product market fit', 'product-led growth',
+  'data science', 'data engineering', 'data lake', 'data mesh',
+  'cloud computing', 'serverless', 'edge computing',
+  'open source', 'código aberto',
+  'sprint', 'scrum', 'kanban', 'agile', 'ágil',
+  'tech lead', 'staff engineer', 'principal engineer',
+  'burnout', 'soft skills', 'hard skills',
+  'token', 'tokens', 'context window', 'janela de contexto',
+  'hallucination', 'alucinação',
+  'multimodal', 'text-to-speech', 'speech-to-text',
+];
+
+/** Score a quote for quality (higher = better). Returns 0 for rejected quotes. */
+function scoreQuote(text: string): number {
+  // Hard reject: intro/greeting/closing patterns — regardless of length
+  for (const pat of HARD_REJECT_PATTERNS) {
+    if (pat.test(text)) return 0;
+  }
+
+  // Soft penalty: low-quality patterns reduce score
+  let penalty = 0;
+  for (const pat of LOW_QUALITY_PATTERNS) {
+    if (pat.test(text)) penalty += 15;
+  }
+
+  let score = 10; // base score
+
+  // Bonus: quotes with images or links are richer content
+  if (/!\[Image\]\(media\//.test(text)) score += 10;
+  if (/https?:\/\/[^\s)]+/.test(text)) score += 8;
+
+  // Prefer quotes with numbers/data
+  if (/\d+%|\d+\s*(mil(hões|hão)?|bi(lhões|lhão)?|trilhões|vezes|x)\b/i.test(text)) score += 15;
+  if (/\d{2,}/.test(text)) score += 5;
+
+  // Prefer quotes with opinions/insights
+  if (/\b(eu acho|na minha opinião|eu acredito|o ponto é|a questão é|o problema é|o interessante é|o legal é)\b/i.test(text)) score += 10;
+
+  // Prefer quotes with tech terms
+  const lowerText = text.toLowerCase();
+  let techHits = 0;
+  for (const term of TECH_PRODUCTS) {
+    if (lowerText.includes(term.toLowerCase())) techHits++;
+  }
+  for (const term of TECH_CONCEPTS) {
+    if (lowerText.includes(term.toLowerCase())) techHits++;
+  }
+  score += Math.min(techHits * 5, 25);
+
+  // Prefer medium-length quotes (not too short, not too long)
+  if (text.length >= 100 && text.length <= 400) score += 10;
+  else if (text.length > 400) score += 5;
+
+  // Reject very short quotes
+  if (text.length < 100) return 0;
+
+  // Penalize informal/broken Portuguese (WhatsApp abbreviations = likely casual question, not insight)
+  const informalMarkers = (text.match(/\b(mto|d\+|vc|vcs|tb|tbm|pq|eh|oq|q |nao manjo|n[aã]o manjo|codigos que)\b/gi) ?? []).length;
+  if (informalMarkers >= 3) score -= 20;
+
+  // Apply soft penalty from low-quality patterns
+  score -= penalty;
+
+  return Math.max(score, 1); // never go below 1 (0 means hard reject)
+}
+
+/** Truncate text at a sentence boundary, never mid-word */
+function truncateAtSentence(text: string, maxLen: number): string {
+  if (text.length <= maxLen) return text;
+
+  // Look for last sentence boundary within maxLen
+  const sentenceEnd = /[.?!…]+["»)]*\s/g;
+  let lastBoundary = -1;
+  let m: RegExpExecArray | null;
+  while ((m = sentenceEnd.exec(text)) !== null) {
+    const endPos = m.index + m[0].trimEnd().length;
+    if (endPos <= maxLen) {
+      lastBoundary = endPos;
+    } else if (lastBoundary === -1 && endPos <= maxLen + 500) {
+      // No boundary found within limit — extend to next one (up to +500)
+      return text.slice(0, endPos);
+    } else {
+      break;
+    }
+  }
+
+  if (lastBoundary > 0) {
+    return text.slice(0, lastBoundary);
+  }
+
+  // No sentence boundary found even within +500 — find last word boundary
+  const wordBoundary = text.lastIndexOf(' ', maxLen);
+  if (wordBoundary > maxLen * 0.5) {
+    return text.slice(0, wordBoundary) + '...';
+  }
+
+  return text.slice(0, maxLen) + '...';
+}
+
+/** Apply bold to tech product names and italic to concept terms */
+function boldTechKeywords(text: string): string {
+  // Skip if text already has formatting markers (WhatsApp *bold*, >blockquote, [links])
+  if (/\*\w|\n>/.test(text)) return text;
+
+  let result = text;
+
+  // Sort by length descending to match longer terms first (e.g., "Claude Code" before "Claude")
+  const sortedProducts = [...TECH_PRODUCTS].sort((a, b) => b.length - a.length);
+  const sortedConcepts = [...TECH_CONCEPTS].sort((a, b) => b.length - a.length);
+
+  // Bold products — case-insensitive match, preserve original casing
+  for (const term of sortedProducts) {
+    const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(?<!\\*)\\b(${escaped})\\b(?!\\*)`, 'gi');
+    result = result.replace(regex, '**$1**');
+  }
+
+  // Italic concepts — case-insensitive, preserve original casing
+  // Skip terms already wrapped in * (bold or italic)
+  for (const term of sortedConcepts) {
+    const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(?<!\\*)\\b(${escaped})\\b(?!\\*)`, 'gi');
+    result = result.replace(regex, '*$1*');
+  }
+
+  return result;
+}
+
 // --- Helpers ---
 
 function readSignals(dir: string): ParsedSignal[] {
@@ -92,36 +297,42 @@ function readSignals(dir: string): ParsedSignal[] {
 function extractQuotes(body: string, maxQuotes = 5): Quote[] {
   // Pattern: **[Speaker · HH:MM]** text
   const regex = /\*\*\[(.+?)\s*·\s*(\d+:\d+)\]\*\*\s*([\s\S]*?)(?=\n\n\*\*\[|\n\n#|$)/g;
-  const quotes: Quote[] = [];
+  const scored: { quote: Quote; score: number }[] = [];
   let match: RegExpExecArray | null;
   while ((match = regex.exec(body)) !== null) {
-    const text = match[3].trim();
-    // Skip very short messages (greetings, etc.)
-    if (text.length < 80) continue;
-    quotes.push({
-      text: text.slice(0, 500), // cap at 500 chars
-      speaker: match[1].trim(),
-      timestamp: match[2],
+    const rawText = match[3].trim();
+    // Truncate at sentence boundary instead of hard cut
+    const text = truncateAtSentence(rawText, 500);
+    const score = scoreQuote(text);
+    if (score === 0) continue; // rejected by quality filter
+    scored.push({
+      quote: {
+        text: boldTechKeywords(text),
+        speaker: match[1].trim(),
+        timestamp: match[2],
+      },
+      score,
     });
   }
-  // Pick diverse speakers, prefer longer quotes
-  const bySpeaker = new Map<string, Quote[]>();
-  for (const q of quotes) {
-    const arr = bySpeaker.get(q.speaker) ?? [];
-    arr.push(q);
-    bySpeaker.set(q.speaker, arr);
+
+  // Sort by quality score descending
+  scored.sort((a, b) => b.score - a.score);
+
+  // Pick diverse speakers via round-robin, but ordered by score within each speaker
+  const bySpeaker = new Map<string, typeof scored>();
+  for (const item of scored) {
+    const arr = bySpeaker.get(item.quote.speaker) ?? [];
+    arr.push(item);
+    bySpeaker.set(item.quote.speaker, arr);
   }
+
   const selected: Quote[] = [];
-  // Round-robin by speaker, picking longest first
-  for (const [, arr] of bySpeaker) {
-    arr.sort((a, b) => b.text.length - a.text.length);
-  }
   let round = 0;
   while (selected.length < maxQuotes) {
     let added = false;
     for (const [, arr] of bySpeaker) {
       if (round < arr.length && selected.length < maxQuotes) {
-        selected.push(arr[round]);
+        selected.push(arr[round].quote);
         added = true;
       }
     }
@@ -132,14 +343,9 @@ function extractQuotes(body: string, maxQuotes = 5): Quote[] {
 }
 
 function extractBestQuote(body: string): Quote | null {
+  // extractQuotes already scores and sorts by quality — just pick the top one
   const quotes = extractQuotes(body, 20);
-  if (quotes.length === 0) return null;
-  // Pick the quote with the best "insight density" (longer but not too long)
-  return quotes.sort((a, b) => {
-    const scoreA = Math.min(a.text.length, 300);
-    const scoreB = Math.min(b.text.length, 300);
-    return scoreB - scoreA;
-  })[0];
+  return quotes[0] ?? null;
 }
 
 function slugify(text: string): string {
@@ -396,7 +602,23 @@ function syncCurtas() {
     }
   }
 
-  waQuotes.sort((a, b) => Math.min(b.quote.text.length, 300) - Math.min(a.quote.text.length, 300));
+  // Filter out low-quality WhatsApp quotes more aggressively
+  const filteredWa = waQuotes.filter(({ quote }) => {
+    const text = quote.text.replace(/\n+/g, ' ').trim();
+    // Reject short real content (strip markdown/whitespace before measuring)
+    const plainText = text.replace(/[*_>\[\]()!#]/g, '').replace(/\s+/g, ' ').trim();
+    if (plainText.length < 100) return false;
+    // Reject greetings/requests/closings at the start
+    if (/^(bom dia|boa tarde|boa noite|salve|fala|oi |olá|obrigad|valeu|ei,)/i.test(plainText)) return false;
+    // Reject job seeking, help requests, event announcements
+    if (/\b(aceito indica|n[aã]o tenho emprego|procurando vaga|me desculpa usar|precisava de.{0,20}dicas|algu[eé]m (sabe|pode) me)\b/i.test(plainText)) return false;
+    // Reject URL-only messages
+    if (/^https?:\/\//.test(plainText) && plainText.split(' ').length < 10) return false;
+    // Reject image-only messages
+    if (/^\!\[Image\]/.test(text) && plainText.length < 150) return false;
+    return true;
+  });
+  filteredWa.sort((a, b) => Math.min(b.quote.text.length, 300) - Math.min(a.quote.text.length, 300));
 
   const groupNames: Record<string, string> = {
     'whatsapp-builders-sp-claude-code': 'Builders SP',
@@ -404,7 +626,7 @@ function syncCurtas() {
     'whatsapp-ia-sob-controle': 'IA Sob Controle',
   };
 
-  for (const { quote, signal } of waQuotes.slice(0, 20)) {
+  for (const { quote, signal } of filteredWa.slice(0, 20)) {
     const dateStr = new Date(signal.frontmatter.captured_at).toISOString().slice(0, 10);
     const slug = `${dateStr}-wa-${slugify(quote.speaker)}-${slugify(quote.text.slice(0, 40))}`;
     const context = groupNames[signal.frontmatter.source_name] ?? signal.frontmatter.source_name;
@@ -478,4 +700,57 @@ syncEpisodes();
 syncCurtas();
 syncNewsletters();
 
+syncMedia();
+
 console.log('\n✅ Sync complete!');
+
+// --- Sync Media ---
+
+function syncMedia() {
+  console.log('\n🖼️  Syncing media...');
+  const mediaSource = path.join(vaultPath, 'signals', 'internal', 'whatsapp', 'media');
+  const mediaDest = path.join(projectRoot, 'public', 'media', 'whatsapp');
+
+  if (!fs.existsSync(mediaSource)) {
+    console.log('  No WhatsApp media directory found');
+    return;
+  }
+
+  // Scan curtas for image references
+  const curtasDir = path.join(contentDir, 'curtas');
+  if (!fs.existsSync(curtasDir)) return;
+
+  const referencedImages = new Set<string>();
+  for (const file of fs.readdirSync(curtasDir).filter(f => f.endsWith('.md'))) {
+    const content = fs.readFileSync(path.join(curtasDir, file), 'utf-8');
+    const matches = content.matchAll(/!\[Image\]\(media\/([^)]+)\)/g);
+    for (const m of matches) {
+      referencedImages.add(m[1]);
+    }
+  }
+
+  if (referencedImages.size === 0) {
+    console.log('  No image references found in curtas');
+    return;
+  }
+
+  if (!dryRun) {
+    fs.mkdirSync(mediaDest, { recursive: true });
+  }
+
+  let copied = 0;
+  for (const img of referencedImages) {
+    const src = path.join(mediaSource, img);
+    const dest = path.join(mediaDest, img);
+    if (fs.existsSync(src)) {
+      if (!dryRun) {
+        fs.copyFileSync(src, dest);
+      }
+      copied++;
+    } else {
+      console.log(`  ⚠️  Missing: ${img}`);
+    }
+  }
+
+  console.log(`  ✅ ${dryRun ? 'Would copy' : 'Copied'} ${copied} images`);
+}

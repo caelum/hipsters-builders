@@ -1,43 +1,88 @@
-# Astro Starter Kit: Minimal
+# Hipsters.builders
 
-```sh
-npm create astro@latest -- --template minimal
+Community portal for the **Hipsters Network** (Alura podcasts + community). Publishes episode summaries with quotes, short-form "curtas", and a weekly newsletter. All content comes from the [Stromae vault](https://github.com/caelum/stromae-vault-alura) at build time.
+
+**Live site**: https://hipsters.builders
+
+## Quick start
+
+```bash
+# Requirements: Node.js >= 22.12.0
+
+# 1. Install dependencies
+npm install
+
+# 2. Set up the vault (content source)
+# Option A: symlink from existing vault clone
+ln -s ~/stromae-vault-alura/signals vault/signals
+ln -s ~/stromae-vault-alura/drafts vault/drafts
+
+# Option B: clone the vault into ./vault/
+git clone git@github.com:caelum/stromae-vault-alura.git vault-repo
+ln -s vault-repo/signals vault/signals
+ln -s vault-repo/drafts vault/drafts
+
+# 3. Sync content from vault to Astro content collections
+npm run sync
+
+# 4. Run dev server (port 5332)
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commands
 
-## 🚀 Project Structure
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Dev server on `localhost:5332` |
+| `npm run sync` | Vault to content collections (episodes, curtas, newsletters, media) |
+| `npm run build` | Sync + production build |
+| `npx astro preview` | Preview production build |
 
-Inside of your Astro project, you'll see the following folders and files:
+### sync-content.ts options
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npx tsx scripts/sync-content.ts --help
+npx tsx scripts/sync-content.ts --dry-run          # preview without writing
+npx tsx scripts/sync-content.ts --since 2024-01-01 # change date filter (default: 2025-01-01)
+npx tsx scripts/sync-content.ts --vault ~/other     # different vault path
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Architecture
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```
+Stromae vault (signals/, drafts/)
+  | npm run sync
+  v
+src/content/          <-- gitignored, regenerated on every sync
+  episodes/           <-- 1 .md per podcast episode
+  curtas/             <-- best quotes from podcasts + WhatsApp
+  newsletters/        <-- weekly editions
+public/media/whatsapp/ <-- images from WhatsApp threads (gitignored)
+  | npm run build
+  v
+dist/                 <-- static site (GitHub Pages)
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Stack
 
-## 🧞 Commands
+- **Framework**: [Astro 6](https://astro.build/) (SSG)
+- **Styling**: [Tailwind v4](https://tailwindcss.com/) (CSS-first)
+- **Design**: Editorial (light, serif, newspaper-inspired)
+- **Content source**: Stromae vault (read-only at build time)
+- **Deploy**: GitHub Pages (planned)
 
-All commands are run from the root of the project, from a terminal:
+## Content sources
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Source | Type | Count |
+|--------|------|-------|
+| Hipsters Ponto Tech | Podcast | ~100 episodes |
+| IA Sob Controle | Podcast | ~100 episodes |
+| WhatsApp Builders SP | Community | ~20 curtas |
+| WhatsApp Clauders | Community | curtas |
 
-## 👀 Want to learn more?
+## Related repos
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Repo | Description |
+|------|-------------|
+| [caelum/stromae](https://github.com/caelum/stromae) | Content orchestrator |
+| [caelum/stromae-vault-alura](https://github.com/caelum/stromae-vault-alura) | Vault (signals, drafts, voices) |

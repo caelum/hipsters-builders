@@ -1,7 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Nav from '../../components/Nav.astro';
+import EditorialLayout from '../../layouts/EditorialLayout.astro';
 
 export async function getStaticPaths() {
   const newsletters = await getCollection('newsletters');
@@ -10,36 +9,89 @@ export async function getStaticPaths() {
 
 const { newsletter } = Astro.props;
 const { Content } = await render(newsletter);
-const { title, subject, editionNumber, pubDate } = newsletter.data;
+const { subject, editionNumber, pubDate } = newsletter.data;
 const dateStr = new Date(pubDate).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
 ---
 
-<BaseLayout title={`Newsletter #${editionNumber}: ${subject}`}>
-  <Nav slot="nav" />
-
-  <article class="max-w-3xl mx-auto">
-    <div class="mb-8">
-      <div class="flex items-center gap-2 mb-3">
-        <span class="text-sm font-mono px-3 py-1 rounded-full bg-accent-pink/15 text-accent-pink">
-          Edição #{editionNumber}
-        </span>
-        <span class="text-sm text-text-muted">{dateStr}</span>
+<EditorialLayout title={`Newsletter #${editionNumber}: ${subject}`} activeNav="newsletter">
+  <article class="nl-detail">
+    <header class="nl-detail__header">
+      <div class="nl-detail__meta">
+        <span class="nl-detail__edition">Edicao #{editionNumber}</span>
+        <time class="ed-meta-date" datetime={new Date(pubDate).toISOString()}>{dateStr}</time>
       </div>
-      <h1 class="text-2xl sm:text-3xl font-bold text-text-primary mb-2">{subject}</h1>
-    </div>
+      <h1 class="nl-detail__title">{subject}</h1>
+    </header>
 
-    <div class="prose prose-invert max-w-none
-      prose-headings:text-text-primary prose-p:text-text-secondary
-      prose-blockquote:border-brand/30 prose-blockquote:text-text-secondary
-      prose-strong:text-text-primary prose-a:text-brand-light
-      prose-li:text-text-secondary">
+    <div class="ed-prose">
       <Content />
     </div>
 
-    <div class="mt-10 pt-6 border-t border-surface-overlay text-center">
-      <a href="/newsletter" class="text-sm text-brand-light hover:text-brand font-medium">
-        ← Todas as edições
-      </a>
-    </div>
+    <footer class="nl-detail__back">
+      <a href="/newsletter">&larr; Todas as edicoes</a>
+    </footer>
   </article>
-</BaseLayout>
+</EditorialLayout>
+
+<style>
+  .nl-detail {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  .nl-detail__header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .nl-detail__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .nl-detail__edition {
+    font-family: var(--ed-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.1875rem 0.5rem;
+    border-radius: 2px;
+    background: #fce7f3;
+    color: #9d174d;
+  }
+
+  .nl-detail__title {
+    font-family: var(--ed-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--ed-ink);
+  }
+
+  @media (min-width: 640px) {
+    .nl-detail__title {
+      font-size: 2.25rem;
+    }
+  }
+
+  .nl-detail__back {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--ed-rule);
+  }
+
+  .nl-detail__back a {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ed-accent);
+  }
+
+  .nl-detail__back a:hover {
+    color: var(--ed-accent-hover);
+  }
+</style>

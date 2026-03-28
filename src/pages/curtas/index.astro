@@ -1,58 +1,251 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Nav from '../../components/Nav.astro';
-import QuoteCard from '../../components/QuoteCard.astro';
+import EditorialLayout from '../../layouts/EditorialLayout.astro';
+import { renderInlineMd } from '../../utils/render-inline-md';
 
 const curtas = (await getCollection('curtas'))
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
 
 const podcasts = curtas.filter(c => c.data.sourceType === 'podcast');
 const whatsapp = curtas.filter(c => c.data.sourceType === 'whatsapp');
+
+/** Bento size based on quote length and whether it has an image */
+function bentoSize(quote: string): 'sm' | 'md' | 'lg' {
+  const hasImage = quote.includes('![Image]');
+  if (hasImage) return 'lg';
+  const plainLen = quote.replace(/[*_>\[\]()!#]/g, '').length;
+  if (plainLen > 250) return 'lg';
+  if (plainLen > 150) return 'md';
+  return 'sm';
+}
 ---
 
-<BaseLayout title="Curtas" description="Quotes e insights dos podcasts e comunidades Hipsters">
-  <Nav slot="nav" />
-
-  <h1 class="text-3xl font-bold text-text-primary mb-2">Curtas</h1>
-  <p class="text-text-secondary mb-8">
-    {curtas.length} quotes e insights extraídos dos podcasts e comunidades
+<EditorialLayout title="Curtas" description="Quotes e insights dos podcasts e comunidades Hipsters" activeNav="curtas">
+  <div class="ed-section__label">Curtas</div>
+  <p class="curtas-subtitle">
+    {curtas.length} frases que marcaram as conversas recentes
   </p>
 
   {podcasts.length > 0 && (
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold text-text-primary mb-4">🎙 Dos Podcasts</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {podcasts.map((c, i) => (
-          <QuoteCard
-            quote={c.data.quote}
-            speaker={c.data.speaker}
-            context={c.data.context}
-            sourceType={c.data.sourceType}
-            sourceUrl={c.data.sourceUrl}
-            tags={c.data.tags}
-            size={i === 0 ? '2x1' : '1x1'}
-          />
-        ))}
+    <section class="curtas-section">
+      <h2 class="curtas-section__title">Dos Podcasts</h2>
+      <div class="bento">
+        {podcasts.map(c => {
+          const size = bentoSize(c.data.quote);
+          return (
+            <article class={`bento-card bento-card--${size}`}>
+              <blockquote class="bento-card__quote">
+                <p set:html={renderInlineMd(c.data.quote)} />
+              </blockquote>
+              <footer class="bento-card__footer">
+                <span class="bento-card__speaker">{c.data.speaker}</span>
+                <span class="bento-card__context">{c.data.context}</span>
+              </footer>
+              {c.data.tags.length > 0 && (
+                <div class="bento-card__tags">
+                  {c.data.tags.slice(0, 3).map(tag => (
+                    <span class="ed-tag ed-tag--sm">{tag}</span>
+                  ))}
+                </div>
+              )}
+            </article>
+          );
+        })}
       </div>
     </section>
   )}
 
   {whatsapp.length > 0 && (
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold text-text-primary mb-4">💬 Da Comunidade</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {whatsapp.map((c, i) => (
-          <QuoteCard
-            quote={c.data.quote}
-            speaker={c.data.speaker}
-            context={c.data.context}
-            sourceType={c.data.sourceType}
-            tags={c.data.tags}
-            size={i === 0 ? '2x1' : '1x1'}
-          />
-        ))}
+    <section class="curtas-section">
+      <h2 class="curtas-section__title">Da Comunidade</h2>
+      <div class="bento">
+        {whatsapp.map(c => {
+          const size = bentoSize(c.data.quote);
+          return (
+            <article class={`bento-card bento-card--${size}`}>
+              <blockquote class="bento-card__quote">
+                <p set:html={renderInlineMd(c.data.quote)} />
+              </blockquote>
+              <footer class="bento-card__footer">
+                <span class="bento-card__speaker">{c.data.speaker}</span>
+                <span class="bento-card__context">{c.data.context}</span>
+              </footer>
+              {c.data.tags.length > 0 && (
+                <div class="bento-card__tags">
+                  {c.data.tags.slice(0, 3).map(tag => (
+                    <span class="ed-tag ed-tag--sm">{tag}</span>
+                  ))}
+                </div>
+              )}
+            </article>
+          );
+        })}
       </div>
     </section>
   )}
-</BaseLayout>
+</EditorialLayout>
+
+<style>
+  .curtas-subtitle {
+    font-family: var(--ed-serif);
+    font-size: 1.0625rem;
+    color: var(--ed-ink-secondary);
+    margin-top: -0.75rem;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+  }
+
+  .curtas-section {
+    margin-bottom: 3rem;
+  }
+
+  .curtas-section__title {
+    font-family: var(--ed-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ed-ink-muted);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--ed-rule);
+    margin-bottom: 1.5rem;
+  }
+
+  /* ======= BENTO GRID ======= */
+  .bento {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--ed-rule);
+    border: 1px solid var(--ed-rule);
+  }
+
+  @media (min-width: 640px) {
+    .bento {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .bento {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .bento-card {
+    background: var(--ed-bg);
+    padding: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .bento-card {
+      padding: 1.5rem;
+    }
+  }
+
+  /* Large cards span 2 columns on tablet+ */
+  @media (min-width: 640px) {
+    .bento-card--lg {
+      grid-column: span 2;
+    }
+  }
+
+  /* On 3-col, large cards span 2, medium stays 1 */
+  @media (min-width: 1024px) {
+    .bento-card--lg {
+      grid-column: span 2;
+    }
+  }
+
+  .bento-card__quote {
+    margin: 0 0 1rem;
+  }
+
+  .bento-card__quote p {
+    font-family: var(--ed-serif);
+    font-size: 0.9375rem;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--ed-ink);
+  }
+
+  @media (min-width: 640px) {
+    .bento-card__quote p {
+      font-size: 1rem;
+    }
+  }
+
+  .bento-card--lg .bento-card__quote p {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .bento-card--lg .bento-card__quote p {
+      font-size: 1.0625rem;
+    }
+  }
+
+  .bento-card__quote p::before {
+    content: '\201C';
+    font-size: 1.5em;
+    line-height: 0;
+    vertical-align: -0.2em;
+    color: var(--ed-accent);
+    margin-right: 0.1em;
+  }
+
+  /* Inline markdown styles */
+  .bento-card__quote :global(strong) {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--ed-ink);
+  }
+
+  .bento-card__quote :global(em) {
+    font-style: italic;
+  }
+
+  .bento-card__quote :global(a) {
+    color: var(--ed-accent);
+    border-bottom: 1px solid var(--ed-rule);
+    word-break: break-all;
+  }
+
+  .bento-card__quote :global(a:hover) {
+    border-bottom-color: var(--ed-accent);
+  }
+
+  .bento-card__quote :global(.quote-img) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 3px;
+    margin-bottom: 0.75rem;
+    border: 1px solid var(--ed-rule);
+  }
+
+  .bento-card__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .bento-card__speaker {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--ed-ink);
+  }
+
+  .bento-card__context {
+    font-size: 0.75rem;
+    color: var(--ed-ink-muted);
+    line-height: 1.4;
+  }
+
+  .bento-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 0.75rem;
+  }
+</style>

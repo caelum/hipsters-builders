@@ -1,0 +1,922 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const episodes = (await getCollection('episodes'))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+const curtas = (await getCollection('curtas'))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+const heroEpisode = episodes[0];
+const recentEpisodes = episodes.slice(1, 9);
+const featuredCurtas = curtas.slice(0, 6);
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+}
+
+function formatDateShort(date: Date): string {
+  return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
+}
+
+function podcastLabel(podcast: string): string {
+  if (podcast === 'Hipsters Ponto Tech') return 'Hipsters';
+  if (podcast === 'IA Sob Controle') return 'IA Sob Controle';
+  return podcast;
+}
+
+function podcastAccentClass(podcast: string): string {
+  if (podcast === 'Hipsters Ponto Tech') return 'ed-label--hipsters';
+  if (podcast === 'IA Sob Controle') return 'ed-label--ia';
+  if (podcast === 'Like a Boss') return 'ed-label--boss';
+  if (podcast === 'Mesa de Produto') return 'ed-label--mesa';
+  return 'ed-label--default';
+}
+---
+
+<BaseLayout title="Editorial">
+  <Fragment slot="nav">
+    <!-- Editorial nav replaces the dark one -->
+  </Fragment>
+  <Fragment slot="footer">
+    <!-- V1 has its own footer inside ed-page -->
+  </Fragment>
+
+  <div class="ed-page">
+    <!-- HEADER -->
+    <header class="ed-header">
+      <div class="ed-header__inner">
+        <div class="ed-header__brand">
+          <a href="/design/v1" class="ed-header__logo">
+            <span class="ed-header__logo-h">Hipsters</span><span class="ed-header__logo-dot">.</span><span class="ed-header__logo-b">builders</span>
+          </a>
+          <p class="ed-header__tagline">Os melhores momentos da Hipsters Network</p>
+        </div>
+        <nav class="ed-header__nav">
+          <a href="/episodios" class="ed-header__nav-link">Episodios</a>
+          <a href="/curtas" class="ed-header__nav-link">Curtas</a>
+          <a href="/newsletter" class="ed-header__nav-link">Newsletter</a>
+        </nav>
+      </div>
+      <div class="ed-header__rule"></div>
+    </header>
+
+    <!-- HERO — Destaque da Semana -->
+    <section class="ed-section">
+      <div class="ed-section__label">Destaque da Semana</div>
+      <article class="ed-hero">
+        <div class="ed-hero__body">
+          <div class="ed-hero__meta">
+            <span class={`ed-label ${podcastAccentClass(heroEpisode.data.podcast)}`}>
+              {podcastLabel(heroEpisode.data.podcast)}{heroEpisode.data.episodeNumber ? ` #${heroEpisode.data.episodeNumber}` : ''}
+            </span>
+            <time class="ed-meta-date" datetime={heroEpisode.data.pubDate.toISOString()}>
+              {formatDate(heroEpisode.data.pubDate)}
+            </time>
+          </div>
+          <h2 class="ed-hero__title">
+            <a href={`/episodios/${heroEpisode.id}`}>{heroEpisode.data.title}</a>
+          </h2>
+          <p class="ed-hero__description">{heroEpisode.data.description}</p>
+          <div class="ed-hero__authors">
+            {heroEpisode.data.authors.map((author, i) => (
+              <span>{author}{i < heroEpisode.data.authors.length - 1 ? ', ' : ''}</span>
+            ))}
+          </div>
+          {heroEpisode.data.tags.length > 0 && (
+            <div class="ed-hero__tags">
+              {heroEpisode.data.tags.slice(0, 5).map(tag => (
+                <span class="ed-tag">{tag}</span>
+              ))}
+            </div>
+          )}
+        </div>
+        {heroEpisode.data.quotes.length > 0 && (
+          <aside class="ed-hero__quote-panel">
+            <blockquote class="ed-pullquote ed-pullquote--hero">
+              <p>{heroEpisode.data.quotes[0].text}</p>
+              <footer>
+                <cite>{heroEpisode.data.quotes[0].speaker}</cite>
+                {heroEpisode.data.quotes[0].timestamp && (
+                  <span class="ed-pullquote__time">{heroEpisode.data.quotes[0].timestamp}</span>
+                )}
+              </footer>
+            </blockquote>
+            {heroEpisode.data.quotes.length > 1 && (
+              <blockquote class="ed-pullquote ed-pullquote--secondary">
+                <p>{heroEpisode.data.quotes[1].text}</p>
+                <footer>
+                  <cite>{heroEpisode.data.quotes[1].speaker}</cite>
+                </footer>
+              </blockquote>
+            )}
+          </aside>
+        )}
+      </article>
+    </section>
+
+    <!-- THIN DIVIDER -->
+    <hr class="ed-divider" />
+
+    <!-- ULTIMOS EPISODIOS -->
+    <section class="ed-section">
+      <div class="ed-section__label">Ultimos Episodios</div>
+      <div class="ed-episode-list">
+        {recentEpisodes.map((ep, i) => (
+          <article class="ed-episode-row">
+            <div class="ed-episode-row__number">{String(i + 1).padStart(2, '0')}</div>
+            <div class="ed-episode-row__content">
+              <div class="ed-episode-row__meta">
+                <span class={`ed-label ed-label--sm ${podcastAccentClass(ep.data.podcast)}`}>
+                  {podcastLabel(ep.data.podcast)}{ep.data.episodeNumber ? ` #${ep.data.episodeNumber}` : ''}
+                </span>
+                <time class="ed-meta-date" datetime={ep.data.pubDate.toISOString()}>
+                  {formatDateShort(ep.data.pubDate)}
+                </time>
+              </div>
+              <h3 class="ed-episode-row__title">
+                <a href={`/episodios/${ep.id}`}>{ep.data.title}</a>
+              </h3>
+              <p class="ed-episode-row__desc">{ep.data.description}</p>
+            </div>
+            <div class="ed-episode-row__authors">
+              {ep.data.authors.slice(0, 3).join(', ')}
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="ed-section__more">
+        <a href="/episodios">Ver todos os {episodes.length} episodios &rarr;</a>
+      </div>
+    </section>
+
+    <!-- THIN DIVIDER -->
+    <hr class="ed-divider" />
+
+    <!-- CURTAS — Pull Quotes -->
+    <section class="ed-section">
+      <div class="ed-section__label">Curtas</div>
+      <p class="ed-section__subtitle">Frases que marcaram as conversas recentes</p>
+      <div class="ed-curtas-grid">
+        {featuredCurtas.map((c, i) => {
+          const isWide = i === 0;
+          return (
+            <article class={`ed-curta ${isWide ? 'ed-curta--wide' : ''}`}>
+              <blockquote class="ed-curta__quote">
+                <p>{c.data.quote}</p>
+              </blockquote>
+              <footer class="ed-curta__footer">
+                <span class="ed-curta__speaker">{c.data.speaker}</span>
+                <span class="ed-curta__context">{c.data.context}</span>
+              </footer>
+              {c.data.tags.length > 0 && (
+                <div class="ed-curta__tags">
+                  {c.data.tags.slice(0, 3).map(tag => (
+                    <span class="ed-tag ed-tag--sm">{tag}</span>
+                  ))}
+                </div>
+              )}
+            </article>
+          );
+        })}
+      </div>
+      <div class="ed-section__more">
+        <a href="/curtas">Ver todas as {curtas.length} curtas &rarr;</a>
+      </div>
+    </section>
+
+    <!-- THIN DIVIDER -->
+    <hr class="ed-divider" />
+
+    <!-- NEWSLETTER -->
+    <section class="ed-section ed-newsletter">
+      <div class="ed-newsletter__inner">
+        <div class="ed-newsletter__text">
+          <h2 class="ed-newsletter__title">Newsletter semanal</h2>
+          <p class="ed-newsletter__desc">
+            Toda quarta-feira, um resumo curado dos melhores episodios e discussoes da comunidade. Direto no seu e-mail, sem ruido.
+          </p>
+        </div>
+        <form class="ed-newsletter__form" action="/api/subscribe" method="POST">
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="seu@email.com"
+            class="ed-newsletter__input"
+          />
+          <button type="submit" class="ed-newsletter__btn">Assinar</button>
+        </form>
+        <p class="ed-newsletter__fine">Sem spam. Cancelamento com 1 clique.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="ed-footer">
+      <div class="ed-footer__inner">
+        <p>Hipsters Builders &mdash; parte da <a href="https://hipsters.tech">Hipsters Network</a> &middot; <a href="https://alura.com.br">Alura</a></p>
+      </div>
+    </footer>
+  </div>
+</BaseLayout>
+
+<style>
+  /* =========================================
+     EDITORIAL DESIGN — v1
+     Hipsters.builders newspaper-style layout
+     ========================================= */
+
+  /* --- Fonts --- */
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&display=swap');
+
+  /* --- Override dark theme from global.css --- */
+  :global(html),
+  :global(body) {
+    background: #faf9f7 !important;
+    color: #1a1a1a !important;
+  }
+
+  :global(body > main) {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  :global(a) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :global(::selection) {
+    background: rgba(196, 52, 45, 0.2);
+  }
+
+  .ed-page {
+    --ed-bg: #faf9f7;
+    --ed-bg-warm: #f5f3ef;
+    --ed-ink: #1a1a1a;
+    --ed-ink-secondary: #4a4a4a;
+    --ed-ink-muted: #8a8a8a;
+    --ed-ink-faint: #b5b5b5;
+    --ed-rule: #d4d0c8;
+    --ed-rule-strong: #1a1a1a;
+    --ed-accent: #c4342d;
+    --ed-accent-hover: #a02a24;
+    --ed-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --ed-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    background: var(--ed-bg);
+    color: var(--ed-ink);
+    font-family: var(--ed-sans);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .ed-page a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .ed-page a:hover {
+    color: var(--ed-accent);
+  }
+
+  /* --- HEADER --- */
+  .ed-header {
+    padding: 2rem 1.5rem 0;
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  .ed-header__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .ed-header__inner {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+
+  .ed-header__brand {
+    text-align: center;
+  }
+
+  @media (min-width: 640px) {
+    .ed-header__brand {
+      text-align: left;
+    }
+  }
+
+  .ed-header__logo {
+    display: inline-block;
+    font-family: var(--ed-serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ed-ink);
+  }
+
+  .ed-header__logo:hover {
+    color: var(--ed-ink);
+  }
+
+  .ed-header__logo-h {
+    color: var(--ed-ink);
+  }
+
+  .ed-header__logo-dot {
+    color: var(--ed-accent);
+  }
+
+  .ed-header__logo-b {
+    color: var(--ed-ink-secondary);
+    font-weight: 400;
+  }
+
+  .ed-header__tagline {
+    font-size: 0.8125rem;
+    color: var(--ed-ink-muted);
+    margin-top: 0.125rem;
+    letter-spacing: 0.02em;
+  }
+
+  .ed-header__nav {
+    display: flex;
+    gap: 1.75rem;
+  }
+
+  .ed-header__nav-link {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ed-ink-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: color 0.15s;
+  }
+
+  .ed-header__nav-link:hover {
+    color: var(--ed-accent);
+  }
+
+  .ed-header__rule {
+    height: 3px;
+    background: var(--ed-rule-strong);
+    margin-top: 0;
+  }
+
+  .ed-header__rule::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: var(--ed-rule);
+    margin-top: 3px;
+  }
+
+  /* --- SECTIONS --- */
+  .ed-section {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .ed-section__label {
+    font-family: var(--ed-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ed-accent);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .ed-section__subtitle {
+    font-family: var(--ed-serif);
+    font-size: 1.0625rem;
+    color: var(--ed-ink-secondary);
+    margin-top: -0.75rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  .ed-section__more {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--ed-rule);
+  }
+
+  .ed-section__more a {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ed-accent);
+    letter-spacing: 0.01em;
+  }
+
+  .ed-section__more a:hover {
+    color: var(--ed-accent-hover);
+  }
+
+  .ed-divider {
+    max-width: 72rem;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid var(--ed-rule);
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  @media (min-width: 1152px) {
+    .ed-divider {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  /* --- LABELS (podcast badges) --- */
+  .ed-label {
+    display: inline-block;
+    font-family: var(--ed-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.1875rem 0.5rem;
+    border-radius: 2px;
+  }
+
+  .ed-label--sm {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.375rem;
+  }
+
+  .ed-label--hipsters {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  .ed-label--ia {
+    background: #fce7f3;
+    color: #9d174d;
+  }
+
+  .ed-label--boss {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  .ed-label--mesa {
+    background: #d1fae5;
+    color: #065f46;
+  }
+
+  .ed-label--default {
+    background: #f3f4f6;
+    color: #374151;
+  }
+
+  /* --- META DATE --- */
+  .ed-meta-date {
+    font-size: 0.75rem;
+    color: var(--ed-ink-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* --- TAGS --- */
+  .ed-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    color: var(--ed-ink-muted);
+    border: 1px solid var(--ed-rule);
+    padding: 0.125rem 0.5rem;
+    border-radius: 2px;
+    letter-spacing: 0.01em;
+  }
+
+  .ed-tag--sm {
+    font-size: 0.625rem;
+    padding: 0.0625rem 0.375rem;
+  }
+
+  /* =========================================
+     HERO
+     ========================================= */
+  .ed-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .ed-hero {
+      grid-template-columns: 3fr 2fr;
+      gap: 3rem;
+    }
+  }
+
+  .ed-hero__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .ed-hero__title {
+    font-family: var(--ed-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--ed-ink);
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .ed-hero__title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .ed-hero__title a:hover {
+    color: var(--ed-accent);
+  }
+
+  .ed-hero__description {
+    font-family: var(--ed-serif);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--ed-ink-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .ed-hero__authors {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ed-ink-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .ed-hero__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  /* --- Hero quote panel --- */
+  .ed-hero__quote-panel {
+    border-left: 3px solid var(--ed-accent);
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .ed-hero__quote-panel {
+      padding-top: 0.5rem;
+    }
+  }
+
+  /* --- PULL QUOTES --- */
+  .ed-pullquote {
+    margin: 0;
+  }
+
+  .ed-pullquote p {
+    font-family: var(--ed-serif);
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--ed-ink);
+  }
+
+  .ed-pullquote--hero p {
+    font-size: 1.125rem;
+  }
+
+  .ed-pullquote--secondary p {
+    font-size: 0.9375rem;
+    color: var(--ed-ink-secondary);
+  }
+
+  .ed-pullquote footer {
+    margin-top: 0.625rem;
+    font-size: 0.8125rem;
+  }
+
+  .ed-pullquote cite {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--ed-ink);
+  }
+
+  .ed-pullquote__time {
+    color: var(--ed-ink-faint);
+    margin-left: 0.5rem;
+  }
+
+  /* =========================================
+     EPISODE LIST
+     ========================================= */
+  .ed-episode-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ed-episode-row {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--ed-rule);
+    align-items: start;
+  }
+
+  .ed-episode-row:first-child {
+    padding-top: 0;
+  }
+
+  .ed-episode-row:last-child {
+    border-bottom: none;
+  }
+
+  @media (min-width: 768px) {
+    .ed-episode-row {
+      grid-template-columns: 2.5rem 1fr 10rem;
+      gap: 1.5rem;
+    }
+  }
+
+  .ed-episode-row__number {
+    font-family: var(--ed-serif);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--ed-ink-faint);
+    line-height: 1.2;
+    padding-top: 0.125rem;
+  }
+
+  .ed-episode-row__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .ed-episode-row__title {
+    font-family: var(--ed-serif);
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ed-ink);
+    margin-bottom: 0.375rem;
+  }
+
+  .ed-episode-row__title a:hover {
+    color: var(--ed-accent);
+  }
+
+  .ed-episode-row__desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--ed-ink-secondary);
+    /* no truncation — show full text */
+  }
+
+  .ed-episode-row__authors {
+    display: none;
+    font-size: 0.75rem;
+    color: var(--ed-ink-muted);
+    padding-top: 0.375rem;
+    text-align: right;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    .ed-episode-row__authors {
+      display: block;
+    }
+  }
+
+  /* =========================================
+     CURTAS GRID
+     ========================================= */
+  .ed-curtas-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .ed-curtas-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .ed-curtas-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .ed-curta {
+    padding: 1.5rem 0;
+    border-top: 2px solid var(--ed-ink);
+  }
+
+  .ed-curta--wide {
+    border-top-color: var(--ed-accent);
+  }
+
+  @media (min-width: 640px) {
+    .ed-curta--wide {
+      grid-column: span 2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .ed-curta--wide {
+      grid-column: span 1;
+    }
+  }
+
+  .ed-curta__quote {
+    margin: 0 0 1rem;
+  }
+
+  .ed-curta__quote p {
+    font-family: var(--ed-serif);
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--ed-ink);
+  }
+
+  .ed-curta--wide .ed-curta__quote p {
+    font-size: 1.125rem;
+  }
+
+  .ed-curta__quote p::before {
+    content: '\201C';
+    font-size: 1.5em;
+    line-height: 0;
+    vertical-align: -0.2em;
+    color: var(--ed-accent);
+    margin-right: 0.1em;
+  }
+
+  .ed-curta__quote p::after {
+    content: '\201D';
+  }
+
+  .ed-curta__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .ed-curta__speaker {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--ed-ink);
+  }
+
+  .ed-curta__context {
+    font-size: 0.75rem;
+    color: var(--ed-ink-muted);
+    line-height: 1.4;
+  }
+
+  .ed-curta__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 0.75rem;
+  }
+
+  /* =========================================
+     NEWSLETTER
+     ========================================= */
+  .ed-newsletter {
+    background: var(--ed-bg-warm);
+    max-width: 100%;
+    padding: 3rem 1.5rem;
+    margin-top: 0;
+  }
+
+  .ed-newsletter__inner {
+    max-width: 36rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ed-newsletter__title {
+    font-family: var(--ed-serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--ed-ink);
+    margin-bottom: 0.75rem;
+  }
+
+  .ed-newsletter__desc {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ed-ink-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .ed-newsletter__form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 480px) {
+    .ed-newsletter__form {
+      flex-direction: column;
+    }
+  }
+
+  .ed-newsletter__input {
+    flex: 1;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    font-family: var(--ed-sans);
+    border: 1px solid var(--ed-rule);
+    border-radius: 3px;
+    background: #fff;
+    color: var(--ed-ink);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .ed-newsletter__input::placeholder {
+    color: var(--ed-ink-faint);
+  }
+
+  .ed-newsletter__input:focus {
+    border-color: var(--ed-accent);
+    box-shadow: 0 0 0 2px rgba(196, 52, 45, 0.1);
+  }
+
+  .ed-newsletter__btn {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    font-family: var(--ed-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--ed-accent);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+
+  .ed-newsletter__btn:hover {
+    background: var(--ed-accent-hover);
+  }
+
+  .ed-newsletter__fine {
+    font-size: 0.6875rem;
+    color: var(--ed-ink-muted);
+    margin-top: 0.75rem;
+  }
+
+  /* =========================================
+     FOOTER
+     ========================================= */
+  .ed-footer {
+    border-top: 2px solid var(--ed-rule-strong);
+    padding: 2rem 1.5rem;
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  .ed-footer__inner {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--ed-ink-muted);
+  }
+
+  .ed-footer__inner a {
+    color: var(--ed-ink-secondary);
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .ed-footer__inner a:hover {
+    color: var(--ed-accent);
+    border-bottom-color: var(--ed-accent);
+  }
+</style>
