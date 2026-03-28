@@ -32,6 +32,17 @@ const vaultPath = args.includes('--vault')
   ? args[args.indexOf('--vault') + 1]
   : path.join(os.homedir(), 'stromae-vault-alura');
 
+if (!fs.existsSync(vaultPath)) {
+  console.error(`\n❌ Vault not found at: ${vaultPath}\n`);
+  console.error(`The Stromae vault contains podcast transcriptions, WhatsApp threads,`);
+  console.error(`and newsletter drafts — it's the content source for this site.\n`);
+  console.error(`To set it up:\n`);
+  console.error(`  git clone git@github.com:caelum/stromae-vault-alura.git ~/stromae-vault-alura\n`);
+  console.error(`Or point to a different location:\n`);
+  console.error(`  npx tsx scripts/sync-content.ts --vault /path/to/vault\n`);
+  process.exit(1);
+}
+
 const sinceDate = new Date(
   args.includes('--since') ? args[args.indexOf('--since') + 1] : '2025-01-01'
 );

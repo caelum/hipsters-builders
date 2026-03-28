@@ -14,17 +14,14 @@ Na pratica: episodios com destaques e quotes, curtas com as melhores frases, e u
 # 1. Install dependencies
 npm install
 
-# 2. Set up the vault (content source)
-# Option A: symlink from existing vault clone
-ln -s ~/stromae-vault-alura/signals vault/signals
-ln -s ~/stromae-vault-alura/drafts vault/drafts
-
-# Option B: clone the vault into ./vault/
-git clone git@github.com:caelum/stromae-vault-alura.git vault-repo
-ln -s vault-repo/signals vault/signals
-ln -s vault-repo/drafts vault/drafts
+# 2. Clone the Stromae vault (content source)
+#    The vault has podcast transcriptions, WhatsApp threads, and newsletter
+#    drafts. Without it there's no content to build. You need access to
+#    caelum/stromae-vault-alura on GitHub.
+git clone git@github.com:caelum/stromae-vault-alura.git ~/stromae-vault-alura
 
 # 3. Sync content from vault to Astro content collections
+#    (looks for the vault at ~/stromae-vault-alura by default)
 npm run sync
 
 # 4. Run dev server (port 5332)
