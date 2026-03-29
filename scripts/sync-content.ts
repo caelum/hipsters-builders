@@ -19,6 +19,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import matter from 'gray-matter';
+import { consolidateTags } from './tag-taxonomy.ts';
 
 // --- CLI ---
 
@@ -510,7 +511,7 @@ function syncEpisodes() {
       ...(episodeNum !== undefined && { episodeNumber: episodeNum }),
       sourceUrl: parent.frontmatter.source_url,
       authors: [...authorsSet],
-      tags: [...tagsSet].slice(0, 10),
+      tags: consolidateTags([...tagsSet]),
       segmentCount: segments.length,
       quotes: topQuotes,
     };
@@ -583,7 +584,7 @@ function syncCurtas() {
       sourceType: 'podcast' as const,
       sourceUrl: signal.frontmatter.source_url,
       pubDate: signal.frontmatter.captured_at,
-      tags: (signal.frontmatter.tags ?? []).slice(0, 5),
+      tags: consolidateTags(signal.frontmatter.tags ?? []),
     };
 
     if (!dryRun) {
@@ -648,7 +649,7 @@ function syncCurtas() {
       context,
       sourceType: 'whatsapp' as const,
       pubDate: signal.frontmatter.captured_at,
-      tags: (signal.frontmatter.tags ?? []).slice(0, 5),
+      tags: consolidateTags(signal.frontmatter.tags ?? []),
     };
 
     if (!dryRun) {
@@ -706,6 +707,16 @@ console.log(`   Vault: ${vaultPath}`);
 console.log(`   Since: ${sinceDate.toISOString().slice(0, 10)}`);
 console.log(`   Output: ${contentDir}`);
 if (dryRun) console.log('   ⚠️  DRY RUN — no files will be written');
+
+// Clean generated content before writing (stale files from previous syncs)
+if (!dryRun) {
+  for (const sub of ['episodes', 'curtas', 'newsletters']) {
+    const dir = path.join(contentDir, sub);
+    if (fs.existsSync(dir)) {
+      fs.rmSync(dir, { recursive: true });
+    }
+  }
+}
 
 syncEpisodes();
 syncCurtas();

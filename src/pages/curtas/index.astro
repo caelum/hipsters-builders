@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import EditorialLayout from '../../layouts/EditorialLayout.astro';
 import { renderInlineMd } from '../../utils/render-inline-md';
+import { topicLabel } from '../../../scripts/tag-taxonomy';
 
 const curtas = (await getCollection('curtas'))
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
@@ -9,7 +10,7 @@ const curtas = (await getCollection('curtas'))
 const podcasts = curtas.filter(c => c.data.sourceType === 'podcast');
 const whatsapp = curtas.filter(c => c.data.sourceType === 'whatsapp');
 
-/** Collect all unique tags across all curtas, sorted alphabetically */
+/** Collect all unique topic IDs across all curtas, sorted alphabetically */
 const allTags = [...new Set(curtas.flatMap(c => c.data.tags))].sort();
 
 /** Bento size based on quote length and whether it has an image */
@@ -59,7 +60,7 @@ function tweetUrl(quote: string, speaker: string): string {
     <div class="tag-filters" id="tag-filters">
       <button class="tag-pill tag-pill--active" data-tag="all">Todos</button>
       {allTags.map(tag => (
-        <button class="tag-pill" data-tag={tag}>{tag}</button>
+        <button class="tag-pill" data-tag={tag}>{topicLabel(tag)}</button>
       ))}
     </div>
   )}
@@ -94,7 +95,7 @@ function tweetUrl(quote: string, speaker: string): string {
               {c.data.tags.length > 0 && (
                 <div class="bento-card__tags">
                   {c.data.tags.slice(0, 3).map(tag => (
-                    <span class="ed-tag ed-tag--sm">{tag}</span>
+                    <span class="ed-tag ed-tag--sm">{topicLabel(tag)}</span>
                   ))}
                 </div>
               )}
@@ -135,7 +136,7 @@ function tweetUrl(quote: string, speaker: string): string {
               {c.data.tags.length > 0 && (
                 <div class="bento-card__tags">
                   {c.data.tags.slice(0, 3).map(tag => (
-                    <span class="ed-tag ed-tag--sm">{tag}</span>
+                    <span class="ed-tag ed-tag--sm">{topicLabel(tag)}</span>
                   ))}
                 </div>
               )}
