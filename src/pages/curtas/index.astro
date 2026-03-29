@@ -9,6 +9,9 @@ const curtas = (await getCollection('curtas'))
 const podcasts = curtas.filter(c => c.data.sourceType === 'podcast');
 const whatsapp = curtas.filter(c => c.data.sourceType === 'whatsapp');
 
+/** Collect all unique tags across all curtas, sorted alphabetically */
+const allTags = [...new Set(curtas.flatMap(c => c.data.tags))].sort();
+
 /** Bento size based on quote length and whether it has an image */
 function bentoSize(quote: string): 'sm' | 'md' | 'lg' {
   const hasImage = quote.includes('![Image]');
@@ -18,6 +21,32 @@ function bentoSize(quote: string): 'sm' | 'md' | 'lg' {
   if (plainLen > 150) return 'md';
   return 'sm';
 }
+
+/** Strip markdown to plain text for tweet length calculation */
+function stripMd(text: string): string {
+  return text
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, '')   // remove images
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // [text](url) → text
+    .replace(/\*\*(.+?)\*\*/g, '$1')         // **bold** → bold
+    .replace(/\*(.+?)\*/g, '$1')             // *italic* → italic
+    .replace(/\n+/g, ' ')
+    .trim();
+}
+
+/** Check if a quote fits in a tweet (280 chars) including attribution and link */
+function tweetFits(quote: string, speaker: string): boolean {
+  const plain = stripMd(quote);
+  // Format: "{quote}" — {speaker}\nhipsters.builders/curtas
+  const tweet = `"${plain}" — ${speaker}\nhipsters.builders/curtas`;
+  return tweet.length <= 280;
+}
+
+/** Build the tweet intent URL */
+function tweetUrl(quote: string, speaker: string): string {
+  const plain = stripMd(quote);
+  const tweet = `"${plain}" — ${speaker}\nhipsters.builders/curtas`;
+  return `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet)}`;
+}
 ---
 
 <EditorialLayout title="Curtas" description="Quotes e insights dos podcasts e comunidades Hipsters" activeNav="curtas">
@@ -26,20 +55,41 @@ function bentoSize(quote: string): 'sm' | 'md' | 'lg' {
     {curtas.length} frases que marcaram as conversas recentes
   </p>
 
+  {allTags.length > 0 && (
+    <div class="tag-filters" id="tag-filters">
+      <button class="tag-pill tag-pill--active" data-tag="all">Todos</button>
+      {allTags.map(tag => (
+        <button class="tag-pill" data-tag={tag}>{tag}</button>
+      ))}
+    </div>
+  )}
+
   {podcasts.length > 0 && (
-    <section class="curtas-section">
+    <section class="curtas-section" data-section>
       <h2 class="curtas-section__title">Dos Podcasts</h2>
       <div class="bento">
         {podcasts.map(c => {
           const size = bentoSize(c.data.quote);
+          const shareable = tweetFits(c.data.quote, c.data.speaker);
           return (
-            <article class={`bento-card bento-card--${size}`}>
+            <article class={`bento-card bento-card--${size}`} data-tags={c.data.tags.join(',')}>
               <blockquote class="bento-card__quote">
                 <p set:html={renderInlineMd(c.data.quote)} />
               </blockquote>
               <footer class="bento-card__footer">
-                <span class="bento-card__speaker">{c.data.speaker}</span>
-                <span class="bento-card__context">{c.data.context}</span>
+                <div class="bento-card__meta">
+                  <span class="bento-card__speaker">{c.data.speaker}</span>
+                  <span class="bento-card__context">{c.data.context}</span>
+                </div>
+                {shareable && (
+                  <a class="share-btn" href={tweetUrl(c.data.quote, c.data.speaker)} target="_blank" rel="noopener" title="Compartilhar no X" aria-label="Compartilhar no X">
+                    <svg class="share-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                      <polyline points="16 6 12 2 8 6" />
+                      <line x1="12" y1="2" x2="12" y2="15" />
+                    </svg>
+                  </a>
+                )}
               </footer>
               {c.data.tags.length > 0 && (
                 <div class="bento-card__tags">
@@ -56,19 +106,31 @@ function bentoSize(quote: string): 'sm' | 'md' | 'lg' {
   )}
 
   {whatsapp.length > 0 && (
-    <section class="curtas-section">
+    <section class="curtas-section" data-section>
       <h2 class="curtas-section__title">Da Comunidade</h2>
       <div class="bento">
         {whatsapp.map(c => {
           const size = bentoSize(c.data.quote);
+          const shareable = tweetFits(c.data.quote, c.data.speaker);
           return (
-            <article class={`bento-card bento-card--${size}`}>
+            <article class={`bento-card bento-card--${size}`} data-tags={c.data.tags.join(',')}>
               <blockquote class="bento-card__quote">
                 <p set:html={renderInlineMd(c.data.quote)} />
               </blockquote>
               <footer class="bento-card__footer">
-                <span class="bento-card__speaker">{c.data.speaker}</span>
-                <span class="bento-card__context">{c.data.context}</span>
+                <div class="bento-card__meta">
+                  <span class="bento-card__speaker">{c.data.speaker}</span>
+                  <span class="bento-card__context">{c.data.context}</span>
+                </div>
+                {shareable && (
+                  <a class="share-btn" href={tweetUrl(c.data.quote, c.data.speaker)} target="_blank" rel="noopener" title="Compartilhar no X" aria-label="Compartilhar no X">
+                    <svg class="share-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                      <polyline points="16 6 12 2 8 6" />
+                      <line x1="12" y1="2" x2="12" y2="15" />
+                    </svg>
+                  </a>
+                )}
               </footer>
               {c.data.tags.length > 0 && (
                 <div class="bento-card__tags">
@@ -91,12 +153,58 @@ function bentoSize(quote: string): 'sm' | 'md' | 'lg' {
     font-size: 1.0625rem;
     color: var(--ed-ink-secondary);
     margin-top: -0.75rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     font-style: italic;
+    max-width: 56rem;
+  }
+
+  /* ======= TAG FILTERS ======= */
+  .tag-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-bottom: 2.5rem;
+    max-width: 56rem;
+  }
+
+  .tag-pill {
+    font-family: var(--ed-sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: var(--ed-ink-muted);
+    background: transparent;
+    border: 1px solid var(--ed-rule);
+    padding: 0.1875rem 0.625rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 0.01em;
+  }
+
+  .tag-pill:hover {
+    color: var(--ed-ink-secondary);
+    border-color: var(--ed-ink-muted);
+  }
+
+  .tag-pill--active {
+    color: #fff;
+    background: var(--ed-accent);
+    border-color: var(--ed-accent);
+  }
+
+  .tag-pill--active:hover {
+    color: #fff;
+    background: var(--ed-accent-hover);
+    border-color: var(--ed-accent-hover);
   }
 
   .curtas-section {
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
+    max-width: 56rem;
+  }
+
+  .curtas-section[data-hidden] {
+    display: none;
   }
 
   .curtas-section__title {
@@ -108,39 +216,42 @@ function bentoSize(quote: string): 'sm' | 'md' | 'lg' {
     color: var(--ed-ink-muted);
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--ed-rule);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
   }
 
   /* ======= BENTO GRID ======= */
   .bento {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1px;
-    background: var(--ed-rule);
-    border: 1px solid var(--ed-rule);
+    gap: 1.5rem;
   }
 
   @media (min-width: 640px) {
     .bento {
       grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
     }
   }
 
   @media (min-width: 1024px) {
     .bento {
       grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
     }
   }
 
   .bento-card {
-    background: var(--ed-bg);
-    padding: 1.25rem;
+    border-top: 2px solid var(--ed-rule);
+    padding-top: 1.25rem;
+    overflow: hidden;
   }
 
-  @media (min-width: 640px) {
-    .bento-card {
-      padding: 1.5rem;
-    }
+  .bento-card[data-hidden] {
+    display: none;
+  }
+
+  .bento-card--lg {
+    border-top-color: var(--ed-accent);
   }
 
   /* Large cards span 2 columns on tablet+ */
@@ -150,22 +261,15 @@ function bentoSize(quote: string): 'sm' | 'md' | 'lg' {
     }
   }
 
-  /* On 3-col, large cards span 2, medium stays 1 */
-  @media (min-width: 1024px) {
-    .bento-card--lg {
-      grid-column: span 2;
-    }
-  }
-
   .bento-card__quote {
-    margin: 0 0 1rem;
+    margin: 0 0 1.25rem;
   }
 
   .bento-card__quote p {
     font-family: var(--ed-serif);
     font-size: 0.9375rem;
     font-style: italic;
-    line-height: 1.65;
+    line-height: 1.7;
     color: var(--ed-ink);
   }
 
@@ -176,13 +280,7 @@ function bentoSize(quote: string): 'sm' | 'md' | 'lg' {
   }
 
   .bento-card--lg .bento-card__quote p {
-    font-size: 1rem;
-  }
-
-  @media (min-width: 640px) {
-    .bento-card--lg .bento-card__quote p {
-      font-size: 1.0625rem;
-    }
+    font-size: 1.0625rem;
   }
 
   .bento-card__quote p::before {
@@ -215,16 +313,31 @@ function bentoSize(quote: string): 'sm' | 'md' | 'lg' {
     border-bottom-color: var(--ed-accent);
   }
 
+  /* Images: contained, max-height, rounded */
   .bento-card__quote :global(.quote-img) {
     display: block;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    max-height: 16rem;
+    object-fit: cover;
     border-radius: 3px;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     border: 1px solid var(--ed-rule);
   }
 
+  @media (min-width: 640px) {
+    .bento-card--lg .bento-card__quote :global(.quote-img) {
+      max-height: 20rem;
+    }
+  }
+
   .bento-card__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .bento-card__meta {
     display: flex;
     flex-direction: column;
     gap: 0.125rem;
@@ -242,10 +355,96 @@ function bentoSize(quote: string): 'sm' | 'md' | 'lg' {
     line-height: 1.4;
   }
 
+  /* ======= SHARE BUTTON ======= */
+  .share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    color: var(--ed-ink-muted);
+    border-radius: 2px;
+    transition: color 0.15s, background 0.15s;
+  }
+
+  .share-btn:hover {
+    color: var(--ed-accent) !important;
+    background: rgba(196, 52, 45, 0.08);
+  }
+
+  .share-btn__icon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  /* Desktop: hidden until card hover */
+  @media (min-width: 640px) {
+    .share-btn {
+      opacity: 0;
+      transition: opacity 0.15s, color 0.15s, background 0.15s;
+    }
+
+    .bento-card:hover .share-btn {
+      opacity: 1;
+    }
+  }
+
   .bento-card__tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.25rem;
-    margin-top: 0.75rem;
+    margin-top: 1rem;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filters = document.getElementById('tag-filters');
+    if (!filters) return;
+
+    const pills = filters.querySelectorAll<HTMLButtonElement>('.tag-pill');
+    const sections = document.querySelectorAll<HTMLElement>('[data-section]');
+
+    function filterByTag(activeTag: string) {
+      // Update pill states
+      pills.forEach(pill => {
+        pill.classList.toggle('tag-pill--active', pill.dataset.tag === activeTag);
+      });
+
+      // Filter cards and toggle section visibility
+      sections.forEach(section => {
+        const cards = section.querySelectorAll<HTMLElement>('.bento-card');
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          if (activeTag === 'all') {
+            card.removeAttribute('data-hidden');
+            visibleCount++;
+          } else {
+            const cardTags = (card.dataset.tags || '').split(',');
+            if (cardTags.includes(activeTag)) {
+              card.removeAttribute('data-hidden');
+              visibleCount++;
+            } else {
+              card.setAttribute('data-hidden', '');
+            }
+          }
+        });
+
+        // Hide section header if all cards in it are hidden
+        if (visibleCount === 0) {
+          section.setAttribute('data-hidden', '');
+        } else {
+          section.removeAttribute('data-hidden');
+        }
+      });
+    }
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterByTag(pill.dataset.tag || 'all');
+      });
+    });
+  });
+</script>
