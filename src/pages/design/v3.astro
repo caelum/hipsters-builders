@@ -1,11 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { mockEpisodes, mockCurtas } from '../../data/mock';
 
-const episodes = (await getCollection('episodes'))
+const rawEpisodes = await getCollection('episodes');
+const rawCurtas = await getCollection('curtas');
+
+const episodes = (rawEpisodes.length > 0 ? rawEpisodes : mockEpisodes)
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
 
-const curtas = (await getCollection('curtas'))
+const curtas = (rawCurtas.length > 0 ? rawCurtas : mockCurtas)
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
 
 // Featured: latest episode with quotes
