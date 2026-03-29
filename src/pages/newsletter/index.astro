@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import EditorialLayout from '../../layouts/EditorialLayout.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
 
 const newsletters = (await getCollection('newsletters'))
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
@@ -19,17 +20,7 @@ function formatDate(date: Date): string {
 
     <!-- Subscribe form -->
     <div class="nl-subscribe">
-      <form class="nl-form" action="/api/subscribe" method="POST">
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="seu@email.com"
-          class="nl-form__input"
-        />
-        <button type="submit" class="nl-form__btn">Assinar</button>
-      </form>
-      <p class="nl-form__fine">Sem spam. Cancelamento com 1 clique.</p>
+      <NewsletterForm />
     </div>
 
     <!-- Archive -->
@@ -82,65 +73,6 @@ function formatDate(date: Date): string {
     padding: 1.75rem;
     border-radius: 3px;
     margin-bottom: 3rem;
-  }
-
-  .nl-form {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  @media (max-width: 480px) {
-    .nl-form {
-      flex-direction: column;
-    }
-  }
-
-  .nl-form__input {
-    flex: 1;
-    padding: 0.625rem 1rem;
-    font-size: 0.875rem;
-    font-family: var(--ed-sans);
-    border: 1px solid var(--ed-rule);
-    border-radius: 3px;
-    background: #fff;
-    color: var(--ed-ink);
-    outline: none;
-    transition: border-color 0.15s;
-  }
-
-  .nl-form__input::placeholder {
-    color: var(--ed-ink-faint);
-  }
-
-  .nl-form__input:focus {
-    border-color: var(--ed-accent);
-    box-shadow: 0 0 0 2px rgba(196, 52, 45, 0.1);
-  }
-
-  .nl-form__btn {
-    padding: 0.625rem 1.5rem;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    font-family: var(--ed-sans);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    background: var(--ed-accent);
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background 0.15s;
-    white-space: nowrap;
-  }
-
-  .nl-form__btn:hover {
-    background: var(--ed-accent-hover);
-  }
-
-  .nl-form__fine {
-    font-size: 0.6875rem;
-    color: var(--ed-ink-muted);
-    margin-top: 0.75rem;
   }
 
   /* Archive */

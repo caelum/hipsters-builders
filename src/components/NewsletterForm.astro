@@ -1,27 +1,162 @@
 ---
-// Newsletter signup form — Resend integration (Phase 2)
-// For now, just the UI with a placeholder action
+/**
+ * Newsletter subscribe form with client-side fetch + progressive enhancement.
+ * Works without JS (form POST fallback) and with JS (async submit + feedback).
+ *
+ * Props:
+ *   variant: 'inline' (compact, for sidebars) | 'block' (centered, for sections)
+ */
+interface Props {
+  variant?: 'inline' | 'block';
+}
+
+const { variant = 'block' } = Astro.props;
 ---
 
-<div class="rounded-2xl bg-gradient-to-br from-brand/10 to-accent-pink/10 border border-brand/20 p-6">
-  <h3 class="text-lg font-semibold text-text-primary mb-2">Newsletter semanal</h3>
-  <p class="text-sm text-text-secondary mb-4">
-    Receba toda quarta-feira um resumo curado dos melhores episódios e discussões da comunidade.
-  </p>
-  <form class="flex gap-2" action="/api/subscribe" method="POST">
+<div class={`nl-form-wrap nl-form-wrap--${variant}`} data-nl-form>
+  <form class="nl-form" action="/api/subscribe" method="POST">
     <input
       type="email"
       name="email"
       required
       placeholder="seu@email.com"
-      class="flex-1 px-4 py-2 rounded-lg bg-surface text-text-primary border border-surface-overlay placeholder:text-text-muted text-sm focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/30"
+      autocomplete="email"
+      class="nl-form__input"
     />
-    <button
-      type="submit"
-      class="px-5 py-2 rounded-lg bg-brand text-white text-sm font-medium hover:bg-brand-dark transition-colors shrink-0"
-    >
-      Assinar
+    <button type="submit" class="nl-form__btn">
+      <span class="nl-form__btn-text">Assinar</span>
+      <span class="nl-form__btn-loading" aria-hidden="true" style="display:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="32"><animate attributeName="stroke-dashoffset" values="32;0" dur="1s" repeatCount="indefinite" /></circle></svg>
+      </span>
     </button>
   </form>
-  <p class="text-xs text-text-muted mt-2">Sem spam. Cancelamento com 1 clique.</p>
+  <p class="nl-form__fine">Sem spam. Cancelamento com 1 clique.</p>
+  <p class="nl-form__feedback" role="status" aria-live="polite" style="display:none;"></p>
 </div>
+
+<script>
+  document.querySelectorAll('[data-nl-form]').forEach(wrap => {
+    const form = wrap.querySelector('form')!;
+    const btnText = wrap.querySelector('.nl-form__btn-text') as HTMLElement;
+    const btnLoading = wrap.querySelector('.nl-form__btn-loading') as HTMLElement;
+    const feedback = wrap.querySelector('.nl-form__feedback') as HTMLElement;
+    const input = wrap.querySelector('input[name="email"]') as HTMLInputElement;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = input.value.trim();
+      if (!email) return;
+
+      // Show loading
+      btnText.style.display = 'none';
+      btnLoading.style.display = 'inline';
+      feedback.style.display = 'none';
+
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+        const data = await res.json();
+
+        feedback.textContent = data.message;
+        feedback.className = `nl-form__feedback nl-form__feedback--${data.success ? 'ok' : 'err'}`;
+        feedback.style.display = 'block';
+
+        if (data.success) {
+          input.value = '';
+        }
+      } catch {
+        feedback.textContent = 'Erro de conexao. Tente novamente.';
+        feedback.className = 'nl-form__feedback nl-form__feedback--err';
+        feedback.style.display = 'block';
+      } finally {
+        btnText.style.display = 'inline';
+        btnLoading.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+<style>
+  .nl-form {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    .nl-form {
+      flex-direction: column;
+    }
+  }
+
+  .nl-form__input {
+    flex: 1;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    font-family: var(--ed-sans, system-ui, sans-serif);
+    border: 1px solid var(--ed-rule, #d4d0c8);
+    border-radius: 3px;
+    background: #fff;
+    color: var(--ed-ink, #1a1a1a);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .nl-form__input::placeholder {
+    color: var(--ed-ink-faint, #b5b5b5);
+  }
+
+  .nl-form__input:focus {
+    border-color: var(--ed-accent, #c4342d);
+    box-shadow: 0 0 0 2px rgba(196, 52, 45, 0.1);
+  }
+
+  .nl-form__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    font-family: var(--ed-sans, system-ui, sans-serif);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--ed-accent, #c4342d);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+    min-width: 5.5rem;
+  }
+
+  .nl-form__btn:hover {
+    background: var(--ed-accent-hover, #a02a24);
+  }
+
+  .nl-form__fine {
+    font-size: 0.6875rem;
+    color: var(--ed-ink-muted, #8a8a8a);
+    margin-top: 0.75rem;
+  }
+
+  .nl-form__feedback {
+    font-size: 0.8125rem;
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 3px;
+  }
+
+  .nl-form__feedback--ok {
+    background: #d1fae5;
+    color: #065f46;
+  }
+
+  .nl-form__feedback--err {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+</style>
