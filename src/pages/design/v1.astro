@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { mockEpisodes, mockCurtas } from '../../data/mock';
+import { renderInlineMd } from '../../utils/render-inline-md';
+import NewsletterForm from '../../components/NewsletterForm.astro';
 
 const rawEpisodes = await getCollection('episodes');
 const rawCurtas = await getCollection('curtas');
@@ -37,6 +39,23 @@ function podcastAccentClass(podcast: string): string {
   if (podcast === 'Mesa de Produto') return 'ed-label--mesa';
   return 'ed-label--default';
 }
+
+function stripMd(text: string): string {
+  return text
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/\*(.+?)\*/g, '$1')
+    .replace(/\n+/g, ' ')
+    .trim();
+}
+
+function weight(quote: string): 'featured' | 'standard' | 'compact' {
+  const len = stripMd(quote).length;
+  if (len > 280) return 'featured';
+  if (len < 120) return 'compact';
+  return 'standard';
+}
 ---
 
 <BaseLayout title="Editorial">
@@ -66,153 +85,106 @@ function podcastAccentClass(podcast: string): string {
       <div class="ed-header__rule"></div>
     </header>
 
-    <!-- HERO — Destaque da Semana -->
+    <!-- HERO — Latest episode -->
     <section class="ed-section">
       <div class="ed-section__label">Destaque da Semana</div>
       <article class="ed-hero">
-        <div class="ed-hero__body">
-          <div class="ed-hero__meta">
-            <span class={`ed-label ${podcastAccentClass(heroEpisode.data.podcast)}`}>
-              {podcastLabel(heroEpisode.data.podcast)}{heroEpisode.data.episodeNumber ? ` #${heroEpisode.data.episodeNumber}` : ''}
-            </span>
-            <time class="ed-meta-date" datetime={heroEpisode.data.pubDate.toISOString()}>
-              {formatDate(heroEpisode.data.pubDate)}
-            </time>
-          </div>
-          <h2 class="ed-hero__title">
-            <a href={`/episodios/${heroEpisode.id}`}>{heroEpisode.data.title}</a>
-          </h2>
-          <p class="ed-hero__description">{heroEpisode.data.description}</p>
-          <div class="ed-hero__authors">
-            {heroEpisode.data.authors.map((author, i) => (
-              <span>{author}{i < heroEpisode.data.authors.length - 1 ? ', ' : ''}</span>
-            ))}
-          </div>
-          {heroEpisode.data.tags.length > 0 && (
-            <div class="ed-hero__tags">
-              {heroEpisode.data.tags.slice(0, 5).map(tag => (
-                <span class="ed-tag">{tag}</span>
-              ))}
-            </div>
-          )}
+        <div class="ed-hero__meta">
+          <span class={`ed-label ${podcastAccentClass(heroEpisode.data.podcast)}`}>
+            {podcastLabel(heroEpisode.data.podcast)}{heroEpisode.data.episodeNumber ? ` #${heroEpisode.data.episodeNumber}` : ''}
+          </span>
+          <time class="ed-meta-date" datetime={heroEpisode.data.pubDate.toISOString()}>
+            {formatDate(heroEpisode.data.pubDate)}
+          </time>
         </div>
+        <h1 class="ed-hero__title">
+          <a href={`/episodios/${heroEpisode.id}`}>{heroEpisode.data.title}</a>
+        </h1>
+        <p class="ed-hero__description">{heroEpisode.data.description}</p>
+        <div class="ed-hero__authors">
+          {heroEpisode.data.authors.join(', ')}
+        </div>
+
         {heroEpisode.data.quotes.length > 0 && (
-          <aside class="ed-hero__quote-panel">
-            <blockquote class="ed-pullquote ed-pullquote--hero">
+          <aside class="ed-hero__quote">
+            <div class="ed-hero__quote-bar" aria-hidden="true" />
+            <blockquote>
               <p>{heroEpisode.data.quotes[0].text}</p>
               <footer>
                 <cite>{heroEpisode.data.quotes[0].speaker}</cite>
                 {heroEpisode.data.quotes[0].timestamp && (
-                  <span class="ed-pullquote__time">{heroEpisode.data.quotes[0].timestamp}</span>
+                  <span class="ed-hero__quote-time">{heroEpisode.data.quotes[0].timestamp}</span>
                 )}
               </footer>
             </blockquote>
-            {heroEpisode.data.quotes.length > 1 && (
-              <blockquote class="ed-pullquote ed-pullquote--secondary">
-                <p>{heroEpisode.data.quotes[1].text}</p>
-                <footer>
-                  <cite>{heroEpisode.data.quotes[1].speaker}</cite>
-                </footer>
-              </blockquote>
-            )}
           </aside>
         )}
       </article>
     </section>
 
-    <!-- THIN DIVIDER -->
-    <hr class="ed-divider" />
-
-    <!-- ULTIMOS EPISODIOS -->
-    <section class="ed-section">
-      <div class="ed-section__label">Ultimos Episodios</div>
-      <div class="ed-episode-list">
-        {recentEpisodes.map((ep, i) => (
-          <article class="ed-episode-row">
-            <div class="ed-episode-row__number">{String(i + 1).padStart(2, '0')}</div>
-            <div class="ed-episode-row__content">
-              <div class="ed-episode-row__meta">
-                <span class={`ed-label ed-label--sm ${podcastAccentClass(ep.data.podcast)}`}>
-                  {podcastLabel(ep.data.podcast)}{ep.data.episodeNumber ? ` #${ep.data.episodeNumber}` : ''}
-                </span>
-                <time class="ed-meta-date" datetime={ep.data.pubDate.toISOString()}>
+    <!-- RECENT EPISODES -->
+    {recentEpisodes.length > 0 && (
+      <section class="ed-section">
+        <div class="ed-section__label">Episodios Recentes</div>
+        <ol class="ed-episodes">
+          {recentEpisodes.map((ep) => (
+            <li class="ed-ep">
+              <a href={`/episodios/${ep.id}`} class="ed-ep__link">
+                <div class="ed-ep__left">
+                  <span class={`ed-label ed-label--sm ${podcastAccentClass(ep.data.podcast)}`}>
+                    {podcastLabel(ep.data.podcast)}
+                  </span>
+                  <h3 class="ed-ep__title">{ep.data.title}</h3>
+                </div>
+                <time class="ed-ep__date" datetime={ep.data.pubDate.toISOString()}>
                   {formatDateShort(ep.data.pubDate)}
                 </time>
-              </div>
-              <h3 class="ed-episode-row__title">
-                <a href={`/episodios/${ep.id}`}>{ep.data.title}</a>
-              </h3>
-              <p class="ed-episode-row__desc">{ep.data.description}</p>
-            </div>
-            <div class="ed-episode-row__authors">
-              {ep.data.authors.slice(0, 3).join(', ')}
-            </div>
-          </article>
-        ))}
-      </div>
-      <div class="ed-section__more">
-        <a href="/episodios">Ver todos os {episodes.length} episodios &rarr;</a>
-      </div>
-    </section>
+              </a>
+            </li>
+          ))}
+        </ol>
+        <div class="ed-section__more">
+          <a href="/episodios">Todos os {episodes.length} episodios &rarr;</a>
+        </div>
+      </section>
+    )}
 
-    <!-- THIN DIVIDER -->
-    <hr class="ed-divider" />
-
-    <!-- CURTAS — Pull Quotes -->
-    <section class="ed-section">
-      <div class="ed-section__label">Curtas</div>
-      <p class="ed-section__subtitle">Frases que marcaram as conversas recentes</p>
-      <div class="ed-curtas-grid">
-        {featuredCurtas.map((c, i) => {
-          const isWide = i === 0;
-          return (
-            <article class={`ed-curta ${isWide ? 'ed-curta--wide' : ''}`}>
-              <blockquote class="ed-curta__quote">
-                <p>{c.data.quote}</p>
-              </blockquote>
-              <footer class="ed-curta__footer">
-                <span class="ed-curta__speaker">{c.data.speaker}</span>
-                <span class="ed-curta__context">{c.data.context}</span>
-              </footer>
-              {c.data.tags.length > 0 && (
-                <div class="ed-curta__tags">
-                  {c.data.tags.slice(0, 3).map(tag => (
-                    <span class="ed-tag ed-tag--sm">{tag}</span>
-                  ))}
-                </div>
-              )}
-            </article>
-          );
-        })}
-      </div>
-      <div class="ed-section__more">
-        <a href="/curtas">Ver todas as {curtas.length} curtas &rarr;</a>
-      </div>
-    </section>
-
-    <!-- THIN DIVIDER -->
-    <hr class="ed-divider" />
+    <!-- CURTAS — Masonry quote wall -->
+    {featuredCurtas.length > 0 && (
+      <section class="ed-section">
+        <div class="ed-section__label">Curtas</div>
+        <p class="ed-section__subtitle">Frases que marcaram as conversas recentes</p>
+        <div class="ed-masonry">
+          {featuredCurtas.map((c, i) => {
+            const w = i === 0 ? 'featured' : weight(c.data.quote);
+            return (
+              <article class={`ed-quote ed-quote--${w}`}>
+                {w === 'featured' && <div class="ed-quote__accent" aria-hidden="true" />}
+                <blockquote class="ed-quote__body">
+                  <p set:html={renderInlineMd(c.data.quote)} />
+                </blockquote>
+                <footer class="ed-quote__foot">
+                  <span class="ed-quote__speaker">{c.data.speaker}</span>
+                  <span class="ed-quote__source">{c.data.context}</span>
+                </footer>
+              </article>
+            );
+          })}
+        </div>
+        <div class="ed-section__more">
+          <a href="/curtas">Todas as {curtas.length} curtas &rarr;</a>
+        </div>
+      </section>
+    )}
 
     <!-- NEWSLETTER -->
-    <section class="ed-section ed-newsletter">
-      <div class="ed-newsletter__inner">
-        <div class="ed-newsletter__text">
-          <h2 class="ed-newsletter__title">Newsletter semanal</h2>
-          <p class="ed-newsletter__desc">
-            Toda quarta-feira, um resumo curado dos melhores episodios e discussoes da comunidade. Direto no seu e-mail, sem ruido.
-          </p>
-        </div>
-        <form class="ed-newsletter__form" action="/api/subscribe" method="POST">
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="seu@email.com"
-            class="ed-newsletter__input"
-          />
-          <button type="submit" class="ed-newsletter__btn">Assinar</button>
-        </form>
-        <p class="ed-newsletter__fine">Sem spam. Cancelamento com 1 clique.</p>
+    <section class="ed-newsletter">
+      <h2 class="ed-newsletter__title">Newsletter semanal</h2>
+      <p class="ed-newsletter__desc">
+        Toda quarta-feira, um resumo curado dos melhores episodios e discussoes da comunidade. Direto no seu e-mail, sem ruido.
+      </p>
+      <div class="ed-newsletter__form">
+        <NewsletterForm variant="block" />
       </div>
     </section>
 
@@ -280,6 +252,7 @@ function podcastAccentClass(podcast: string): string {
   .ed-page a {
     color: inherit;
     text-decoration: none;
+    transition: color 0.15s;
   }
 
   .ed-page a:hover {
@@ -288,7 +261,7 @@ function podcastAccentClass(podcast: string): string {
 
   /* --- HEADER --- */
   .ed-header {
-    padding: 2rem 1.5rem 0;
+    padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 4vw, 2rem) 0;
     max-width: 72rem;
     margin: 0 auto;
   }
@@ -297,8 +270,8 @@ function podcastAccentClass(podcast: string): string {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding-bottom: 1.5rem;
+    gap: 1.25rem;
+    padding-bottom: clamp(1.25rem, 3vw, 2rem);
   }
 
   @media (min-width: 640px) {
@@ -322,9 +295,9 @@ function podcastAccentClass(podcast: string): string {
   .ed-header__logo {
     display: inline-block;
     font-family: var(--ed-serif);
-    font-size: 1.75rem;
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     color: var(--ed-ink);
   }
 
@@ -346,28 +319,33 @@ function podcastAccentClass(podcast: string): string {
   }
 
   .ed-header__tagline {
-    font-size: 0.8125rem;
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
     color: var(--ed-ink-muted);
-    margin-top: 0.125rem;
-    letter-spacing: 0.02em;
+    margin-top: 0.25rem;
+    letter-spacing: 0.03em;
+    font-style: italic;
+    font-family: var(--ed-serif);
   }
 
   .ed-header__nav {
     display: flex;
-    gap: 1.75rem;
+    gap: clamp(1rem, 2.5vw, 2rem);
   }
 
   .ed-header__nav-link {
-    font-size: 0.8125rem;
+    font-size: clamp(0.6875rem, 1.2vw, 0.8125rem);
     font-weight: 500;
     color: var(--ed-ink-secondary);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     transition: color 0.15s;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
   }
 
   .ed-header__nav-link:hover {
-    color: var(--ed-accent);
+    color: var(--ed-ink);
+    border-bottom-color: var(--ed-rule);
   }
 
   .ed-header__rule {
@@ -388,37 +366,42 @@ function podcastAccentClass(podcast: string): string {
   .ed-section {
     max-width: 72rem;
     margin: 0 auto;
-    padding: 2rem 1.5rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 4vw, 2rem);
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .ed-section:last-of-type {
+    border-bottom: none;
   }
 
   .ed-section__label {
     font-family: var(--ed-sans);
-    font-size: 0.6875rem;
+    font-size: clamp(0.625rem, 1vw, 0.6875rem);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--ed-accent);
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--ed-rule);
   }
 
   .ed-section__subtitle {
     font-family: var(--ed-serif);
-    font-size: 1.0625rem;
+    font-size: clamp(1rem, 1.8vw, 1.0625rem);
     color: var(--ed-ink-secondary);
     margin-top: -0.75rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
     font-style: italic;
   }
 
   .ed-section__more {
     margin-top: 1.5rem;
     padding-top: 1rem;
-    border-top: 1px solid var(--ed-rule);
   }
 
   .ed-section__more a {
+    font-family: var(--ed-sans);
     font-size: 0.8125rem;
     font-weight: 500;
     color: var(--ed-accent);
@@ -427,22 +410,6 @@ function podcastAccentClass(podcast: string): string {
 
   .ed-section__more a:hover {
     color: var(--ed-accent-hover);
-  }
-
-  .ed-divider {
-    max-width: 72rem;
-    margin: 0 auto;
-    border: none;
-    border-top: 1px solid var(--ed-rule);
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
-
-  @media (min-width: 1152px) {
-    .ed-divider {
-      margin-left: auto;
-      margin-right: auto;
-    }
   }
 
   /* --- LABELS (podcast badges) --- */
@@ -494,59 +461,33 @@ function podcastAccentClass(podcast: string): string {
     font-variant-numeric: tabular-nums;
   }
 
-  /* --- TAGS --- */
-  .ed-tag {
-    display: inline-block;
-    font-size: 0.6875rem;
-    color: var(--ed-ink-muted);
-    border: 1px solid var(--ed-rule);
-    padding: 0.125rem 0.5rem;
-    border-radius: 2px;
-    letter-spacing: 0.01em;
-  }
-
-  .ed-tag--sm {
-    font-size: 0.625rem;
-    padding: 0.0625rem 0.375rem;
-  }
-
   /* =========================================
      HERO
      ========================================= */
   .ed-hero {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  @media (min-width: 768px) {
-    .ed-hero {
-      grid-template-columns: 3fr 2fr;
-      gap: 3rem;
-    }
+    padding: 0.5rem 0 0;
   }
 
   .ed-hero__meta {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   .ed-hero__title {
     font-family: var(--ed-serif);
-    font-size: 2rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.015em;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
     color: var(--ed-ink);
     margin-bottom: 1rem;
   }
 
-  @media (min-width: 768px) {
-    .ed-hero__title {
-      font-size: 2.5rem;
-    }
+  .ed-hero__title a {
+    color: inherit;
+    transition: color 0.15s;
   }
 
   .ed-hero__title a:hover {
@@ -555,368 +496,351 @@ function podcastAccentClass(podcast: string): string {
 
   .ed-hero__description {
     font-family: var(--ed-serif);
-    font-size: 1.125rem;
+    font-size: clamp(1.0625rem, 2vw, 1.1875rem);
     line-height: 1.7;
     color: var(--ed-ink-secondary);
-    margin-bottom: 1rem;
-  }
-
-  .ed-hero__authors {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    color: var(--ed-ink-muted);
+    max-width: 42rem;
     margin-bottom: 0.75rem;
   }
 
-  .ed-hero__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.375rem;
+  .ed-hero__authors {
+    font-family: var(--ed-sans);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ed-ink-muted);
   }
 
-  /* --- Hero quote panel --- */
-  .ed-hero__quote-panel {
-    border-left: 3px solid var(--ed-accent);
-    padding-left: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  /* Hero featured quote — accent bar + oversized quotation marks */
+  .ed-hero__quote {
+    margin-top: 2rem;
+    padding-left: 1.25rem;
+    position: relative;
+    max-width: 36rem;
   }
 
-  @media (min-width: 768px) {
-    .ed-hero__quote-panel {
-      padding-top: 0.5rem;
-    }
+  .ed-hero__quote-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--ed-accent);
   }
 
-  /* --- PULL QUOTES --- */
-  .ed-pullquote {
+  .ed-hero__quote blockquote {
     margin: 0;
   }
 
-  .ed-pullquote p {
+  .ed-hero__quote blockquote p {
     font-family: var(--ed-serif);
-    font-style: italic;
-    line-height: 1.6;
-    color: var(--ed-ink);
-  }
-
-  .ed-pullquote--hero p {
-    font-size: 1.125rem;
-  }
-
-  .ed-pullquote--secondary p {
-    font-size: 0.9375rem;
-    color: var(--ed-ink-secondary);
-  }
-
-  .ed-pullquote footer {
-    margin-top: 0.625rem;
-    font-size: 0.8125rem;
-  }
-
-  .ed-pullquote cite {
-    font-style: normal;
-    font-weight: 600;
-    color: var(--ed-ink);
-  }
-
-  .ed-pullquote__time {
-    color: var(--ed-ink-faint);
-    margin-left: 0.5rem;
-  }
-
-  /* =========================================
-     EPISODE LIST
-     ========================================= */
-  .ed-episode-list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .ed-episode-row {
-    display: grid;
-    grid-template-columns: 2rem 1fr;
-    gap: 1rem;
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--ed-rule);
-    align-items: start;
-  }
-
-  .ed-episode-row:first-child {
-    padding-top: 0;
-  }
-
-  .ed-episode-row:last-child {
-    border-bottom: none;
-  }
-
-  @media (min-width: 768px) {
-    .ed-episode-row {
-      grid-template-columns: 2.5rem 1fr 10rem;
-      gap: 1.5rem;
-    }
-  }
-
-  .ed-episode-row__number {
-    font-family: var(--ed-serif);
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--ed-ink-faint);
-    line-height: 1.2;
-    padding-top: 0.125rem;
-  }
-
-  .ed-episode-row__meta {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    margin-bottom: 0.375rem;
-  }
-
-  .ed-episode-row__title {
-    font-family: var(--ed-serif);
-    font-size: 1.125rem;
-    font-weight: 600;
-    line-height: 1.35;
-    color: var(--ed-ink);
-    margin-bottom: 0.375rem;
-  }
-
-  .ed-episode-row__title a:hover {
-    color: var(--ed-accent);
-  }
-
-  .ed-episode-row__desc {
-    font-size: 0.875rem;
-    line-height: 1.55;
-    color: var(--ed-ink-secondary);
-    /* no truncation — show full text */
-  }
-
-  .ed-episode-row__authors {
-    display: none;
-    font-size: 0.75rem;
-    color: var(--ed-ink-muted);
-    padding-top: 0.375rem;
-    text-align: right;
-    line-height: 1.5;
-  }
-
-  @media (min-width: 768px) {
-    .ed-episode-row__authors {
-      display: block;
-    }
-  }
-
-  /* =========================================
-     CURTAS GRID
-     ========================================= */
-  .ed-curtas-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  @media (min-width: 640px) {
-    .ed-curtas-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem 2rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .ed-curtas-grid {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-
-  .ed-curta {
-    padding: 1.5rem 0;
-    border-top: 2px solid var(--ed-ink);
-  }
-
-  .ed-curta--wide {
-    border-top-color: var(--ed-accent);
-  }
-
-  @media (min-width: 640px) {
-    .ed-curta--wide {
-      grid-column: span 2;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .ed-curta--wide {
-      grid-column: span 1;
-    }
-  }
-
-  .ed-curta__quote {
-    margin: 0 0 1rem;
-  }
-
-  .ed-curta__quote p {
-    font-family: var(--ed-serif);
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
     font-style: italic;
     line-height: 1.65;
     color: var(--ed-ink);
   }
 
-  .ed-curta--wide .ed-curta__quote p {
-    font-size: 1.125rem;
-  }
-
-  .ed-curta__quote p::before {
-    content: '\201C';
-    font-size: 1.5em;
+  .ed-hero__quote blockquote p::before {
+    content: '\201c';
+    font-family: var(--ed-serif);
+    font-size: 3em;
     line-height: 0;
-    vertical-align: -0.2em;
+    vertical-align: -0.35em;
     color: var(--ed-accent);
-    margin-right: 0.1em;
+    opacity: 0.35;
+    margin-right: 0.05em;
+    font-weight: 700;
   }
 
-  .ed-curta__quote p::after {
-    content: '\201D';
-  }
-
-  .ed-curta__footer {
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-  }
-
-  .ed-curta__speaker {
+  .ed-hero__quote footer {
+    margin-top: 0.625rem;
+    font-family: var(--ed-sans);
     font-size: 0.8125rem;
+  }
+
+  .ed-hero__quote cite {
+    font-style: normal;
     font-weight: 600;
     color: var(--ed-ink);
   }
 
-  .ed-curta__context {
-    font-size: 0.75rem;
-    color: var(--ed-ink-muted);
-    line-height: 1.4;
-  }
-
-  .ed-curta__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-    margin-top: 0.75rem;
+  .ed-hero__quote-time {
+    color: var(--ed-ink-faint);
+    margin-left: 0.5rem;
   }
 
   /* =========================================
-     NEWSLETTER
+     EPISODE LIST — clean rows, date column
+     ========================================= */
+  .ed-episodes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ed-ep {
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .ed-ep:last-child {
+    border-bottom: none;
+  }
+
+  .ed-ep__link {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.875rem 0;
+    color: inherit;
+    text-decoration: none;
+    transition: none;
+  }
+
+  .ed-ep__link:hover {
+    color: inherit;
+  }
+
+  .ed-ep__link:hover .ed-ep__title {
+    color: var(--ed-accent);
+  }
+
+  .ed-ep__left {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+
+  .ed-ep__title {
+    font-family: var(--ed-serif);
+    font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ed-ink);
+    transition: color 0.12s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 640px) {
+    .ed-ep__title {
+      white-space: normal;
+    }
+  }
+
+  .ed-ep__date {
+    font-family: var(--ed-sans);
+    font-size: 0.75rem;
+    color: var(--ed-ink-muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* =========================================
+     CURTAS — CSS columns masonry
+     ========================================= */
+  .ed-masonry {
+    column-count: 1;
+    column-gap: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .ed-masonry {
+      column-count: 2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .ed-masonry {
+      column-count: 3;
+    }
+  }
+
+  .ed-quote {
+    break-inside: avoid;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+
+  .ed-quote--featured {
+    padding-left: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .ed-quote__accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--ed-accent);
+  }
+
+  .ed-quote__body {
+    margin: 0;
+  }
+
+  .ed-quote__body p {
+    font-family: var(--ed-serif);
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--ed-ink);
+  }
+
+  .ed-quote--featured .ed-quote__body p {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7;
+  }
+
+  .ed-quote--compact .ed-quote__body p {
+    font-size: 0.875rem;
+  }
+
+  /* Oversized opening quote mark */
+  .ed-quote__body p::before {
+    content: '\201c';
+    font-family: var(--ed-serif);
+    font-size: 2.5em;
+    line-height: 0;
+    vertical-align: -0.35em;
+    color: var(--ed-accent);
+    opacity: 0.25;
+    margin-right: 0.05em;
+    font-weight: 700;
+  }
+
+  .ed-quote--featured .ed-quote__body p::before {
+    font-size: 3em;
+    opacity: 0.35;
+  }
+
+  /* Inline markdown in quotes */
+  .ed-quote__body :global(strong) {
+    font-weight: 600;
+    color: var(--ed-ink);
+  }
+
+  .ed-quote__body :global(em) {
+    font-style: italic;
+  }
+
+  .ed-quote__body :global(a) {
+    color: var(--ed-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--ed-rule);
+    text-underline-offset: 2px;
+    word-break: break-all;
+    transition: text-decoration-color 0.12s;
+  }
+
+  .ed-quote__body :global(a:hover) {
+    text-decoration-color: var(--ed-accent);
+  }
+
+  .ed-quote__body :global(.quote-img) {
+    display: block;
+    width: 100%;
+    max-height: 18rem;
+    object-fit: cover;
+    margin: 0.75rem 0;
+    border: 1px solid var(--ed-rule);
+  }
+
+  .ed-quote__foot {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0.75rem;
+  }
+
+  .ed-quote__speaker {
+    font-family: var(--ed-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--ed-ink);
+  }
+
+  .ed-quote__source {
+    font-family: var(--ed-sans);
+    font-size: 0.6875rem;
+    color: var(--ed-ink-faint);
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+  }
+
+  /* =========================================
+     NEWSLETTER — centered, warm background
      ========================================= */
   .ed-newsletter {
     background: var(--ed-bg-warm);
-    max-width: 100%;
-    padding: 3rem 1.5rem;
-    margin-top: 0;
-  }
-
-  .ed-newsletter__inner {
-    max-width: 36rem;
-    margin: 0 auto;
+    padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 4vw, 2rem);
     text-align: center;
   }
 
   .ed-newsletter__title {
     font-family: var(--ed-serif);
-    font-size: 1.75rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 700;
     color: var(--ed-ink);
     margin-bottom: 0.75rem;
   }
 
   .ed-newsletter__desc {
+    font-family: var(--ed-serif);
     font-size: 0.9375rem;
-    line-height: 1.6;
+    line-height: 1.65;
     color: var(--ed-ink-secondary);
-    margin-bottom: 1.5rem;
+    max-width: 32rem;
+    margin: 0 auto 1.5rem;
   }
 
   .ed-newsletter__form {
-    display: flex;
-    gap: 0.5rem;
     max-width: 28rem;
     margin: 0 auto;
   }
 
-  @media (max-width: 480px) {
-    .ed-newsletter__form {
-      flex-direction: column;
-    }
+  /* Center the fine print from NewsletterForm */
+  .ed-newsletter__form :global(.nl-form-wrap) {
+    text-align: center;
   }
 
-  .ed-newsletter__input {
-    flex: 1;
-    padding: 0.625rem 1rem;
-    font-size: 0.875rem;
-    font-family: var(--ed-sans);
-    border: 1px solid var(--ed-rule);
-    border-radius: 3px;
-    background: #fff;
-    color: var(--ed-ink);
-    outline: none;
-    transition: border-color 0.15s;
-  }
-
-  .ed-newsletter__input::placeholder {
-    color: var(--ed-ink-faint);
-  }
-
-  .ed-newsletter__input:focus {
-    border-color: var(--ed-accent);
-    box-shadow: 0 0 0 2px rgba(196, 52, 45, 0.1);
-  }
-
-  .ed-newsletter__btn {
-    padding: 0.625rem 1.5rem;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    font-family: var(--ed-sans);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    background: var(--ed-accent);
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background 0.15s;
-    white-space: nowrap;
-  }
-
-  .ed-newsletter__btn:hover {
-    background: var(--ed-accent-hover);
-  }
-
-  .ed-newsletter__fine {
-    font-size: 0.6875rem;
-    color: var(--ed-ink-muted);
-    margin-top: 0.75rem;
+  .ed-newsletter__form :global(.nl-form__fine) {
+    text-align: center;
   }
 
   /* =========================================
-     FOOTER
+     FOOTER — refined with decorative dash
      ========================================= */
   .ed-footer {
-    border-top: 2px solid var(--ed-rule-strong);
-    padding: 2rem 1.5rem;
     max-width: 72rem;
-    margin: 0 auto;
+    margin: clamp(2rem, 5vw, 4rem) auto 0;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 4vw, 2rem) clamp(2.5rem, 5vw, 4rem);
+    border-top: 1px solid var(--ed-rule);
+  }
+
+  .ed-footer::before {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 2px;
+    background: var(--ed-rule-strong);
+    margin: 0 auto clamp(1.5rem, 3vw, 2.5rem);
   }
 
   .ed-footer__inner {
     text-align: center;
-    font-size: 0.8125rem;
+    font-size: clamp(0.75rem, 1.3vw, 0.8125rem);
     color: var(--ed-ink-muted);
+    letter-spacing: 0.01em;
   }
 
   .ed-footer__inner a {
     color: var(--ed-ink-secondary);
     border-bottom: 1px solid var(--ed-rule);
+    transition: color 0.15s, border-color 0.15s;
   }
 
   .ed-footer__inner a:hover {

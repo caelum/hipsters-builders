@@ -1,0 +1,105 @@
+---
+/**
+ * Static confirmation page.
+ * Reads ?t=TOKEN from URL and redirects to the Worker /confirm endpoint.
+ * Also handles ?confirmed=ok|error|expired after redirect back.
+ */
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet" />
+    <title>Confirmacao | Hipsters Builders</title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="brand">
+        <span class="brand-h">Hipsters</span><span class="brand-dot">.</span><span class="brand-b">builders</span>
+      </div>
+
+      <div id="status">
+        <div id="loading" class="card">
+          <p class="msg">Confirmando sua inscricao...</p>
+        </div>
+        <div id="success" class="card" style="display:none;">
+          <h1 class="title">Inscricao confirmada!</h1>
+          <p class="msg">Bem-vindo ao Hipsters Builders. Voce vai receber a proxima edicao no seu e-mail.</p>
+          <a href="/" class="link">Voltar ao site</a>
+        </div>
+        <div id="expired" class="card" style="display:none;">
+          <h1 class="title">Link expirado</h1>
+          <p class="msg">O link de confirmacao expirou. Inscreva-se novamente na pagina principal.</p>
+          <a href="/" class="link">Voltar ao site</a>
+        </div>
+        <div id="error" class="card" style="display:none;">
+          <h1 class="title">Algo deu errado</h1>
+          <p class="msg">Nao foi possivel confirmar sua inscricao. Tente se inscrever novamente.</p>
+          <a href="/" class="link">Voltar ao site</a>
+        </div>
+      </div>
+    </div>
+
+    <script is:inline>
+      (function() {
+        var params = new URLSearchParams(window.location.search);
+
+        // After redirect back from worker
+        var confirmed = params.get('confirmed');
+        if (confirmed === 'ok') {
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('success').style.display = 'block';
+          return;
+        }
+        if (confirmed === 'expired') {
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('expired').style.display = 'block';
+          return;
+        }
+        if (confirmed === 'error') {
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('error').style.display = 'block';
+          return;
+        }
+
+        // Initial visit with token — redirect to worker
+        var token = params.get('t');
+        if (token) {
+          // WORKER_URL is replaced at build time or configured here
+          var workerUrl = 'WORKER_URL_PLACEHOLDER';
+          window.location.href = workerUrl + '/confirm?t=' + encodeURIComponent(token);
+        } else {
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('error').style.display = 'block';
+        }
+      })();
+    </script>
+  </body>
+</html>
+
+<style is:inline>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #f5f1e8;
+    color: #1e1e1a;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .page { max-width: 28rem; padding: 2rem; text-align: center; }
+  .brand { margin-bottom: 2rem; }
+  .brand-h { font-family: 'Source Serif 4', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: #1e1e1a; }
+  .brand-dot { font-family: 'Source Serif 4', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: #c4342d; }
+  .brand-b { font-family: 'Source Serif 4', Georgia, serif; font-size: 1.5rem; font-weight: 400; color: #35342f; }
+  .card { padding: 2rem; background: #fefbf4; border-top: 3px solid #c56e4a; }
+  .title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; }
+  .msg { font-size: 1rem; line-height: 1.6; color: #35342f; }
+  .link { display: inline-block; margin-top: 1.5rem; color: #c56e4a; font-weight: 600; font-size: 0.875rem; }
+  .link:hover { color: #a95636; }
+</style>

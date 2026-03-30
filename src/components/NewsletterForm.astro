@@ -11,10 +11,11 @@ interface Props {
 }
 
 const { variant = 'block' } = Astro.props;
+const subscribeUrl = import.meta.env.PUBLIC_SUBSCRIBE_URL || '/api/subscribe';
 ---
 
-<div class={`nl-form-wrap nl-form-wrap--${variant}`} data-nl-form>
-  <form class="nl-form" action="/api/subscribe" method="POST">
+<div class={`nl-form-wrap nl-form-wrap--${variant}`} data-nl-form data-subscribe-url={subscribeUrl}>
+  <form class="nl-form" action={subscribeUrl} method="POST">
     <input
       type="email"
       name="email"
@@ -53,7 +54,8 @@ const { variant = 'block' } = Astro.props;
       feedback.style.display = 'none';
 
       try {
-        const res = await fetch('/api/subscribe', {
+        const apiUrl = wrap.getAttribute('data-subscribe-url') || '/api/subscribe';
+        const res = await fetch(apiUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email }),

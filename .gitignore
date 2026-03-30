@@ -34,3 +34,8 @@ vault/
 # editors
 .idea/
 .vscode/
+
+# claude skills (local install)
+.agents/
+.claude/skills/
+skills-lock.json

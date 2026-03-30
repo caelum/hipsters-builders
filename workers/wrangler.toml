@@ -1,0 +1,9 @@
+name = "hipsters-subscribe"
+main = "subscribe.ts"
+compatibility_date = "2024-12-01"
+
+# Set these in Cloudflare dashboard > Workers > Settings > Variables
+# RESEND_API_KEY = "re_xxx"
+# RESEND_AUDIENCE_ID = "xxx"
+# SITE_URL = "https://hipsters.builders"
+# FROM_EMAIL = "Hipsters Builders <newsletter@hipsters.builders>"

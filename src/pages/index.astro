@@ -1,222 +1,764 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import NewsletterForm from '../components/NewsletterForm.astro';
 
-const designs = [
-  {
-    name: 'V1 "Editorial"',
-    href: '/design/v1',
-    description: 'Fundo claro, tipografia serif, hierarquia jornalistica',
-    style: 'light',
-    colors: { bg: '#faf9f7', accent: '#c4342d', text: '#1a1a1a' },
-  },
-  {
-    name: 'V2 "Linear"',
-    href: '/design/v2',
-    description: 'Dark refinado, episodios em lista, ultra-minimal',
-    style: 'dark-cool',
-    colors: { bg: '#0f0f13', accent: '#818cf8', text: '#f0f0f5' },
-  },
-  {
-    name: 'V3 "Magazine"',
-    href: '/design/v3',
-    description: 'Dark quente, carrosseis horizontais, streaming-inspired',
-    style: 'dark-warm',
-    colors: { bg: '#1a1412', accent: '#f59e0b', text: '#f5f0eb' },
-  },
-];
+let newsletters: any[] = [];
+try {
+  newsletters = (await getCollection('newsletters'))
+    .filter(n => n.data.status !== 'draft')
+    .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+} catch {
+  // No newsletters yet — that's fine
+}
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+}
 ---
 
-<BaseLayout title="Design Prototypes">
-  <Fragment slot="nav" />
-  <Fragment slot="footer" />
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A newsletter semanal para quem esta buildando software no Brasil. Destaques dos podcasts Hipsters e IA Sob Controle, discussoes da comunidade e os melhores links da semana." />
+    <link rel="canonical" href="https://hipsters.builders/" />
+    <link rel="alternate" type="application/rss+xml" title="Hipsters Builders RSS" href="/rss.xml" />
 
-  <div class="gallery">
-    <header class="gallery__header">
-      <h1 class="gallery__title">
-        Hipsters<span class="gallery__dot">.</span>builders
-      </h1>
-      <p class="gallery__subtitle">Design Prototypes</p>
-    </header>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <div class="gallery__grid">
-      {designs.map((d) => (
-        <a href={d.href} class="card" style={`--card-bg: ${d.colors.bg}; --card-accent: ${d.colors.accent}; --card-text: ${d.colors.text};`}>
-          <div class="card__preview">
-            <div class="card__preview-bar" />
-            <div class="card__preview-lines">
-              <div class="card__preview-line card__preview-line--title" />
-              <div class="card__preview-line card__preview-line--short" />
-              <div class="card__preview-line card__preview-line--medium" />
-            </div>
+    <title>Hipsters Builders — a newsletter da comunidade builder</title>
+  </head>
+  <body>
+    <!-- Warm radial gradients -->
+    <div class="bg-glow bg-glow--top" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--mid" aria-hidden="true"></div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__brand">
+          <span class="brand__h">Hipsters</span><span class="brand__dot">.</span><span class="brand__b">builders</span>
+        </div>
+
+        <p class="hero__eyebrow reveal">A newsletter da comunidade builder</p>
+
+        <h1 class="hero__title reveal">
+          Participe da principal newsletter<br class="hide-mobile" />
+          de quem esta buildando software<br class="hide-mobile" />
+          no Brasil
+        </h1>
+
+        <p class="hero__subtitle reveal">
+          Toda semana, um resumo curado dos podcasts Hipsters Ponto Tech e IA Sob Controle,
+          das discussoes nos grupos de builders e os melhores links e eventos da comunidade.
+          Direto no seu e-mail.
+        </p>
+
+        <div class="hero__form reveal">
+          <NewsletterForm variant="block" />
+        </div>
+
+        <p class="hero__proof reveal">Junte-se a 500+ builders</p>
+      </div>
+    </section>
+
+    <!-- WHAT TO EXPECT -->
+    <section class="features">
+      <div class="features__inner">
+        <h2 class="section-label reveal">O que voce recebe</h2>
+
+        <div class="features__grid">
+          <div class="feature-card reveal">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                <line x1="12" y1="19" x2="12" y2="23"/>
+                <line x1="8" y1="23" x2="16" y2="23"/>
+              </svg>
+            </span>
+            <h3 class="feature-card__title">Destaques dos podcasts</h3>
+            <p class="feature-card__desc">
+              Os melhores momentos do Hipsters Ponto Tech e IA Sob Controle,
+              com quotes e links para os episodios completos.
+            </p>
           </div>
-          <div class="card__body">
-            <h2 class="card__name">{d.name}</h2>
-            <p class="card__desc">{d.description}</p>
-          </div>
-          <div class="card__arrow">&rarr;</div>
-        </a>
-      ))}
-    </div>
-  </div>
-</BaseLayout>
 
-<style>
-  :global(html),
-  :global(body) {
-    background: #18181b !important;
-    color: #e4e4e7 !important;
+          <div class="feature-card reveal">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </span>
+            <h3 class="feature-card__title">Discussoes da comunidade</h3>
+            <p class="feature-card__desc">
+              O que esta rolando nos grupos Builders SP, Clauders e IA Sob Controle.
+              As melhores conversas, sem precisar acompanhar tudo.
+            </p>
+          </div>
+
+          <div class="feature-card reveal">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </span>
+            <h3 class="feature-card__title">Eventos e encontros</h3>
+            <p class="feature-card__desc">
+              Encontros de builders pelo Brasil, meetups, workshops
+              e eventos que valem a pena participar.
+            </p>
+          </div>
+
+          <div class="feature-card reveal">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+              </svg>
+            </span>
+            <h3 class="feature-card__title">Top links da semana</h3>
+            <p class="feature-card__desc">
+              Os links mais compartilhados e discutidos pela comunidade.
+              Artigos, ferramentas e threads que voce nao pode perder.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="community">
+      <div class="community__inner reveal">
+        <div class="community__rule" aria-hidden="true"></div>
+        <h2 class="community__title">Um espaco para quem esta construindo</h2>
+        <p class="community__text">
+          Hipsters Builders conecta as pessoas que estao buildando software no Brasil.
+          Comecamos com o Builders SP e a ideia e crescer para outras cidades.
+          A newsletter e o fio que une a comunidade: as conversas dos podcasts, os papos dos grupos e os encontros presenciais.
+        </p>
+        <div class="community__rule" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- PAST EDITIONS -->
+    {newsletters.length > 0 && (
+      <section class="editions">
+        <div class="editions__inner">
+          <h2 class="section-label reveal">Edicoes anteriores</h2>
+          <ol class="editions__list">
+            {newsletters.map((nl) => (
+              <li class="edition reveal">
+                <a href={`/newsletter/${nl.id}`} class="edition__link">
+                  <span class="edition__number">#{nl.data.editionNumber}</span>
+                  <span class="edition__title">{nl.data.subject}</span>
+                  <time class="edition__date" datetime={nl.data.pubDate.toISOString()}>
+                    {formatDate(nl.data.pubDate)}
+                  </time>
+                </a>
+              </li>
+            ))}
+          </ol>
+          <div class="editions__more">
+            <a href="/newsletter">Ver todas as edicoes &rarr;</a>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- BOTTOM CTA -->
+    <section class="bottom-cta">
+      <div class="bottom-cta__inner reveal">
+        <h2 class="bottom-cta__title">Nao perca a proxima edicao</h2>
+        <p class="bottom-cta__desc">
+          Inscreva-se e receba toda semana, de graca.
+        </p>
+        <div class="bottom-cta__form">
+          <NewsletterForm variant="block" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <span class="brand__h brand__h--sm">Hipsters</span><span class="brand__dot brand__dot--sm">.</span><span class="brand__b brand__b--sm">builders</span>
+        </div>
+        <p class="site-footer__copy">
+          Parte da <a href="https://hipsters.tech">Hipsters Network</a> · <a href="https://alura.com.br">Alura</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Reveal animation script -->
+    <script>
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!prefersReduced) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+        );
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+      } else {
+        // No animation — show everything immediately
+        document.querySelectorAll('.reveal').forEach((el) => el.classList.add('revealed'));
+      }
+    </script>
+  </body>
+</html>
+
+<style is:inline>
+  /* ===========================================
+     LANDING PAGE — Newsletter capture
+     Warm paper + clay accent
+     =========================================== */
+
+  /* --- Reset --- */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
-  :global(body > main) {
-    max-width: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+  /* --- Custom properties --- */
+  :root {
+    --lp-paper: #f5f1e8;
+    --lp-sand: #eae2d3;
+    --lp-ink: #1e1e1a;
+    --lp-ink-secondary: #35342f;
+    --lp-ink-muted: #8a8578;
+    --lp-clay: #c56e4a;
+    --lp-clay-dark: #a95636;
+    --lp-white: #fefbf4;
+    --lp-line: #d8cebc;
+    --lp-dot: #c4342d;
+
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Source Sans 3', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Menlo', monospace;
+    --font-serif: 'Source Serif 4', Georgia, serif;
   }
 
-  :global(a) {
+  html, body {
+    background: var(--lp-paper);
+    color: var(--lp-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(197, 110, 74, 0.2);
+  }
+
+  a {
     color: inherit;
     text-decoration: none;
   }
 
-  .gallery {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 1.5rem;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  /* --- Background glows --- */
+  .bg-glow {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
   }
 
-  .gallery__header {
-    text-align: center;
-    margin-bottom: 3rem;
+  .bg-glow--top {
+    width: 60vw;
+    height: 60vw;
+    max-width: 900px;
+    max-height: 900px;
+    top: -15vw;
+    right: -10vw;
+    background: radial-gradient(circle, rgba(197, 110, 74, 0.07) 0%, transparent 70%);
   }
 
-  .gallery__title {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #f4f4f5;
+  .bg-glow--mid {
+    width: 50vw;
+    height: 50vw;
+    max-width: 700px;
+    max-height: 700px;
+    top: 50vh;
+    left: -15vw;
+    background: radial-gradient(circle, rgba(234, 226, 211, 0.5) 0%, transparent 70%);
   }
 
-  .gallery__dot {
-    color: #818cf8;
+  /* --- Reveal animations --- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
 
-  .gallery__subtitle {
-    font-size: 0.875rem;
-    color: #71717a;
-    margin-top: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 500;
+  .revealed {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .gallery__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 64rem;
-  }
+  /* Stagger children */
+  .features__grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+  .features__grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+  .features__grid .reveal:nth-child(4) { transition-delay: 0.24s; }
 
-  @media (min-width: 768px) {
-    .gallery__grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
     }
   }
 
-  .card {
-    display: flex;
-    flex-direction: column;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #27272a;
-    background: #27272a;
-    transition: border-color 0.2s, transform 0.2s;
-    text-decoration: none !important;
-    color: inherit !important;
+  /* --- Brand logo --- */
+  .brand__h {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--lp-ink);
   }
 
-  .card:hover {
-    border-color: #52525b;
-    transform: translateY(-4px);
-    color: inherit !important;
+  .brand__dot {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--lp-dot);
   }
 
-  .card__preview {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    min-height: 10rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  .brand__b {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    color: var(--lp-ink-secondary);
   }
 
-  .card__preview-bar {
-    height: 3px;
-    width: 100%;
-    background: var(--card-accent);
-    border-radius: 1px;
-  }
-
-  .card__preview-lines {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-top: 0.5rem;
-  }
-
-  .card__preview-line {
-    height: 8px;
-    border-radius: 2px;
-    background: var(--card-text);
-    opacity: 0.15;
-  }
-
-  .card__preview-line--title {
-    width: 70%;
-    height: 12px;
-    opacity: 0.3;
-  }
-
-  .card__preview-line--short {
-    width: 45%;
-  }
-
-  .card__preview-line--medium {
-    width: 60%;
-  }
-
-  .card__body {
-    padding: 1.25rem 1.5rem;
-    flex: 1;
-  }
-
-  .card__name {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #f4f4f5;
-    margin-bottom: 0.375rem;
-  }
-
-  .card__desc {
-    font-size: 0.8125rem;
-    color: #a1a1aa;
-    line-height: 1.5;
-  }
-
-  .card__arrow {
-    padding: 0 1.5rem 1.25rem;
+  .brand__h--sm, .brand__dot--sm, .brand__b--sm {
     font-size: 1.25rem;
-    color: #52525b;
-    transition: color 0.2s, transform 0.2s;
   }
 
-  .card:hover .card__arrow {
-    color: #818cf8;
-    transform: translateX(4px);
+  /* ===========================================
+     HERO
+     =========================================== */
+  .hero {
+    position: relative;
+    z-index: 1;
+    padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 2rem) clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .hero__inner {
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+
+  .hero__brand {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.02em;
+  }
+
+  .hero__eyebrow {
+    font-family: var(--font-mono);
+    font-size: clamp(0.6875rem, 1.2vw, 0.8125rem);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--lp-clay);
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    color: var(--lp-ink);
+    margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .hide-mobile {
+      display: inline;
+    }
+  }
+
+  .hero__subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
+    line-height: 1.7;
+    color: var(--lp-ink-secondary);
+    max-width: 38rem;
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .hero__form {
+    max-width: 36rem;
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .hero__proof {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--lp-ink-muted);
+  }
+
+  /* Override NewsletterForm styles for landing page — larger, more prominent */
+  .hero__form .nl-form,
+  .bottom-cta__form .nl-form {
+    gap: 0.75rem !important;
+  }
+
+  .hero__form .nl-form__input,
+  .bottom-cta__form .nl-form__input {
+    font-family: var(--font-body) !important;
+    font-size: clamp(1rem, 2vw, 1.125rem) !important;
+    padding: clamp(0.875rem, 2vw, 1.125rem) clamp(1rem, 2vw, 1.25rem) !important;
+    border-color: var(--lp-line) !important;
+    background: var(--lp-white) !important;
+    color: var(--lp-ink) !important;
+    border-radius: 6px !important;
+  }
+
+  .hero__form .nl-form__input::placeholder,
+  .bottom-cta__form .nl-form__input::placeholder {
+    color: var(--lp-ink-muted) !important;
+  }
+
+  .hero__form .nl-form__input:focus,
+  .bottom-cta__form .nl-form__input:focus {
+    border-color: var(--lp-clay) !important;
+    box-shadow: 0 0 0 3px rgba(197, 110, 74, 0.15) !important;
+  }
+
+  .hero__form .nl-form__btn,
+  .bottom-cta__form .nl-form__btn {
+    font-family: var(--font-body) !important;
+    font-size: clamp(0.875rem, 1.8vw, 1rem) !important;
+    padding: clamp(0.875rem, 2vw, 1.125rem) clamp(1.5rem, 3vw, 2rem) !important;
+    background: var(--lp-clay) !important;
+    border-radius: 6px !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  .hero__form .nl-form__btn:hover,
+  .bottom-cta__form .nl-form__btn:hover {
+    background: var(--lp-clay-dark) !important;
+  }
+
+  .hero__form .nl-form__fine,
+  .bottom-cta__form .nl-form__fine {
+    color: var(--lp-ink-muted) !important;
+  }
+
+  .hero__form .nl-form__feedback--ok,
+  .bottom-cta__form .nl-form__feedback--ok {
+    background: #e8f0e0;
+    color: #2d5016;
+  }
+
+  /* ===========================================
+     FEATURES
+     =========================================== */
+  .features {
+    position: relative;
+    z-index: 1;
+    padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 5vw, 2rem);
+    background: var(--lp-white);
+    border-top: 1px solid var(--lp-line);
+    border-bottom: 1px solid var(--lp-line);
+  }
+
+  .features__inner {
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: clamp(0.625rem, 1vw, 0.75rem);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--lp-clay);
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--lp-line);
+  }
+
+  .features__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.25rem, 3vw, 1.75rem);
+  }
+
+  @media (min-width: 640px) {
+    .features__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .feature-card {
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    background: var(--lp-paper);
+    border: 1px solid var(--lp-line);
+    border-radius: 6px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .feature-card:hover {
+    border-color: var(--lp-sand);
+    box-shadow: 0 2px 12px rgba(30, 30, 26, 0.04);
+  }
+
+  .feature-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 6px;
+    background: var(--lp-sand);
+    color: var(--lp-clay);
+    margin-bottom: 1rem;
+  }
+
+  .feature-card__title {
+    font-family: var(--font-display);
+    font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+    font-weight: 600;
+    color: var(--lp-ink);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .feature-card__desc {
+    font-family: var(--font-body);
+    font-size: clamp(0.8125rem, 1.3vw, 0.9375rem);
+    line-height: 1.65;
+    color: var(--lp-ink-muted);
+  }
+
+  /* ===========================================
+     COMMUNITY
+     =========================================== */
+  .community {
+    position: relative;
+    z-index: 1;
+    padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 5vw, 2rem);
+  }
+
+  .community__inner {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  .community__rule {
+    width: 3rem;
+    height: 2px;
+    background: var(--lp-clay);
+    opacity: 0.4;
+    margin-bottom: 2rem;
+  }
+
+  .community__inner .community__rule:last-child {
+    margin: 2rem 0 0;
+  }
+
+  .community__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 600;
+    color: var(--lp-ink);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .community__text {
+    font-family: var(--font-body);
+    font-size: clamp(0.9375rem, 1.6vw, 1.0625rem);
+    line-height: 1.75;
+    color: var(--lp-ink-secondary);
+  }
+
+  /* ===========================================
+     EDITIONS
+     =========================================== */
+  .editions {
+    position: relative;
+    z-index: 1;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 5vw, 2rem);
+    background: var(--lp-white);
+    border-top: 1px solid var(--lp-line);
+  }
+
+  .editions__inner {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  .editions__list {
+    list-style: none;
+  }
+
+  .edition {
+    border-bottom: 1px solid var(--lp-line);
+  }
+
+  .edition:last-child {
+    border-bottom: none;
+  }
+
+  .edition__link {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.875rem 0;
+    transition: color 0.15s;
+  }
+
+  .edition__link:hover {
+    color: var(--lp-clay);
+  }
+
+  .edition__number {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--lp-ink-muted);
+    flex-shrink: 0;
+    min-width: 2.5rem;
+  }
+
+  .edition__title {
+    font-family: var(--font-display);
+    font-size: clamp(0.875rem, 1.4vw, 1rem);
+    font-weight: 500;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 640px) {
+    .edition__title {
+      white-space: normal;
+    }
+  }
+
+  .edition__date {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--lp-ink-muted);
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .editions__more {
+    margin-top: 1.25rem;
+  }
+
+  .editions__more a {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--lp-clay);
+    letter-spacing: 0.02em;
+    transition: color 0.15s;
+  }
+
+  .editions__more a:hover {
+    color: var(--lp-clay-dark);
+  }
+
+  /* ===========================================
+     BOTTOM CTA
+     =========================================== */
+  .bottom-cta {
+    position: relative;
+    z-index: 1;
+    padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 5vw, 2rem);
+    border-top: 1px solid var(--lp-line);
+  }
+
+  .bottom-cta__inner {
+    max-width: 32rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .bottom-cta__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 600;
+    color: var(--lp-ink);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .bottom-cta__desc {
+    font-family: var(--font-body);
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    color: var(--lp-ink-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .bottom-cta__form {
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+
+  /* ===========================================
+     FOOTER
+     =========================================== */
+  .site-footer {
+    position: relative;
+    z-index: 1;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 5vw, 2rem);
+    border-top: 1px solid var(--lp-line);
+  }
+
+  .site-footer__inner {
+    max-width: 42rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .site-footer__brand {
+    margin-bottom: 0.5rem;
+  }
+
+  .site-footer__copy {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    color: var(--lp-ink-muted);
+  }
+
+  .site-footer__copy a {
+    color: var(--lp-ink-secondary);
+    border-bottom: 1px solid var(--lp-line);
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .site-footer__copy a:hover {
+    color: var(--lp-clay);
+    border-bottom-color: var(--lp-clay);
   }
 </style>

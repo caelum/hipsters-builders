@@ -48,42 +48,46 @@ const hasTranscription = quotes.length > 0 || segmentCount > 0;
         </span>
         <time class="ed-meta-date" datetime={pubDate.toISOString()}>{dateStr}</time>
       </div>
-      <h1 class="ep-detail__title">{title}</h1>
-      <p class="ep-detail__description">{description}</p>
 
-      {authors.length > 0 && (
-        <div class="ep-detail__authors">
-          {authors.join(', ')}
-        </div>
+      <h1 class="ep-detail__title">{title}</h1>
+
+      {description && (
+        <p class="ep-detail__description">{description}</p>
       )}
 
-      {/* Spotify embed for podcasters.spotify.com episodes */}
-      {embedUrl ? (
-        <div class="ep-detail__player">
-          <iframe
-            src={embedUrl}
-            width="100%"
-            height="152"
-            frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-            style="border-radius: 4px;"
-          ></iframe>
-        </div>
-      ) : (
+      {authors.length > 0 && (
+        <p class="ep-detail__byline">Por {authors.join(', ')}</p>
+      )}
+    </header>
+
+    <!-- Player -->
+    {embedUrl ? (
+      <div class="ep-detail__player">
+        <iframe
+          src={embedUrl}
+          width="100%"
+          height="152"
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          style="border-radius: 4px;"
+        ></iframe>
+      </div>
+    ) : (
+      <div class="ep-detail__listen-wrap">
         <a href={sourceUrl} target="_blank" rel="noopener" class="ep-detail__listen">
           <svg class="ep-detail__listen-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
           Ouvir episodio completo
         </a>
-      )}
-    </header>
+      </div>
+    )}
 
     <!-- No transcription notice -->
     {!hasTranscription && (
-      <div class="ep-detail__wip">
+      <aside class="ep-detail__wip">
         <svg class="ep-detail__wip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        <p>Estamos trabalhando na transcricao e quotes desse episodio!</p>
-      </div>
+        <p>Estamos trabalhando na transcricao e quotes desse episodio.</p>
+      </aside>
     )}
 
     <!-- Quotes / Pull Quotes -->
@@ -92,10 +96,8 @@ const hasTranscription = quotes.length > 0 || segmentCount > 0;
         <div class="ed-section__label">Destaques</div>
         <div class="ep-quotes-list">
           {quotes.map((q, i) => (
-            <blockquote class="ep-quote">
-              <div class="ep-quote__number">{String(i + 1).padStart(2, '0')}</div>
+            <blockquote class={`ep-quote${i === 0 ? ' ep-quote--featured' : ''}`}>
               <div class="ep-quote__body">
-                <div class="ep-quote__mark" aria-hidden="true">&ldquo;</div>
                 <p class="ep-quote__text" set:html={renderInlineMd(q.text)} />
                 <footer class="ep-quote__attribution">
                   <cite class="ep-quote__speaker">{q.speaker}</cite>
@@ -113,19 +115,21 @@ const hasTranscription = quotes.length > 0 || segmentCount > 0;
       <Content />
     </section>
 
-    <!-- Tags -->
-    {tags.length > 0 && (
-      <footer class="ep-detail__tags">
-        {tags.map(tag => (
-          <span class="ed-tag">{tag}</span>
-        ))}
-      </footer>
-    )}
+    <!-- Tags & back -->
+    <footer class="ep-detail__footer">
+      {tags.length > 0 && (
+        <div class="ep-detail__tags">
+          {tags.map(tag => (
+            <span class="ep-detail__tag">{tag}</span>
+          ))}
+        </div>
+      )}
 
-    <!-- Back link -->
-    <div class="ep-detail__back">
-      <a href="/episodios">&larr; Todos os episodios</a>
-    </div>
+      <a href="/episodios" class="ep-detail__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Todos os episodios
+      </a>
+    </footer>
   </article>
 </EditorialLayout>
 
@@ -135,117 +139,110 @@ const hasTranscription = quotes.length > 0 || segmentCount > 0;
     margin: 0 auto;
   }
 
+  /* --- Header --- */
   .ep-detail__header {
-    margin-bottom: 2.5rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid var(--ed-rule);
   }
 
   .ep-detail__meta {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .ep-detail__title {
     font-family: var(--ed-serif);
-    font-size: 1.75rem;
+    font-size: clamp(1.75rem, 4vw + 0.5rem, 2.75rem);
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.015em;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
     color: var(--ed-ink);
     margin-bottom: 1rem;
   }
 
-  @media (min-width: 640px) {
-    .ep-detail__title {
-      font-size: 2.5rem;
-    }
-  }
-
   .ep-detail__description {
     font-family: var(--ed-serif);
-    font-size: 1.0625rem;
-    line-height: 1.7;
+    font-size: clamp(1rem, 1.5vw + 0.5rem, 1.1875rem);
+    font-style: italic;
+    line-height: 1.65;
     color: var(--ed-ink-secondary);
     margin-bottom: 1rem;
   }
 
-  @media (min-width: 640px) {
-    .ep-detail__description {
-      font-size: 1.125rem;
-    }
-  }
-
-  .ep-detail__authors {
+  .ep-detail__byline {
+    font-family: var(--ed-sans);
     font-size: 0.8125rem;
     font-weight: 500;
     color: var(--ed-ink-muted);
-    margin-bottom: 1rem;
+    letter-spacing: 0.01em;
   }
 
-  /* Spotify player */
+  /* --- Player (Spotify) --- */
   .ep-detail__player {
-    margin-top: 1.25rem;
+    margin-bottom: 2.5rem;
+    padding-top: 0.5rem;
   }
 
-  /* Listen link (non-Spotify) */
+  /* --- Listen link (non-Spotify) --- */
+  .ep-detail__listen-wrap {
+    margin-bottom: 2.5rem;
+    padding-top: 0.5rem;
+  }
+
   .ep-detail__listen {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    margin-top: 0.75rem;
-    padding: 0.625rem 1.25rem;
+    font-family: var(--ed-sans);
     font-size: 0.8125rem;
     font-weight: 600;
     color: var(--ed-accent);
-    border: 1.5px solid var(--ed-accent);
-    border-radius: 3px;
     letter-spacing: 0.01em;
-    transition: background 0.15s, color 0.15s;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--ed-rule);
+    transition: border-color 0.15s;
   }
 
   .ep-detail__listen:hover {
-    background: var(--ed-accent);
-    color: #fff !important;
+    color: var(--ed-accent-hover) !important;
+    border-bottom-color: var(--ed-accent);
   }
 
   .ep-detail__listen-icon {
-    width: 1rem;
-    height: 1rem;
+    width: 0.875rem;
+    height: 0.875rem;
     flex-shrink: 0;
   }
 
-  /* Work in progress notice */
+  /* --- Work in progress notice --- */
   .ep-detail__wip {
     display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1.25rem;
-    background: var(--ed-bg-warm);
-    border-left: 3px solid var(--ed-accent);
-    margin-bottom: 2rem;
-    border-radius: 0 3px 3px 0;
+    align-items: baseline;
+    gap: 0.625rem;
+    margin-bottom: 2.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--ed-rule);
   }
 
   .ep-detail__wip-icon {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1rem;
+    height: 1rem;
     flex-shrink: 0;
-    color: var(--ed-accent);
-    margin-top: 0.125rem;
+    color: var(--ed-ink-muted);
+    position: relative;
+    top: 0.15rem;
   }
 
   .ep-detail__wip p {
     font-family: var(--ed-serif);
     font-size: 0.9375rem;
     font-style: italic;
-    color: var(--ed-ink-secondary);
-    line-height: 1.5;
+    color: var(--ed-ink-muted);
+    line-height: 1.6;
   }
 
-  /* Quotes section */
+  /* --- Quotes section --- */
   .ep-detail__quotes {
     margin-bottom: 2.5rem;
     padding-bottom: 2rem;
@@ -259,12 +256,10 @@ const hasTranscription = quotes.length > 0 || segmentCount > 0;
   }
 
   .ep-quote {
-    display: grid;
-    grid-template-columns: 2rem 1fr;
-    gap: 0.75rem;
     padding: 1.5rem 0;
     border-bottom: 1px solid var(--ed-rule);
     margin: 0;
+    position: relative;
   }
 
   .ep-quote:last-child {
@@ -276,72 +271,82 @@ const hasTranscription = quotes.length > 0 || segmentCount > 0;
     padding-top: 0;
   }
 
-  @media (min-width: 640px) {
-    .ep-quote {
-      grid-template-columns: 2.5rem 1fr;
-      gap: 1rem;
-    }
+  /* Featured quote: accent bar like curtas page */
+  .ep-quote--featured {
+    padding-left: 1.25rem;
   }
 
-  .ep-quote__number {
-    font-family: var(--ed-serif);
-    font-size: 1.25rem;
-    font-weight: 300;
-    color: var(--ed-ink-faint);
-    line-height: 1;
-    padding-top: 0.5rem;
+  .ep-quote--featured::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--ed-accent);
+  }
+
+  .ep-quote--featured:first-child::before {
+    top: 0;
+  }
+
+  .ep-quote--featured:last-child::before {
+    bottom: 0;
   }
 
   .ep-quote__body {
     position: relative;
   }
 
-  .ep-quote__mark {
+  /* Opening quote mark — oversized, semi-transparent, matching curtas style */
+  .ep-quote__text::before {
+    content: '\201c';
     font-family: var(--ed-serif);
-    font-size: 3rem;
-    line-height: 1;
+    font-size: 2.5em;
+    line-height: 0;
+    vertical-align: -0.35em;
     color: var(--ed-accent);
-    opacity: 0.3;
-    position: absolute;
-    top: -0.5rem;
-    left: -0.25rem;
-    pointer-events: none;
-    user-select: none;
+    opacity: 0.25;
+    margin-right: 0.05em;
+    font-weight: 700;
+  }
+
+  .ep-quote--featured .ep-quote__text::before {
+    font-size: 3em;
+    opacity: 0.35;
   }
 
   .ep-quote__text {
     font-family: var(--ed-serif);
-    font-size: 1rem;
-    font-style: italic;
-    line-height: 1.7;
+    font-size: 0.9375rem;
+    line-height: 1.75;
     color: var(--ed-ink);
-    padding-left: 1rem;
   }
 
-  @media (min-width: 640px) {
-    .ep-quote__text {
-      font-size: 1.0625rem;
-    }
+  .ep-quote--featured .ep-quote__text {
+    font-size: clamp(1.0625rem, 2vw, 1.1875rem);
+    line-height: 1.7;
   }
 
   .ep-quote__attribution {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-top: 0.625rem;
-    padding-left: 1rem;
+    margin-top: 0.75rem;
   }
 
   .ep-quote__speaker {
     font-family: var(--ed-sans);
     font-style: normal;
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     font-weight: 600;
+    letter-spacing: 0.03em;
     color: var(--ed-ink);
   }
 
   .ep-quote__time {
-    font-size: 0.75rem;
+    font-family: var(--ed-sans);
+    font-size: 0.6875rem;
     color: var(--ed-ink-faint);
     font-variant-numeric: tabular-nums;
   }
@@ -352,7 +357,6 @@ const hasTranscription = quotes.length > 0 || segmentCount > 0;
 
   /* Inline markdown in quotes */
   .ep-quote__text :global(strong) {
-    font-style: normal;
     font-weight: 600;
     color: var(--ed-ink);
   }
@@ -363,38 +367,59 @@ const hasTranscription = quotes.length > 0 || segmentCount > 0;
 
   .ep-quote__text :global(a) {
     color: var(--ed-accent);
-    border-bottom: 1px solid var(--ed-rule);
+    text-decoration: underline;
+    text-decoration-color: var(--ed-rule);
+    text-underline-offset: 2px;
     word-break: break-all;
+    transition: text-decoration-color 0.12s;
   }
 
   .ep-quote__text :global(a:hover) {
-    border-bottom-color: var(--ed-accent);
+    text-decoration-color: var(--ed-accent);
   }
 
-  /* Tags */
-  .ep-detail__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.375rem;
+  /* --- Footer: tags + back --- */
+  .ep-detail__footer {
     margin-top: 2.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--ed-rule);
   }
 
-  /* Back link */
-  .ep-detail__back {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--ed-rule);
+  .ep-detail__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.625rem;
+    margin-bottom: 1.5rem;
   }
 
-  .ep-detail__back a {
+  .ep-detail__tag {
+    font-family: var(--ed-sans);
+    font-size: 0.75rem;
+    color: var(--ed-ink-muted);
+    letter-spacing: 0.01em;
+  }
+
+  .ep-detail__tag::before {
+    content: '#';
+    color: var(--ed-ink-faint);
+  }
+
+  .ep-detail__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-family: var(--ed-sans);
     font-size: 0.8125rem;
     font-weight: 500;
-    color: var(--ed-accent);
+    color: var(--ed-ink-muted);
+    transition: color 0.15s;
   }
 
-  .ep-detail__back a:hover {
-    color: var(--ed-accent-hover);
+  .ep-detail__back:hover {
+    color: var(--ed-accent) !important;
+  }
+
+  .ep-detail__back svg {
+    flex-shrink: 0;
   }
 </style>

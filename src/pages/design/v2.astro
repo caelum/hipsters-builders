@@ -32,11 +32,11 @@ function podcastShort(podcast: string): string {
 }
 ---
 
-<BaseLayout title="v2">
+<BaseLayout title="v2 — Linear">
   <Fragment slot="nav">
     <nav class="v2-nav">
       <div class="v2-nav-inner">
-        <a href="/design/v2" class="v2-wordmark">Hipsters<span class="v2-wordmark-dim">.builders</span></a>
+        <a href="/design/v2" class="v2-wordmark">hipsters<span class="v2-dot">.</span>builders</a>
         <div class="v2-nav-links">
           <a href="#episodes">Episodios</a>
           <a href="#curtas">Curtas</a>
@@ -48,31 +48,33 @@ function podcastShort(podcast: string): string {
 
   <!-- Featured -->
   <section class="v2-featured">
-    <p class="v2-label">Mais recente</p>
+    <div class="v2-label-row">
+      <span class="v2-label">Ultimo episodio</span>
+      <time class="v2-label-date">{formatDate(featured.data.pubDate)}</time>
+    </div>
     <a href={`/episodios/${featured.id}`} class="v2-featured-link">
       <h1 class="v2-featured-title">{featured.data.title}</h1>
     </a>
-    <p class="v2-featured-meta">
+    <div class="v2-featured-meta">
       <span class="v2-featured-podcast">{podcastShort(featured.data.podcast)}{featured.data.episodeNumber ? ` #${featured.data.episodeNumber}` : ''}</span>
-      <span class="v2-sep">/</span>
-      <span>{formatDate(featured.data.pubDate)}</span>
       {featured.data.duration && (
-        <>
-          <span class="v2-sep">/</span>
-          <span>{featured.data.duration}</span>
-        </>
+        <span class="v2-featured-duration">{featured.data.duration}</span>
       )}
-    </p>
+      <span class="v2-featured-authors">{featured.data.authors.join(', ')}</span>
+    </div>
     <p class="v2-featured-desc">{featured.data.description}</p>
     {featured.data.quotes.length > 0 && (
       <blockquote class="v2-featured-quote">
-        "{featured.data.quotes[0].text}"
-        <cite>-- {featured.data.quotes[0].speaker}</cite>
+        <p>{featured.data.quotes[0].text}</p>
+        <footer>
+          <span class="v2-quote-speaker">{featured.data.quotes[0].speaker}</span>
+          {featured.data.quotes[0].timestamp && (
+            <span class="v2-quote-time">{featured.data.quotes[0].timestamp}</span>
+          )}
+        </footer>
       </blockquote>
     )}
   </section>
-
-  <hr class="v2-divider" />
 
   <!-- Episodes -->
   <section id="episodes" class="v2-section">
@@ -81,28 +83,26 @@ function podcastShort(podcast: string): string {
       <span class="v2-section-count">{episodes.length}</span>
     </div>
 
-    <div class="v2-table" role="list">
-      <div class="v2-table-head" aria-hidden="true">
-        <span class="v2-col-date">Data</span>
-        <span class="v2-col-podcast">Podcast</span>
+    <div class="v2-list" role="list">
+      <div class="v2-list-head" aria-hidden="true">
+        <span class="v2-col-num">#</span>
         <span class="v2-col-title">Titulo</span>
-        <span class="v2-col-tags">Tags</span>
+        <span class="v2-col-podcast">Podcast</span>
+        <span class="v2-col-date">Data</span>
       </div>
       {recentEpisodes.map((ep) => (
         <a href={`/episodios/${ep.id}`} class="v2-row" role="listitem">
-          <span class="v2-col-date">{formatDate(ep.data.pubDate)}</span>
-          <span class="v2-col-podcast">
-            <span class="v2-pill">{podcastShort(ep.data.podcast)}</span>
-          </span>
+          <span class="v2-col-num">{ep.data.episodeNumber || ''}</span>
           <span class="v2-col-title">
-            {ep.data.title}
-            {ep.data.episodeNumber ? <span class="v2-ep-num">#{ep.data.episodeNumber}</span> : null}
+            <span class="v2-row-title">{ep.data.title}</span>
+            <span class="v2-row-tags">
+              {ep.data.tags.slice(0, 3).map(tag => (
+                <span class="v2-tag">{tag}</span>
+              ))}
+            </span>
           </span>
-          <span class="v2-col-tags">
-            {ep.data.tags.slice(0, 2).map(tag => (
-              <span class="v2-tag">{tag}</span>
-            ))}
-          </span>
+          <span class="v2-col-podcast">{podcastShort(ep.data.podcast)}</span>
+          <span class="v2-col-date">{formatDate(ep.data.pubDate)}</span>
         </a>
       ))}
     </div>
@@ -112,8 +112,6 @@ function podcastShort(podcast: string): string {
     </div>
   </section>
 
-  <hr class="v2-divider" />
-
   <!-- Curtas -->
   <section id="curtas" class="v2-section">
     <div class="v2-section-header">
@@ -121,15 +119,18 @@ function podcastShort(podcast: string): string {
       <span class="v2-section-count">{curtas.length}</span>
     </div>
 
-    <div class="v2-curtas-grid">
+    <div class="v2-curtas">
       {recentCurtas.map((c) => (
-        <a href={c.data.sourceUrl || '#'} class="v2-curta" target={c.data.sourceUrl ? '_blank' : undefined} rel={c.data.sourceUrl ? 'noopener' : undefined}>
-          <blockquote class="v2-curta-text">"{c.data.quote}"</blockquote>
-          <div class="v2-curta-footer">
+        <article class="v2-curta">
+          <blockquote class="v2-curta-quote">
+            <p>{c.data.quote}</p>
+          </blockquote>
+          <footer class="v2-curta-footer">
             <span class="v2-curta-speaker">{c.data.speaker}</span>
+            <span class="v2-curta-sep">/</span>
             <span class="v2-curta-context">{c.data.context}</span>
-          </div>
-        </a>
+          </footer>
+        </article>
       ))}
     </div>
 
@@ -138,13 +139,11 @@ function podcastShort(podcast: string): string {
     </div>
   </section>
 
-  <hr class="v2-divider" />
-
   <!-- Newsletter -->
   <section id="newsletter" class="v2-section v2-newsletter">
     <div class="v2-newsletter-inner">
-      <h2 class="v2-section-title">Newsletter semanal</h2>
-      <p class="v2-newsletter-desc">Resumo curado toda quarta-feira. Sem spam.</p>
+      <h2 class="v2-newsletter-title">Newsletter semanal</h2>
+      <p class="v2-newsletter-desc">Resumo curado toda quarta-feira. Sem spam, sem ruido.</p>
       <form class="v2-newsletter-form" action="/api/subscribe" method="POST">
         <input
           type="email"
@@ -156,35 +155,72 @@ function podcastShort(podcast: string): string {
         />
         <button type="submit" class="v2-newsletter-btn">Assinar</button>
       </form>
+      <p class="v2-newsletter-fine">Cancelamento em um clique. Seus dados seguros.</p>
     </div>
   </section>
+
+  <!-- Footer -->
+  <Fragment slot="footer">
+    <footer class="v2-footer">
+      <div class="v2-footer-inner">
+        <span class="v2-footer-brand">hipsters.builders</span>
+        <span class="v2-footer-sep">/</span>
+        <a href="https://hipsters.tech" class="v2-footer-link">Hipsters Network</a>
+        <span class="v2-footer-sep">/</span>
+        <a href="https://alura.com.br" class="v2-footer-link">Alura</a>
+      </div>
+    </footer>
+  </Fragment>
 </BaseLayout>
 
 <style>
-  /* ── Base ──────────────────────────────────────────── */
+  /* =============================================
+     V2 — LINEAR
+     Dark minimal. Vercel-inspired. Monochrome + indigo.
+     ============================================= */
+
+  /* ── Tokens ───────────────────────────────────── */
 
   :root {
-    --v2-bg: #09090b;
-    --v2-surface: #111113;
-    --v2-border: rgba(255, 255, 255, 0.06);
-    --v2-text-1: #f0f0f5;
-    --v2-text-2: #a0a0b0;
-    --v2-text-3: #5a5a6e;
-    --v2-accent: #6366f1;
-    --v2-accent-dim: rgba(99, 102, 241, 0.15);
+    --v2-bg: #0a0a0f;
+    --v2-surface: #0e0e14;
+    --v2-border: rgba(255, 255, 255, 0.055);
+    --v2-border-hover: rgba(255, 255, 255, 0.09);
+    --v2-text-0: #ededf2;
+    --v2-text-1: #c8c8d4;
+    --v2-text-2: #7d7d90;
+    --v2-text-3: #484860;
+    --v2-accent: #818cf8;
+    --v2-accent-soft: rgba(129, 140, 248, 0.08);
+    --v2-accent-medium: rgba(129, 140, 248, 0.15);
     --v2-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
-    --v2-max: 960px;
+    --v2-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --v2-max: 920px;
   }
 
-  /* ── Nav ───────────────────────────────────────────── */
+  /* ── Override body for this prototype ──────────── */
+
+  :global(body) {
+    background: var(--v2-bg) !important;
+    color: var(--v2-text-1) !important;
+    font-family: var(--v2-sans) !important;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :global(main) {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  /* ── Nav ───────────────────────────────────────── */
 
   .v2-nav {
     position: sticky;
     top: 0;
     z-index: 50;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background: rgba(9, 9, 11, 0.85);
+    backdrop-filter: blur(16px) saturate(1.4);
+    -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    background: rgba(10, 10, 15, 0.8);
     border-bottom: 1px solid var(--v2-border);
   }
 
@@ -192,97 +228,106 @@ function podcastShort(podcast: string): string {
     max-width: var(--v2-max);
     margin: 0 auto;
     padding: 0 1.5rem;
-    height: 3.25rem;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
   .v2-wordmark {
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--v2-text-1) !important;
-    text-decoration: none;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--v2-text-2) !important;
+    text-decoration: none !important;
+    transition: color 0.2s;
   }
 
   .v2-wordmark:hover {
-    color: var(--v2-text-1) !important;
-    opacity: 0.8;
+    color: var(--v2-text-0) !important;
   }
 
-  .v2-wordmark-dim {
-    color: var(--v2-text-3);
+  .v2-dot {
+    color: var(--v2-accent);
   }
 
   .v2-nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
 
   .v2-nav-links a {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
+    font-weight: 400;
     color: var(--v2-text-3) !important;
-    text-decoration: none;
-    transition: color 0.15s;
+    text-decoration: none !important;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
   }
 
   .v2-nav-links a:hover {
-    color: var(--v2-text-2) !important;
+    color: var(--v2-text-1) !important;
   }
 
-  /* ── Layout ────────────────────────────────────────── */
+  /* ── Layout ────────────────────────────────────── */
 
   .v2-section {
     max-width: var(--v2-max);
     margin: 0 auto;
-    padding: 2.5rem 1.5rem;
-  }
-
-  .v2-divider {
-    max-width: var(--v2-max);
-    margin: 0 auto;
-    border: none;
+    padding: 3rem 1.5rem;
     border-top: 1px solid var(--v2-border);
   }
 
   .v2-section-header {
     display: flex;
     align-items: baseline;
-    gap: 0.625rem;
-    margin-bottom: 1.5rem;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
   }
 
   .v2-section-title {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--v2-text-3);
-  }
-
-  .v2-section-count {
-    font-size: 0.75rem;
-    font-family: var(--v2-mono);
-    color: var(--v2-text-3);
-    opacity: 0.6;
-  }
-
-  /* ── Featured ──────────────────────────────────────── */
-
-  .v2-featured {
-    max-width: var(--v2-max);
-    margin: 0 auto;
-    padding: 4rem 1.5rem 2.5rem;
-  }
-
-  .v2-label {
     font-size: 0.6875rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    color: var(--v2-text-3);
+  }
+
+  .v2-section-count {
+    font-size: 0.625rem;
+    font-family: var(--v2-mono);
+    color: var(--v2-text-3);
+    opacity: 0.5;
+  }
+
+  /* ── Featured ──────────────────────────────────── */
+
+  .v2-featured {
+    max-width: var(--v2-max);
+    margin: 0 auto;
+    padding: 5rem 1.5rem 3.5rem;
+  }
+
+  .v2-label-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .v2-label {
+    font-size: 0.625rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
     color: var(--v2-accent);
-    margin-bottom: 1rem;
+  }
+
+  .v2-label-date {
+    font-size: 0.625rem;
+    font-family: var(--v2-mono);
+    color: var(--v2-text-3);
+    letter-spacing: 0.02em;
   }
 
   .v2-featured-link {
@@ -291,85 +336,111 @@ function podcastShort(podcast: string): string {
   }
 
   .v2-featured-title {
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
-    font-weight: 650;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-    color: var(--v2-text-1);
-    margin-bottom: 0.875rem;
-    transition: opacity 0.15s;
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    color: var(--v2-text-0);
+    margin-bottom: 1.25rem;
+    transition: color 0.2s;
+    max-width: 42rem;
   }
 
   .v2-featured-link:hover .v2-featured-title {
-    opacity: 0.75;
+    color: var(--v2-accent);
   }
 
   .v2-featured-meta {
-    font-size: 0.8125rem;
-    color: var(--v2-text-3);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     margin-bottom: 1.25rem;
     flex-wrap: wrap;
   }
 
   .v2-featured-podcast {
-    color: var(--v2-text-2);
+    font-size: 0.75rem;
     font-weight: 500;
+    color: var(--v2-text-1);
   }
 
-  .v2-sep {
-    opacity: 0.3;
+  .v2-featured-duration {
+    font-size: 0.6875rem;
+    font-family: var(--v2-mono);
+    color: var(--v2-text-3);
+  }
+
+  .v2-featured-authors {
+    font-size: 0.75rem;
+    color: var(--v2-text-2);
+    font-weight: 300;
   }
 
   .v2-featured-desc {
     font-size: 0.9375rem;
-    line-height: 1.6;
+    font-weight: 300;
+    line-height: 1.7;
     color: var(--v2-text-2);
-    max-width: 640px;
+    max-width: 38rem;
   }
 
   .v2-featured-quote {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     padding-left: 1rem;
-    border-left: 2px solid var(--v2-accent-dim);
+    border-left: 1px solid var(--v2-accent-medium);
+    max-width: 36rem;
+  }
+
+  .v2-featured-quote p {
     font-size: 0.875rem;
+    font-weight: 300;
     font-style: italic;
-    line-height: 1.6;
+    line-height: 1.7;
+    color: var(--v2-text-1);
+    margin: 0;
+  }
+
+  .v2-featured-quote footer {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .v2-quote-speaker {
+    font-size: 0.6875rem;
+    font-weight: 500;
     color: var(--v2-text-2);
-    max-width: 600px;
-  }
-
-  .v2-featured-quote cite {
-    display: block;
     font-style: normal;
-    font-size: 0.75rem;
-    color: var(--v2-text-3);
-    margin-top: 0.375rem;
   }
 
-  /* ── Episode Table ─────────────────────────────────── */
+  .v2-quote-time {
+    font-size: 0.625rem;
+    font-family: var(--v2-mono);
+    color: var(--v2-text-3);
+  }
 
-  .v2-table {
+  /* ── Episode List ──────────────────────────────── */
+
+  .v2-list {
     display: flex;
     flex-direction: column;
   }
 
-  .v2-table-head {
+  .v2-list-head {
     display: none;
   }
 
   @media (min-width: 768px) {
-    .v2-table-head {
+    .v2-list-head {
       display: grid;
-      grid-template-columns: 5rem 9rem 1fr 12rem;
+      grid-template-columns: 3rem 1fr 9rem 5.5rem;
       gap: 1rem;
-      padding: 0 0.75rem 0.625rem;
-      font-size: 0.6875rem;
+      padding: 0 0 0.5rem;
+      font-size: 0.625rem;
       font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       color: var(--v2-text-3);
       opacity: 0.6;
       border-bottom: 1px solid var(--v2-border);
@@ -380,236 +451,277 @@ function podcastShort(podcast: string): string {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    padding: 0.75rem;
+    padding: 0.75rem 0;
     text-decoration: none !important;
     border-bottom: 1px solid var(--v2-border);
-    transition: background-color 0.12s;
+    transition: border-color 0.2s;
+  }
+
+  .v2-row:first-of-type {
+    border-top: none;
   }
 
   .v2-row:hover {
-    background-color: rgba(255, 255, 255, 0.02);
+    border-bottom-color: var(--v2-border-hover);
+  }
+
+  .v2-row:hover .v2-row-title {
+    color: var(--v2-text-0);
   }
 
   @media (min-width: 768px) {
     .v2-row {
       display: grid;
-      grid-template-columns: 5rem 9rem 1fr 12rem;
+      grid-template-columns: 3rem 1fr 9rem 5.5rem;
       gap: 1rem;
-      align-items: center;
+      align-items: baseline;
       flex-direction: row;
     }
   }
 
-  .v2-col-date {
-    font-size: 0.8125rem;
+  .v2-col-num {
+    font-size: 0.6875rem;
     font-family: var(--v2-mono);
     color: var(--v2-text-3);
-    white-space: nowrap;
+    opacity: 0.5;
+    min-width: 3rem;
   }
 
-  .v2-col-podcast {
-    font-size: 0.8125rem;
-  }
-
-  .v2-pill {
-    display: inline-block;
-    padding: 0.125rem 0.5rem;
-    font-size: 0.6875rem;
-    font-weight: 500;
-    color: var(--v2-accent);
-    background: var(--v2-accent-dim);
-    border-radius: 2px;
-    white-space: nowrap;
+  @media (max-width: 767px) {
+    .v2-col-num {
+      display: none;
+    }
   }
 
   .v2-col-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+
+  .v2-row-title {
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--v2-text-1);
     line-height: 1.4;
+    transition: color 0.2s;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
   @media (max-width: 767px) {
-    .v2-col-title {
+    .v2-row-title {
       white-space: normal;
-    }
-
-    .v2-col-tags {
-      margin-top: 0.125rem;
+      font-weight: 450;
     }
   }
 
-  .v2-ep-num {
-    font-family: var(--v2-mono);
-    font-size: 0.75rem;
-    color: var(--v2-text-3);
-    margin-left: 0.375rem;
-    font-weight: 400;
-  }
-
-  .v2-col-tags {
+  .v2-row-tags {
     display: flex;
     gap: 0.375rem;
     overflow: hidden;
   }
 
   .v2-tag {
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
+    font-family: var(--v2-mono);
     color: var(--v2-text-3);
-    background: rgba(255, 255, 255, 0.04);
-    padding: 0.0625rem 0.375rem;
-    border-radius: 2px;
+    opacity: 0.6;
     white-space: nowrap;
   }
 
+  .v2-tag::before {
+    content: '#';
+    opacity: 0.4;
+  }
+
+  .v2-col-podcast {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--v2-text-2);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 767px) {
+    .v2-col-podcast {
+      font-size: 0.6875rem;
+      color: var(--v2-accent);
+      opacity: 0.7;
+      order: -1;
+    }
+  }
+
+  .v2-col-date {
+    font-size: 0.6875rem;
+    font-family: var(--v2-mono);
+    color: var(--v2-text-3);
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  @media (max-width: 767px) {
+    .v2-col-date {
+      display: none;
+    }
+  }
+
   .v2-more {
-    margin-top: 1.25rem;
+    margin-top: 1.5rem;
   }
 
   .v2-more a {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     color: var(--v2-text-3) !important;
-    text-decoration: none;
-    transition: color 0.15s;
+    text-decoration: none !important;
+    transition: color 0.2s;
+    letter-spacing: 0.01em;
   }
 
   .v2-more a:hover {
-    color: var(--v2-text-2) !important;
+    color: var(--v2-accent) !important;
   }
 
   .v2-more a::after {
     content: ' \2192';
-    opacity: 0.5;
+    opacity: 0.4;
+    transition: opacity 0.2s;
   }
 
-  /* ── Curtas ────────────────────────────────────────── */
-
-  .v2-curtas-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1px;
-    background: var(--v2-border);
+  .v2-more a:hover::after {
+    opacity: 0.8;
   }
 
-  @media (min-width: 640px) {
-    .v2-curtas-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+  /* ── Curtas ────────────────────────────────────── */
 
-  @media (min-width: 1024px) {
-    .v2-curtas-grid {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+  .v2-curtas {
+    display: flex;
+    flex-direction: column;
   }
 
   .v2-curta {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1.25rem;
-    background: var(--v2-bg);
-    text-decoration: none !important;
-    transition: background-color 0.12s;
-    min-height: 8rem;
+    padding: 1.25rem 0 1.25rem 1rem;
+    border-left: 1px solid var(--v2-border);
+    border-bottom: 1px solid var(--v2-border);
+    transition: border-left-color 0.2s;
+  }
+
+  .v2-curta:last-child {
+    border-bottom: none;
   }
 
   .v2-curta:hover {
-    background-color: rgba(255, 255, 255, 0.015);
+    border-left-color: var(--v2-accent-medium);
   }
 
-  .v2-curta-text {
-    font-size: 0.8125rem;
-    font-family: var(--v2-mono);
-    line-height: 1.6;
-    color: var(--v2-text-2);
+  .v2-curta-quote {
     margin: 0;
-    /* no truncation */
+  }
+
+  .v2-curta-quote p {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--v2-text-1);
+    margin: 0;
+    max-width: 40rem;
   }
 
   .v2-curta-footer {
-    margin-top: 0.75rem;
+    margin-top: 0.625rem;
     display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.375rem;
   }
 
   .v2-curta-speaker {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 500;
-    color: var(--v2-text-1);
+    color: var(--v2-text-2);
+  }
+
+  .v2-curta-sep {
+    font-size: 0.625rem;
+    color: var(--v2-text-3);
+    opacity: 0.3;
   }
 
   .v2-curta-context {
     font-size: 0.6875rem;
+    font-weight: 300;
     color: var(--v2-text-3);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 16rem;
   }
 
-  /* ── Newsletter ────────────────────────────────────── */
+  /* ── Newsletter ────────────────────────────────── */
 
   .v2-newsletter {
-    padding-top: 3rem;
-    padding-bottom: 4rem;
+    padding-top: 3.5rem;
+    padding-bottom: 5rem;
   }
 
   .v2-newsletter-inner {
-    max-width: 28rem;
+    max-width: 26rem;
+  }
+
+  .v2-newsletter-title {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--v2-text-0);
+    margin-bottom: 0.375rem;
   }
 
   .v2-newsletter-desc {
     font-size: 0.8125rem;
-    color: var(--v2-text-3);
-    margin-top: 0.375rem;
-    margin-bottom: 1.25rem;
+    font-weight: 300;
+    color: var(--v2-text-2);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
   }
 
   .v2-newsletter-form {
     display: flex;
     gap: 0;
-    border: 1px solid var(--v2-border);
-    border-radius: 4px;
     overflow: hidden;
-    transition: border-color 0.15s;
+    border: 1px solid var(--v2-border);
+    border-radius: 6px;
+    transition: border-color 0.2s;
   }
 
   .v2-newsletter-form:focus-within {
-    border-color: rgba(99, 102, 241, 0.4);
+    border-color: rgba(129, 140, 248, 0.3);
   }
 
   .v2-newsletter-input {
     flex: 1;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.02);
     border: none;
     padding: 0.625rem 0.875rem;
     font-size: 0.8125rem;
-    color: var(--v2-text-1);
+    font-weight: 300;
+    color: var(--v2-text-0);
     outline: none;
-    font-family: inherit;
+    font-family: var(--v2-sans);
     min-width: 0;
   }
 
   .v2-newsletter-input::placeholder {
     color: var(--v2-text-3);
+    font-weight: 300;
   }
 
   .v2-newsletter-btn {
     background: var(--v2-accent);
     color: #fff;
     border: none;
-    padding: 0.625rem 1.25rem;
-    font-size: 0.8125rem;
+    padding: 0.625rem 1.5rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    font-family: inherit;
+    font-family: var(--v2-sans);
+    letter-spacing: 0.02em;
     cursor: pointer;
-    transition: opacity 0.15s;
+    transition: opacity 0.2s;
     white-space: nowrap;
   }
 
@@ -617,23 +729,71 @@ function podcastShort(podcast: string): string {
     opacity: 0.85;
   }
 
-  /* ── Mobile refinements ────────────────────────────── */
+  .v2-newsletter-fine {
+    font-size: 0.6875rem;
+    font-weight: 300;
+    color: var(--v2-text-3);
+    opacity: 0.5;
+    margin-top: 0.75rem;
+  }
+
+  /* ── Footer ────────────────────────────────────── */
+
+  .v2-footer {
+    border-top: 1px solid var(--v2-border);
+    padding: 2rem 1.5rem;
+  }
+
+  .v2-footer-inner {
+    max-width: var(--v2-max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .v2-footer-brand {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    color: var(--v2-text-3);
+  }
+
+  .v2-footer-sep {
+    font-size: 0.625rem;
+    color: var(--v2-text-3);
+    opacity: 0.25;
+  }
+
+  .v2-footer-link {
+    font-size: 0.6875rem;
+    font-weight: 300;
+    color: var(--v2-text-3) !important;
+    text-decoration: none !important;
+    transition: color 0.2s;
+  }
+
+  .v2-footer-link:hover {
+    color: var(--v2-text-2) !important;
+  }
+
+  /* ── Mobile ────────────────────────────────────── */
 
   @media (max-width: 639px) {
     .v2-featured {
-      padding-top: 2.5rem;
+      padding-top: 3rem;
+      padding-bottom: 2.5rem;
     }
 
     .v2-nav-links {
-      gap: 1rem;
+      gap: 1.25rem;
     }
 
-    .v2-col-date {
-      font-size: 0.75rem;
+    .v2-section {
+      padding: 2rem 1.5rem;
     }
 
-    .v2-col-podcast {
-      order: -1;
+    .v2-curta {
+      padding-left: 0.75rem;
     }
   }
 </style>

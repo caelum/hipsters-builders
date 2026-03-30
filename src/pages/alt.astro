@@ -1,0 +1,570 @@
+---
+import { getCollection } from 'astro:content';
+import EditorialLayout from '../layouts/EditorialLayout.astro';
+import { renderInlineMd } from '../utils/render-inline-md';
+import NewsletterForm from '../components/NewsletterForm.astro';
+
+const episodes = (await getCollection('episodes'))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+const curtas = (await getCollection('curtas'))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+const heroEpisode = episodes[0];
+const recentEpisodes = episodes.slice(1, 9);
+const featuredCurtas = curtas.slice(0, 6);
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+}
+
+function formatDateShort(date: Date): string {
+  return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
+}
+
+function podcastLabel(podcast: string): string {
+  if (podcast === 'Hipsters Ponto Tech') return 'Hipsters';
+  if (podcast === 'IA Sob Controle') return 'IA Sob Controle';
+  return podcast;
+}
+
+function podcastAccentClass(podcast: string): string {
+  if (podcast === 'Hipsters Ponto Tech') return 'ed-label--hipsters';
+  if (podcast === 'IA Sob Controle') return 'ed-label--ia';
+  if (podcast === 'Like a Boss') return 'ed-label--boss';
+  if (podcast === 'Mesa de Produto') return 'ed-label--mesa';
+  return 'ed-label--default';
+}
+
+function stripMd(text: string): string {
+  return text
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/\*(.+?)\*/g, '$1')
+    .replace(/\n+/g, ' ')
+    .trim();
+}
+
+/** Visual weight for curtas masonry layout */
+function weight(quote: string): 'featured' | 'standard' | 'compact' {
+  const len = stripMd(quote).length;
+  if (len > 280) return 'featured';
+  if (len < 120) return 'compact';
+  return 'standard';
+}
+---
+
+<EditorialLayout title="Inicio — Blue" description="Os melhores momentos da Hipsters Network: episodios, quotes e newsletter sobre tech">
+
+  <!-- HERO — Latest episode -->
+  {heroEpisode && (
+    <section class="home-hero">
+      <div class="home-hero__meta">
+        <span class={`ed-label ${podcastAccentClass(heroEpisode.data.podcast)}`}>
+          {podcastLabel(heroEpisode.data.podcast)}{heroEpisode.data.episodeNumber ? ` #${heroEpisode.data.episodeNumber}` : ''}
+        </span>
+        <time class="ed-meta-date" datetime={heroEpisode.data.pubDate.toISOString()}>
+          {formatDate(heroEpisode.data.pubDate)}
+        </time>
+      </div>
+      <h1 class="home-hero__title">
+        <a href={`/episodios/${heroEpisode.id}`}>{heroEpisode.data.title}</a>
+      </h1>
+      <p class="home-hero__description">{heroEpisode.data.description}</p>
+      <div class="home-hero__authors">
+        {heroEpisode.data.authors.join(', ')}
+      </div>
+
+      {heroEpisode.data.quotes.length > 0 && (
+        <aside class="home-hero__quote">
+          <div class="home-hero__quote-bar" aria-hidden="true" />
+          <blockquote>
+            <p>{heroEpisode.data.quotes[0].text}</p>
+            <footer>
+              <cite>{heroEpisode.data.quotes[0].speaker}</cite>
+              {heroEpisode.data.quotes[0].timestamp && (
+                <span class="home-hero__quote-time">{heroEpisode.data.quotes[0].timestamp}</span>
+              )}
+            </footer>
+          </blockquote>
+        </aside>
+      )}
+    </section>
+  )}
+
+  <!-- RECENT EPISODES -->
+  {recentEpisodes.length > 0 && (
+    <section class="home-section">
+      <div class="home-section__label">Episodios Recentes</div>
+      <ol class="home-episodes">
+        {recentEpisodes.map((ep) => (
+          <li class="home-ep">
+            <a href={`/episodios/${ep.id}`} class="home-ep__link">
+              <div class="home-ep__left">
+                <span class={`ed-label ed-label--sm ${podcastAccentClass(ep.data.podcast)}`}>
+                  {podcastLabel(ep.data.podcast)}
+                </span>
+                <h3 class="home-ep__title">{ep.data.title}</h3>
+              </div>
+              <time class="home-ep__date" datetime={ep.data.pubDate.toISOString()}>
+                {formatDateShort(ep.data.pubDate)}
+              </time>
+            </a>
+          </li>
+        ))}
+      </ol>
+      <div class="home-section__more">
+        <a href="/episodios">Todos os {episodes.length} episodios &rarr;</a>
+      </div>
+    </section>
+  )}
+
+  <!-- CURTAS -->
+  {featuredCurtas.length > 0 && (
+    <section class="home-section">
+      <div class="home-section__label">Curtas</div>
+      <p class="home-section__subtitle">Frases que marcaram as conversas recentes</p>
+      <div class="home-curtas">
+        {featuredCurtas.map((c, i) => {
+          const w = i === 0 ? 'featured' : weight(c.data.quote);
+          return (
+            <article class={`home-quote home-quote--${w}`}>
+              {w === 'featured' && <div class="home-quote__accent" aria-hidden="true" />}
+              <blockquote class="home-quote__body">
+                <p set:html={renderInlineMd(c.data.quote)} />
+              </blockquote>
+              <footer class="home-quote__foot">
+                <span class="home-quote__speaker">{c.data.speaker}</span>
+                <span class="home-quote__source">{c.data.context}</span>
+              </footer>
+            </article>
+          );
+        })}
+      </div>
+      <div class="home-section__more">
+        <a href="/curtas">Todas as {curtas.length} curtas &rarr;</a>
+      </div>
+    </section>
+  )}
+
+  <!-- NEWSLETTER -->
+  <section class="home-newsletter">
+    <h2 class="home-newsletter__title">Newsletter semanal</h2>
+    <p class="home-newsletter__desc">
+      Toda quarta-feira, um resumo curado dos melhores episodios e discussoes da comunidade. Direto no seu e-mail, sem ruido.
+    </p>
+    <div class="home-newsletter__form">
+      <NewsletterForm variant="block" />
+    </div>
+  </section>
+
+</EditorialLayout>
+
+<style is:global>
+  /* ============================================
+     BLUE ACCENT OVERRIDE
+     Swap red (#c4342d) for Hipsters.tech blue (#45b0ee)
+     ============================================ */
+
+  .ed-page {
+    --ed-accent: #45b0ee;
+    --ed-accent-hover: #2d8fe3;
+  }
+
+  ::selection {
+    background: rgba(69, 176, 238, 0.2);
+  }
+
+  /* Newsletter form focus ring — override hardcoded red rgba */
+  .nl-form__input:focus {
+    border-color: var(--ed-accent, #45b0ee);
+    box-shadow: 0 0 0 2px rgba(69, 176, 238, 0.15);
+  }
+</style>
+
+<style>
+  /* ============================================
+     HOMEPAGE — Editorial (identical to index.astro)
+     ============================================ */
+
+  /* --- Hero --- */
+  .home-hero {
+    display: block;
+    padding: 1.5rem 0 2.5rem;
+    border-bottom: 1px solid var(--ed-rule);
+    margin-bottom: 2.5rem;
+  }
+
+  .home-hero__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .home-hero__title {
+    display: block;
+    width: 100%;
+    font-family: var(--ed-serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ed-ink);
+    margin-bottom: 1rem;
+  }
+
+  .home-hero__title a {
+    color: inherit;
+    transition: color 0.15s;
+  }
+
+  .home-hero__title a:hover {
+    color: var(--ed-accent);
+  }
+
+  .home-hero__description {
+    font-family: var(--ed-serif);
+    font-size: clamp(1.0625rem, 2vw, 1.1875rem);
+    line-height: 1.7;
+    color: var(--ed-ink-secondary);
+    max-width: 42rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .home-hero__authors {
+    font-family: var(--ed-sans);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ed-ink-muted);
+  }
+
+  /* Hero featured quote */
+  .home-hero__quote {
+    margin-top: 2rem;
+    padding-left: 1.25rem;
+    position: relative;
+    max-width: 36rem;
+  }
+
+  .home-hero__quote-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--ed-accent);
+  }
+
+  .home-hero__quote blockquote {
+    margin: 0;
+  }
+
+  .home-hero__quote blockquote p {
+    font-family: var(--ed-serif);
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--ed-ink);
+  }
+
+  .home-hero__quote footer {
+    margin-top: 0.625rem;
+    font-family: var(--ed-sans);
+    font-size: 0.8125rem;
+  }
+
+  .home-hero__quote cite {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--ed-ink);
+  }
+
+  .home-hero__quote-time {
+    color: var(--ed-ink-faint);
+    margin-left: 0.5rem;
+  }
+
+  /* --- Shared section styles --- */
+  .home-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .home-section__label {
+    font-family: var(--ed-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ed-accent);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .home-section__subtitle {
+    font-family: var(--ed-serif);
+    font-size: 1.0625rem;
+    color: var(--ed-ink-secondary);
+    font-style: italic;
+    margin-top: -0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .home-section__more {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  .home-section__more a {
+    font-family: var(--ed-sans);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ed-accent);
+    letter-spacing: 0.01em;
+  }
+
+  .home-section__more a:hover {
+    color: var(--ed-accent-hover, #2d8fe3);
+  }
+
+  /* --- Episode list --- */
+  .home-episodes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .home-ep {
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .home-ep:last-child {
+    border-bottom: none;
+  }
+
+  .home-ep__link {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.875rem 0;
+    color: inherit;
+    text-decoration: none;
+    transition: none;
+  }
+
+  .home-ep__link:hover {
+    color: inherit;
+  }
+
+  .home-ep__link:hover .home-ep__title {
+    color: var(--ed-accent);
+  }
+
+  .home-ep__left {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+
+  .home-ep__title {
+    font-family: var(--ed-serif);
+    font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ed-ink);
+    transition: color 0.12s;
+    /* Truncate long titles on small screens */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 640px) {
+    .home-ep__title {
+      white-space: normal;
+    }
+  }
+
+  .home-ep__date {
+    font-family: var(--ed-sans);
+    font-size: 0.75rem;
+    color: var(--ed-ink-muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* --- Curtas masonry --- */
+  .home-curtas {
+    column-count: 1;
+    column-gap: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .home-curtas {
+      column-count: 2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .home-curtas {
+      column-count: 3;
+    }
+  }
+
+  .home-quote {
+    break-inside: avoid;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+
+  .home-quote--featured {
+    padding-left: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .home-quote__accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--ed-accent);
+  }
+
+  .home-quote__body {
+    margin: 0;
+  }
+
+  .home-quote__body p {
+    font-family: var(--ed-serif);
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--ed-ink);
+  }
+
+  .home-quote--featured .home-quote__body p {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7;
+  }
+
+  .home-quote--compact .home-quote__body p {
+    font-size: 0.875rem;
+  }
+
+  /* Opening quote mark */
+  .home-quote__body p::before {
+    content: '\201c';
+    font-family: var(--ed-serif);
+    font-size: 2.5em;
+    line-height: 0;
+    vertical-align: -0.35em;
+    color: var(--ed-accent);
+    opacity: 0.25;
+    margin-right: 0.05em;
+    font-weight: 700;
+  }
+
+  .home-quote--featured .home-quote__body p::before {
+    font-size: 3em;
+    opacity: 0.35;
+  }
+
+  /* Inline markdown in quotes */
+  .home-quote__body :global(strong) {
+    font-weight: 600;
+    color: var(--ed-ink);
+  }
+
+  .home-quote__body :global(em) {
+    font-style: italic;
+  }
+
+  .home-quote__body :global(a) {
+    color: var(--ed-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--ed-rule);
+    text-underline-offset: 2px;
+    word-break: break-all;
+    transition: text-decoration-color 0.12s;
+  }
+
+  .home-quote__body :global(a:hover) {
+    text-decoration-color: var(--ed-accent);
+  }
+
+  .home-quote__foot {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0.75rem;
+  }
+
+  .home-quote__speaker {
+    font-family: var(--ed-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--ed-ink);
+  }
+
+  .home-quote__source {
+    font-family: var(--ed-sans);
+    font-size: 0.6875rem;
+    color: var(--ed-ink-faint);
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+  }
+
+  /* --- Newsletter CTA --- */
+  .home-newsletter {
+    background: var(--ed-bg-warm, #f5f3ef);
+    margin: 0 -1rem 0;
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  @media (min-width: 640px) {
+    .home-newsletter {
+      margin: 0 -1.5rem 0;
+      padding: 3.5rem 2rem;
+    }
+  }
+
+  .home-newsletter__title {
+    font-family: var(--ed-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--ed-ink);
+    margin-bottom: 0.75rem;
+  }
+
+  .home-newsletter__desc {
+    font-family: var(--ed-serif);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--ed-ink-secondary);
+    max-width: 32rem;
+    margin: 0 auto 1.5rem;
+  }
+
+  .home-newsletter__form {
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+
+  /* Center the fine print from NewsletterForm */
+  .home-newsletter__form :global(.nl-form-wrap) {
+    text-align: center;
+  }
+
+  .home-newsletter__form :global(.nl-form__fine) {
+    text-align: center;
+  }
+</style>

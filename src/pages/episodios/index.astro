@@ -13,6 +13,8 @@ const totalCurtas = allCurtas.length;
 
 // Split: first 6 featured, then the rest
 const featured = episodes.slice(0, 6);
+const hero = featured[0];
+const rest = featured.slice(1);
 const remaining = episodes.slice(6);
 
 // Group remaining by month
@@ -51,311 +53,611 @@ function podcastAccentClass(podcast: string): string {
 ---
 
 <EditorialLayout title="Episodios" description="Todos os episodios de podcast da Hipsters Network" activeNav="episodios">
-  <!-- Featured episodes -->
-  <div class="ed-section__label">Destaques Recentes</div>
-  <div class="ep-featured">
-    {featured.map(ep => (
-      <article class="ep-featured-row">
-        <div class="ep-featured-row__meta">
-          <span class={`ed-label ed-label--sm ${podcastAccentClass(ep.data.podcast)}`}>
-            {podcastLabel(ep.data.podcast)}{ep.data.episodeNumber ? ` #${ep.data.episodeNumber}` : ''}
-          </span>
-          <time class="ed-meta-date" datetime={ep.data.pubDate.toISOString()}>
-            {formatDateShort(ep.data.pubDate)}
-          </time>
-        </div>
-        <h3 class="ep-featured-row__title">
-          <a href={`/episodios/${ep.id}`}>{ep.data.title}</a>
-        </h3>
-        <p class="ep-featured-row__desc">{ep.data.description}</p>
-        <div class="ep-featured-row__authors">
-          {ep.data.authors.slice(0, 3).join(', ')}
+
+  <!-- Page header -->
+  <header class="ep-header">
+    <h1 class="ep-title">Episodios</h1>
+    <p class="ep-deck">
+      {episodes.length} episodios dos podcasts da Hipsters Network,
+      transcritos e destilados em quotes e resumos.
+    </p>
+  </header>
+
+  <!-- Hero episode (first featured) -->
+  {hero && (
+    <section class="ep-hero">
+      <article class="ep-hero__card">
+        <div class="ep-hero__accent" aria-hidden="true"></div>
+        <div class="ep-hero__content">
+          <div class="ep-hero__meta">
+            <span class={`ed-label ${podcastAccentClass(hero.data.podcast)}`}>
+              {podcastLabel(hero.data.podcast)}{hero.data.episodeNumber ? ` #${hero.data.episodeNumber}` : ''}
+            </span>
+            <time class="ed-meta-date" datetime={hero.data.pubDate.toISOString()}>
+              {formatDateShort(hero.data.pubDate)}
+            </time>
+          </div>
+          <h2 class="ep-hero__title">
+            <a href={`/episodios/${hero.id}`}>{hero.data.title}</a>
+          </h2>
+          <p class="ep-hero__desc">{hero.data.description}</p>
+          <div class="ep-hero__authors">{hero.data.authors.slice(0, 3).join(', ')}</div>
+          {hero.data.quotes.length > 0 && (
+            <blockquote class="ep-hero__quote">
+              <p>&ldquo;{hero.data.quotes[0].text.slice(0, 200)}{hero.data.quotes[0].text.length > 200 ? '...' : ''}&rdquo;</p>
+              <cite>{hero.data.quotes[0].speaker}</cite>
+            </blockquote>
+          )}
         </div>
       </article>
-    ))}
-  </div>
+    </section>
+  )}
+
+  <!-- Remaining featured (2-6) -->
+  {rest.length > 0 && (
+    <section class="ep-recent">
+      <div class="ep-recent__label">
+        <svg class="ep-recent__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 18.5a6.5 6.5 0 0 0 6.5-6.5V8a6.5 6.5 0 0 0-13 0v4a6.5 6.5 0 0 0 6.5 6.5Z"/><path d="M12 18.5V22"/><path d="M8 22h8"/></svg>
+        Recentes
+      </div>
+      <div class="ep-recent__list">
+        {rest.map(ep => (
+          <article class="ep-recent__item">
+            <time class="ep-recent__date" datetime={ep.data.pubDate.toISOString()}>
+              {formatDateShort(ep.data.pubDate)}
+            </time>
+            <div class="ep-recent__body">
+              <div class="ep-recent__top">
+                <span class={`ed-label ed-label--sm ${podcastAccentClass(ep.data.podcast)}`}>
+                  {podcastLabel(ep.data.podcast)}{ep.data.episodeNumber ? ` #${ep.data.episodeNumber}` : ''}
+                </span>
+              </div>
+              <h3 class="ep-recent__title">
+                <a href={`/episodios/${ep.id}`}>{ep.data.title}</a>
+              </h3>
+              <p class="ep-recent__desc">{ep.data.description}</p>
+              <div class="ep-recent__authors">{ep.data.authors.slice(0, 3).join(', ')}</div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
 
   <!-- Curtas interlude -->
   {curtas.length > 0 && (
-    <section class="ep-curtas-break">
-      <div class="ed-section__label">Curtas</div>
-      <p class="ep-curtas-break__subtitle">Frases que marcaram as conversas recentes</p>
-      <div class="ep-curtas-grid">
-        {curtas.slice(0, 4).map(c => (
-          <article class="ep-curta-card">
-            <blockquote class="ep-curta-card__quote">
+    <section class="ep-curtas">
+      <div class="ep-curtas__label">
+        <svg class="ep-curtas__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        Curtas
+      </div>
+      <p class="ep-curtas__deck">Frases que marcaram as conversas recentes</p>
+      <div class="ep-curtas__masonry">
+        {curtas.slice(0, 4).map((c, i) => (
+          <article class={`ep-curta ${i === 0 ? 'ep-curta--featured' : ''}`}>
+            {i === 0 && <div class="ep-curta__accent" aria-hidden="true" />}
+            <blockquote class="ep-curta__body">
               <p set:html={renderInlineMd(c.data.quote)} />
             </blockquote>
-            <footer class="ep-curta-card__footer">
-              <cite class="ep-curta-card__speaker">{c.data.speaker}</cite>
-              <span class="ep-curta-card__context">{c.data.context}</span>
+            <footer class="ep-curta__foot">
+              <span class="ep-curta__speaker">{c.data.speaker}</span>
+              <span class="ep-curta__source">{c.data.context}</span>
             </footer>
           </article>
         ))}
       </div>
-      <div class="ep-curtas-break__more">
+      <div class="ep-curtas__more">
         <a href="/curtas">Ver todas as {totalCurtas} curtas &rarr;</a>
       </div>
     </section>
   )}
 
-  <!-- Remaining episodes by month -->
-  <div class="ed-section__label">Todos os Episodios</div>
-  <p class="ep-count">{episodes.length} episodios da Hipsters Network</p>
+  <!-- All episodes by month -->
+  <section class="ep-archive">
+    <div class="ep-archive__label">
+      <svg class="ep-archive__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Arquivo
+    </div>
 
-  {[...byMonth.entries()].map(([key, eps]) => (
-    <section class="ep-month-group">
-      <h2 class="ep-month-label">{monthLabel(key)}</h2>
-      <div class="ep-list">
-        {eps.map(ep => (
-          <article class="ep-row">
-            <div class="ep-row__meta">
-              <span class={`ed-label ed-label--sm ${podcastAccentClass(ep.data.podcast)}`}>
-                {podcastLabel(ep.data.podcast)}{ep.data.episodeNumber ? ` #${ep.data.episodeNumber}` : ''}
-              </span>
-              <time class="ed-meta-date" datetime={ep.data.pubDate.toISOString()}>
+    {[...byMonth.entries()].map(([key, eps]) => (
+      <div class="ep-month">
+        <h2 class="ep-month__label">{monthLabel(key)}</h2>
+        <div class="ep-month__list">
+          {eps.map(ep => (
+            <article class="ep-row">
+              <time class="ep-row__date" datetime={ep.data.pubDate.toISOString()}>
                 {formatDateShort(ep.data.pubDate)}
               </time>
-            </div>
-            <h3 class="ep-row__title">
-              <a href={`/episodios/${ep.id}`}>{ep.data.title}</a>
-            </h3>
-            <p class="ep-row__desc">{ep.data.description}</p>
-            <div class="ep-row__authors">
-              {ep.data.authors.slice(0, 3).join(', ')}
-            </div>
-          </article>
-        ))}
+              <div class="ep-row__body">
+                <div class="ep-row__top">
+                  <span class={`ed-label ed-label--sm ${podcastAccentClass(ep.data.podcast)}`}>
+                    {podcastLabel(ep.data.podcast)}{ep.data.episodeNumber ? ` #${ep.data.episodeNumber}` : ''}
+                  </span>
+                </div>
+                <h3 class="ep-row__title">
+                  <a href={`/episodios/${ep.id}`}>{ep.data.title}</a>
+                </h3>
+                <p class="ep-row__desc">{ep.data.description}</p>
+                <div class="ep-row__authors">{ep.data.authors.slice(0, 3).join(', ')}</div>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
-    </section>
-  ))}
+    ))}
+  </section>
+
 </EditorialLayout>
 
 <style>
-  /* ======= FEATURED EPISODES ======= */
-  .ep-featured {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2.5rem;
+  /* ============================================
+     EPISODIOS — Editorial listing
+     Newspaper front page meets podcast archive
+     ============================================ */
+
+  /* --- Page header --- */
+  .ep-header {
+    max-width: 38rem;
+    padding: 1rem 0 2rem;
   }
 
-  .ep-featured-row {
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--ed-rule);
+  .ep-title {
+    font-family: var(--ed-serif);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--ed-ink);
+    margin-bottom: 0.75rem;
   }
 
-  .ep-featured-row:last-child {
-    border-bottom: 2px solid var(--ed-rule-strong);
+  .ep-deck {
+    font-family: var(--ed-serif);
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
+    color: var(--ed-ink-secondary);
   }
 
-  .ep-featured-row__meta {
+  /* ======= HERO EPISODE (first featured) ======= */
+  .ep-hero {
+    margin-bottom: 3rem;
+  }
+
+  .ep-hero__card {
+    position: relative;
+    padding-left: 1.25rem;
+  }
+
+  .ep-hero__accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--ed-accent);
+  }
+
+  .ep-hero__meta {
     display: flex;
     align-items: center;
-    gap: 0.625rem;
-    margin-bottom: 0.375rem;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
   }
 
-  .ep-featured-row__title {
+  .ep-hero__title {
     font-family: var(--ed-serif);
-    font-size: 1.125rem;
-    font-weight: 600;
-    line-height: 1.35;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
     color: var(--ed-ink);
+    margin-bottom: 0.75rem;
+  }
+
+  .ep-hero__title a:hover {
+    color: var(--ed-accent);
+  }
+
+  .ep-hero__desc {
+    font-family: var(--ed-serif);
+    font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
+    line-height: 1.7;
+    color: var(--ed-ink-secondary);
+    margin-bottom: 0.625rem;
+    max-width: 42rem;
+  }
+
+  .ep-hero__authors {
+    font-family: var(--ed-sans);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ed-ink-muted);
+  }
+
+  .ep-hero__quote {
+    margin-top: 1.25rem;
+    padding: 0;
+    max-width: 36rem;
+  }
+
+  .ep-hero__quote p {
+    font-family: var(--ed-serif);
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--ed-ink-secondary);
+  }
+
+  .ep-hero__quote p::before {
+    content: '';
+  }
+
+  .ep-hero__quote cite {
+    display: block;
+    font-family: var(--ed-sans);
+    font-style: normal;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--ed-ink-muted);
+    margin-top: 0.5rem;
+  }
+
+  /* ======= RECENT EPISODES (2-6) ======= */
+  .ep-recent {
+    margin-bottom: 3.5rem;
+  }
+
+  .ep-recent__label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--ed-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ed-ink-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .ep-recent__icon {
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.5;
+  }
+
+  .ep-recent__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ep-recent__item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 1.5rem 0;
+  }
+
+  @media (min-width: 640px) {
+    .ep-recent__item {
+      grid-template-columns: 5rem 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  .ep-recent__item + .ep-recent__item {
+    border-top: 1px solid var(--ed-rule);
+  }
+
+  .ep-recent__date {
+    font-family: var(--ed-sans);
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--ed-ink-faint);
+    padding-top: 0.25rem;
     margin-bottom: 0.375rem;
   }
 
   @media (min-width: 640px) {
-    .ep-featured-row__title {
-      font-size: 1.25rem;
+    .ep-recent__date {
+      margin-bottom: 0;
     }
   }
 
-  .ep-featured-row__title a:hover {
-    color: var(--ed-accent);
-  }
-
-  .ep-featured-row__desc {
-    font-size: 0.875rem;
-    line-height: 1.55;
-    color: var(--ed-ink-secondary);
+  .ep-recent__top {
     margin-bottom: 0.375rem;
   }
 
-  .ep-featured-row__authors {
+  .ep-recent__title {
+    font-family: var(--ed-serif);
+    font-size: clamp(1.0625rem, 2.2vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--ed-ink);
+    margin-bottom: 0.375rem;
+  }
+
+  .ep-recent__title a:hover {
+    color: var(--ed-accent);
+  }
+
+  .ep-recent__desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--ed-ink-secondary);
+    margin-bottom: 0.375rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @media (min-width: 640px) {
+    .ep-recent__desc {
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+  }
+
+  .ep-recent__authors {
+    font-family: var(--ed-sans);
     font-size: 0.75rem;
     color: var(--ed-ink-muted);
   }
 
   /* ======= CURTAS INTERLUDE ======= */
-  .ep-curtas-break {
-    margin-bottom: 2.5rem;
-    padding: 2rem 0;
+  .ep-curtas {
+    margin-bottom: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--ed-rule);
   }
 
-  .ep-curtas-break__subtitle {
+  .ep-curtas__label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--ed-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ed-ink-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .ep-curtas__icon {
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.5;
+  }
+
+  .ep-curtas__deck {
     font-family: var(--ed-serif);
     font-size: 1rem;
     color: var(--ed-ink-secondary);
-    margin-top: -0.75rem;
-    margin-bottom: 1.5rem;
     font-style: italic;
+    margin-bottom: 2rem;
   }
 
-  .ep-curtas-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1px;
-    background: var(--ed-rule);
-    border: 1px solid var(--ed-rule);
+  .ep-curtas__masonry {
+    column-count: 1;
+    column-gap: 2rem;
   }
 
   @media (min-width: 640px) {
-    .ep-curtas-grid {
-      grid-template-columns: 1fr 1fr;
+    .ep-curtas__masonry {
+      column-count: 2;
     }
   }
 
-  .ep-curta-card {
-    background: var(--ed-bg);
-    padding: 1.25rem;
+  .ep-curta {
+    break-inside: avoid;
+    margin-bottom: 2rem;
+    position: relative;
   }
 
-  .ep-curta-card__quote {
-    margin: 0 0 0.75rem;
+  .ep-curta--featured {
+    padding-left: 1.25rem;
+    margin-bottom: 2.5rem;
   }
 
-  .ep-curta-card__quote p {
+  .ep-curta__accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--ed-accent);
+  }
+
+  .ep-curta__body {
+    margin: 0;
+  }
+
+  .ep-curta__body p {
     font-family: var(--ed-serif);
     font-size: 0.9375rem;
-    font-style: italic;
-    line-height: 1.6;
+    line-height: 1.75;
     color: var(--ed-ink);
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
-  .ep-curta-card__quote p::before {
-    content: '\201C';
-    font-size: 1.4em;
+  .ep-curta--featured .ep-curta__body p {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+
+  /* Opening quote mark */
+  .ep-curta__body p::before {
+    content: '\201c';
+    font-family: var(--ed-serif);
+    font-size: 2.5em;
     line-height: 0;
-    vertical-align: -0.2em;
+    vertical-align: -0.35em;
     color: var(--ed-accent);
-    margin-right: 0.1em;
+    opacity: 0.25;
+    margin-right: 0.05em;
+    font-weight: 700;
   }
 
-  /* Inline markdown in curtas interlude */
-  .ep-curta-card__quote :global(strong) {
-    font-style: normal;
-    font-weight: 600;
+  .ep-curta--featured .ep-curta__body p::before {
+    font-size: 3em;
+    opacity: 0.35;
   }
 
-  .ep-curta-card__quote :global(em) {
-    font-style: italic;
-  }
-
-  .ep-curta-card__quote :global(a) {
-    color: var(--ed-accent);
-    border-bottom: 1px solid var(--ed-rule);
-  }
-
-  .ep-curta-card__quote :global(.quote-img) {
-    display: none; /* hide images in preview cards */
-  }
-
-  .ep-curta-card__footer {
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-  }
-
-  .ep-curta-card__speaker {
-    font-style: normal;
-    font-size: 0.8125rem;
+  /* Inline markdown in curtas */
+  .ep-curta__body :global(strong) {
     font-weight: 600;
     color: var(--ed-ink);
   }
 
-  .ep-curta-card__context {
+  .ep-curta__body :global(em) {
+    font-style: italic;
+  }
+
+  .ep-curta__body :global(a) {
+    color: var(--ed-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--ed-rule);
+    text-underline-offset: 2px;
+    word-break: break-all;
+  }
+
+  .ep-curta__body :global(.quote-img) {
+    display: none;
+  }
+
+  .ep-curta__foot {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0.75rem;
+  }
+
+  .ep-curta__speaker {
+    font-family: var(--ed-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--ed-ink);
+  }
+
+  .ep-curta__source {
+    font-family: var(--ed-sans);
     font-size: 0.6875rem;
-    color: var(--ed-ink-muted);
+    color: var(--ed-ink-faint);
+    line-height: 1.4;
   }
 
-  .ep-curtas-break__more {
-    margin-top: 1rem;
+  .ep-curtas__more {
+    margin-top: 0.5rem;
   }
 
-  .ep-curtas-break__more a {
+  .ep-curtas__more a {
+    font-family: var(--ed-sans);
     font-size: 0.8125rem;
     font-weight: 500;
     color: var(--ed-accent);
   }
 
-  .ep-curtas-break__more a:hover {
+  .ep-curtas__more a:hover {
     color: var(--ed-accent-hover);
   }
 
-  /* ======= REMAINING EPISODES ======= */
-  .ep-count {
-    font-family: var(--ed-serif);
-    font-size: 1.0625rem;
-    color: var(--ed-ink-secondary);
-    margin-top: -0.75rem;
-    margin-bottom: 2.5rem;
-    font-style: italic;
+  /* ======= ARCHIVE (all episodes by month) ======= */
+  .ep-archive {
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--ed-rule);
   }
 
-  .ep-month-group {
-    margin-bottom: 2.5rem;
-  }
-
-  .ep-month-label {
+  .ep-archive__label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-family: var(--ed-sans);
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--ed-ink-muted);
+    margin-bottom: 2rem;
+  }
+
+  .ep-archive__icon {
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.5;
+  }
+
+  .ep-month {
+    margin-bottom: 2.5rem;
+  }
+
+  .ep-month__label {
+    font-family: var(--ed-serif);
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ed-ink);
+    text-transform: capitalize;
     padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--ed-rule);
     margin-bottom: 0;
   }
 
-  .ep-list {
+  .ep-month__list {
     display: flex;
     flex-direction: column;
   }
 
   .ep-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
     padding: 1.25rem 0;
-    border-bottom: 1px solid var(--ed-rule);
   }
 
-  .ep-row:last-child {
-    border-bottom: none;
+  @media (min-width: 640px) {
+    .ep-row {
+      grid-template-columns: 5rem 1fr;
+      gap: 1.5rem;
+    }
   }
 
-  .ep-row__meta {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    margin-bottom: 0.375rem;
+  .ep-row + .ep-row {
+    border-top: 1px solid color-mix(in srgb, var(--ed-rule) 50%, transparent);
+  }
+
+  .ep-row__date {
+    font-family: var(--ed-sans);
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--ed-ink-faint);
+    padding-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .ep-row__date {
+      margin-bottom: 0;
+    }
+  }
+
+  .ep-row__top {
+    margin-bottom: 0.25rem;
   }
 
   .ep-row__title {
     font-family: var(--ed-serif);
-    font-size: 1rem;
+    font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
     font-weight: 600;
     line-height: 1.35;
     color: var(--ed-ink);
-    margin-bottom: 0.375rem;
-  }
-
-  @media (min-width: 640px) {
-    .ep-row__title {
-      font-size: 1.125rem;
-    }
+    margin-bottom: 0.25rem;
   }
 
   .ep-row__title a:hover {
@@ -366,9 +668,9 @@ function podcastAccentClass(podcast: string): string {
     font-size: 0.8125rem;
     line-height: 1.55;
     color: var(--ed-ink-secondary);
-    margin-bottom: 0.375rem;
+    margin-bottom: 0.25rem;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -382,7 +684,8 @@ function podcastAccentClass(podcast: string): string {
   }
 
   .ep-row__authors {
-    font-size: 0.75rem;
+    font-family: var(--ed-sans);
+    font-size: 0.6875rem;
     color: var(--ed-ink-muted);
   }
 </style>
