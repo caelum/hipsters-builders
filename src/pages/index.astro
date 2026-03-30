@@ -22,7 +22,7 @@ function formatDate(date: Date): string {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A newsletter semanal para quem esta buildando software no Brasil. Destaques dos podcasts Hipsters e IA Sob Controle, discussoes da comunidade e os melhores links da semana." />
-    <link rel="canonical" href="https://hipsters.builders/" />
+    <link rel="canonical" href="https://caelum.github.io/hipsters-builders/" />
     <link rel="alternate" type="application/rss+xml" title="Hipsters Builders RSS" href="/rss.xml" />
 
     <!-- Fonts -->
@@ -42,6 +42,7 @@ function formatDate(date: Date): string {
       <div class="hero__inner">
         <div class="hero__brand">
           <span class="brand__h">Hipsters</span><span class="brand__dot">.</span><span class="brand__b">builders</span>
+          <span class="beta-badge">BETA</span>
         </div>
 
         <p class="hero__eyebrow reveal">A newsletter da comunidade builder</p>
@@ -344,6 +345,20 @@ function formatDate(date: Date): string {
     font-family: var(--font-serif);
     font-weight: 400;
     color: var(--lp-ink-secondary);
+  }
+
+  .beta-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.5em;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--lp-clay);
+    border: 1px solid var(--lp-clay);
+    padding: 0.15em 0.5em;
+    border-radius: 3px;
+    vertical-align: super;
+    margin-left: 0.3em;
   }
 
   .brand__h--sm, .brand__dot--sm, .brand__b--sm {
