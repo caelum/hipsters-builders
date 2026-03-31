@@ -50,29 +50,39 @@ async function subscribe(req: Request, env: Env): Promise<Response> {
   const normalized = email.toLowerCase().trim();
 
   try {
-    // Create contact as pending (unsubscribed)
-    await resend(env, `/audiences/${AUDIENCE_ID}/contacts`, 'POST', {
-      email: normalized, unsubscribed: true,
-    });
-
-    // Build confirmation link
+    // Try to send confirmation email first
     const token = await makeToken(normalized, env.RESEND_API_KEY);
     const workerOrigin = new URL(req.url).origin;
     const confirmUrl = `${workerOrigin}/confirm?t=${token}`;
 
-    // Send confirmation email
-    await resend(env, '/emails', 'POST', {
-      from: FROM_EMAIL,
-      to: normalized,
-      subject: 'Confirme sua inscricao no Hipsters Builders',
-      html: confirmHtml(confirmUrl),
-      text: confirmText(confirmUrl),
+    let emailSent = false;
+    try {
+      await resend(env, '/emails', 'POST', {
+        from: FROM_EMAIL,
+        to: normalized,
+        subject: 'Confirme sua inscricao no Hipsters Builders',
+        html: confirmHtml(confirmUrl),
+        text: confirmText(confirmUrl),
+      });
+      emailSent = true;
+    } catch (emailErr) {
+      // Domain not verified yet — fall back to direct subscribe
+      console.error('Email send failed (domain not verified?):', emailErr);
+    }
+
+    // Create contact: pending if email sent, active if not
+    await resend(env, `/audiences/${AUDIENCE_ID}/contacts`, 'POST', {
+      email: normalized, unsubscribed: emailSent,
     });
 
-    return json({ success: true, message: 'Enviamos um e-mail de confirmacao. Confere sua inbox!' });
+    if (emailSent) {
+      return json({ success: true, message: 'Enviamos um e-mail de confirmacao. Confere sua inbox!' });
+    } else {
+      return json({ success: true, message: 'Inscricao confirmada! Voce vai receber a proxima edicao.' });
+    }
   } catch (err: any) {
     if (err?.message?.includes('already exists') || err?.message?.includes('409')) {
-      return json({ success: true, message: 'Enviamos um e-mail de confirmacao. Confere sua inbox!' });
+      return json({ success: true, message: 'Voce ja esta inscrito!' });
     }
     console.error('subscribe:', err);
     return json({ success: false, message: 'Erro ao inscrever. Tente novamente.' }, 500);
