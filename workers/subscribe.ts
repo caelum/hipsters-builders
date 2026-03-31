@@ -9,7 +9,7 @@
  */
 
 const AUDIENCE_ID = '1f0625e7-1208-4c1b-8a94-60c2ca2437e8';
-const SITE_URL = 'https://caelum.github.io/hipsters-builders';
+const SITE_URL = 'https://builders.hipsters.tech';
 const FROM_EMAIL = 'Hipsters Builders <onboarding@resend.dev>';
 const TOKEN_TTL_MS = 48 * 60 * 60 * 1000;
 

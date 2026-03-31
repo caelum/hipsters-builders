@@ -4,8 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://caelum.github.io',
-  base: '/hipsters-builders',
+  site: 'https://builders.hipsters.tech',
   server: { port: 3323 },
   output: 'static',
   integrations: [sitemap()],
