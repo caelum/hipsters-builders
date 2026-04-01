@@ -10,7 +10,8 @@
 
 const AUDIENCE_ID = '1f0625e7-1208-4c1b-8a94-60c2ca2437e8';
 const SITE_URL = 'https://builders.hipsters.tech';
-const FROM_EMAIL = 'Hipsters Builders <onboarding@resend.dev>';
+const FROM_EMAIL = 'Hipsters Builders <builders@hipsters.tech>';
+const REPLY_TO = 'noreply@hipsters.tech';
 const TOKEN_TTL_MS = 48 * 60 * 60 * 1000;
 
 const CORS = {
@@ -59,8 +60,9 @@ async function subscribe(req: Request, env: Env): Promise<Response> {
     try {
       await resend(env, '/emails', 'POST', {
         from: FROM_EMAIL,
+        replyTo: REPLY_TO,
         to: normalized,
-        subject: 'Confirme sua inscricao no Hipsters Builders',
+        subject: 'Confirme sua inscrição no Hipsters Builders',
         html: confirmHtml(confirmUrl),
         text: confirmText(confirmUrl),
       });
