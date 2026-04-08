@@ -707,8 +707,32 @@ async function main() {
   // Write outputs
   await mkdir(dataDir, { recursive: true });
 
-  // signals.json — deduped signals, metadata only (no body/summary for privacy)
-  const signalsOut = dedupedSignals.map(s => ({
+  // Filter low-value signals from public output (logistics, events, internal comms)
+  const LOW_VALUE_TAGS = new Set([
+    "eventos", "eventos presenciais", "inscrição", "acesso gratuito",
+    "gestão de comunidade", "logística", "sympla", "confirmação",
+    "tools discovery", "comunidade",
+  ]);
+  const LOW_VALUE_TOPICS = [
+    "inscrição", "presença", "sympla", "evento pago", "confirmação",
+    "acesso sem custo", "compartilham referências sobre ferrament",
+  ];
+
+  const filteredSignals = dedupedSignals.filter(s => {
+    const topicLower = (s.topic || "").toLowerCase();
+    if (LOW_VALUE_TOPICS.some(kw => topicLower.includes(kw))) return false;
+    const tagSet = new Set(s.tags.map(t => t.toLowerCase()));
+    const lowTagCount = [...tagSet].filter(t => LOW_VALUE_TAGS.has(t)).length;
+    // Skip if majority of tags are low-value
+    if (tagSet.size > 0 && lowTagCount >= tagSet.size * 0.5) return false;
+    return true;
+  });
+
+  const filtered = dedupedSignals.length - filteredSignals.length;
+  if (filtered > 0) console.log(`[build-signals] Filtered ${filtered} low-value signals (events, logistics)`);
+
+  // signals.json — deduped + filtered signals, metadata only
+  const signalsOut = filteredSignals.map(s => ({
     id: s.id,
     source: s.source,
     sourceLabel: s.sourceLabel,

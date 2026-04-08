@@ -474,24 +474,6 @@
     "messageCount": 3
   },
   {
-    "id": "whatsapp-clauders-2026-04-03-004",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-04-03T19:03:08.000Z",
-    "authors": [
-      "Mauricio Aniche",
-      "Paulo Silveira",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "eventos presenciais",
-      "gestão de comunidade"
-    ],
-    "topic": "Discussão interna sobre confirmação de presença de um membro em evento presencial e possíveis questões de conduta.",
-    "linkCount": 0,
-    "messageCount": 9
-  },
-  {
     "id": "whatsapp-clauders-2026-04-02-008",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -976,24 +958,6 @@
       "definicao-inteligencia"
     ],
     "topic": "Recomendação de episódio do podcast 'IA Sob Controle' com Adrian Valentim discutindo o significado de inteligência na era dos LLMs, limites dos modelos e futuro da IA.",
-    "linkCount": 1,
-    "messageCount": 3
-  },
-  {
-    "id": "whatsapp-clauders-2026-03-25-002",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-25T14:30:50.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Rafael Ribeiro"
-    ],
-    "tags": [
-      "claude-code",
-      "auto-dream",
-      "memoria-agentes"
-    ],
-    "topic": "Confirmação de testes com Auto-dream do Claude Code, com vídeo demostrativo sobre como o recurso resolve problemas de memória em sessões longas.",
     "linkCount": 1,
     "messageCount": 3
   },
@@ -1854,26 +1818,6 @@
     "messageCount": 3
   },
   {
-    "id": "whatsapp-clauders-2026-03-18-004",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-18T11:20:20.000Z",
-    "authors": [
-      "Mauricio Aniche",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "eventos",
-      "comunidade",
-      "educação",
-      "inscrição",
-      "acesso gratuito"
-    ],
-    "topic": "Mauricio Aniche questiona sobre inscrição em evento pago via Sympla e solicita orientação sobre acesso sem custo.",
-    "linkCount": 0,
-    "messageCount": 3
-  },
-  {
     "id": "whatsapp-clauders-2026-03-18-002",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -2375,25 +2319,6 @@
     "topic": "Discussão interna sobre pitch de produtos educacionais com IA e ganhos reais de produtividade, questionando modelos genéricos tipo 'Duolingo de tudo' e analisando como IA beneficia apenas top performers, não usuários médios.",
     "linkCount": 3,
     "messageCount": 20
-  },
-  {
-    "id": "whatsapp-clauders-2026-03-11-003",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-11T20:05:08.000Z",
-    "authors": [
-      "Mauricio Aniche",
-      "Marcell Almeida",
-      "Rafael Ribeiro"
-    ],
-    "tags": [
-      "tools discovery",
-      "wondering app",
-      "code review"
-    ],
-    "topic": "Membros da comunidade compartilham referências sobre ferramentas e discutem participação em eventos, incluindo menção ao app Wondering para descoberta de tools.",
-    "linkCount": 2,
-    "messageCount": 5
   },
   {
     "id": "whatsapp-clauders-2026-03-11-002",
