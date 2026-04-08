@@ -14,10 +14,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.85.0",
     "@astrojs/node": "^10.0.4",
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.0",
     "astro": "^6.0.8",
+    "dotenv": "^17.4.1",
     "force-graph": "^1.51.2",
     "gray-matter": "^4.0.3",
     "resend": "^6.9.4"

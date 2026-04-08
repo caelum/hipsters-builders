@@ -18,6 +18,11 @@ interface Story {
   links: Array<{ url: string; title?: string; description?: string; image?: string; site?: string }>;
   sourceGroups: string[];
   conversation: ConversationMsg[];
+  editorial?: {
+    title: string;
+    subtitle: string;
+    body: string;
+  };
   messageCount: number;
   authorCount: number;
   linkCount: number;
@@ -80,8 +85,12 @@ const renderText = (text: string) => {
             </div>
 
             <h2 class="story__title">
-              <a href={`#${story.id}`}>{story.title}</a>
+              <a href={`#${story.id}`}>{story.editorial?.title || story.title}</a>
             </h2>
+
+            {story.editorial?.subtitle && (
+              <p class="story__subtitle">{story.editorial.subtitle}</p>
+            )}
 
             {story.links.length > 0 && (
               <div class="story__links">
@@ -102,14 +111,18 @@ const renderText = (text: string) => {
               </div>
             )}
 
-            <div class="story__conversation">
-              {story.conversation.map((msg) => (
-                <div class="story__msg">
-                  <span class="story__msg-author">{msg.author}{msg.time ? ` · ${msg.time}` : ""}</span>
-                  <p class="story__msg-text" set:html={renderText(msg.text)} />
-                </div>
-              ))}
-            </div>
+            {story.editorial?.body ? (
+              <div class="story__editorial ed-prose" set:html={story.editorial.body} />
+            ) : (
+              <div class="story__conversation">
+                {story.conversation.map((msg) => (
+                  <div class="story__msg">
+                    <span class="story__msg-author">{msg.author}{msg.time ? ` · ${msg.time}` : ""}</span>
+                    <p class="story__msg-text" set:html={renderText(msg.text)} />
+                  </div>
+                ))}
+              </div>
+            )}
 
             {story.tags.length > 0 && (
               <div class="story__tags">
@@ -179,6 +192,31 @@ const renderText = (text: string) => {
 
   .story__title a {
     color: inherit;
+  }
+
+  .story__subtitle {
+    font-family: var(--ed-serif);
+    font-size: 0.9375rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ed-ink-secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .story__editorial {
+    font-family: var(--ed-serif);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--ed-ink-secondary);
+  }
+
+  .story__editorial :global(p) {
+    margin-bottom: 0.75rem;
+  }
+
+  .story__editorial :global(strong) {
+    color: var(--ed-ink);
+    font-weight: 600;
   }
 
   .story__links {

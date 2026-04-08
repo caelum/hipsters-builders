@@ -98,7 +98,7 @@ function formatDate(date: Date): string {
                 <span class="latest-story__date">
                   {new Date(story.date).toLocaleDateString("pt-BR", { day: "2-digit", month: "short" })}
                 </span>
-                <span class="latest-story__title">{story.title}</span>
+                <span class="latest-story__title">{story.editorial?.title || story.title}</span>
                 <span class="latest-story__meta">
                   {story.authorCount} pessoas · {story.messageCount} msgs
                 </span>
