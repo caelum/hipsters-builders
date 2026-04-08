@@ -95,10 +95,8 @@ const renderText = (text: string) => {
             {story.links.length > 0 && (
               <div class="story__links">
                 {story.links.slice(0, 2).map(link => (
-                  <a href={link.url} target="_blank" rel="noopener" class={`link-card ${link.image ? "link-card--rich" : ""}`}>
-                    {link.image && (
-                      <img src={link.image} alt="" class="link-card__img" loading="lazy" />
-                    )}
+                  <a href={link.url} target="_blank" rel="noopener" class="link-card link-card--rich">
+                    <img src={link.image || `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(link.url)}&size=128`} alt="" class="link-card__img" loading="lazy" />
                     <div class="link-card__body">
                       <span class="link-card__site">{link.site || new URL(link.url).hostname}</span>
                       <span class="link-card__title">{link.title || link.url}</span>

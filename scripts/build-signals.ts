@@ -141,6 +141,11 @@ interface Story {
   authorCount: number;
   linkCount: number;
   weight: number; // engagement score: msgs + authors*3 + links*2
+  editorial?: {
+    title: string;
+    subtitle: string;
+    body: string;
+  };
 }
 
 interface GraphNode {
@@ -553,6 +558,22 @@ async function main() {
     for (const g of s.sourceGroups) bySource.set(g, (bySource.get(g) || 0) + 1);
   }
   for (const [src, count] of bySource) console.log(`  ${src}: ${count} stories`);
+
+  // Preserve editorial content from existing stories.json
+  const storiesJsonPath = join(dataDir, "stories.json");
+  try {
+    const existing: Story[] = JSON.parse(await readFile(storiesJsonPath, "utf-8"));
+    const editorialMap = new Map<string, Story["editorial"]>();
+    for (const s of existing) {
+      if (s.editorial) editorialMap.set(s.id, s.editorial);
+    }
+    let preserved = 0;
+    for (const story of stories) {
+      const ed = editorialMap.get(story.id);
+      if (ed) { story.editorial = ed; preserved++; }
+    }
+    if (preserved > 0) console.log(`[build-signals] Preserved ${preserved} editorial entries from existing stories.json`);
+  } catch { /* no existing file */ }
 
   // Enrich links with OG metadata
   await loadOGCache();
