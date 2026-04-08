@@ -22,11 +22,34 @@ Paulo Silveira — Chief Visionary Officer, Grupo Alun. Co-founder of Alura.
 ## Commands
 
 ```bash
-npm run sync     # vault -> content collections (episodes, curtas, newsletters)
-npm run dev      # dev server (port 4321)
-npm run build    # sync + astro build
-npx astro preview  # preview production build locally
+npm run sync           # vault -> content collections (episodes, curtas, newsletters)
+npm run build-signals  # vault signals -> src/data/{signals,stories,graph}.json + OG enrichment
+npm run dev            # dev server (port 3323)
+npm run build          # sync + build-signals + astro build
+npx astro preview      # preview production build locally
 ```
+
+### Signals pipeline (build-signals.ts)
+
+Reads 3 sources from Stromae vault, normalizes, groups by thread, filters quality, enriches links with OG metadata, builds graph. Outputs `signals.json`, `stories.json`, `graph.json` to `src/data/`.
+
+Sources: `signals/telegram-groups/` (Hipsters Bot) + `signals/internal/whatsapp-clauders-*` + `signals/internal/whatsapp-ia-sob-controle-*`.
+**DO NOT include**: Builders SP WhatsApp group (large, excluded), unnamed group IDs (`whatsapp-12036*`).
+
+Story quality: needs 2+ messages with >200 chars OR 1 message >300 chars.
+
+### Editorial pass (editorialize-stories.ts)
+
+Runs **Sonnet** on each story to generate editorial content: short title, subtitle, body with indirect speech + direct quotes. Run separately (not in build pipeline — costs ~$0.50 for all stories):
+
+```bash
+npx tsx scripts/editorialize-stories.ts              # process all unedited stories
+npx tsx scripts/editorialize-stories.ts --limit 5    # process 5 stories
+npx tsx scripts/editorialize-stories.ts --force      # reprocess all (even already done)
+npx tsx scripts/editorialize-stories.ts --dry-run    # preview without writing
+```
+
+Requires ANTHROPIC_API_KEY (loads from .env or ~/pkm/.env).
 
 ### sync-content.ts options
 
