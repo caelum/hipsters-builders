@@ -407,35 +407,21 @@ async function main() {
   allSignals.push(...tgSignals);
   console.log(`  Telegram: ${tgSignals.length} signals`);
 
-  // 2. WhatsApp Clauders (multiple naming patterns)
-  // Named: whatsapp-clauders-*, wa-clauders-*
-  // Group IDs: 120363154248832196 (Clauders), 120363425465757403 (Clauders liderança)
-  const CLAUDERS_PATTERNS = [
-    "whatsapp-clauders-",
-    "wa-clauders-",
-    "whatsapp-120363154248832196-g-us-",
-    "whatsapp-120363425465757403-g-us-",
-  ];
+  // 2. WhatsApp Clauders (only explicitly named files)
+  // IMPORTANT: Do NOT include unnamed group IDs (whatsapp-12036*) — may be Builders SP (large group, excluded)
   const claudersSignals = await readSignalsFromDir(
     join(vaultPath, "signals", "internal"),
-    (f) => CLAUDERS_PATTERNS.some(p => f.startsWith(p)),
+    (f) => f.startsWith("whatsapp-clauders-"),
     "whatsapp-clauders",
     "Clauders",
   );
   allSignals.push(...claudersSignals);
   console.log(`  Clauders: ${claudersSignals.length} signals`);
 
-  // 3. WhatsApp IA Sob Controle (multiple naming patterns)
-  // Named: whatsapp-ia-sob-controle-*, wa-ia-sob-controle-*
-  // Group ID: 120363408138765885
-  const SOB_CONTROLE_PATTERNS = [
-    "whatsapp-ia-sob-controle-",
-    "wa-ia-sob-controle-",
-    "whatsapp-120363408138765885-g-us-",
-  ];
+  // 3. WhatsApp IA Sob Controle (only explicitly named files)
   const sobControleSignals = await readSignalsFromDir(
     join(vaultPath, "signals", "internal"),
-    (f) => SOB_CONTROLE_PATTERNS.some(p => f.startsWith(p)),
+    (f) => f.startsWith("whatsapp-ia-sob-controle-"),
     "whatsapp-sob-controle",
     "IA Sob Controle",
   );

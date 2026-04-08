@@ -1138,79 +1138,6 @@
     "messageCount": 5
   },
   {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-26-001",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-26T13:45:04.000Z",
-    "authors": [
-      "Fabrício Carraro",
-      "Mauricio Aniche",
-      "Marcell Almeida",
-      "Paulo Silveira"
-    ],
-    "tags": [
-      "vibe coding",
-      "marketing engineering",
-      "agentes de ia",
-      "automação de tarefas"
-    ],
-    "topic": "Discussão sobre viralização de conteúdo sobre 'vibe coding' em marketing/HR e análise crítica sobre adoção em empresas pequenas versus grandes.",
-    "summary": "Discussão sobre viralização de conteúdo sobre 'vibe coding' em marketing/HR e análise crítica sobre adoção em empresas pequenas versus grandes.",
-    "links": [
-      {
-        "url": "https://x.com/i/status/2037162417516625950"
-      }
-    ],
-    "messageCount": 8
-  },
-  {
-    "id": "whatsapp-120363408138765885-g-us-2026-03-26-001",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-26T13:01:54.000Z",
-    "authors": [
-      "Gustavo Brandão",
-      "Max Ferreira",
-      "Nathan",
-      "Vagner Bitencourt @vagner.me",
-      "Gustavo Arruda",
-      "Lucas Yoshioka",
-      "Marcelo Cordeiro",
-      "Aldo Kusuke",
-      "Matheus Hunger",
-      "Natelson Nascimento",
-      "Bruno Lopau",
-      "Gustavo Barros",
-      "Hugo",
-      "Fábio Perez",
-      "Roni ",
-      "Felipe Collins",
-      "Virginia M"
-    ],
-    "tags": [
-      "claude",
-      "llm",
-      "turboQuantum",
-      "agentes de ia",
-      "inferência",
-      "otimização de modelos"
-    ],
-    "topic": "Grupo discute recomendações para aprender Claude, compartilha artigo sobre TurboQuantum (compressão de KV cache 6x) e relata possível limitação de tokens no plano Max da Anthropic.",
-    "summary": "Grupo discute recomendações para aprender Claude, compartilha artigo sobre TurboQuantum (compressão de KV cache 6x) e relata possível limitação de tokens no plano Max da Anthropic.",
-    "links": [
-      {
-        "url": "https://github.com/shareAI-lab/claw0"
-      },
-      {
-        "url": "https://github.com/paperclipai/paperclip"
-      },
-      {
-        "url": "https://7min.ai/d/2026-03-26/pt-br/google-launches-lyria-3/"
-      }
-    ],
-    "messageCount": 44
-  },
-  {
     "id": "whatsapp-ia-sob-controle-2026-03-26-005",
     "source": "whatsapp-sob-controle",
     "sourceLabel": "IA Sob Controle",
@@ -1328,64 +1255,6 @@
     "messageCount": 10
   },
   {
-    "id": "whatsapp-120363408138765885-g-us-2026-03-25-016",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-25T10:44:09.000Z",
-    "authors": [
-      "André Torres",
-      ".",
-      "Eduardo",
-      "Gabriel Masson",
-      "Wesley",
-      "Bruno Lopau"
-    ],
-    "tags": [
-      "agi",
-      "asi",
-      "claude auto mode",
-      "system prompt",
-      "otimização de tokens",
-      "ia generativa"
-    ],
-    "topic": "Discussão sobre Auto Mode do Claude, AGI/ASI, economia de tokens em projetos SystemPrompt e tendência de layoffs corporativos para cobrir custos de IA.",
-    "summary": "Discussão sobre Auto Mode do Claude, AGI/ASI, economia de tokens em projetos SystemPrompt e tendência de layoffs corporativos para cobrir custos de IA.",
-    "links": [
-      {
-        "url": "https://claude.com/blog/auto-mode"
-      },
-      {
-        "url": "https://github.com/gmasson/systemprompt/"
-      }
-    ],
-    "messageCount": 10
-  },
-  {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-24-017",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T23:36:32.000Z",
-    "authors": [
-      "Marcell Almeida",
-      "Mauricio Aniche"
-    ],
-    "tags": [
-      "issue tracking",
-      "linear.app",
-      "agentes de ia",
-      "software development",
-      "evolução de ferramentas"
-    ],
-    "topic": "Linear anuncia novo produto baseado em agentes: 75% dos workspaces enterprise têm coding agents instalados, com volume de trabalho completado por agentes crescendo 5x em 3 meses e agentes autorizando 25% de novas issues.",
-    "summary": "Linear anuncia novo produto baseado em agentes: 75% dos workspaces enterprise têm coding agents instalados, com volume de trabalho completado por agentes crescendo 5x em 3 meses e agentes autorizando 25% de novas issues.",
-    "links": [
-      {
-        "url": "https://linear.app/next"
-      }
-    ],
-    "messageCount": 6
-  },
-  {
     "id": "whatsapp-clauders-2026-03-24-017",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -1411,116 +1280,6 @@
     "messageCount": 6
   },
   {
-    "id": "whatsapp-120363408138765885-g-us-2026-03-24-014",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-24T22:50:26.000Z",
-    "authors": [
-      "Victor Gutierrez",
-      "Bruno Lauria",
-      "Alan Alves",
-      "Denis Rocha",
-      "Fábio Perez",
-      "Delton",
-      "Lucca Pinto",
-      "Levi Bertolino",
-      "May",
-      "Igor Carvalho",
-      "Lucas Massena",
-      "Vitor Miziara",
-      "Rodrigo Tozato",
-      "Cleberson",
-      "Denis B",
-      ".",
-      "Gabriel▫️",
-      "Rafael C  Sampaio",
-      "Fernando",
-      "Vagner Bitencourt @vagner.me",
-      "Marcel Leão",
-      "Gustavo Barros",
-      "~",
-      "Vinícius Gomes",
-      "Pastor Paulo Coutinho",
-      "Dedé",
-      "Roni ",
-      "Helder Santos",
-      "Victor Almeida",
-      "Cesar Kato",
-      "Vieira",
-      "Lucas",
-      "Gustavo Brandão",
-      "FB",
-      "Joao Lima",
-      "Leandro Gregolin",
-      "Max Ferreira"
-    ],
-    "tags": [
-      "agentes de ia",
-      "orquestração de agentes",
-      "claude",
-      "paperclip",
-      "code review",
-      "multi-agentes",
-      "arquitetura de sistemas"
-    ],
-    "topic": "Discussão técnica sobre arquitetura multi-agente com Paperclip e Claude, incluindo desafios de custos com APIs, limites de subscription e alternativas para orquestração de agentes autônomos.",
-    "summary": "Discussão técnica sobre arquitetura multi-agente com Paperclip e Claude, incluindo desafios de custos com APIs, limites de subscription e alternativas para orquestração de agentes autônomos.",
-    "links": [
-      {
-        "url": "https://victorgutierrez.com.br/post/30/"
-      },
-      {
-        "url": "https://www.theregister.com/2026/02/20/anthropic_clarifies_ban_third_party_claude_access/#:~:text=That%20practice%2C%20effectively%20a%20subsidy,web%20interface%20for%20Claude%20models"
-      },
-      {
-        "url": "https://x.com/pawelhuryn/status/2036058594433519790?s=48"
-      },
-      {
-        "url": "https://x.com/fabioricotta/status/2033001176543760709?s=46"
-      },
-      {
-        "url": "https://x.com/aakashgupta/status/2036575179451801904?s=46"
-      },
-      {
-        "url": "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
-      },
-      {
-        "url": "https://project-6s0j1.vercel.app/"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=zoT8J-gZJa0"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=I44_zbEwz_w"
-      }
-    ],
-    "messageCount": 161
-  },
-  {
-    "id": "whatsapp-120363154248832196-g-us-2026-03-24-015",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T21:13:11.000Z",
-    "authors": [
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "claude",
-      "física teórica",
-      "pesquisa científica",
-      "agentic science",
-      "prompt engineering"
-    ],
-    "topic": "Publicação da Anthropic sobre Claude Opus 4.5 realizando cálculos de física teórica frontier-grade de forma autônoma, gerando paper em 2 semanas vs. ano tradicional com 36M tokens.",
-    "summary": "Publicação da Anthropic sobre Claude Opus 4.5 realizando cálculos de física teórica frontier-grade de forma autônoma, gerando paper em 2 semanas vs. ano tradicional com 36M tokens.",
-    "links": [
-      {
-        "url": "https://www.anthropic.com/research/vibe-physics"
-      }
-    ],
-    "messageCount": 4
-  },
-  {
     "id": "whatsapp-ia-sob-controle-2026-03-24-014",
     "source": "whatsapp-sob-controle",
     "sourceLabel": "IA Sob Controle",
@@ -1543,27 +1302,6 @@
     "messageCount": 4
   },
   {
-    "id": "whatsapp-120363154248832196-g-us-2026-03-24-014",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T20:35:17.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "claude pro",
-      "reasoning",
-      "agentic programming",
-      "documentação",
-      "análise"
-    ],
-    "topic": "Discussão sobre Claude Pro e seu uso para análise profunda de documentação técnica, com exemplo de 63 minutos de reasoning que gerou guia de 15 páginas com código.",
-    "summary": "Discussão sobre Claude Pro e seu uso para análise profunda de documentação técnica, com exemplo de 63 minutos de reasoning que gerou guia de 15 páginas com código.",
-    "links": [],
-    "messageCount": 14
-  },
-  {
     "id": "whatsapp-ia-sob-controle-2026-03-24-013",
     "source": "whatsapp-sob-controle",
     "sourceLabel": "IA Sob Controle",
@@ -1582,31 +1320,6 @@
     "summary": "Discussão sobre Claude Pro com modo thinking que prolonga raciocínio (63 minutos em caso real), ideal para análise profunda de documentação e geração de guias estruturados.",
     "links": [],
     "messageCount": 14
-  },
-  {
-    "id": "whatsapp-120363154248832196-g-us-2026-03-24-013",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T19:56:23.000Z",
-    "authors": [
-      "Guilherme Silveira",
-      "Marcus Mendes",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "agentes de ia",
-      "claude",
-      "invocação de modelos",
-      "recursão"
-    ],
-    "topic": "Relato informal sobre Claude invocando a si mesmo sem instrução explícita, gerando curiosidade sobre comportamento emergente e autoinvocação de modelos.",
-    "summary": "Relato informal sobre Claude invocando a si mesmo sem instrução explícita, gerando curiosidade sobre comportamento emergente e autoinvocação de modelos.",
-    "links": [
-      {
-        "url": "https://x.com/i/status/2036136822099628173"
-      }
-    ],
-    "messageCount": 6
   },
   {
     "id": "whatsapp-ia-sob-controle-2026-03-24-012",
@@ -1633,27 +1346,6 @@
     "messageCount": 6
   },
   {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-24-016",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T19:51:00.000Z",
-    "authors": [
-      "Guilherme Silveira",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "megatron-lm",
-      "nvidia framework",
-      "destilação de modelos",
-      "claude assistência",
-      "produtividade engineering"
-    ],
-    "topic": "Fabrício Carraro detalha uso de framework Megatron-Bridge da NVIDIA para destilação, mencionando que Claude ajudou a reduzir tempo de 2-4 semanas para 2-3 dias, combinando scripts existentes e ferramentas open source.",
-    "summary": "Fabrício Carraro detalha uso de framework Megatron-Bridge da NVIDIA para destilação, mencionando que Claude ajudou a reduzir tempo de 2-4 semanas para 2-3 dias, combinando scripts existentes e ferramentas open source.",
-    "links": [],
-    "messageCount": 6
-  },
-  {
     "id": "whatsapp-clauders-2026-03-24-016",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -1675,27 +1367,6 @@
     "messageCount": 6
   },
   {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-24-015",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T18:59:48.000Z",
-    "authors": [
-      "Mauricio Aniche",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "model pruning",
-      "distilação de modelos",
-      "llms 40b-20b",
-      "function calling",
-      "otimização de modelos"
-    ],
-    "topic": "Fabrício Carraro relata trabalho em pruning e destilação de modelo de 40B para 20B no BSC, com objetivo de ensinar function calling durante o processo.",
-    "summary": "Fabrício Carraro relata trabalho em pruning e destilação de modelo de 40B para 20B no BSC, com objetivo de ensinar function calling durante o processo.",
-    "links": [],
-    "messageCount": 3
-  },
-  {
     "id": "whatsapp-clauders-2026-03-24-015",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -1715,126 +1386,6 @@
     "summary": "Menção de trabalho em progresso para reduzir modelo instruct de 40B para 20B através de pruning e destilação, adicionando capacidade de function calling no processo.",
     "links": [],
     "messageCount": 3
-  },
-  {
-    "id": "whatsapp-120363408138765885-g-us-2026-03-24-013",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-24T18:52:35.000Z",
-    "authors": [
-      "Fábio Perez",
-      "Thiago Ramos",
-      "Vagner Bitencourt @vagner.me",
-      "Aleksandro (Lekão)🇧🇷🚀",
-      "Katiana",
-      "Gui",
-      "Bruno Moura",
-      "Denis Rocha",
-      "Ricardo Soares Costa",
-      "Matheus Hunger",
-      "Diego de Oliveira",
-      "Rodrigo",
-      "Diego Anselmo",
-      "Bruno Lopau",
-      "Bruno Lauria",
-      "~ Marco Aurélio 💎",
-      "Vinícius Secundo",
-      "Lucas",
-      "Capella",
-      "Lucas Yoshioka",
-      "Aldo Kusuke",
-      "Robson Lima",
-      "Joel Jucá",
-      "Gael Souza",
-      "Levi Bertolino",
-      "Vitor Miziara",
-      "Maicon Guimaraes",
-      "Cleberson",
-      "Pedro",
-      "Victor Segatti",
-      "Jousivan",
-      "Helder Santos",
-      "Henrique",
-      "Diego Emanuel",
-      "João Nascimento"
-    ],
-    "tags": [
-      "7min.ai",
-      "agentes de ia",
-      "automação",
-      "llm api",
-      "claude cowork",
-      "segurança",
-      "supply chain"
-    ],
-    "topic": "Lançamento de URLs para consumo de notícias de IA por LLMs no 7min.ai + alerta crítico: pacote PyPI litellm comprometido com roubo de credenciais em versões v1.82.7 e v1.82.8.",
-    "summary": "Lançamento de URLs para consumo de notícias de IA por LLMs no 7min.ai + alerta crítico: pacote PyPI litellm comprometido com roubo de credenciais em versões v1.82.7 e v1.82.8.",
-    "links": [
-      {
-        "url": "https://7min.ai/daily-ai-news-llms.txt"
-      },
-      {
-        "url": "https://7min.ai/noticias-diarias-de-ia-llms.txt"
-      },
-      {
-        "url": "https://github.com/twentyhq/twenty"
-      },
-      {
-        "url": "https://x.com/ihtesham2005/status/2036458108516712548/photo/1"
-      },
-      {
-        "url": "https://github.com/berriAi/litellm/issues/24518"
-      },
-      {
-        "url": "https://news.ycombinator.com/item?id=47501426"
-      },
-      {
-        "url": "https://luma.com/q5eb2zjg"
-      },
-      {
-        "url": "https://ia.fullcycle.com.br/mba-ia/?utm_source=site-fullcycle&utm_medium=slider-site&utm_content=org_slider_mba_engenharia_ia&_gl=1*1mrp619*_gcl_au*MTk3MjU4MTU4OC4xNzczMDY3MDE5"
-      },
-      {
-        "url": "https://www.sciencedirect.com/science/article/abs/pii/S0736585325000450"
-      },
-      {
-        "url": "https://www.instagram.com/reel/DWPnQFrEQEK/?igsh=MWE1d2x6N2xiZ2l2OQ=="
-      },
-      {
-        "url": "https://x.com/dr_cintas/status/2035387052460536293?s=48"
-      }
-    ],
-    "messageCount": 137
-  },
-  {
-    "id": "whatsapp-120363154248832196-g-us-2026-03-24-012",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T18:41:13.000Z",
-    "authors": [
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "harness design",
-      "agentes de ia",
-      "agentic coding",
-      "claude",
-      "frontend design"
-    ],
-    "topic": "Publicação da Anthropic sobre design de harness para development com Claude, demonstrando abordagens multi-agente (generator/evaluator) para melhorar qualidade em design frontend e coding autônomo.",
-    "summary": "Publicação da Anthropic sobre design de harness para development com Claude, demonstrando abordagens multi-agente (generator/evaluator) para melhorar qualidade em design frontend e coding autônomo.",
-    "links": [
-      {
-        "url": "https://t.co/HWvmXk1ykn"
-      },
-      {
-        "url": "https://x.com/i/status/2036499691571953848"
-      },
-      {
-        "url": "https://x.com/i/status/2036503582166393240"
-      }
-    ],
-    "messageCount": 4
   },
   {
     "id": "whatsapp-ia-sob-controle-2026-03-24-011",
@@ -1863,35 +1414,6 @@
       }
     ],
     "messageCount": 4
-  },
-  {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-24-014",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T17:55:31.000Z",
-    "authors": [
-      "Guilherme Silveira",
-      "Marcell Almeida",
-      "Fabrício Carraro",
-      "Paulo Silveira",
-      "Sérgio Lopes"
-    ],
-    "tags": [
-      "arxiv",
-      "pesquisa nlp",
-      "papers científicos",
-      "dynamic workers",
-      "cloudflare",
-      "segurança de código ia"
-    ],
-    "topic": "Fabrício Carraro anuncia aprovação de seu primeiro paper na conferência LREC, escrito com colega PhD do BSC; equipe discute process de submissão no arXiv e Cloudflare lança Dynamic Workers para executar código gerado por IA de forma segura.",
-    "summary": "Fabrício Carraro anuncia aprovação de seu primeiro paper na conferência LREC, escrito com colega PhD do BSC; equipe discute process de submissão no arXiv e Cloudflare lança Dynamic Workers para executar código gerado por IA de forma segura.",
-    "links": [
-      {
-        "url": "https://blog.cloudflare.com/dynamic-workers/"
-      }
-    ],
-    "messageCount": 12
   },
   {
     "id": "whatsapp-clauders-2026-03-24-014",
@@ -1924,64 +1446,6 @@
     "messageCount": 12
   },
   {
-    "id": "whatsapp-120363408138765885-g-us-2026-03-24-012",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-24T17:50:31.000Z",
-    "authors": [
-      "Alan Alves",
-      "Ailton Jr.",
-      "Marcelo Vieira",
-      "Bruno Gomes",
-      "Lucas Yoshioka",
-      "Leonardo Bora",
-      "Caio 🛶🛶"
-    ],
-    "tags": [
-      "claude code",
-      "tutorial",
-      "conteúdo educacional",
-      "youtube"
-    ],
-    "topic": "Compartilhamento de conteúdo gratuito no YouTube sobre Claude Code, descrito como um dos materiais mais completos e densos disponíveis sobre a ferramenta.",
-    "summary": "Compartilhamento de conteúdo gratuito no YouTube sobre Claude Code, descrito como um dos materiais mais completos e densos disponíveis sobre a ferramenta.",
-    "links": [
-      {
-        "url": "https://www.youtube.com/watch?v=brLhhkUqcn4"
-      }
-    ],
-    "messageCount": 7
-  },
-  {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-24-013",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T16:46:25.000Z",
-    "authors": [
-      "Sérgio Lopes",
-      "Fabrício Carraro",
-      "Paulo Silveira",
-      "Marcell Almeida",
-      "Mauricio Aniche"
-    ],
-    "tags": [
-      "modelos de linguagem",
-      "brainfuck",
-      "code generation",
-      "agentes de ia",
-      "prompt engineering",
-      "análise crítica de papers"
-    ],
-    "topic": "Sérgio Lopes testa Codex XHigh com Brainfuck, resolvendo problemas que o paper original não conseguiu, e discute se o modelo realmente aprendeu a linguagem ou apenas contornou limitações de tokenização usando Python como intermediário.",
-    "summary": "Sérgio Lopes testa Codex XHigh com Brainfuck, resolvendo problemas que o paper original não conseguiu, e discute se o modelo realmente aprendeu a linguagem ou apenas contornou limitações de tokenização usando Python como intermediário.",
-    "links": [
-      {
-        "url": "https://chatgpt.com/s/t_69c2c76ce2548191adc5b3b06d3c049c"
-      }
-    ],
-    "messageCount": 62
-  },
-  {
     "id": "whatsapp-clauders-2026-03-24-013",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -2012,60 +1476,6 @@
     "messageCount": 62
   },
   {
-    "id": "whatsapp-120363408138765885-g-us-2026-03-24-011",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-24T15:39:33.000Z",
-    "authors": [
-      "Denis B",
-      "Roni ",
-      "Vitor Miziara",
-      "Fábio Perez",
-      "Fernando Horas",
-      "Marcel Leão",
-      "Mario Campello",
-      "perez",
-      "Vagner Bitencourt @vagner.me",
-      "Fernando Luz"
-    ],
-    "tags": [
-      "claude",
-      "whatsapp",
-      "integração",
-      "mcp",
-      "automação",
-      "prompt engineering"
-    ],
-    "topic": "Membros compartilham implementações de integração Claude com WhatsApp para resumo e categorização de conversas, com exemplo prático no Claude Code e uso de MCP para descoberta de domínios.",
-    "summary": "Membros compartilham implementações de integração Claude com WhatsApp para resumo e categorização de conversas, com exemplo prático no Claude Code e uso de MCP para descoberta de domínios.",
-    "links": [
-      {
-        "url": "https://www.instagram.com/p/DU6iNzDDhxZ/?igsh=MXdtYXR0a3JkOXB0aQ=="
-      }
-    ],
-    "messageCount": 33
-  },
-  {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-24-012",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T15:36:12.000Z",
-    "authors": [
-      "Paulo Silveira"
-    ],
-    "tags": [
-      "llm reasoning",
-      "memorização vs raciocínio",
-      "benchmark gaming",
-      "esolang-bench",
-      "código"
-    ],
-    "topic": "Análise profunda de resultados devastadores do EsoLang-Bench: LLMs com 85-95% em benchmarks convencionais obtêm 0-11% em linguagens esotéricas, sugerindo memorização vs. raciocínio genuíno.",
-    "summary": "Análise profunda de resultados devastadores do EsoLang-Bench: LLMs com 85-95% em benchmarks convencionais obtêm 0-11% em linguagens esotéricas, sugerindo memorização vs. raciocínio genuíno.",
-    "links": [],
-    "messageCount": 4
-  },
-  {
     "id": "whatsapp-clauders-2026-03-24-012",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -2083,55 +1493,6 @@
     "topic": "Análise de pesquisa mostrando que LLMs não raciocinam genuinamente sobre código, apenas reconhecem padrões de treino, com falha radical em linguagens pouco representadas em dados públicos.",
     "summary": "Análise de pesquisa mostrando que LLMs não raciocinam genuinamente sobre código, apenas reconhecem padrões de treino, com falha radical em linguagens pouco representadas em dados públicos.",
     "links": [],
-    "messageCount": 4
-  },
-  {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-24-011",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T14:49:56.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "esolang-bench",
-      "raciocínio genuíno",
-      "avaliação de llm",
-      "linguagens esotéricas"
-    ],
-    "topic": "Compartilhamento de paper arXiv sobre EsoLang-Bench, benchmark que avalia raciocínio genuíno em LLMs usando linguagens esotéricas.",
-    "summary": "Compartilhamento de paper arXiv sobre EsoLang-Bench, benchmark que avalia raciocínio genuíno em LLMs usando linguagens esotéricas.",
-    "links": [
-      {
-        "url": "https://arxiv.org/abs/2603.09678"
-      }
-    ],
-    "messageCount": 3
-  },
-  {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-24-010",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T13:55:36.000Z",
-    "authors": [
-      "Fabrício Carraro",
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "happy robot",
-      "ai workers",
-      "agentes autônomos",
-      "demo interativa",
-      "barcelona"
-    ],
-    "topic": "Apresentação de HappyRobot, plataforma de Barcelona para build de AI workers autônomos com demo interativa, em crescimento no mercado.",
-    "summary": "Apresentação de HappyRobot, plataforma de Barcelona para build de AI workers autônomos com demo interativa, em crescimento no mercado.",
-    "links": [
-      {
-        "url": "https://www.happyrobot.ai/"
-      }
-    ],
     "messageCount": 4
   },
   {
@@ -2160,131 +1521,6 @@
     "messageCount": 4
   },
   {
-    "id": "whatsapp-120363408138765885-g-us-2026-03-24-010",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-24T12:05:49.000Z",
-    "authors": [
-      "Breno",
-      "Cesar Kato",
-      "Pastor Paulo Coutinho",
-      "Ricardo Bemfica",
-      "Bruno Lopau",
-      "Diego de Oliveira",
-      "Yago Wallace",
-      "Fábio Perez",
-      "Gustavo Barros",
-      "Mario Campello",
-      "Abner Lincoln",
-      ".",
-      "Vagner Bitencourt @vagner.me",
-      "Giovanni Klein",
-      "Ricardo Soares Costa",
-      "FB",
-      "Diego Anselmo",
-      "Leandro Gregolin",
-      "Igor Carvalho",
-      "Vitor Miziara",
-      "Cleberson",
-      "Roni ",
-      "Alan Alves",
-      "Bruno Moura",
-      "Julio",
-      "Fabrício",
-      "Patrick",
-      "Letícia Cândido",
-      "André Torres"
-    ],
-    "tags": [
-      "claude",
-      "firebase",
-      "supabase",
-      "replit",
-      "agentes de ia",
-      "cursor",
-      "desenvolvimento web"
-    ],
-    "topic": "Discussão técnica sobre ferramentas de desenvolvimento (Firebase, Supabase, Replit, Claude Code, Cursor) com avaliações de membros sobre performance, pricing e funcionalidades de IA para coding.",
-    "summary": "Discussão técnica sobre ferramentas de desenvolvimento (Firebase, Supabase, Replit, Claude Code, Cursor) com avaliações de membros sobre performance, pricing e funcionalidades de IA para coding.",
-    "links": [
-      {
-        "url": "https://techcrunch.com/2026/03/22/cursor-admits-its-new-coding-model-was-built-on-top-of-moonshot-ais-kimi/"
-      },
-      {
-        "url": "https://7min.ai/d/2026-03-24/pt-br/anthropic-ships-claude-mac/"
-      },
-      {
-        "url": "https://replit.com/stripe-checkout-by-price/core_1mo_20usd_monthly_feb_26?coupon=AGENT4AE0BE8976C52"
-      },
-      {
-        "url": "https://community.sap.com/t5/technology-blog-posts-by-sap/claude-code-python-sap-gui-scripting-your-ai-agent-for-any-sap-transaction/ba-p/14327865"
-      },
-      {
-        "url": "https://skillsmp.com/pt/categories/data-analysis"
-      },
-      {
-        "url": "https://www.linkedin.com/posts/sumanth077_clone-any-voice-with-just-3-seconds-of-audio-share-7441796174870818816-6QZJ?utm_source=share&utm_medium=member_android&rcm=ACoAAAtBqHYBlYbaCOmruTt8S8AEVFeRqhnsyLI"
-      },
-      {
-        "url": "https://stitch.withgoogle.com/"
-      },
-      {
-        "url": "https://www.agile-robots.com/en/news/detail/agile-robots-and-google-deepmind-partner-to-bring-intelligence-to-robotics/"
-      }
-    ],
-    "messageCount": 75
-  },
-  {
-    "id": "whatsapp-120363408138765885-g-us-2026-03-24-008",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-24T10:20:00.000Z",
-    "authors": [
-      ".",
-      "Fabrício"
-    ],
-    "tags": [
-      "banco de dados",
-      "firebase",
-      "supabase",
-      "postgres serverless",
-      "neon"
-    ],
-    "topic": "Recomendação de banco de dados: usuário questiona alternativas a Firebase e Supabase, e Fabrício sugere Neon como opção de Postgres serverless.",
-    "summary": "Recomendação de banco de dados: usuário questiona alternativas a Firebase e Supabase, e Fabrício sugere Neon como opção de Postgres serverless.",
-    "links": [
-      {
-        "url": "https://neon.com"
-      }
-    ],
-    "messageCount": 7
-  },
-  {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-24-009",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T10:07:49.000Z",
-    "authors": [
-      "Fabrício Carraro",
-      "Paulo Silveira"
-    ],
-    "tags": [
-      "ia agent",
-      "mark zuckerberg",
-      "facebook meta",
-      "ceo automation",
-      "agentes"
-    ],
-    "topic": "Compartilhamento de artigo WSJ sobre IA agent que Zuckerberg está desenvolvendo para auxiliar funções de CEO.",
-    "summary": "Compartilhamento de artigo WSJ sobre IA agent que Zuckerberg está desenvolvendo para auxiliar funções de CEO.",
-    "links": [
-      {
-        "url": "https://www.wsj.com/tech/ai/mark-zuckerberg-is-building-an-ai-agent-to-help-him-be-ceo-eddab2d5"
-      }
-    ],
-    "messageCount": 3
-  },
-  {
     "id": "whatsapp-clauders-2026-03-24-009",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -2304,33 +1540,6 @@
     "links": [
       {
         "url": "https://www.wsj.com/tech/ai/mark-zuckerberg-is-building-an-ai-agent-to-help-him-be-ceo-eddab2d5"
-      }
-    ],
-    "messageCount": 3
-  },
-  {
-    "id": "whatsapp-120363154248832196-g-us-2026-03-24-005",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T10:07:05.000Z",
-    "authors": [
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "agentes de ia",
-      "mark zuckerberg",
-      "openai",
-      "anthropic",
-      "competição"
-    ],
-    "topic": "Compartilhamento de notícias sobre Zuckerberg desenvolvendo agente de IA para CEO e competição entre OpenAI e Anthropic por investimento em IA empresarial.",
-    "summary": "Compartilhamento de notícias sobre Zuckerberg desenvolvendo agente de IA para CEO e competição entre OpenAI e Anthropic por investimento em IA empresarial.",
-    "links": [
-      {
-        "url": "https://www.wsj.com/tech/ai/mark-zuckerberg-is-building-an-ai-agent-to-help-him-be-ceo-eddab2d5"
-      },
-      {
-        "url": "https://www.reuters.com/business/openai-sweetens-private-equity-pitch-amid-enterprise-turf-war-with-anthropic-2026-03-23/"
       }
     ],
     "messageCount": 3
@@ -2363,72 +1572,6 @@
     "messageCount": 3
   },
   {
-    "id": "whatsapp-120363408138765885-g-us-2026-03-24-005",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-24T02:22:10.000Z",
-    "authors": [
-      "Marcos Oliveira",
-      "Leandro Aveiro",
-      "Lucas Mata",
-      "Pastor Paulo Coutinho",
-      "Rodrigo Klosowski",
-      "Rodrigo",
-      "Alberto Henrique Cordeiro",
-      "Vagner Bitencourt @vagner.me",
-      "Harrison",
-      "Vitor Miziara",
-      "~ Marco Aurélio 💎",
-      "Mário Lúcio"
-    ],
-    "tags": [
-      "agentes de ia",
-      "multi-agentes",
-      "gerenciador desktop",
-      "openai claude",
-      "extensões ia",
-      "arquitetura de agentes"
-    ],
-    "topic": "Discussão sobre ferramentas para trabalhar com agentes de IA, incluindo PyeClaw (gerenciador desktop para OpenClaw) e uma extensão para otimizar processamento com multi-agentes no Claude, com ressalva sobre consumo de tokens.",
-    "summary": "Discussão sobre ferramentas para trabalhar com agentes de IA, incluindo PyeClaw (gerenciador desktop para OpenClaw) e uma extensão para otimizar processamento com multi-agentes no Claude, com ressalva sobre consumo de tokens.",
-    "links": [
-      {
-        "url": "https://github.com/paulocoutinhox/pyeclaw"
-      },
-      {
-        "url": "https://x.com/VivendodeSaas/status/2036047073301184613"
-      },
-      {
-        "url": "https://youtu.be/AsIusJoJHpg?si=N1JE7ln2BdWgWQRu"
-      },
-      {
-        "url": "https://antigravity-kit.unikorn.vn/docs/installation"
-      }
-    ],
-    "messageCount": 17
-  },
-  {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-24-007",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-24T00:57:28.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "nano claw",
-      "claude code",
-      "integração com whatsapp",
-      "automação",
-      "mac"
-    ],
-    "topic": "Menção informal sobre integração de nano claw em WhatsApp com acesso a Mac e planos de experimentar com Claude Code.",
-    "summary": "Menção informal sobre integração de nano claw em WhatsApp com acesso a Mac e planos de experimentar com Claude Code.",
-    "links": [],
-    "messageCount": 7
-  },
-  {
     "id": "whatsapp-clauders-2026-03-24-007",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -2447,31 +1590,6 @@
     "summary": "Comentário sobre integração de Claude Code em aplicações de mensageria e sistemas pessoais, com referência a nano claw e possibilidades de automação avançada.",
     "links": [],
     "messageCount": 7
-  },
-  {
-    "id": "whatsapp-120363154248832196-g-us-2026-03-23-002",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-23T23:06:21.000Z",
-    "authors": [
-      "Fabrício Carraro",
-      "Guilherme Silveira"
-    ],
-    "tags": [
-      "agentes de ia",
-      "claude",
-      "computer use",
-      "anthropic",
-      "openclaw"
-    ],
-    "topic": "Discussão sobre OpenClaw e capacidades avançadas de computer use no Claude, com menção a confiança estratégica na Anthropic.",
-    "summary": "Discussão sobre OpenClaw e capacidades avançadas de computer use no Claude, com menção a confiança estratégica na Anthropic.",
-    "links": [
-      {
-        "url": "https://x.com/i/status/2036195789601374705"
-      }
-    ],
-    "messageCount": 4
   },
   {
     "id": "whatsapp-ia-sob-controle-2026-03-23-002",
@@ -2496,100 +1614,6 @@
       }
     ],
     "messageCount": 4
-  },
-  {
-    "id": "whatsapp-120363408138765885-g-us-2026-03-23-004",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-23T22:39:23.000Z",
-    "authors": [
-      "Gael Souza",
-      "Roney",
-      "Davi Maçana",
-      "Fernando",
-      "Fabrício Carraro",
-      "Rodrigo Klosowski",
-      "Bruno Lopau",
-      "Maicon Guimaraes",
-      "Paulo Silveira",
-      "Helder Santos",
-      "FB",
-      "Alan Alves",
-      "Leandro Aveiro",
-      "Mário Lúcio",
-      "Fábio Perez",
-      "Rony Max",
-      "Francisco Paiva Jr",
-      "Marcelo Grilo Jr",
-      "Paulo",
-      "Lucas Mata",
-      ".",
-      "Breno",
-      "Lucas",
-      "Cleberson",
-      "Lucas Massena",
-      "Vieira"
-    ],
-    "tags": [
-      "agentes de ia",
-      "web scraping",
-      "renderização de conteúdo",
-      "ferramentas open-source",
-      "integração llm",
-      "anti-detect browser",
-      "busca inteligente"
-    ],
-    "topic": "Rodrigo Klosowski apresenta GhostReader, um proxy de renderização com browser anti-detect que permite agentes de IA acessar qualquer site sem bloqueios, e Fernando lança Arquivo da República, uma busca inteligente sobre publicações do Poder Executivo e TCU.",
-    "summary": "Rodrigo Klosowski apresenta GhostReader, um proxy de renderização com browser anti-detect que permite agentes de IA acessar qualquer site sem bloqueios, e Fernando lança Arquivo da República, uma busca inteligente sobre publicações do Poder Executivo e TCU.",
-    "links": [
-      {
-        "url": "https://github.com/klosowsk/ghostreader"
-      },
-      {
-        "url": "https://data.anbima.com.br/busca/debentures"
-      },
-      {
-        "url": "https://luma.com/q5eb2zjg"
-      },
-      {
-        "url": "https://github.com/daijro/camoufox"
-      },
-      {
-        "url": "https://github.com/klosowsk/ghostreader/pull/1"
-      }
-    ],
-    "messageCount": 115
-  },
-  {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-23-005",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-23T22:09:10.000Z",
-    "authors": [
-      "Guilherme Silveira",
-      "Mauricio Aniche",
-      "Rafael Ribeiro",
-      "Marcell Almeida",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "finops",
-      "otimização de tokens",
-      "custos de ia",
-      "token economy",
-      "code review"
-    ],
-    "topic": "Discussão sobre emergência de FinOps para IA, monitoramento de custos de tokens e possíveis halucinações em bases de código grandes.",
-    "summary": "Discussão sobre emergência de FinOps para IA, monitoramento de custos de tokens e possíveis halucinações em bases de código grandes.",
-    "links": [
-      {
-        "url": "https://x.com/davidgeorge83/status/2036091262080811265?s=46&t=eUIi7rcC09bcxduho1P1bg"
-      },
-      {
-        "url": "https://x.com/felixrieseberg/status/2036193240509235452?s=46"
-      }
-    ],
-    "messageCount": 6
   },
   {
     "id": "whatsapp-clauders-2026-03-23-005",
@@ -2623,26 +1647,6 @@
     "messageCount": 6
   },
   {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-23-004",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-23T21:26:07.000Z",
-    "authors": [
-      "Sérgio Lopes"
-    ],
-    "tags": [
-      "grep",
-      "busca de contexto",
-      "otimização",
-      "claude",
-      "arquitetura de sistema"
-    ],
-    "topic": "Reflexão sobre eficácia de grep simples vs. otimizações complexas em IA, com menção a abordagem minimalista em desenvolvimento.",
-    "summary": "Reflexão sobre eficácia de grep simples vs. otimizações complexas em IA, com menção a abordagem minimalista em desenvolvimento.",
-    "links": [],
-    "messageCount": 3
-  },
-  {
     "id": "whatsapp-clauders-2026-03-23-004",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -2660,58 +1664,6 @@
     "summary": "Reflexão sobre a abordagem de Claude em usar grep para busca de código e percepção de que limitações de token e contexto são temporárias, não impedindo workflows eficazes.",
     "links": [],
     "messageCount": 3
-  },
-  {
-    "id": "whatsapp-120363408138765885-g-us-2026-03-23-003",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-23T20:46:56.000Z",
-    "authors": [
-      "Gustavo Barros",
-      "Bruno Lopau",
-      "Jane",
-      "Vitor Miziara",
-      "Eder Castro"
-    ],
-    "tags": [
-      "jensen huang",
-      "nvidia",
-      "liderança em ia",
-      "vídeo educativo"
-    ],
-    "topic": "Compartilhamento de podcast Lex Fridman com Jensen Huang sobre NVIDIA e revolução de IA, com interesse informal em aplicação de Claude para criar carrosséis.",
-    "summary": "Compartilhamento de podcast Lex Fridman com Jensen Huang sobre NVIDIA e revolução de IA, com interesse informal em aplicação de Claude para criar carrosséis.",
-    "links": [
-      {
-        "url": "https://www.youtube.com/watch?v=vif8NQcjVf0"
-      }
-    ],
-    "messageCount": 6
-  },
-  {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-23-003",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-23T20:21:00.000Z",
-    "authors": [
-      "Rafael Ribeiro",
-      "Mauricio Aniche"
-    ],
-    "tags": [
-      "code-review-graph",
-      "otimização de contexto",
-      "tokens",
-      "cursor",
-      "claude code"
-    ],
-    "topic": "Apresentação de ferramenta code-review-graph que reduz consumo de tokens via knowledge graph local, com comparação a Cursor.",
-    "summary": "Apresentação de ferramenta code-review-graph que reduz consumo de tokens via knowledge graph local, com comparação a Cursor.",
-    "links": [
-      {
-        "url": "https://github.com/tirth8205/code-review-graph?tab=readme-ov-file"
-      }
-    ],
-    "messageCount": 4
   },
   {
     "id": "whatsapp-clauders-2026-03-23-003",
@@ -2739,26 +1691,6 @@
     "messageCount": 4
   },
   {
-    "id": "whatsapp-120363425465757403-g-us-2026-03-23-001",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-23T16:34:55.000Z",
-    "authors": [
-      "Sérgio Lopes",
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "lovable",
-      "pivotação estratégica",
-      "produto",
-      "desenvolvimento web"
-    ],
-    "topic": "Menção casual a pivot recente da ferramenta Lovable com paralelo a outras soluções.",
-    "summary": "Menção casual a pivot recente da ferramenta Lovable com paralelo a outras soluções.",
-    "links": [],
-    "messageCount": 3
-  },
-  {
     "id": "whatsapp-clauders-2026-03-23-001",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -2776,66 +1708,6 @@
     "summary": "Comentário breve sobre mudança de direção estratégica da plataforma Lovable e seu paralelo com outras soluções de IA.",
     "links": [],
     "messageCount": 3
-  },
-  {
-    "id": "whatsapp-120363408138765885-g-us-2026-03-23-001",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-23T15:38:09.000Z",
-    "authors": [
-      "Max Ferreira",
-      "Leonardo Bora",
-      "Bruno Gomes",
-      "Roney",
-      "Wesley",
-      ".",
-      "Leandro Gregolin",
-      "Denis B",
-      "Edd Martins",
-      "Dedé",
-      "Pastor Paulo Coutinho",
-      "Lucas Yoshioka",
-      "Bruno Lauria",
-      "Bruna ",
-      "Ana",
-      "Daniel Resende",
-      "Lucas Rodrigues",
-      "Armando",
-      "Igor Carvalho",
-      "Marcelo",
-      "Bruno Lopau",
-      "Mário Lúcio",
-      "Breno",
-      "Mauro Couto",
-      "Roni ",
-      "JorgeX 😎",
-      "Lucas",
-      "Victor Segatti"
-    ],
-    "tags": [
-      "ia e automação",
-      "impacto social",
-      "layoffs",
-      "segurança de código",
-      "futuro do trabalho"
-    ],
-    "topic": "Debate entre desenvolvedores sobre impactos sociais e econômicos da IA, incluindo preocupações com layoffs, qualidade de código gerado por IA, e oportunidades em profissões humanas e terapia psicológica.",
-    "summary": "Debate entre desenvolvedores sobre impactos sociais e econômicos da IA, incluindo preocupações com layoffs, qualidade de código gerado por IA, e oportunidades em profissões humanas e terapia psicológica.",
-    "links": [
-      {
-        "url": "https://www.linkedin.com/posts/a-messina_salve-este-post-se-voc%C3%AA-quiser-se-tornar-share-7441811157616713728-hVRq?utm_source=share&utm_medium=member_android&rcm=ACoAAAtBqHYBlYbaCOmruTt8S8AEVFeRqhnsyLI"
-      },
-      {
-        "url": "https://80000hours.org/problem-profiles/."
-      },
-      {
-        "url": "https://gitingest.com/"
-      },
-      {
-        "url": "https://www.linkedin.com/pulse/como-eu-crio-novas-aplica%C3%A7%C3%B5es-com-ia-partir-de-base-j%C3%A1-paulo-coutinho-dpbaf/?trackingId=bwWXs8xAflnHHvBNRqaxfw%3D%3D"
-      }
-    ],
-    "messageCount": 100
   },
   {
     "id": "whatsapp-clauders-2026-03-23-022",
@@ -3178,35 +2050,6 @@
     "messageCount": 6
   },
   {
-    "id": "whatsapp-120363154248832196-g-us-2026-03-19-001",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-19T18:13:08.000Z",
-    "authors": [
-      "Fabrício Carraro",
-      "Sérgio Lopes"
-    ],
-    "tags": [
-      "google ai studio",
-      "agentes de ia",
-      "firebase",
-      "cloud run",
-      "full-stack apps",
-      "antigravity"
-    ],
-    "topic": "Fabrício Carraro apresenta upgrade completo do Google AI Studio com novo agente Antigravity para transformar prompts em apps full-stack prontos para produção, incluindo suporte a Firebase, Cloud Firestore e autenticação.",
-    "summary": "Fabrício Carraro apresenta upgrade completo do Google AI Studio com novo agente Antigravity para transformar prompts em apps full-stack prontos para produção, incluindo suporte a Firebase, Cloud Firestore e autenticação.",
-    "links": [
-      {
-        "url": "https://github.com/ledmaster/ml-mania-2026"
-      },
-      {
-        "url": "https://x.com/i/status/2034634698471911858"
-      }
-    ],
-    "messageCount": 4
-  },
-  {
     "id": "whatsapp-ia-sob-controle-2026-03-19-001",
     "source": "whatsapp-sob-controle",
     "sourceLabel": "IA Sob Controle",
@@ -3233,80 +2076,6 @@
       }
     ],
     "messageCount": 4
-  },
-  {
-    "id": "whatsapp-120363408138765885-g-us-2026-03-19-001",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-19T16:27:22.000Z",
-    "authors": [
-      "Edu",
-      "Igor Carvalho",
-      "~",
-      "Felipe Ferro",
-      "Enzo Baião",
-      "Everton Carneiro",
-      "Gustavo Brandão",
-      "Hugo",
-      "Rodrigo Meza",
-      "gabriel souza",
-      "Alan",
-      "Emanuel Azevedo",
-      "Matheus Hunger",
-      "Bruno Lauria",
-      "Mêndel Narciso",
-      "Fábio Perez",
-      "Cleyson Diego 😄",
-      "Mauricio Aniche",
-      "Hugo Fernandes",
-      "Natelson Nascimento",
-      "Júlio Neto",
-      "perez",
-      "Patrick",
-      "Pastor Paulo Coutinho",
-      "Gustavo Barros",
-      "Alan Alves",
-      "Gustavo Arruda",
-      "Kaique Covo",
-      "Jane",
-      "Gabriel Masson",
-      "Wagner Alves",
-      "Breno",
-      "Jason Jkp Tecnologia",
-      "FB",
-      "Helder Santos"
-    ],
-    "tags": [
-      "agentes de ia",
-      "casos de uso de ia",
-      "modelos preditivos",
-      "ia generativa",
-      "claude code",
-      "automação"
-    ],
-    "topic": "Discussão em comunidade sobre casos de uso reais de IA, diferenciando entre IA generativa e modelos preditivos, com foco em problemas que realmente são solucionados por IA e o papel do humano no loop de decisão.",
-    "summary": "Discussão em comunidade sobre casos de uso reais de IA, diferenciando entre IA generativa e modelos preditivos, com foco em problemas que realmente são solucionados por IA e o papel do humano no loop de decisão.",
-    "links": [
-      {
-        "url": "https://www.linkedin.com/posts/bruno-luciano-primesz-lauria-866449138_genie-code-skills-contextualiza%C3%A7%C3%A3o-activity-7440434716815618048-Nk9U?utm_source=share&utm_medium=member_ios&rcm=ACoAACGGdY4ByWzwKYDTQhEbXuXjoGiEhLkgRXU"
-      },
-      {
-        "url": "https://www.linkedin.com/posts/mendeloliveira_cto-founder-startuplife-activity-7440430092012466176-EayV?utm_medium=ios_app&rcm=ACoAAAVGWq8BUz2KYNdNmFEK_MjvN5hDLcBb86Q&utm_source=social_share_send&utm_campaign=whatsapp"
-      },
-      {
-        "url": "https://mauricioaniche.com/publications"
-      },
-      {
-        "url": "https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Fgithub%2Ecom%2FWorld-Open-Graph%2Fbr-acc&urlhash=Asm9&mt=0k-qa3K4BOv1fzccawyK-CTu4WdNSEFP0j0ld_Ff7kxsZMiy1JdzfJJUkl5wW2IRZMW-kjXbkXjOuRPXEiQBoruzZwNuH1tE_WI3-pNm5uoLbkCqDX8-UF4oD-Tt-iv_c1ceD5Ek-CMasxLWXKjUZy10jWYQmvyy63Dn-vl_gTI&isSdui=true"
-      },
-      {
-        "url": "https://github.com/ionclaw-org/ionclaw?"
-      },
-      {
-        "url": "https://x.com/FelipeBossolani/status/2034711122071204070"
-      }
-    ],
-    "messageCount": 60
   },
   {
     "id": "whatsapp-ia-sob-controle-2026-03-19-014",
@@ -4121,109 +2890,6 @@
       }
     ],
     "messageCount": 23
-  },
-  {
-    "id": "wa-clauders-2026-03-14-paulo-silveira-compartilha-materia-sobre-uso-de-ai",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-15T21:10:29.642Z",
-    "authors": [
-      "Paulo Silveira",
-      "Guilherme Silveira"
-    ],
-    "tags": [
-      "crítica de mídia",
-      "desinformação em ia",
-      "jornalismo científico",
-      "ceticismo tecnológico"
-    ],
-    "topic": "Paulo Silveira compartilha artigo sobre uso de IA para criar vacina de câncer em cão; Guilherme Silveira alerta criticamente sobre riscos de sensacionalismo em notícias de tecnologia que prometem curas milagrosas e abertura para curandeirismo.",
-    "summary": "Paulo Silveira compartilha artigo sobre uso de IA para criar vacina de câncer em cão; Guilherme Silveira alerta criticamente sobre riscos de sensacionalismo em notícias de tecnologia que prometem curas milagrosas e abertura para curandeirismo.",
-    "links": [
-      {
-        "url": "https://www.theaustralian.com.au/business/technology/tech-boss-uses-ai-and-chatgpt-to-create-cancer-vaccine-for-his-dying-dog/news-story/292a21bcbe93efa17810bfcfcdfadbf7"
-      }
-    ],
-    "messageCount": 1
-  },
-  {
-    "id": "wa-clauders-2026-03-14-marcell-almeida-compartilha-pagina-de-vagas-de-emp",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-15T21:10:29.641Z",
-    "authors": [
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "mercado de trabalho",
-      "ia e emprego",
-      "visualização de dados",
-      "bureau of labor statistics"
-    ],
-    "topic": "Marcell Almeida compartilha ferramenta de visualização do mercado de trabalho americano que usa LLM para avaliar exposição de ocupações à IA. Utilitário prático para explorar riscos e oportunidades profissionais em contexto de automação.",
-    "summary": "Marcell Almeida compartilha ferramenta de visualização do mercado de trabalho americano que usa LLM para avaliar exposição de ocupações à IA. Utilitário prático para explorar riscos e oportunidades profissionais em contexto de automação.",
-    "links": [
-      {
-        "url": "https://karpathy.ai/jobs/"
-      }
-    ],
-    "messageCount": 1
-  },
-  {
-    "id": "wa-clauders-2026-03-14-rafael-ribeiro-compartilha-promocao-da-anthropic-c",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-15T21:10:29.641Z",
-    "authors": [
-      "Rafael Ribeiro",
-      "Paulo Silveira",
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "promoção anthropic",
-      "claude",
-      "pricing strategy",
-      "retenção de usuários"
-    ],
-    "topic": "Rafael Ribeiro compartilha promoção da Anthropic (março 2026) oferecendo uso gratuito do Claude em horários de madrugada para retenção. Discussão sobre potencial de segmentação para usuários próximos de cancelamento.",
-    "summary": "Rafael Ribeiro compartilha promoção da Anthropic (março 2026) oferecendo uso gratuito do Claude em horários de madrugada para retenção. Discussão sobre potencial de segmentação para usuários próximos de cancelamento.",
-    "links": [
-      {
-        "url": "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
-      }
-    ],
-    "messageCount": 1
-  },
-  {
-    "id": "wa-ia-sob-controle-2026-03-14-marcus-compartilhou-noticia-sobre-bytedance-suspen",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-15T21:10:12.350Z",
-    "authors": [
-      "Marcus Mendes",
-      "Guilherme Silveira",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "copyright e ia",
-      "video generation",
-      "bytedance",
-      "regulação"
-    ],
-    "topic": "ByteDance suspende lançamento global do Seedance 2.0 devido a disputas de copyright com estúdios de Hollywood e streamers. Trending topic sobre regulação de modelos de video generation baseados em IA.",
-    "summary": "ByteDance suspende lançamento global do Seedance 2.0 devido a disputas de copyright com estúdios de Hollywood e streamers. Trending topic sobre regulação de modelos de video generation baseados em IA.",
-    "links": [
-      {
-        "url": "https://www.theinformation.com/articles/bytedance-suspends-launch-video-ai-model-copyright-disputes-hollywood"
-      },
-      {
-        "url": "https://x.com/i/status/2032949970161250625"
-      },
-      {
-        "url": "https://x.com/i/status/2033221428640674015"
-      }
-    ],
-    "messageCount": 1
   },
   {
     "id": "whatsapp-clauders-2026-03-15-022",
