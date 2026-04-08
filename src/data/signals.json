@@ -1,22 +1,5 @@
 [
   {
-    "id": "tg-hipsters-2026-04-06-paulo-hipsterssignalsbot",
-    "source": "telegram",
-    "sourceLabel": "Hipsters Builders (Telegram)",
-    "date": "2026-04-06T17:06:30.000Z",
-    "authors": [
-      "Paulo"
-    ],
-    "tags": [
-      "bot-commands",
-      "hipsters-builders",
-      "sinais"
-    ],
-    "topic": "Consulta ao bot de conhecimento",
-    "linkCount": 0,
-    "messageCount": 1
-  },
-  {
     "id": "tg-hipsters-2026-04-06-vinny-neves-daniel-stenberg-desligou-bug-bounty-curl-depois-que",
     "source": "telegram",
     "sourceLabel": "Hipsters Builders (Telegram)",
@@ -91,23 +74,6 @@
     "messageCount": 1
   },
   {
-    "id": "tg-hipsters-2026-04-05-paulo-httpsopenspotifycomepisode7yjlyti6aab2pmvzz980xdsigwv2mmpslu3kz2izox5hgt1389piuhz7c6tfs4601",
-    "source": "telegram",
-    "sourceLabel": "Hipsters Builders (Telegram)",
-    "date": "2026-04-05T15:01:47.000Z",
-    "authors": [
-      "Paulo"
-    ],
-    "tags": [
-      "podcast",
-      "recomendacao-conteudo",
-      "audio"
-    ],
-    "topic": "Episódio de podcast recomendado",
-    "linkCount": 1,
-    "messageCount": 1
-  },
-  {
     "id": "tg-hipsters-2026-04-05-paulo-karpathy-tem-buscado-solucionar-problema-excesso-informacao-como",
     "source": "telegram",
     "sourceLabel": "Hipsters Builders (Telegram)",
@@ -124,25 +90,6 @@
     ],
     "topic": "Organização de dados com LLMs e wikis",
     "linkCount": 1,
-    "messageCount": 1
-  },
-  {
-    "id": "tg-hipsters-2026-04-05-paulo-anthropic-esta-tentando-entender-melhor-como-claude-llms",
-    "source": "telegram",
-    "sourceLabel": "Hipsters Builders (Telegram)",
-    "date": "2026-04-05T01:34:51.000Z",
-    "authors": [
-      "Paulo"
-    ],
-    "tags": [
-      "llms",
-      "claude",
-      "embeddings",
-      "pesquisa-ia",
-      "analise-tecnica"
-    ],
-    "topic": "Reações emocionais de LLMs e embeddings",
-    "linkCount": 0,
     "messageCount": 1
   },
   {
@@ -213,23 +160,6 @@
     "topic": "EmDash: sucessor moderno do WordPress",
     "linkCount": 0,
     "messageCount": 1
-  },
-  {
-    "id": "whatsapp-clauders-2026-04-08-011",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-04-08T00:38:39.000Z",
-    "authors": [
-      "Guilherme Silveira",
-      "Paulo Silveira"
-    ],
-    "tags": [
-      "energia da bateria",
-      "dispositivos"
-    ],
-    "topic": "Conversa casual sobre bateria de dispositivo com zero porcento e menção a um tweet sobre algo errado relacionado (conteúdo do tweet não disponível).",
-    "linkCount": 1,
-    "messageCount": 3
   },
   {
     "id": "whatsapp-clauders-2026-04-07-010",
@@ -458,22 +388,6 @@
     "messageCount": 8
   },
   {
-    "id": "whatsapp-clauders-2026-04-03-005",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-04-03T19:57:53.000Z",
-    "authors": [
-      "Marcell Almeida",
-      "Paulo Silveira"
-    ],
-    "tags": [
-      "teams"
-    ],
-    "topic": "Breve troca sobre ferramentas de comunicação.",
-    "linkCount": 0,
-    "messageCount": 3
-  },
-  {
     "id": "whatsapp-clauders-2026-04-02-008",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -514,24 +428,6 @@
     "topic": "Avaliação de ferramentas para orquestração de agentes, comparando interfaces e fluxos de trabalho para gerenciar issues e goals em projetos.",
     "linkCount": 0,
     "messageCount": 6
-  },
-  {
-    "id": "whatsapp-ia-sob-controle-2026-04-02-004",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-04-02T17:11:58.000Z",
-    "authors": [
-      "Fabrício Carraro",
-      "Stromae"
-    ],
-    "tags": [
-      "ia",
-      "trending topics",
-      "x.com"
-    ],
-    "topic": "Compartilhamento de posts sobre tópicos de IA em rede social sem detalhes específicos capturados (URLs indisponíveis).",
-    "linkCount": 2,
-    "messageCount": 3
   },
   {
     "id": "whatsapp-clauders-2026-04-01-003",
@@ -1099,23 +995,6 @@
     "messageCount": 3
   },
   {
-    "id": "whatsapp-ia-sob-controle-2026-03-24-011",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-24T18:41:13.000Z",
-    "authors": [
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "notícias ia",
-      "mercado de ia",
-      "desenvolvimento acelerado"
-    ],
-    "topic": "Compilação de múltiplas notícias sobre IA descrita como 'dia quente', indicando volume significativo de anúncios ou desenvolvimentos relevantes.",
-    "linkCount": 3,
-    "messageCount": 4
-  },
-  {
     "id": "whatsapp-clauders-2026-03-24-014",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -1342,24 +1221,6 @@
     "messageCount": 4
   },
   {
-    "id": "whatsapp-clauders-2026-03-23-001",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-23T16:34:55.000Z",
-    "authors": [
-      "Sérgio Lopes",
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "lovable",
-      "pivô de produto",
-      "ferramenta de ia"
-    ],
-    "topic": "Comentário breve sobre mudança de direção estratégica da plataforma Lovable e seu paralelo com outras soluções de IA.",
-    "linkCount": 0,
-    "messageCount": 3
-  },
-  {
     "id": "whatsapp-clauders-2026-03-23-022",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -1402,24 +1263,6 @@
     "messageCount": 6
   },
   {
-    "id": "whatsapp-ia-sob-controle-2026-03-21-004",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-21T21:11:26.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "padrão cognitivo",
-      "uso de ia",
-      "reflexão pessoal"
-    ],
-    "topic": "Breve exchange pessoal sobre um padrão cognitivo recorrente que Paulo experimenta, com concordância de Fabrício. Contexto específico não disponível (mensagem anterior não incluída).",
-    "linkCount": 0,
-    "messageCount": 3
-  },
-  {
     "id": "whatsapp-clauders-2026-03-21-013",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -1437,26 +1280,6 @@
       "developer experience"
     ],
     "topic": "Discussão sobre investimento de US$100M+ da Moonshot no modelo Kimi, estratégia de pricing agressivo para adoção, e como Cursor agrega valor via UX mesmo utilizando modelos open-source baratos. Foca na diferença entre vender infraestrutura (modelo) versus produto (experiência).",
-    "linkCount": 1,
-    "messageCount": 3
-  },
-  {
-    "id": "whatsapp-clauders-2026-03-21-011",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-21T00:48:51.000Z",
-    "authors": [
-      "Rafael Ribeiro",
-      "Sérgio Lopes"
-    ],
-    "tags": [
-      "modelo de linguagem",
-      "pricing",
-      "kimi",
-      "composer",
-      "comparação de modelos"
-    ],
-    "topic": "Reação a vídeo comparativo entre Bernie e Claude, com comentário crítico sobre Kimi 2.5 custar mais que o dobro do preço original e análise de diferenças entre Composer e Kimi.",
     "linkCount": 1,
     "messageCount": 3
   },
@@ -1505,25 +1328,6 @@
     "topic": "Discussão técnica sobre acúmulo de alucinações em processos de IA, estratégias de validação de segurança com abordagens desacopladas, e comparação de modelos de coding (Cursor Composer, Codex, modelos chineses). Questiona quando múltiplos agentes de segurança são necessários versus overkill para features simples.",
     "linkCount": 1,
     "messageCount": 23
-  },
-  {
-    "id": "whatsapp-ia-sob-controle-2026-03-20-001",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-20T10:37:49.000Z",
-    "authors": [
-      "Fabrício Carraro",
-      "Paulo Silveira"
-    ],
-    "tags": [
-      "pricing",
-      "cursor composer",
-      "competição de preço",
-      "modelo de linguagem"
-    ],
-    "topic": "Reação rápida ao lançamento do Cursor Composer 2 com observação de que há corrida de preços para baixo na indústria de modelos de linguagem para coding.",
-    "linkCount": 1,
-    "messageCount": 3
   },
   {
     "id": "whatsapp-clauders-2026-03-20-004",
@@ -1758,38 +1562,6 @@
     "messageCount": 8
   },
   {
-    "id": "whatsapp-clauders-2026-03-18-035",
-    "source": "whatsapp-clauders",
-    "sourceLabel": "Clauders",
-    "date": "2026-03-18T13:38:46.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Sergio Lopes",
-      "Mauricio Aniche",
-      "Fabrício Carraro",
-      "Sérgio Lopes",
-      "5511983358086"
-    ],
-    "tags": [
-      "integração de sistemas",
-      "autenticação",
-      "github",
-      "dados pessoais",
-      "onboarding",
-      "stromae",
-      "integrações sociais",
-      "linkedin",
-      "twitter",
-      "educação",
-      "tecnologia",
-      "comunidade",
-      "desenvolvimento"
-    ],
-    "topic": "Solicitação de informações pessoais (telefone, LinkedIn, Twitter, GitHub) para integração com sistema Stromae, com participantes compartilhando seus dados de contato.",
-    "linkCount": 1,
-    "messageCount": 5
-  },
-  {
     "id": "whatsapp-clauders-2026-03-18-005",
     "source": "whatsapp-clauders",
     "sourceLabel": "Clauders",
@@ -1912,24 +1684,6 @@
     "topic": "Solução prática para transição entre máquinas em sessões Claude: documentar contexto em arquivo Claude.md, fazer commit no git, e usar Telegram bot para notificações de tarefas finalizadas.",
     "linkCount": 0,
     "messageCount": 11
-  },
-  {
-    "id": "whatsapp-ia-sob-controle-2026-03-17-006",
-    "source": "whatsapp-sob-controle",
-    "sourceLabel": "IA Sob Controle",
-    "date": "2026-03-17T11:34:49.000Z",
-    "authors": [
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "ia",
-      "segurança de ia",
-      "governança de ia",
-      "controle"
-    ],
-    "topic": "Fabrício Carraro compartilha imagens relacionadas a controle e governança de sistemas de IA, provavelmente conteúdo educativo ou de pesquisa.",
-    "linkCount": 0,
-    "messageCount": 3
   },
   {
     "id": "whatsapp-ia-sob-controle-2026-03-16-005",

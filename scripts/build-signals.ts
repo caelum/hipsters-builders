@@ -711,11 +711,18 @@ async function main() {
   const LOW_VALUE_TAGS = new Set([
     "eventos", "eventos presenciais", "inscrição", "acesso gratuito",
     "gestão de comunidade", "logística", "sympla", "confirmação",
-    "tools discovery", "comunidade",
+    "tools discovery", "comunidade", "casual-check-in",
   ]);
   const LOW_VALUE_TOPICS = [
     "inscrição", "presença", "sympla", "evento pago", "confirmação",
     "acesso sem custo", "compartilham referências sobre ferrament",
+    "conversa casual sobre", "breve troca sobre", "breve exchange pessoal",
+    "compartilhamento de posts sobre tópicos", "sem detalhes e",
+    "solicitação de informações pessoais", "compartilha imagens relacionadas",
+    "comentário breve sobre mudança", "reação rápida ao",
+    "episódio de podcast recomendado", "consulta ao bot de conhecimento",
+    "compilação de múltiplas notícias", "reação a vídeo comparativo",
+    "reações emocionais de llms",
   ];
 
   const filteredSignals = dedupedSignals.filter(s => {
