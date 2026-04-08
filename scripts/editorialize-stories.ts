@@ -192,6 +192,24 @@ async function main() {
 
   console.log(`\n[editorial] Done: ${processed} processed, ${splits} splits`);
 
+  // Generate slugs from editorial titles
+  const usedSlugs = new Set<string>();
+  for (const story of stories) {
+    if (!story.editorial?.title) continue;
+    let slug = story.editorial.title
+      .toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-")
+      .slice(0, 60)
+      .replace(/-$/, "");
+    if (usedSlugs.has(slug)) slug = `${slug}-${story.date.slice(0, 10)}`;
+    story.slug = slug;
+    usedSlugs.add(slug);
+  }
+  console.log(`[editorial] Generated ${usedSlugs.size} slugs`);
+
   if (!dryRun) {
     await writeFile(storiesPath, JSON.stringify(stories, null, 2));
     console.log(`[editorial] Wrote updated stories.json`);

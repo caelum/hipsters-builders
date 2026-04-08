@@ -11,8 +11,7 @@ interface Signal {
   authors: string[];
   tags: string[];
   topic: string;
-  summary: string;
-  links: Array<{ url: string; title?: string; site?: string }>;
+  linkCount: number;
   messageCount: number;
 }
 
@@ -75,20 +74,9 @@ const fmtDate = (d: string) => {
           <div class="signal-card__header">
             <span class="ed-label ed-label--sm" style={`background:${sc.bg};color:${sc.text};`}>{sc.label}</span>
             <span class="ed-meta-date">{fmtDate(signal.date)}</span>
+            <span class="signal-card__meta">{signal.messageCount} msgs · {signal.authors.length} pessoas{signal.linkCount > 0 ? ` · ${signal.linkCount} links` : ""}</span>
           </div>
-          <p class="signal-card__topic">{signal.topic || signal.summary}</p>
-          {signal.authors.length > 0 && (
-            <p class="signal-card__authors">{signal.authors.join(", ")}</p>
-          )}
-          {signal.links.length > 0 && (
-            <div class="signal-card__links">
-              {signal.links.slice(0, 2).map(link => (
-                <a href={link.url} target="_blank" rel="noopener" class="signal-card__link">
-                  {link.title || link.site || new URL(link.url).hostname}
-                </a>
-              ))}
-            </div>
-          )}
+          <p class="signal-card__topic">{signal.topic}</p>
           {signal.tags.length > 0 && (
             <div class="signal-card__tags">
               {signal.tags.slice(0, 4).map(tag => (

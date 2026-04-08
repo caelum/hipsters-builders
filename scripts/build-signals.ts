@@ -106,6 +106,17 @@ const dataDir = join(projectRoot, "src", "data");
 
 // --- Types ---
 
+// --- Author normalization ---
+
+const AUTHOR_ALIASES: Record<string, string> = {
+  "Marcell Pm3": "Marcell Almeida",
+  "marcell pm3": "Marcell Almeida",
+};
+
+function normalizeAuthor(name: string): string {
+  return AUTHOR_ALIASES[name] || name;
+}
+
 interface RawSignal {
   id: string;
   source: "telegram" | "whatsapp-clauders" | "whatsapp-sob-controle";
@@ -119,6 +130,8 @@ interface RawSignal {
   links: OGMeta[];
   messageCount: number;
   threadSlug?: string;
+  threadStart?: string;
+  threadEnd?: string;
 }
 
 interface ConversationMsg {
@@ -146,6 +159,9 @@ interface Story {
     subtitle: string;
     body: string;
   };
+  public?: boolean;
+  sensitivityReason?: string;
+  slug?: string;
 }
 
 interface GraphNode {
@@ -304,7 +320,9 @@ async function readSignalsFromDir(
       const raw = await readFile(join(dir, file), "utf-8");
       const { data, content } = matter(raw);
       const id = file.replace(".md", "");
-      const authors = Array.isArray(data.authors) ? data.authors.filter((a: string) => a !== "Unknown") : [];
+      const authors = Array.isArray(data.authors)
+        ? [...new Set(data.authors.filter((a: string) => a !== "Unknown").map(normalizeAuthor))]
+        : [];
       const tags = Array.isArray(data.tags) ? data.tags : [];
       const body = content.trim();
       const links = extractLinks(body, data.links);
@@ -323,10 +341,76 @@ async function readSignalsFromDir(
         links,
         messageCount,
         threadSlug: data.thread_slug || undefined,
+        threadStart: data.thread_start || undefined,
+        threadEnd: data.thread_end || undefined,
       });
     } catch { /* skip */ }
   }
   return signals;
+}
+
+// --- Signal deduplication ---
+
+interface DedupResult {
+  signals: RawSignal[];
+  idMapping: Map<string, string[]>; // newId → [oldIds that were merged into it]
+}
+
+function deduplicateSignals(signals: RawSignal[]): DedupResult {
+  const idMapping = new Map<string, string[]>();
+
+  // Hard dedup: group by source + threadStart + threadEnd (identical = same conversation)
+  const threadKey = (s: RawSignal) =>
+    s.threadStart && s.threadEnd ? `${s.source}|${s.threadStart}|${s.threadEnd}` : null;
+
+  const threadGroups = new Map<string, RawSignal[]>();
+  const noThread: RawSignal[] = [];
+
+  for (const s of signals) {
+    const key = threadKey(s);
+    if (key) {
+      const group = threadGroups.get(key) || [];
+      group.push(s);
+      threadGroups.set(key, group);
+    } else {
+      noThread.push(s);
+    }
+  }
+
+  const deduped: RawSignal[] = [...noThread];
+  let mergedCount = 0;
+
+  for (const [, group] of threadGroups) {
+    if (group.length === 1) {
+      deduped.push(group[0]);
+      continue;
+    }
+
+    // Keep the signal with most tags (richest classification)
+    group.sort((a, b) => b.tags.length - a.tags.length);
+    const winner = group[0];
+
+    // Merge authors and tags from all duplicates
+    const allAuthors = new Set<string>();
+    const allTags = new Set<string>();
+    const mergedFromIds: string[] = [];
+
+    for (const s of group) {
+      for (const a of s.authors) allAuthors.add(a);
+      for (const t of s.tags) allTags.add(t);
+      if (s.id !== winner.id) mergedFromIds.push(s.id);
+    }
+
+    winner.authors = [...allAuthors];
+    winner.tags = [...allTags];
+
+    deduped.push(winner);
+    idMapping.set(winner.id, mergedFromIds);
+    mergedCount += group.length - 1;
+  }
+
+  console.log(`[dedup] ${signals.length} → ${deduped.length} signals (${mergedCount} duplicates removed, ${threadGroups.size} thread groups)`);
+  return { signals: deduped, idMapping };
 }
 
 // --- Story builder ---
@@ -548,8 +632,11 @@ async function main() {
   // Sort all signals by date desc
   allSignals.sort((a, b) => b.date.localeCompare(a.date));
 
-  // Build stories
-  const stories = buildStories(allSignals);
+  // Deduplicate signals (same thread_start + thread_end = same conversation)
+  const { signals: dedupedSignals, idMapping } = deduplicateSignals(allSignals);
+
+  // Build stories from deduped signals
+  const stories = buildStories(dedupedSignals);
   console.log(`\n[build-signals] Built ${stories.length} stories`);
 
   // Stats
@@ -559,18 +646,34 @@ async function main() {
   }
   for (const [src, count] of bySource) console.log(`  ${src}: ${count} stories`);
 
-  // Preserve editorial content from existing stories.json
+  // Preserve editorial, public, slug from existing stories.json
+  // Also check merged IDs (dedup may have changed which signal ID is the "winner")
   const storiesJsonPath = join(dataDir, "stories.json");
   try {
     const existing: Story[] = JSON.parse(await readFile(storiesJsonPath, "utf-8"));
-    const editorialMap = new Map<string, Story["editorial"]>();
-    for (const s of existing) {
-      if (s.editorial) editorialMap.set(s.id, s.editorial);
+    const existingById = new Map<string, Story>();
+    for (const s of existing) existingById.set(s.id, s);
+
+    // Build reverse map: oldId → existingStory (for dedup ID migration)
+    const oldIdToStory = new Map<string, Story>();
+    for (const [newId, oldIds] of idMapping) {
+      for (const oldId of oldIds) {
+        // A story might have been created from an oldId that's now merged
+        const oldStoryId = `story-${oldId}`;
+        const found = existingById.get(oldStoryId);
+        if (found) oldIdToStory.set(newId, found);
+      }
     }
+
     let preserved = 0;
     for (const story of stories) {
-      const ed = editorialMap.get(story.id);
-      if (ed) { story.editorial = ed; preserved++; }
+      // Try direct match first, then check merged IDs
+      const match = existingById.get(story.id) || oldIdToStory.get(story.id.replace("story-", ""));
+      if (!match) continue;
+      if (match.editorial) { story.editorial = match.editorial; preserved++; }
+      if (match.public !== undefined) story.public = match.public;
+      if (match.sensitivityReason) story.sensitivityReason = match.sensitivityReason;
+      if (match.slug) story.slug = match.slug;
     }
     if (preserved > 0) console.log(`[build-signals] Preserved ${preserved} editorial entries from existing stories.json`);
   } catch { /* no existing file */ }
@@ -589,7 +692,7 @@ async function main() {
   console.log(`[build-signals] Enriched ${enriched} links with OG metadata (cache: ${Object.keys(ogCache).length} URLs)`);
 
   // Build graph
-  const graph = buildGraph(allSignals, stories);
+  const graph = buildGraph(dedupedSignals, stories);
   console.log(`\n[build-signals] Graph: ${graph.nodes.length} nodes, ${graph.links.length} links`);
 
   if (dryRun) {
@@ -604,8 +707,8 @@ async function main() {
   // Write outputs
   await mkdir(dataDir, { recursive: true });
 
-  // signals.json — all raw signals (without body, for the grid)
-  const signalsOut = allSignals.map(s => ({
+  // signals.json — deduped signals, metadata only (no body/summary for privacy)
+  const signalsOut = dedupedSignals.map(s => ({
     id: s.id,
     source: s.source,
     sourceLabel: s.sourceLabel,
@@ -613,8 +716,7 @@ async function main() {
     authors: s.authors,
     tags: s.tags,
     topic: s.topic,
-    summary: s.summary,
-    links: s.links,
+    linkCount: s.links.length,
     messageCount: s.messageCount,
   }));
   await writeFile(join(dataDir, "signals.json"), JSON.stringify(signalsOut, null, 2));

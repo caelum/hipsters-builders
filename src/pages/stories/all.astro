@@ -31,14 +31,9 @@ interface Story {
   slug?: string;
 }
 
-// Filter: public only + sort by date DESC
-const allStories = (storiesData as Story[]).sort((a, b) => b.date.localeCompare(a.date));
-const publicStories = allStories.filter(s => s.public !== false);
-
-// HOT threshold: top 30% of public stories by weight
-const weights = publicStories.map(s => s.weight).sort((a, b) => b - a);
-const hotThreshold = weights[Math.floor(weights.length * 0.3)] || 15;
-const stories = publicStories.filter(s => s.weight >= hotThreshold);
+// All stories, sorted by date DESC (admin view)
+const stories = (storiesData as Story[]).sort((a, b) => b.date.localeCompare(a.date));
+const hotThreshold = 0; // show all
 
 const groupStyles: Record<string, { label: string; color: string; bg: string }> = {
   "Clauders": { label: "Clauders", color: "#1e40af", bg: "#dbeafe" },
@@ -66,14 +61,12 @@ const renderText = (text: string) => {
 };
 ---
 
-<EditorialLayout title="Stories" activeNav="stories" description="Discussões da comunidade Hipsters Builders — conversas reais sobre IA, tech e carreira.">
+<EditorialLayout title="Todas as Stories" activeNav="stories" description="Visão completa de todas as stories — admin view.">
+  <meta slot="head" name="robots" content="noindex" />
   <div class="ed-section__label">Stories</div>
   <p class="ed-section__subtitle">
-    {stories.length} destaques de {totalAuthors} pessoas.
-    Cada story é uma conversa real, com as palavras de quem participou.
-    Inspirado no <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener">LLM Wiki</a> do Karpathy:
-    sinais capturados, processados por LLM e conectados num wiki.
-    <a href="/stories/all" style="margin-left:0.5rem;">Ver todas &rarr;</a>
+    Todas as {stories.length} stories (admin view). Marcadas em vermelho = privadas.
+    <a href="/stories">&larr; Voltar para destaques</a>
   </p>
 
   <div class="stories-list">
@@ -87,6 +80,7 @@ const renderText = (text: string) => {
             <div class="story__meta">
               <span class="ed-meta-date">{fmtDate(story.date)}</span>
               <span class="ed-label ed-label--sm" style={`background:${group.bg};color:${group.color};`}>{group.label}</span>
+              {story.public === false && <span class="story__private">interno</span>}
               {isHot && <span class="story__hot">em alta</span>}
               <span class="story__stats">{story.messageCount} msgs · {story.authorCount} pessoas{story.linkCount > 0 ? ` · ${story.linkCount} links` : ""}</span>
             </div>
@@ -160,6 +154,17 @@ const renderText = (text: string) => {
 
   .story--hot .story__title {
     font-size: clamp(1.25rem, 3vw, 1.5rem);
+  }
+
+  .story__private {
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #dc2626;
+    background: rgba(220, 38, 38, 0.08);
+    padding: 0.125rem 0.5rem;
+    border-radius: 2px;
   }
 
   .story__hot {
