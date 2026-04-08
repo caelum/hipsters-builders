@@ -48,18 +48,6 @@
       ]
     },
     {
-      "id": "story-whatsapp-ia-sob-controle-2026-04-07-002",
-      "title": "Compartilhamento de documento da OpenAI sobre política industrial para era da inteligência, junto com notícia sobre ameaça do Irã ao data center Stargate ($30B) em Abu Dhabi. Sinaliza tensões geopolíticas em torno de infraestrutura crítica de IA.",
-      "type": "story",
-      "tags": [
-        "política industrial",
-        "ia",
-        "infraestrutura de data centers",
-        "geopolítica",
-        "openai stargate"
-      ]
-    },
-    {
       "id": "story-whatsapp-clauders-2026-04-07-001",
       "title": "Reflexão sobre o futuro da educação com IA: enquanto modelos ganham capacidades de execução, há risco de usuários priorizar apenas tarefa concluída em vez de pedir explicação e entendimento conceitual.",
       "type": "story",
@@ -80,26 +68,6 @@
         "viabilidade técnica",
         "segurança",
         "produto"
-      ]
-    },
-    {
-      "id": "story-tg-codificacao-agentes-qualidade",
-      "title": "Codificação agêntica e qualidade de código",
-      "type": "story",
-      "tags": [
-        "vibe-coding",
-        "ia-qualidade",
-        "open-source",
-        "codificacao-agentes",
-        "codificacao-agentes-qualidade",
-        "agentic-coding",
-        "code-review",
-        "engenharia-software",
-        "claude-code",
-        "agentes-ia",
-        "qualidade-codigo",
-        "carreira-tech",
-        "ai-slop"
       ]
     },
     {
@@ -124,28 +92,6 @@
         "skills",
         "vibe coding",
         "planejamento"
-      ]
-    },
-    {
-      "id": "story-tg-podcast-recomendado",
-      "title": "Episódio de podcast recomendado",
-      "type": "story",
-      "tags": [
-        "podcast",
-        "recomendacao-conteudo",
-        "audio"
-      ]
-    },
-    {
-      "id": "story-tg-hipsters-2026-04-05-paulo-karpathy-tem-buscado-solucionar-problema-excesso-informacao-como",
-      "title": "Organização de dados com LLMs e wikis",
-      "type": "story",
-      "tags": [
-        "llm-knowledge-management",
-        "agentes-ia",
-        "arquitetura-sistemas",
-        "karpathy",
-        "processamento-dados"
       ]
     },
     {
@@ -200,17 +146,6 @@
       ]
     },
     {
-      "id": "story-tg-hipsters-2026-04-03-paulo-dezenas-pessoas-fazendo-interpretacoes-sobre-vazamento-claude-code",
-      "title": "vazamento Claude Code e qualidade",
-      "type": "story",
-      "tags": [
-        "claude-code",
-        "vibe-coding",
-        "qualidade-código",
-        "ia-desenvolvimento"
-      ]
-    },
-    {
       "id": "story-whatsapp-clauders-2026-04-02-008",
       "title": "Feedback sobre desempenho do Codex para programação, incluindo limitações de uso e comparação com outras ferramentas de IA em ambiente corporativo.",
       "type": "story",
@@ -232,16 +167,6 @@
         "github",
         "lumina",
         "Ralph"
-      ]
-    },
-    {
-      "id": "story-whatsapp-ia-sob-controle-2026-04-02-004",
-      "title": "Compartilhamento de posts sobre tópicos de IA em rede social sem detalhes específicos capturados (URLs indisponíveis).",
-      "type": "story",
-      "tags": [
-        "ia",
-        "trending topics",
-        "x.com"
       ]
     },
     {
@@ -279,17 +204,6 @@
         "análise técnica",
         "memory",
         "vazamento"
-      ]
-    },
-    {
-      "id": "story-whatsapp-clauders-2026-04-01-011",
-      "title": "Mauricio e Rafael compartilham vídeo sobre vazamento do código fonte do Claude revelando características de agentes autônomos, com nota sobre variáveis de ambiente faltando.",
-      "type": "story",
-      "tags": [
-        "claude code",
-        "agentes autônomos",
-        "vazamento",
-        "código fonte"
       ]
     },
     {
@@ -449,18 +363,6 @@
       ]
     },
     {
-      "id": "story-whatsapp-ia-sob-controle-2026-03-27-004",
-      "title": "Comparação visual de capacidades e segurança entre modelos Gemini, Grok e Claude através de imagens.",
-      "type": "story",
-      "tags": [
-        "comparação de modelos",
-        "gemini",
-        "grok",
-        "claude",
-        "segurança de ia"
-      ]
-    },
-    {
       "id": "story-whatsapp-120363425465757403-g-us-2026-03-26-001",
       "title": "Discussão sobre viralização de conteúdo sobre 'vibe coding' em marketing/HR e análise crítica sobre adoção em empresas pequenas versus grandes.",
       "type": "story",
@@ -482,18 +384,6 @@
         "agentes de ia",
         "inferência",
         "otimização de modelos"
-      ]
-    },
-    {
-      "id": "story-whatsapp-ia-sob-controle-2026-03-26-005",
-      "title": "Alerta crítico: LiteLLM sofreu ataque 'vibe-coded' que compromete segurança de agentes IA. Risco extremo de personificação, contaminação de filesystem e roubo de identidade digital via arquivos de contexto e PDFs. Implicações severas para agentes autônomos em produção.",
-      "type": "story",
-      "tags": [
-        "seguranca-ia",
-        "vibe-coding",
-        "litellm-compromissao",
-        "ataque-agentes",
-        "risco-seguranca"
       ]
     },
     {
@@ -588,28 +478,6 @@
         "code review",
         "multi-agentes",
         "arquitetura de sistemas"
-      ]
-    },
-    {
-      "id": "story-whatsapp-120363154248832196-g-us-2026-03-24-015",
-      "title": "Publicação da Anthropic sobre Claude Opus 4.5 realizando cálculos de física teórica frontier-grade de forma autônoma, gerando paper em 2 semanas vs. ano tradicional com 36M tokens.",
-      "type": "story",
-      "tags": [
-        "claude",
-        "física teórica",
-        "pesquisa científica",
-        "agentic science",
-        "prompt engineering"
-      ]
-    },
-    {
-      "id": "story-whatsapp-ia-sob-controle-2026-03-24-014",
-      "title": "Compartilhamento de pesquisa da Anthropic sobre 'vibe physics' com imagens técnicas, sugerindo novo framework ou abordagem de modelagem em desenvolvimento.",
-      "type": "story",
-      "tags": [
-        "pesquisa anthropic",
-        "vibe physics",
-        "modelagem de comportamento"
       ]
     },
     {
@@ -719,28 +587,6 @@
       ]
     },
     {
-      "id": "story-whatsapp-120363154248832196-g-us-2026-03-24-012",
-      "title": "Publicação da Anthropic sobre design de harness para development com Claude, demonstrando abordagens multi-agente (generator/evaluator) para melhorar qualidade em design frontend e coding autônomo.",
-      "type": "story",
-      "tags": [
-        "harness design",
-        "agentes de ia",
-        "agentic coding",
-        "claude",
-        "frontend design"
-      ]
-    },
-    {
-      "id": "story-whatsapp-ia-sob-controle-2026-03-24-011",
-      "title": "Compilação de múltiplas notícias sobre IA descrita como 'dia quente', indicando volume significativo de anúncios ou desenvolvimentos relevantes.",
-      "type": "story",
-      "tags": [
-        "notícias ia",
-        "mercado de ia",
-        "desenvolvimento acelerado"
-      ]
-    },
-    {
       "id": "story-whatsapp-120363425465757403-g-us-2026-03-24-014",
       "title": "Fabrício Carraro anuncia aprovação de seu primeiro paper na conferência LREC, escrito com colega PhD do BSC; equipe discute process de submissão no arXiv e Cloudflare lança Dynamic Workers para executar código gerado por IA de forma segura.",
       "type": "story",
@@ -843,17 +689,6 @@
       ]
     },
     {
-      "id": "story-whatsapp-120363425465757403-g-us-2026-03-24-011",
-      "title": "Compartilhamento de paper arXiv sobre EsoLang-Bench, benchmark que avalia raciocínio genuíno em LLMs usando linguagens esotéricas.",
-      "type": "story",
-      "tags": [
-        "esolang-bench",
-        "raciocínio genuíno",
-        "avaliação de llm",
-        "linguagens esotéricas"
-      ]
-    },
-    {
       "id": "story-whatsapp-120363425465757403-g-us-2026-03-24-010",
       "title": "Apresentação de HappyRobot, plataforma de Barcelona para build de AI workers autônomos com demo interativa, em crescimento no mercado.",
       "type": "story",
@@ -924,30 +759,6 @@
         "agentes de ia",
         "ceo ai agent",
         "mark zuckerberg"
-      ]
-    },
-    {
-      "id": "story-whatsapp-120363154248832196-g-us-2026-03-24-005",
-      "title": "Compartilhamento de notícias sobre Zuckerberg desenvolvendo agente de IA para CEO e competição entre OpenAI e Anthropic por investimento em IA empresarial.",
-      "type": "story",
-      "tags": [
-        "agentes de ia",
-        "mark zuckerberg",
-        "openai",
-        "anthropic",
-        "competição"
-      ]
-    },
-    {
-      "id": "story-whatsapp-ia-sob-controle-2026-03-24-005",
-      "title": "Compartilhamento de notícias sobre Zuckerberg desenvolvendo agente de IA para auxiliar na liderança e OpenAI competindo com Anthropic no mercado enterprise.",
-      "type": "story",
-      "tags": [
-        "mark zuckerberg",
-        "agentes executivos",
-        "openai estratégia",
-        "anthropic competição",
-        "modelos enterprise"
       ]
     },
     {
@@ -1172,19 +983,6 @@
         "padrão cognitivo",
         "uso de ia",
         "reflexão pessoal"
-      ]
-    },
-    {
-      "id": "story-whatsapp-clauders-2026-03-21-013",
-      "title": "Discussão sobre investimento de US$100M+ da Moonshot no modelo Kimi, estratégia de pricing agressivo para adoção, e como Cursor agrega valor via UX mesmo utilizando modelos open-source baratos. Foca na diferença entre vender infraestrutura (modelo) versus produto (experiência).",
-      "type": "story",
-      "tags": [
-        "modelo de linguagem",
-        "kimi foundation",
-        "cursor",
-        "estratégia de produto",
-        "pricing",
-        "developer experience"
       ]
     },
     {
@@ -1638,29 +1436,6 @@
       ]
     },
     {
-      "id": "story-whatsapp-ia-sob-controle-2026-03-17-006",
-      "title": "Fabrício Carraro compartilha imagens relacionadas a controle e governança de sistemas de IA, provavelmente conteúdo educativo ou de pesquisa.",
-      "type": "story",
-      "tags": [
-        "ia",
-        "segurança de ia",
-        "governança de ia",
-        "controle"
-      ]
-    },
-    {
-      "id": "story-whatsapp-ia-sob-controle-2026-03-16-005",
-      "title": "CEO de publisher de games usou ChatGPT para contornar contrato de $250 milhões e perdeu na justiça, ilustrando riscos de confiar em LLMs para decisões legais críticas sem orientação profissional.",
-      "type": "story",
-      "tags": [
-        "llms",
-        "chatgpt",
-        "casos de uso",
-        "decisões empresariais",
-        "direito"
-      ]
-    },
-    {
       "id": "story-whatsapp-clauders-2026-03-16-026",
       "title": "Insights sobre adoção de agentes de software no Uber (1.800 code changes/semana, 95% de engineers usando IA mensalmente), com reflexão sobre necessidade de revisão de código, guardrails de qualidade, e uso de CLI vs IDE.",
       "type": "story",
@@ -1719,50 +1494,6 @@
         "agentes de ia",
         "engenharia de prompt",
         "aprendizado de máquina"
-      ]
-    },
-    {
-      "id": "story-wa-clauders-2026-03-14-paulo-silveira-compartilha-materia-sobre-uso-de-ai",
-      "title": "Paulo Silveira compartilha artigo sobre uso de IA para criar vacina de câncer em cão; Guilherme Silveira alerta criticamente sobre riscos de sensacionalismo em notícias de tecnologia que prometem curas milagrosas e abertura para curandeirismo.",
-      "type": "story",
-      "tags": [
-        "crítica de mídia",
-        "desinformação em ia",
-        "jornalismo científico",
-        "ceticismo tecnológico"
-      ]
-    },
-    {
-      "id": "story-wa-clauders-2026-03-14-marcell-almeida-compartilha-pagina-de-vagas-de-emp",
-      "title": "Marcell Almeida compartilha ferramenta de visualização do mercado de trabalho americano que usa LLM para avaliar exposição de ocupações à IA. Utilitário prático para explorar riscos e oportunidades profissionais em contexto de automação.",
-      "type": "story",
-      "tags": [
-        "mercado de trabalho",
-        "ia e emprego",
-        "visualização de dados",
-        "bureau of labor statistics"
-      ]
-    },
-    {
-      "id": "story-wa-clauders-2026-03-14-rafael-ribeiro-compartilha-promocao-da-anthropic-c",
-      "title": "Rafael Ribeiro compartilha promoção da Anthropic (março 2026) oferecendo uso gratuito do Claude em horários de madrugada para retenção. Discussão sobre potencial de segmentação para usuários próximos de cancelamento.",
-      "type": "story",
-      "tags": [
-        "promoção anthropic",
-        "claude",
-        "pricing strategy",
-        "retenção de usuários"
-      ]
-    },
-    {
-      "id": "story-wa-ia-sob-controle-2026-03-14-marcus-compartilhou-noticia-sobre-bytedance-suspen",
-      "title": "ByteDance suspende lançamento global do Seedance 2.0 devido a disputas de copyright com estúdios de Hollywood e streamers. Trending topic sobre regulação de modelos de video generation baseados em IA.",
-      "type": "story",
-      "tags": [
-        "copyright e ia",
-        "video generation",
-        "bytedance",
-        "regulação"
       ]
     },
     {
@@ -2182,11 +1913,6 @@
       "type": "tag"
     },
     {
-      "id": "tag/ia",
-      "title": "ia",
-      "type": "tag"
-    },
-    {
       "id": "tag/vibe coding",
       "title": "vibe coding",
       "type": "tag"
@@ -2199,21 +1925,6 @@
     {
       "id": "tag/produto",
       "title": "produto",
-      "type": "tag"
-    },
-    {
-      "id": "tag/vibe-coding",
-      "title": "vibe-coding",
-      "type": "tag"
-    },
-    {
-      "id": "tag/claude-code",
-      "title": "claude-code",
-      "type": "tag"
-    },
-    {
-      "id": "tag/agentes-ia",
-      "title": "agentes-ia",
       "type": "tag"
     },
     {
@@ -2292,11 +2003,6 @@
       "type": "tag"
     },
     {
-      "id": "tag/segurança de ia",
-      "title": "segurança de ia",
-      "type": "tag"
-    },
-    {
       "id": "tag/arquitetura",
       "title": "arquitetura",
       "type": "tag"
@@ -2304,16 +2010,6 @@
     {
       "id": "tag/vazamento",
       "title": "vazamento",
-      "type": "tag"
-    },
-    {
-      "id": "tag/agentes autônomos",
-      "title": "agentes autônomos",
-      "type": "tag"
-    },
-    {
-      "id": "tag/código fonte",
-      "title": "código fonte",
       "type": "tag"
     },
     {
@@ -2357,13 +2053,13 @@
       "type": "tag"
     },
     {
-      "id": "tag/comparação de modelos",
-      "title": "comparação de modelos",
+      "id": "tag/otimização de modelos",
+      "title": "otimização de modelos",
       "type": "tag"
     },
     {
-      "id": "tag/otimização de modelos",
-      "title": "otimização de modelos",
+      "id": "tag/claude-code",
+      "title": "claude-code",
       "type": "tag"
     },
     {
@@ -2417,16 +2113,6 @@
       "type": "tag"
     },
     {
-      "id": "tag/pesquisa científica",
-      "title": "pesquisa científica",
-      "type": "tag"
-    },
-    {
-      "id": "tag/prompt engineering",
-      "title": "prompt engineering",
-      "type": "tag"
-    },
-    {
       "id": "tag/reasoning",
       "title": "reasoning",
       "type": "tag"
@@ -2477,6 +2163,11 @@
       "type": "tag"
     },
     {
+      "id": "tag/prompt engineering",
+      "title": "prompt engineering",
+      "type": "tag"
+    },
+    {
       "id": "tag/whatsapp",
       "title": "whatsapp",
       "type": "tag"
@@ -2487,18 +2178,13 @@
       "type": "tag"
     },
     {
-      "id": "tag/esolang-bench",
-      "title": "esolang-bench",
-      "type": "tag"
-    },
-    {
-      "id": "tag/linguagens esotéricas",
-      "title": "linguagens esotéricas",
-      "type": "tag"
-    },
-    {
       "id": "tag/ai workers",
       "title": "ai workers",
+      "type": "tag"
+    },
+    {
+      "id": "tag/agentes autônomos",
+      "title": "agentes autônomos",
       "type": "tag"
     },
     {
@@ -2569,11 +2255,6 @@
     {
       "id": "tag/pricing",
       "title": "pricing",
-      "type": "tag"
-    },
-    {
-      "id": "tag/developer experience",
-      "title": "developer experience",
       "type": "tag"
     },
     {
@@ -2687,11 +2368,6 @@
       "type": "tag"
     },
     {
-      "id": "tag/chatgpt",
-      "title": "chatgpt",
-      "type": "tag"
-    },
-    {
       "id": "tag/uber",
       "title": "uber",
       "type": "tag"
@@ -2702,8 +2378,8 @@
       "type": "tag"
     },
     {
-      "id": "tag/crítica de mídia",
-      "title": "crítica de mídia",
+      "id": "tag/chatgpt",
+      "title": "chatgpt",
       "type": "tag"
     },
     {
@@ -2772,23 +2448,18 @@
       "type": "person"
     },
     {
+      "id": "person/unknown",
+      "title": "Unknown",
+      "type": "person"
+    },
+    {
       "id": "person/rafael-ribeiro",
       "title": "Rafael Ribeiro",
       "type": "person"
     },
     {
-      "id": "person/paulo",
-      "title": "Paulo",
-      "type": "person"
-    },
-    {
       "id": "person/marcus-mendes",
       "title": "Marcus Mendes",
-      "type": "person"
-    },
-    {
-      "id": "person/stromae",
-      "title": "Stromae",
       "type": "person"
     },
     {
@@ -2852,13 +2523,8 @@
       "type": "person"
     },
     {
-      "id": "person/roni-",
-      "title": "Roni ",
-      "type": "person"
-    },
-    {
-      "id": "person/andré-torres",
-      "title": "André Torres",
+      "id": "person/roni",
+      "title": "Roni",
       "type": "person"
     },
     {
@@ -2902,11 +2568,6 @@
       "type": "person"
     },
     {
-      "id": "person/lucas-massena",
-      "title": "Lucas Massena",
-      "type": "person"
-    },
-    {
       "id": "person/vitor-miziara",
       "title": "Vitor Miziara",
       "type": "person"
@@ -2919,11 +2580,6 @@
     {
       "id": "person/denis-b",
       "title": "Denis B",
-      "type": "person"
-    },
-    {
-      "id": "person/fernando",
-      "title": "Fernando",
       "type": "person"
     },
     {
@@ -2982,11 +2638,6 @@
       "type": "person"
     },
     {
-      "id": "person/ricardo-soares-costa",
-      "title": "Ricardo Soares Costa",
-      "type": "person"
-    },
-    {
       "id": "person/diego-de-oliveira",
       "title": "Diego de Oliveira",
       "type": "person"
@@ -3007,18 +2658,8 @@
       "type": "person"
     },
     {
-      "id": "person/gael-souza",
-      "title": "Gael Souza",
-      "type": "person"
-    },
-    {
       "id": "person/maicon-guimaraes",
       "title": "Maicon Guimaraes",
-      "type": "person"
-    },
-    {
-      "id": "person/victor-segatti",
-      "title": "Victor Segatti",
       "type": "person"
     },
     {
@@ -3054,11 +2695,6 @@
     {
       "id": "person/patrick",
       "title": "Patrick",
-      "type": "person"
-    },
-    {
-      "id": "person/leandro-aveiro",
-      "title": "Leandro Aveiro",
       "type": "person"
     },
     {
@@ -3127,10 +2763,6 @@
       "target": "tag/claude mythos"
     },
     {
-      "source": "story-whatsapp-ia-sob-controle-2026-04-07-002",
-      "target": "tag/ia"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-04-06-005",
       "target": "tag/vibe coding"
     },
@@ -3141,18 +2773,6 @@
     {
       "source": "story-whatsapp-clauders-2026-04-06-005",
       "target": "tag/produto"
-    },
-    {
-      "source": "story-tg-codificacao-agentes-qualidade",
-      "target": "tag/vibe-coding"
-    },
-    {
-      "source": "story-tg-codificacao-agentes-qualidade",
-      "target": "tag/claude-code"
-    },
-    {
-      "source": "story-tg-codificacao-agentes-qualidade",
-      "target": "tag/agentes-ia"
     },
     {
       "source": "story-whatsapp-clauders-2026-04-06-003",
@@ -3171,10 +2791,6 @@
       "target": "tag/vibe coding"
     },
     {
-      "source": "story-tg-hipsters-2026-04-05-paulo-karpathy-tem-buscado-solucionar-problema-excesso-informacao-como",
-      "target": "tag/agentes-ia"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-04-04-010",
       "target": "tag/claude code"
     },
@@ -3189,14 +2805,6 @@
     {
       "source": "story-whatsapp-ia-sob-controle-2026-04-04-004",
       "target": "tag/mark zuckerberg"
-    },
-    {
-      "source": "story-tg-hipsters-2026-04-03-paulo-dezenas-pessoas-fazendo-interpretacoes-sobre-vazamento-claude-code",
-      "target": "tag/claude-code"
-    },
-    {
-      "source": "story-tg-hipsters-2026-04-03-paulo-dezenas-pessoas-fazendo-interpretacoes-sobre-vazamento-claude-code",
-      "target": "tag/vibe-coding"
     },
     {
       "source": "story-whatsapp-clauders-2026-04-02-008",
@@ -3217,10 +2825,6 @@
     {
       "source": "story-whatsapp-clauders-2026-04-02-007",
       "target": "tag/github"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-04-02-004",
-      "target": "tag/ia"
     },
     {
       "source": "story-whatsapp-clauders-2026-04-01-003",
@@ -3248,10 +2852,6 @@
     },
     {
       "source": "story-whatsapp-ia-sob-controle-2026-04-01-009",
-      "target": "tag/segurança de ia"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-04-01-009",
       "target": "tag/agentes de ia"
     },
     {
@@ -3265,22 +2865,6 @@
     {
       "source": "story-whatsapp-clauders-2026-04-01-013",
       "target": "tag/vazamento"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-04-01-011",
-      "target": "tag/claude code"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-04-01-011",
-      "target": "tag/agentes autônomos"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-04-01-011",
-      "target": "tag/vazamento"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-04-01-011",
-      "target": "tag/código fonte"
     },
     {
       "source": "story-whatsapp-ia-sob-controle-2026-03-31-008",
@@ -3301,10 +2885,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-31-007",
       "target": "tag/vazamento"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-31-007",
-      "target": "tag/código fonte"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-31-007",
@@ -3383,18 +2963,6 @@
       "target": "tag/replit"
     },
     {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-27-004",
-      "target": "tag/comparação de modelos"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-27-004",
-      "target": "tag/claude"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-27-004",
-      "target": "tag/segurança de ia"
-    },
-    {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-26-001",
       "target": "tag/vibe coding"
     },
@@ -3415,10 +2983,6 @@
       "target": "tag/otimização de modelos"
     },
     {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-26-005",
-      "target": "tag/vibe-coding"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-03-25-002",
       "target": "tag/claude-code"
     },
@@ -3437,10 +3001,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-25-001",
       "target": "tag/auto-dream"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-25-001",
-      "target": "tag/agentes-ia"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-25-016",
@@ -3497,18 +3057,6 @@
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
       "target": "tag/arquitetura de sistemas"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-015",
-      "target": "tag/claude"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-015",
-      "target": "tag/pesquisa científica"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-015",
-      "target": "tag/prompt engineering"
     },
     {
       "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-014",
@@ -3579,14 +3127,6 @@
       "target": "tag/segurança"
     },
     {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-012",
-      "target": "tag/agentes de ia"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-012",
-      "target": "tag/claude"
-    },
-    {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-014",
       "target": "tag/arxiv"
     },
@@ -3601,10 +3141,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-24-014",
       "target": "tag/arxiv"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-24-014",
-      "target": "tag/pesquisa científica"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-012",
@@ -3659,24 +3195,8 @@
       "target": "tag/prompt engineering"
     },
     {
-      "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-012",
-      "target": "tag/esolang-bench"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-24-012",
-      "target": "tag/linguagens esotéricas"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-03-24-012",
       "target": "tag/benchmarks"
-    },
-    {
-      "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-011",
-      "target": "tag/esolang-bench"
-    },
-    {
-      "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-011",
-      "target": "tag/linguagens esotéricas"
     },
     {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-010",
@@ -3752,22 +3272,6 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-03-24-009",
-      "target": "tag/mark zuckerberg"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-005",
-      "target": "tag/agentes de ia"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-005",
-      "target": "tag/mark zuckerberg"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-005",
-      "target": "tag/anthropic"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-24-005",
       "target": "tag/mark zuckerberg"
     },
     {
@@ -3927,22 +3431,6 @@
       "target": "tag/agentes de ia"
     },
     {
-      "source": "story-whatsapp-clauders-2026-03-21-013",
-      "target": "tag/modelo de linguagem"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-21-013",
-      "target": "tag/cursor"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-21-013",
-      "target": "tag/pricing"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-21-013",
-      "target": "tag/developer experience"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-03-21-011",
       "target": "tag/modelo de linguagem"
     },
@@ -3953,10 +3441,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-21-011",
       "target": "tag/kimi"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-21-011",
-      "target": "tag/comparação de modelos"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-20-007",
@@ -4200,10 +3684,6 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-03-18-009",
-      "target": "tag/developer experience"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-18-009",
       "target": "tag/ferramentas de ia"
     },
     {
@@ -4395,22 +3875,6 @@
       "target": "tag/claude"
     },
     {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-17-006",
-      "target": "tag/ia"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-17-006",
-      "target": "tag/segurança de ia"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-16-005",
-      "target": "tag/llms"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-16-005",
-      "target": "tag/chatgpt"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-03-16-026",
       "target": "tag/code review"
     },
@@ -4467,18 +3931,6 @@
       "target": "tag/engenharia de prompt"
     },
     {
-      "source": "story-wa-clauders-2026-03-14-paulo-silveira-compartilha-materia-sobre-uso-de-ai",
-      "target": "tag/crítica de mídia"
-    },
-    {
-      "source": "story-wa-clauders-2026-03-14-rafael-ribeiro-compartilha-promocao-da-anthropic-c",
-      "target": "tag/claude"
-    },
-    {
-      "source": "story-wa-clauders-2026-03-14-rafael-ribeiro-compartilha-promocao-da-anthropic-c",
-      "target": "tag/retenção de usuários"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-03-15-023",
       "target": "tag/chatgpt"
     },
@@ -4489,10 +3941,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-15-029",
       "target": "tag/chatgpt"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-15-029",
-      "target": "tag/crítica de mídia"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-14-019",
@@ -4927,10 +4375,6 @@
       "target": "person/mauricio-aniche"
     },
     {
-      "source": "story-whatsapp-clauders-2026-04-07-010",
-      "target": "person/paulo-silveira"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-04-07-009",
       "target": "person/fabrício-carraro"
     },
@@ -4971,8 +4415,8 @@
       "target": "person/paulo-silveira"
     },
     {
-      "source": "story-whatsapp-ia-sob-controle-2026-04-07-002",
-      "target": "person/fabrício-carraro"
+      "source": "story-whatsapp-clauders-2026-04-07-001",
+      "target": "person/unknown"
     },
     {
       "source": "story-whatsapp-clauders-2026-04-07-001",
@@ -4993,10 +4437,6 @@
     {
       "source": "story-whatsapp-clauders-2026-04-06-005",
       "target": "person/sérgio-lopes"
-    },
-    {
-      "source": "story-tg-codificacao-agentes-qualidade",
-      "target": "person/paulo"
     },
     {
       "source": "story-whatsapp-clauders-2026-04-06-003",
@@ -5019,14 +4459,6 @@
       "target": "person/paulo-silveira"
     },
     {
-      "source": "story-tg-podcast-recomendado",
-      "target": "person/paulo"
-    },
-    {
-      "source": "story-tg-hipsters-2026-04-05-paulo-karpathy-tem-buscado-solucionar-problema-excesso-informacao-como",
-      "target": "person/paulo"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-04-04-010",
       "target": "person/sérgio-lopes"
     },
@@ -5036,11 +4468,11 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-04-04-008",
-      "target": "person/marcell-almeida"
+      "target": "person/paulo-silveira"
     },
     {
       "source": "story-whatsapp-clauders-2026-04-04-008",
-      "target": "person/paulo-silveira"
+      "target": "person/marcell-almeida"
     },
     {
       "source": "story-whatsapp-ia-sob-controle-2026-04-04-004",
@@ -5052,11 +4484,11 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-04-03-005",
-      "target": "person/marcell-almeida"
+      "target": "person/paulo-silveira"
     },
     {
       "source": "story-whatsapp-clauders-2026-04-03-005",
-      "target": "person/paulo-silveira"
+      "target": "person/marcell-almeida"
     },
     {
       "source": "story-whatsapp-clauders-2026-04-03-004",
@@ -5064,23 +4496,15 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-04-03-004",
-      "target": "person/paulo-silveira"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-04-03-004",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-tg-hipsters-2026-04-03-paulo-dezenas-pessoas-fazendo-interpretacoes-sobre-vazamento-claude-code",
-      "target": "person/paulo"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-04-02-008",
       "target": "person/fabrício-carraro"
     },
     {
       "source": "story-whatsapp-clauders-2026-04-02-008",
       "target": "person/marcell-almeida"
+    },
+    {
+      "source": "story-whatsapp-clauders-2026-04-02-008",
+      "target": "person/fabrício-carraro"
     },
     {
       "source": "story-whatsapp-clauders-2026-04-02-008",
@@ -5096,18 +4520,6 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-04-02-007",
-      "target": "person/marcell-almeida"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-04-02-004",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-04-02-004",
-      "target": "person/stromae"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-04-01-003",
       "target": "person/marcell-almeida"
     },
     {
@@ -5139,14 +4551,6 @@
       "target": "person/marcell-almeida"
     },
     {
-      "source": "story-whatsapp-clauders-2026-04-01-011",
-      "target": "person/mauricio-aniche"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-04-01-011",
-      "target": "person/rafael-ribeiro"
-    },
-    {
       "source": "story-whatsapp-ia-sob-controle-2026-03-31-008",
       "target": "person/paulo-silveira"
     },
@@ -5163,16 +4567,12 @@
       "target": "person/fabrício-carraro"
     },
     {
-      "source": "story-whatsapp-clauders-2026-03-31-009",
-      "target": "person/mauricio-aniche"
+      "source": "story-whatsapp-clauders-2026-03-31-007",
+      "target": "person/paulo-silveira"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-31-007",
       "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-31-007",
-      "target": "person/paulo-silveira"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-31-007",
@@ -5191,20 +4591,12 @@
       "target": "person/guilherme-silveira"
     },
     {
-      "source": "story-whatsapp-clauders-2026-03-30-001",
-      "target": "person/stromae"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-03-28-016",
       "target": "person/paulo-silveira"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-28-016",
       "target": "person/marcell-almeida"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-28-016",
-      "target": "person/fabrício-carraro"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-28-014",
@@ -5224,11 +4616,11 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-03-28-013",
-      "target": "person/fabrício-carraro"
+      "target": "person/paulo-silveira"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-28-013",
-      "target": "person/paulo-silveira"
+      "target": "person/fabrício-carraro"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-28-012",
@@ -5264,10 +4656,6 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-03-27-009",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-27-009",
       "target": "person/paulo-silveira"
     },
     {
@@ -5293,14 +4681,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-27-005",
       "target": "person/marcell-almeida"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-27-004",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-120363425465757403-g-us-2026-03-26-001",
-      "target": "person/fabrício-carraro"
     },
     {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-26-001",
@@ -5364,11 +4744,7 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-26-001",
-      "target": "person/roni-"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-26-005",
-      "target": "person/fabrício-carraro"
+      "target": "person/roni"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-26-007",
@@ -5391,10 +4767,6 @@
       "target": "person/paulo-silveira"
     },
     {
-      "source": "story-whatsapp-clauders-2026-03-25-002",
-      "target": "person/rafael-ribeiro"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-03-25-001",
       "target": "person/paulo-silveira"
     },
@@ -5409,10 +4781,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-25-001",
       "target": "person/rafael-ribeiro"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-25-016",
-      "target": "person/andré-torres"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-25-016",
@@ -5472,10 +4840,6 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
-      "target": "person/lucas-massena"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
       "target": "person/vitor-miziara"
     },
     {
@@ -5492,19 +4856,15 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
-      "target": "person/fernando"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
-      "target": "person/vagner-bitencourt-@vagner.me"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
       "target": "person/marcel-leão"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
       "target": "person/gustavo-barros"
+    },
+    {
+      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
+      "target": "person/vagner-bitencourt-@vagner.me"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
@@ -5520,7 +4880,7 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
-      "target": "person/roni-"
+      "target": "person/roni"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
@@ -5555,14 +4915,6 @@
       "target": "person/max-ferreira"
     },
     {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-015",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-24-014",
-      "target": "person/fabrício-carraro"
-    },
-    {
       "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-014",
       "target": "person/paulo-silveira"
     },
@@ -5584,19 +4936,11 @@
     },
     {
       "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-013",
-      "target": "person/marcus-mendes"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-013",
       "target": "person/fabrício-carraro"
     },
     {
       "source": "story-whatsapp-ia-sob-controle-2026-03-24-012",
       "target": "person/guilherme-silveira"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-24-012",
-      "target": "person/marcus-mendes"
     },
     {
       "source": "story-whatsapp-ia-sob-controle-2026-03-24-012",
@@ -5620,15 +4964,7 @@
     },
     {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-015",
-      "target": "person/mauricio-aniche"
-    },
-    {
-      "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-015",
       "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-24-015",
-      "target": "person/mauricio-aniche"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-24-015",
@@ -5649,10 +4985,6 @@
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-013",
       "target": "person/denis-rocha"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-013",
-      "target": "person/ricardo-soares-costa"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-013",
@@ -5696,10 +5028,6 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-013",
-      "target": "person/gael-souza"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-013",
       "target": "person/levi-bertolino"
     },
     {
@@ -5716,21 +5044,9 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-013",
-      "target": "person/victor-segatti"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-013",
       "target": "person/helder-santos"
     },
     {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-012",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-24-011",
-      "target": "person/fabrício-carraro"
-    },
-    {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-014",
       "target": "person/guilherme-silveira"
     },
@@ -5741,10 +5057,6 @@
     {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-014",
       "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-014",
-      "target": "person/paulo-silveira"
     },
     {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-014",
@@ -5764,15 +5076,7 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-03-24-014",
-      "target": "person/paulo-silveira"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-24-014",
       "target": "person/sérgio-lopes"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-012",
-      "target": "person/alan-alves"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-012",
@@ -5792,15 +5096,15 @@
     },
     {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-013",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-013",
       "target": "person/paulo-silveira"
     },
     {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-013",
       "target": "person/marcell-almeida"
+    },
+    {
+      "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-013",
+      "target": "person/fabrício-carraro"
     },
     {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-013",
@@ -5812,15 +5116,15 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-03-24-013",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-24-013",
       "target": "person/paulo-silveira"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-24-013",
       "target": "person/marcell-almeida"
+    },
+    {
+      "source": "story-whatsapp-clauders-2026-03-24-013",
+      "target": "person/fabrício-carraro"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-24-013",
@@ -5832,7 +5136,7 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-011",
-      "target": "person/roni-"
+      "target": "person/roni"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-011",
@@ -5865,14 +5169,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-24-012",
       "target": "person/paulo-silveira"
-    },
-    {
-      "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-011",
-      "target": "person/paulo-silveira"
-    },
-    {
-      "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-011",
-      "target": "person/fabrício-carraro"
     },
     {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-010",
@@ -5928,14 +5224,6 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-010",
-      "target": "person/vagner-bitencourt-@vagner.me"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-010",
-      "target": "person/ricardo-soares-costa"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-010",
       "target": "person/fb"
     },
     {
@@ -5948,10 +5236,6 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-010",
-      "target": "person/igor-carvalho"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-010",
       "target": "person/vitor-miziara"
     },
     {
@@ -5960,7 +5244,7 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-010",
-      "target": "person/roni-"
+      "target": "person/roni"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-010",
@@ -5977,10 +5261,6 @@
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-010",
       "target": "person/patrick"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-010",
-      "target": "person/andré-torres"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-008",
@@ -6005,18 +5285,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-24-009",
       "target": "person/paulo-silveira"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-005",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-24-005",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-005",
-      "target": "person/leandro-aveiro"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-005",
@@ -6084,19 +5352,7 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-004",
-      "target": "person/gael-souza"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-004",
       "target": "person/roney"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-004",
-      "target": "person/fernando"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-004",
-      "target": "person/fabrício-carraro"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-004",
@@ -6128,19 +5384,11 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-004",
-      "target": "person/leandro-aveiro"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-004",
       "target": "person/mário-lúcio"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-004",
       "target": "person/fábio-perez"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-004",
-      "target": "person/paulo"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-004",
@@ -6164,10 +5412,6 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-004",
-      "target": "person/lucas-massena"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-004",
       "target": "person/vieira"
     },
     {
@@ -6180,14 +5424,6 @@
     },
     {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-23-005",
-      "target": "person/rafael-ribeiro"
-    },
-    {
-      "source": "story-whatsapp-120363425465757403-g-us-2026-03-23-005",
-      "target": "person/marcell-almeida"
-    },
-    {
-      "source": "story-whatsapp-120363425465757403-g-us-2026-03-23-005",
       "target": "person/fabrício-carraro"
     },
     {
@@ -6197,14 +5433,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-23-005",
       "target": "person/mauricio-aniche"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-23-005",
-      "target": "person/rafael-ribeiro"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-23-005",
-      "target": "person/marcell-almeida"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-23-005",
@@ -6316,10 +5544,6 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-001",
-      "target": "person/igor-carvalho"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-001",
       "target": "person/bruno-lopau"
     },
     {
@@ -6332,15 +5556,11 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-001",
-      "target": "person/roni-"
+      "target": "person/roni"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-001",
       "target": "person/lucas"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-23-001",
-      "target": "person/victor-segatti"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-23-022",
@@ -6364,14 +5584,6 @@
     },
     {
       "source": "story-whatsapp-ia-sob-controle-2026-03-21-004",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-21-013",
-      "target": "person/mauricio-aniche"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-21-013",
       "target": "person/fabrício-carraro"
     },
     {
@@ -6440,10 +5652,6 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-03-19-002",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-19-002",
       "target": "person/paulo-silveira"
     },
     {
@@ -6453,10 +5661,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-19-001",
       "target": "person/sérgio-lopes"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-19-001",
-      "target": "person/mauricio-aniche"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-19-043",
@@ -6572,14 +5776,14 @@
     },
     {
       "source": "story-whatsapp-ia-sob-controle-2026-03-19-014",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-19-014",
       "target": "person/guilherme-silveira"
     },
     {
       "source": "story-whatsapp-ia-sob-controle-2026-03-19-014",
+      "target": "person/fabrício-carraro"
+    },
+    {
+      "source": "story-whatsapp-ia-sob-controle-2026-03-19-014",
       "target": "person/paulo-silveira"
     },
     {
@@ -6619,10 +5823,6 @@
       "target": "person/paulo-silveira"
     },
     {
-      "source": "story-whatsapp-clauders-2026-03-19-011",
-      "target": "person/rafael-ribeiro"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-03-19-040",
       "target": "person/mauricio-aniche"
     },
@@ -6635,10 +5835,6 @@
       "target": "person/paulo-silveira"
     },
     {
-      "source": "story-whatsapp-clauders-2026-03-19-040",
-      "target": "person/rafael-ribeiro"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-03-19-042",
       "target": "person/mauricio-aniche"
     },
@@ -6649,10 +5845,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-19-042",
       "target": "person/paulo-silveira"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-19-042",
-      "target": "person/rafael-ribeiro"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-18-009",
@@ -6839,22 +6031,6 @@
       "target": "person/paulo-silveira"
     },
     {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-17-006",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-16-005",
-      "target": "person/marcus-mendes"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-16-005",
-      "target": "person/fabrício-carraro"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-03-16-005",
-      "target": "person/guilherme-silveira"
-    },
-    {
       "source": "story-whatsapp-clauders-2026-03-16-026",
       "target": "person/mauricio-aniche"
     },
@@ -6892,63 +6068,27 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-03-16-025",
+      "target": "person/guilherme-silveira"
+    },
+    {
+      "source": "story-whatsapp-clauders-2026-03-16-025",
       "target": "person/marcell-pm3"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-16-025",
-      "target": "person/guilherme-silveira"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-16-025",
       "target": "person/mauricio-aniche"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-16-032",
-      "target": "person/marcell-almeida"
+      "target": "person/guilherme-silveira"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-16-032",
-      "target": "person/guilherme-silveira"
+      "target": "person/marcell-almeida"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-16-032",
       "target": "person/mauricio-aniche"
-    },
-    {
-      "source": "story-wa-clauders-2026-03-14-paulo-silveira-compartilha-materia-sobre-uso-de-ai",
-      "target": "person/paulo-silveira"
-    },
-    {
-      "source": "story-wa-clauders-2026-03-14-paulo-silveira-compartilha-materia-sobre-uso-de-ai",
-      "target": "person/guilherme-silveira"
-    },
-    {
-      "source": "story-wa-clauders-2026-03-14-marcell-almeida-compartilha-pagina-de-vagas-de-emp",
-      "target": "person/marcell-almeida"
-    },
-    {
-      "source": "story-wa-clauders-2026-03-14-rafael-ribeiro-compartilha-promocao-da-anthropic-c",
-      "target": "person/rafael-ribeiro"
-    },
-    {
-      "source": "story-wa-clauders-2026-03-14-rafael-ribeiro-compartilha-promocao-da-anthropic-c",
-      "target": "person/paulo-silveira"
-    },
-    {
-      "source": "story-wa-clauders-2026-03-14-rafael-ribeiro-compartilha-promocao-da-anthropic-c",
-      "target": "person/marcell-almeida"
-    },
-    {
-      "source": "story-wa-ia-sob-controle-2026-03-14-marcus-compartilhou-noticia-sobre-bytedance-suspen",
-      "target": "person/marcus-mendes"
-    },
-    {
-      "source": "story-wa-ia-sob-controle-2026-03-14-marcus-compartilhou-noticia-sobre-bytedance-suspen",
-      "target": "person/guilherme-silveira"
-    },
-    {
-      "source": "story-wa-ia-sob-controle-2026-03-14-marcus-compartilhou-noticia-sobre-bytedance-suspen",
-      "target": "person/fabrício-carraro"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-15-022",
@@ -6984,10 +6124,6 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-03-14-019",
-      "target": "person/rafael-ribeiro"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-14-019",
       "target": "person/marcell-pm3"
     },
     {
@@ -7000,10 +6136,6 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-03-14-020",
-      "target": "person/rafael-ribeiro"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-14-020",
       "target": "person/marcell-pm3"
     },
     {
@@ -7013,10 +6145,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-14-026",
       "target": "person/paulo-silveira"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-14-026",
-      "target": "person/rafael-ribeiro"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-14-026",
@@ -7024,19 +6152,19 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-03-14-018",
-      "target": "person/paulo-silveira"
+      "target": "person/mauricio-aniche"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-14-018",
-      "target": "person/mauricio-aniche"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-14-025",
       "target": "person/paulo-silveira"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-14-025",
       "target": "person/mauricio-aniche"
+    },
+    {
+      "source": "story-whatsapp-clauders-2026-03-14-025",
+      "target": "person/paulo-silveira"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-14-015",
@@ -7072,14 +6200,10 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-03-13-013",
-      "target": "person/rafael-ribeiro"
+      "target": "person/paulo-silveira"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-13-013",
-      "target": "person/paulo-silveira"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-13-014",
       "target": "person/rafael-ribeiro"
     },
     {
@@ -7087,7 +6211,7 @@
       "target": "person/paulo-silveira"
     },
     {
-      "source": "story-whatsapp-clauders-2026-03-13-019",
+      "source": "story-whatsapp-clauders-2026-03-13-014",
       "target": "person/rafael-ribeiro"
     },
     {
@@ -7095,7 +6219,7 @@
       "target": "person/paulo-silveira"
     },
     {
-      "source": "story-whatsapp-clauders-2026-03-13-020",
+      "source": "story-whatsapp-clauders-2026-03-13-019",
       "target": "person/rafael-ribeiro"
     },
     {
@@ -7103,15 +6227,15 @@
       "target": "person/paulo-silveira"
     },
     {
-      "source": "story-whatsapp-clauders-2026-03-13-017",
-      "target": "person/mauricio-aniche"
+      "source": "story-whatsapp-clauders-2026-03-13-020",
+      "target": "person/rafael-ribeiro"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-13-017",
       "target": "person/paulo-silveira"
     },
     {
-      "source": "story-whatsapp-clauders-2026-03-13-018",
+      "source": "story-whatsapp-clauders-2026-03-13-017",
       "target": "person/mauricio-aniche"
     },
     {
@@ -7119,7 +6243,7 @@
       "target": "person/paulo-silveira"
     },
     {
-      "source": "story-whatsapp-clauders-2026-03-13-010",
+      "source": "story-whatsapp-clauders-2026-03-13-018",
       "target": "person/mauricio-aniche"
     },
     {
@@ -7131,7 +6255,7 @@
       "target": "person/paulo-silveira"
     },
     {
-      "source": "story-whatsapp-clauders-2026-03-13-016",
+      "source": "story-whatsapp-clauders-2026-03-13-010",
       "target": "person/mauricio-aniche"
     },
     {
@@ -7141,6 +6265,10 @@
     {
       "source": "story-whatsapp-clauders-2026-03-13-016",
       "target": "person/paulo-silveira"
+    },
+    {
+      "source": "story-whatsapp-clauders-2026-03-13-016",
+      "target": "person/mauricio-aniche"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-13-005",
@@ -7279,6 +6407,10 @@
       "target": "person/fabrício-carraro"
     },
     {
+      "source": "story-whatsapp-clauders-2026-03-11-004",
+      "target": "person/unknown"
+    },
+    {
       "source": "story-whatsapp-clauders-2026-03-11-003",
       "target": "person/mauricio-aniche"
     },
@@ -7289,10 +6421,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-11-003",
       "target": "person/rafael-ribeiro"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-11-002",
-      "target": "person/mauricio-aniche"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-11-002",
@@ -7312,23 +6440,15 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-03-11-001",
+      "target": "person/unknown"
+    },
+    {
+      "source": "story-whatsapp-clauders-2026-03-11-001",
       "target": "person/fabrício-carraro"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-11-001",
       "target": "person/mauricio-aniche"
-    },
-    {
-      "source": "story-tg-codificacao-agentes-qualidade",
-      "target": "story-tg-hipsters-2026-04-03-paulo-dezenas-pessoas-fazendo-interpretacoes-sobre-vazamento-claude-code"
-    },
-    {
-      "source": "story-tg-codificacao-agentes-qualidade",
-      "target": "story-whatsapp-clauders-2026-03-25-001"
-    },
-    {
-      "source": "story-whatsapp-ia-sob-controle-2026-04-04-004",
-      "target": "story-whatsapp-120363154248832196-g-us-2026-03-24-005"
     },
     {
       "source": "story-whatsapp-ia-sob-controle-2026-04-04-004",
@@ -7360,14 +6480,6 @@
     },
     {
       "source": "story-whatsapp-clauders-2026-04-01-013",
-      "target": "story-whatsapp-clauders-2026-04-01-011"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-04-01-013",
-      "target": "story-whatsapp-clauders-2026-03-31-007"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-04-01-011",
       "target": "story-whatsapp-clauders-2026-03-31-007"
     },
     {
@@ -7377,10 +6489,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-31-006",
       "target": "story-whatsapp-120363408138765885-g-us-2026-03-24-013"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-31-006",
-      "target": "story-whatsapp-120363154248832196-g-us-2026-03-24-005"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-31-006",
@@ -7413,10 +6521,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-28-012",
       "target": "story-whatsapp-120363154248832196-g-us-2026-03-24-013"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-28-012",
-      "target": "story-whatsapp-120363154248832196-g-us-2026-03-24-012"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-28-012",
@@ -7461,10 +6565,6 @@
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-26-001",
       "target": "story-whatsapp-120363154248832196-g-us-2026-03-24-013"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-26-001",
-      "target": "story-whatsapp-120363154248832196-g-us-2026-03-24-012"
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-26-001",
@@ -7512,10 +6612,6 @@
     },
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
-      "target": "story-whatsapp-120363154248832196-g-us-2026-03-24-012"
-    },
-    {
-      "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
       "target": "story-whatsapp-120363408138765885-g-us-2026-03-24-010"
     },
     {
@@ -7553,22 +6649,6 @@
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-014",
       "target": "story-whatsapp-clauders-2026-03-11-001"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-015",
-      "target": "story-whatsapp-120363408138765885-g-us-2026-03-24-011"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-015",
-      "target": "story-whatsapp-clauders-2026-03-18-001"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-015",
-      "target": "story-whatsapp-clauders-2026-03-14-025"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-013",
-      "target": "story-whatsapp-120363154248832196-g-us-2026-03-24-012"
     },
     {
       "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-013",
@@ -7613,38 +6693,6 @@
     {
       "source": "story-whatsapp-120363408138765885-g-us-2026-03-24-013",
       "target": "story-whatsapp-clauders-2026-03-14-021"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-012",
-      "target": "story-whatsapp-120363408138765885-g-us-2026-03-24-010"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-012",
-      "target": "story-whatsapp-120363154248832196-g-us-2026-03-23-002"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-012",
-      "target": "story-whatsapp-clauders-2026-03-19-011"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-012",
-      "target": "story-whatsapp-clauders-2026-03-18-005"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-012",
-      "target": "story-whatsapp-clauders-2026-03-18-034"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-012",
-      "target": "story-whatsapp-clauders-2026-03-13-019"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-012",
-      "target": "story-whatsapp-clauders-2026-03-13-020"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-012",
-      "target": "story-whatsapp-clauders-2026-03-11-001"
     },
     {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-013",
@@ -7707,14 +6755,6 @@
       "target": "story-whatsapp-clauders-2026-03-11-001"
     },
     {
-      "source": "story-whatsapp-clauders-2026-03-24-009",
-      "target": "story-whatsapp-120363154248832196-g-us-2026-03-24-005"
-    },
-    {
-      "source": "story-whatsapp-120363154248832196-g-us-2026-03-24-005",
-      "target": "story-whatsapp-120363154248832196-g-us-2026-03-23-002"
-    },
-    {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-24-007",
       "target": "story-whatsapp-clauders-2026-03-24-007"
     },
@@ -7765,18 +6805,6 @@
     {
       "source": "story-whatsapp-120363425465757403-g-us-2026-03-23-003",
       "target": "story-whatsapp-clauders-2026-03-18-032"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-21-013",
-      "target": "story-whatsapp-clauders-2026-03-21-011"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-21-013",
-      "target": "story-whatsapp-clauders-2026-03-20-005"
-    },
-    {
-      "source": "story-whatsapp-clauders-2026-03-21-013",
-      "target": "story-whatsapp-ia-sob-controle-2026-03-20-001"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-21-011",
@@ -8089,10 +7117,6 @@
     {
       "source": "story-whatsapp-clauders-2026-03-16-032",
       "target": "story-whatsapp-clauders-2026-03-11-001"
-    },
-    {
-      "source": "story-wa-clauders-2026-03-14-rafael-ribeiro-compartilha-promocao-da-anthropic-c",
-      "target": "story-whatsapp-clauders-2026-03-14-026"
     },
     {
       "source": "story-whatsapp-clauders-2026-03-14-019",

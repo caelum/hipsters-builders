@@ -66,16 +66,22 @@ interface RawSignal {
   threadSlug?: string;
 }
 
+interface ConversationMsg {
+  author: string;
+  text: string;
+  time?: string; // HH:MM
+}
+
 interface Story {
   id: string;
   title: string;
-  summary: string;
   date: string;
   authors: string[];
   tags: string[];
   sources: string[]; // signal IDs
   links: Array<{ url: string; title?: string; site?: string }>;
   sourceGroups: string[]; // which groups contributed
+  conversation: ConversationMsg[]; // actual quoted messages
   messageCount: number;
   authorCount: number;
   linkCount: number;
@@ -98,6 +104,50 @@ interface GraphLink {
 
 function countMessages(body: string): number {
   return (body.match(/\*\*\[.+?\]\*\*/g) || []).length || 1;
+}
+
+/** Extract conversation messages from signal body.
+ *  Format: **[Author · HH:MM]** Message text...
+ *  Returns only messages with actual text content (not just links). */
+function extractConversation(body: string): ConversationMsg[] {
+  const msgs: ConversationMsg[] = [];
+  // Split by message headers
+  const parts = body.split(/\*\*\[/);
+  for (const part of parts) {
+    if (!part.trim()) continue;
+    const headerEnd = part.indexOf("**");
+    if (headerEnd < 0) continue;
+    const header = part.slice(0, headerEnd);
+    const text = part.slice(headerEnd + 2).trim();
+
+    // Parse author and time from "Author · HH:MM]"
+    const match = header.match(/^(.+?)(?:\s*[·]\s*(\d{1,2}:\d{2}))?\]/);
+    if (!match) continue;
+    const author = match[1].trim();
+    const time = match[2] || undefined;
+
+    // Skip messages that are ONLY a URL (no commentary)
+    const stripped = text.replace(/https?:\/\/[^\s]+/g, "").trim();
+    if (stripped.length < 10) continue;
+
+    // Clean up: remove markdown image refs, keep text
+    const clean = text
+      .replace(/!\[.*?\]\(.*?\)/g, "") // remove images
+      .replace(/\n{3,}/g, "\n\n")
+      .trim();
+
+    if (clean.length < 10) continue;
+
+    msgs.push({ author, text: clean, time });
+  }
+  return msgs;
+}
+
+/** Check if a signal has enough real discussion to be a story.
+ *  Needs at least 2 messages with actual text (not just shared links). */
+function hasSubstantiveDiscussion(body: string): boolean {
+  const msgs = extractConversation(body);
+  return msgs.length >= 2;
 }
 
 function extractLinks(body: string, frontmatterLinks?: any[]): Array<{ url: string; title?: string; site?: string }> {
@@ -185,56 +235,61 @@ function buildStories(signals: RawSignal[]): Story[] {
 
   // Telegram thread groups → stories
   for (const [slug, group] of telegramByThread) {
-    const allAuthors = [...new Set(group.flatMap(s => s.authors))];
-    const allTags = [...new Set(group.flatMap(s => s.tags))];
-    const allLinks = group.flatMap(s => s.links);
-    const totalMsgs = group.reduce((sum, s) => sum + s.messageCount, 0);
     const sortedByDate = group.sort((a, b) => a.date.localeCompare(b.date));
+    const combinedBody = sortedByDate.map(s => s.body).join("\n\n");
+    const conversation = extractConversation(combinedBody);
 
-    // Story quality filter: need substance
-    if (allAuthors.length < 2 && totalMsgs < 3 && allLinks.length === 0) continue;
+    // Story quality: need real discussion (2+ messages with text)
+    if (conversation.length < 2) continue;
 
-    const dedupedLinks = dedupeLinks(allLinks);
+    const allAuthors = [...new Set(conversation.map(m => m.author))];
+    const allTags = [...new Set(group.flatMap(s => s.tags))];
+    const allLinks = dedupeLinks(group.flatMap(s => s.links));
+
     stories.push({
       id: `story-tg-${slug}`,
       title: sortedByDate[0].topic || allTags.slice(0, 3).join(", "),
-      summary: sortedByDate[0].summary || sortedByDate[0].topic,
       date: sortedByDate[sortedByDate.length - 1].date,
       authors: allAuthors,
       tags: allTags,
       sources: group.map(s => s.id),
-      links: dedupedLinks,
+      links: allLinks,
       sourceGroups: ["Hipsters Builders"],
-      messageCount: totalMsgs,
+      conversation,
+      messageCount: conversation.length,
       authorCount: allAuthors.length,
-      linkCount: dedupedLinks.length,
-      weight: totalMsgs + allAuthors.length * 3 + dedupedLinks.length * 2,
+      linkCount: allLinks.length,
+      weight: conversation.length + allAuthors.length * 3 + allLinks.length * 2,
     });
   }
 
-  // WhatsApp signals → stories (already consolidated)
+  // WhatsApp signals → stories (already consolidated threads)
   for (const s of standaloneSignals) {
-    // Quality filter
-    if (s.authors.length < 2 && s.messageCount < 3 && s.links.length === 0) continue;
+    const conversation = extractConversation(s.body);
 
-    const groupLabel = s.source === "whatsapp-clauders" ? "clauders"
-      : s.source === "whatsapp-sob-controle" ? "ia-sob-controle"
+    // Story quality: need real discussion (2+ messages with text)
+    if (conversation.length < 2) continue;
+
+    const groupLabel = s.source === "whatsapp-clauders" ? "Clauders"
+      : s.source === "whatsapp-sob-controle" ? "IA Sob Controle"
       : s.sourceLabel;
+
+    const conversationAuthors = [...new Set(conversation.map(m => m.author))];
 
     stories.push({
       id: `story-${s.id}`,
       title: s.topic || s.tags.slice(0, 3).join(", "),
-      summary: s.summary,
       date: s.date,
-      authors: s.authors,
+      authors: conversationAuthors,
       tags: s.tags,
       sources: [s.id],
       links: s.links,
       sourceGroups: [groupLabel],
-      messageCount: s.messageCount,
-      authorCount: s.authors.length,
+      conversation,
+      messageCount: conversation.length,
+      authorCount: conversationAuthors.length,
       linkCount: s.links.length,
-      weight: s.messageCount + s.authors.length * 3 + s.links.length * 2,
+      weight: conversation.length + conversationAuthors.length * 3 + s.links.length * 2,
     });
   }
 

@@ -2,30 +2,41 @@
 import EditorialLayout from "../../layouts/EditorialLayout.astro";
 import storiesData from "../../data/stories.json";
 
+interface ConversationMsg {
+  author: string;
+  text: string;
+  time?: string;
+}
+
 interface Story {
   id: string;
   title: string;
-  summary: string;
   date: string;
   authors: string[];
   tags: string[];
   sources: string[];
   links: Array<{ url: string; title?: string; site?: string }>;
   sourceGroups: string[];
+  conversation: ConversationMsg[];
   messageCount: number;
   authorCount: number;
   linkCount: number;
   weight: number;
 }
 
-const stories = (storiesData as Story[]).sort((a, b) => b.weight - a.weight);
+// Sort by date DESC (most recent first)
+const stories = (storiesData as Story[]).sort((a, b) => b.date.localeCompare(a.date));
 
-// Group labels
-const groupLabels: Record<string, { label: string; color: string; bg: string }> = {
+// HOT threshold: top 20% by weight
+const weights = stories.map(s => s.weight).sort((a, b) => b - a);
+const hotThreshold = weights[Math.floor(weights.length * 0.2)] || 20;
+
+const groupStyles: Record<string, { label: string; color: string; bg: string }> = {
+  "Clauders": { label: "Clauders", color: "#1e40af", bg: "#dbeafe" },
   "clauders": { label: "Clauders", color: "#1e40af", bg: "#dbeafe" },
-  "ia-sob-controle": { label: "Sob Controle", color: "#9d174d", bg: "#fce7f3" },
-  "telegram-hipsters-builders": { label: "Telegram", color: "#5b21b6", bg: "#ede9fe" },
-  "Hipsters Builders (Telegram)": { label: "Telegram", color: "#5b21b6", bg: "#ede9fe" },
+  "IA Sob Controle": { label: "IA Sob Controle", color: "#9d174d", bg: "#fce7f3" },
+  "ia-sob-controle": { label: "IA Sob Controle", color: "#9d174d", bg: "#fce7f3" },
+  "Hipsters Builders": { label: "Hipsters Builders", color: "#5b21b6", bg: "#ede9fe" },
 };
 
 const fmtDate = (d: string) => {
@@ -34,54 +45,65 @@ const fmtDate = (d: string) => {
   return date.toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" });
 };
 
-// Stats
+const totalMsgs = stories.reduce((s, st) => s + st.messageCount, 0);
 const totalAuthors = new Set(stories.flatMap(s => s.authors)).size;
-const totalLinks = stories.reduce((sum, s) => sum + s.links.length, 0);
+
+/** Render inline URLs as links, keep rest as text */
+const renderText = (text: string) => {
+  return text
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener" class="story-link">$1</a>')
+    .replace(/\n/g, "<br>");
+};
 ---
 
-<EditorialLayout title="Stories" activeNav="stories" description="Tópicos curados da comunidade Hipsters Builders — discussões destiladas em stories.">
+<EditorialLayout title="Stories" activeNav="stories" description="Discussões da comunidade Hipsters Builders — conversas reais sobre IA, tech e carreira.">
   <div class="ed-section__label">Stories</div>
   <p class="ed-section__subtitle">
-    {stories.length} stories de {totalAuthors} autores. Cada story é um tópico discutido na comunidade, destilado de {stories.reduce((s, st) => s + st.messageCount, 0)} mensagens.
+    {stories.length} discussões de {totalAuthors} pessoas, destiladas de {totalMsgs} mensagens.
+    Cada story é uma conversa real da comunidade, com as palavras de quem participou.
   </p>
 
   <div class="stories-list">
     {stories.map((story, i) => {
-      const group = groupLabels[story.sourceGroups[0]] || groupLabels.clauders;
+      const group = groupStyles[story.sourceGroups[0]] || groupStyles.Clauders;
+      const isHot = story.weight >= hotThreshold;
       return (
         <>
           {i > 0 && <hr class="ed-divider" />}
-          <article class="story-item">
-            <div class="story-item__meta">
+          <article class={`story${isHot ? " story--hot" : ""}`} id={story.id}>
+            <div class="story__meta">
               <span class="ed-meta-date">{fmtDate(story.date)}</span>
               <span class="ed-label ed-label--sm" style={`background:${group.bg};color:${group.color};`}>{group.label}</span>
-              <span class="story-item__msgs">{story.messageCount} msgs &middot; {story.authorCount} autores{story.linkCount > 0 ? ` \u00b7 ${story.linkCount} links` : ""}</span>
+              {isHot && <span class="story__hot">em alta</span>}
+              <span class="story__stats">{story.messageCount} msgs · {story.authorCount} pessoas{story.linkCount > 0 ? ` · ${story.linkCount} links` : ""}</span>
             </div>
 
-            <h2 class="story-item__title">{story.title}</h2>
-
-            {story.summary && (
-              <p class="story-item__summary">{story.summary}</p>
-            )}
-
-            <div class="story-item__authors">
-              {story.authors.map((author, j) => (
-                <span>{author}{j < story.authors.length - 1 ? ", " : ""}</span>
-              ))}
-            </div>
+            <h2 class="story__title">
+              <a href={`#${story.id}`}>{story.title}</a>
+            </h2>
 
             {story.links.length > 0 && (
-              <div class="story-item__links">
+              <div class="story__links">
                 {story.links.slice(0, 3).map(link => (
-                  <a href={link.url} target="_blank" rel="noopener" class="story-item__link">
+                  <a href={link.url} target="_blank" rel="noopener" class="story__link-badge">
                     {link.title || link.site || new URL(link.url).hostname} &#8599;
                   </a>
                 ))}
               </div>
             )}
 
+            <div class="story__conversation">
+              {story.conversation.map((msg) => (
+                <div class="story__msg">
+                  <span class="story__msg-author">{msg.author}{msg.time ? ` · ${msg.time}` : ""}</span>
+                  <p class="story__msg-text" set:html={renderText(msg.text)} />
+                </div>
+              ))}
+            </div>
+
             {story.tags.length > 0 && (
-              <div class="story-item__tags">
+              <div class="story__tags">
                 {story.tags.slice(0, 6).map(tag => (
                   <span class="ed-tag ed-tag--sm">{tag}</span>
                 ))}
@@ -96,65 +118,115 @@ const totalLinks = stories.reduce((sum, s) => sum + s.links.length, 0);
 
 <style>
   .stories-list {
-    max-width: 48rem;
+    max-width: 52rem;
   }
 
-  .story-item {
-    padding: 1.5rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  .story {
+    padding: 1.75rem 0;
+    scroll-margin-top: 4rem;
   }
 
-  .story-item__meta {
+  .story--hot {
+    border-left: 3px solid var(--ed-accent);
+    padding-left: 1rem;
+  }
+
+  .story--hot .story__title {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+  }
+
+  .story__hot {
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ed-accent);
+    background: rgba(196, 52, 45, 0.08);
+    padding: 0.125rem 0.5rem;
+    border-radius: 2px;
+  }
+
+  .story__meta {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     flex-wrap: wrap;
+    margin-bottom: 0.5rem;
   }
 
-  .story-item__msgs {
+  .story__stats {
     font-size: 0.6875rem;
     color: var(--ed-ink-faint);
   }
 
-  .story-item__title {
+  .story__title {
     font-family: var(--ed-serif);
-    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
     font-weight: 600;
     color: var(--ed-ink);
     line-height: 1.35;
+    margin-bottom: 0.75rem;
   }
 
-  .story-item__summary {
-    font-family: var(--ed-serif);
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--ed-ink-secondary);
+  .story__title a {
+    color: inherit;
   }
 
-  .story-item__authors {
-    font-size: 0.75rem;
-    color: var(--ed-ink-muted);
-  }
-
-  .story-item__links {
+  .story__links {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-bottom: 1rem;
   }
 
-  .story-item__link {
+  .story__link-badge {
     font-size: 0.75rem;
     color: var(--ed-accent) !important;
-    border-bottom: 1px solid var(--ed-rule);
-    padding-bottom: 1px;
+    background: rgba(196, 52, 45, 0.06);
+    padding: 0.25rem 0.625rem;
+    border-radius: 3px;
+    border: 1px solid rgba(196, 52, 45, 0.15);
   }
 
-  .story-item__tags {
+  .story__conversation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--ed-rule);
+  }
+
+  .story__msg {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .story__msg-author {
+    font-family: var(--ed-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--ed-ink);
+    letter-spacing: 0.01em;
+  }
+
+  .story__msg-text {
+    font-family: var(--ed-serif);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--ed-ink-secondary);
+  }
+
+  .story__msg-text :global(.story-link) {
+    color: var(--ed-accent);
+    word-break: break-all;
+    border-bottom: 1px solid var(--ed-rule);
+  }
+
+  .story__tags {
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
-    margin-top: 0.25rem;
+    margin-top: 0.75rem;
   }
 </style>
