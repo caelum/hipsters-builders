@@ -44,9 +44,14 @@ function formatDate(date: Date): string {
   <body>
     <!-- Nav -->
     <nav class="home-nav">
-      <a href="/signals">Signals</a>
-      <a href="/stories">Stories</a>
-      <a href="/newsletter">Newsletter</a>
+      <div class="home-nav__brand">
+        <a href="/">Hipsters<span class="home-nav__dot">.</span><span class="home-nav__b">builders</span></a>
+      </div>
+      <div class="home-nav__links">
+        <a href="/signals">Signals</a>
+        <a href="/stories">Stories</a>
+        <a href="/newsletter">Newsletter</a>
+      </div>
     </nav>
 
     <!-- Warm radial gradients -->
@@ -413,25 +418,52 @@ function formatDate(date: Date): string {
      =========================================== */
   .home-nav {
     display: flex;
-    justify-content: center;
-    gap: clamp(1.25rem, 3vw, 2rem);
-    padding: 1rem clamp(1rem, 3vw, 2rem) 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1.5rem, 4vw, 3rem);
+    max-width: 72rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+
+  .home-nav__brand a {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: #2c2418;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .home-nav__dot {
+    color: #c56e4a;
+  }
+
+  .home-nav__b {
+    font-weight: 400;
+    color: #6b5e4f;
+  }
+
+  .home-nav__links {
+    display: flex;
+    gap: clamp(1rem, 2.5vw, 2rem);
+  }
+
+  .home-nav__links a {
     font-family: 'Space Grotesk', system-ui, sans-serif;
     font-size: 0.8125rem;
     font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-  }
-
-  .home-nav a {
     color: #6b5e4f;
     text-decoration: none;
-    transition: color 0.15s;
     padding-bottom: 0.25rem;
     border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
   }
 
-  .home-nav a:hover {
+  .home-nav__links a:hover {
     color: #c56e4a;
     border-bottom-color: #c56e4a;
   }
