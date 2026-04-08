@@ -29,6 +29,34 @@ npm run build          # sync + build-signals + astro build
 npx astro preview      # preview production build locally
 ```
 
+### Sensitivity classification (classify-stories.ts)
+
+Runs **Haiku** on each story to classify public vs private. Flags: internal company data, employee criticism, offensive language, political content, private conversations. Writes `public` boolean + `reason` to stories.json.
+
+```bash
+npx tsx scripts/classify-stories.ts              # classify all unclassified stories
+npx tsx scripts/classify-stories.ts --limit 5    # classify 5 stories
+npx tsx scripts/classify-stories.ts --force      # reclassify all (even already done)
+npx tsx scripts/classify-stories.ts --dry-run    # preview without writing
+```
+
+Requires ANTHROPIC_API_KEY (loads from .env or ~/pkm/.env).
+
+### Stories pipeline flow
+
+```
+vault signals → build-signals.ts (dedup + group + quality filter) → stories.json
+  → editorialize-stories.ts (Sonnet: titles, body, quotes) → stories.json (enriched)
+  → classify-stories.ts (Haiku: public/private sensitivity) → stories.json (classified)
+  → /stories (public only, top by weight) + /stories/all (everything for review)
+```
+
+Key steps:
+1. **Dedup**: signals from same source + same day + 2+ shared tags are merged before story creation. Cross-source (Telegram + WhatsApp) dedup by shared tags + 2-day window.
+2. **Editorialize**: Sonnet generates journalistic titles, subtitle, editorial body with indirect speech + direct quotes.
+3. **Classify sensitivity**: Haiku flags stories with internal data, employee criticism, offensive language, etc.
+4. **Render**: `/stories` shows only `public: true` top stories. `/stories/all` shows everything.
+
 ### Signals pipeline (build-signals.ts)
 
 Reads 3 sources from Stromae vault, normalizes, groups by thread, filters quality, enriches links with OG metadata, builds graph. Outputs `signals.json`, `stories.json`, `graph.json` to `src/data/`.
