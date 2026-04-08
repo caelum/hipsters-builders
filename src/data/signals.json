@@ -218,6 +218,8 @@
       {
         "url": "https://www.infoq.com/news/2026/02/ai-floods-close-projects/",
         "title": "AI \"Vibe Coding\" Threatens Open Source as Maintainers Face Crisis",
+        "description": "Daniel Stenberg shut down cURL",
+        "image": "https://res.infoq.com/news/2026/02/ai-floods-close-projects/en/headerimage/generatedHeaderImage-1771439339723.jpg",
         "site": "InfoQ"
       }
     ],
@@ -376,6 +378,8 @@
       {
         "url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f?permalink_comment_id=6079483#gistcomment-6079483",
         "title": "llm-wiki",
+        "description": "llm-wiki. GitHub Gist: instantly share code, notes, and snippets.",
+        "image": "https://github.githubassets.com/assets/gist-og-image-54fd7dc0713e.png",
         "site": "Gist"
       }
     ],
@@ -529,6 +533,8 @@
       {
         "url": "https://build.ms/2026/4/1/the-claude-code-leak/",
         "title": "The Claude Code Leak",
+        "description": "What the accidental Claude Code source code leak tells us about the real value of code, product market fit, and why integration is what actually makes software great.",
+        "image": "https://build.ms/og/2026/4/1/the-claude-code-leak.png",
         "site": "build.ms"
       }
     ],

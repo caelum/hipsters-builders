@@ -30,6 +30,61 @@ import { readdir, readFile, writeFile, mkdir } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import matter from "gray-matter";
 
+// --- OG metadata fetcher with disk cache ---
+
+interface OGMeta {
+  url: string;
+  title?: string;
+  description?: string;
+  image?: string;
+  site?: string;
+}
+
+const OG_CACHE_PATH = join(resolve(import.meta.dirname, ".."), ".og-cache.json");
+let ogCache: Record<string, OGMeta> = {};
+
+async function loadOGCache(): Promise<void> {
+  try {
+    ogCache = JSON.parse(await readFile(OG_CACHE_PATH, "utf-8"));
+  } catch { ogCache = {}; }
+}
+
+async function saveOGCache(): Promise<void> {
+  await writeFile(OG_CACHE_PATH, JSON.stringify(ogCache, null, 2));
+}
+
+async function fetchOG(url: string): Promise<OGMeta> {
+  if (ogCache[url]) return ogCache[url];
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+    const res = await fetch(url, {
+      signal: controller.signal,
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; HipstersBot/1.0)" },
+      redirect: "follow",
+    });
+    clearTimeout(timeout);
+    if (!res.ok) { ogCache[url] = { url }; return ogCache[url]; }
+    const html = await res.text();
+    const meta: OGMeta = { url };
+    const og = (prop: string) => html.match(new RegExp(`<meta[^>]*property=["']og:${prop}["'][^>]*content=["']([^"']+)`, "i"))?.[1];
+    const tw = (name: string) => html.match(new RegExp(`<meta[^>]*name=["']twitter:${name}["'][^>]*content=["']([^"']+)`, "i"))?.[1];
+    meta.title = og("title") || tw("title") || html.match(/<title[^>]*>([^<]+)/i)?.[1]?.trim();
+    meta.description = og("description") || tw("description") || html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)/i)?.[1];
+    meta.image = og("image") || tw("image");
+    meta.site = og("site_name") || new URL(url).hostname.replace("www.", "");
+    // Decode HTML entities
+    for (const k of ["title", "description"] as const) {
+      if (meta[k]) meta[k] = meta[k]!.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+    }
+    ogCache[url] = meta;
+    return meta;
+  } catch {
+    ogCache[url] = { url };
+    return ogCache[url];
+  }
+}
+
 // --- CLI ---
 
 const args = process.argv.slice(2);
@@ -61,7 +116,7 @@ interface RawSignal {
   topic: string;
   summary: string;
   body: string;
-  links: Array<{ url: string; title?: string; site?: string }>;
+  links: OGMeta[];
   messageCount: number;
   threadSlug?: string;
 }
@@ -79,7 +134,7 @@ interface Story {
   authors: string[];
   tags: string[];
   sources: string[]; // signal IDs
-  links: Array<{ url: string; title?: string; site?: string }>;
+  links: OGMeta[];
   sourceGroups: string[]; // which groups contributed
   conversation: ConversationMsg[]; // actual quoted messages
   messageCount: number;
@@ -195,12 +250,12 @@ function qualifiesAsStory(msgs: ConversationMsg[]): boolean {
   return false;
 }
 
-function extractLinks(body: string, frontmatterLinks?: any[]): Array<{ url: string; title?: string; site?: string }> {
-  const links: Array<{ url: string; title?: string; site?: string }> = [];
-  // From frontmatter
+function extractLinks(body: string, frontmatterLinks?: any[]): OGMeta[] {
+  const links: OGMeta[] = [];
+  // From frontmatter (may already have OG data from Hipsters Bot enrichment)
   if (Array.isArray(frontmatterLinks)) {
     for (const l of frontmatterLinks) {
-      if (l.url) links.push({ url: l.url, title: l.title, site: l.site });
+      if (l.url) links.push({ url: l.url, title: l.title, description: l.description, image: l.image, site: l.site });
     }
   }
   // From body (URLs not already captured)
@@ -211,6 +266,20 @@ function extractLinks(body: string, frontmatterLinks?: any[]): Array<{ url: stri
     if (!seen.has(u)) { links.push({ url: u }); seen.add(u); }
   }
   return links;
+}
+
+/** Enrich links that don't have OG metadata yet */
+async function enrichLinks(links: OGMeta[]): Promise<OGMeta[]> {
+  const enriched: OGMeta[] = [];
+  for (const link of links) {
+    if (link.title && link.image) {
+      enriched.push(link); // Already enriched (from vault frontmatter)
+    } else {
+      const og = await fetchOG(link.url);
+      enriched.push({ ...link, ...og, url: link.url });
+    }
+  }
+  return enriched;
 }
 
 async function readSignalsFromDir(
@@ -484,6 +553,19 @@ async function main() {
     for (const g of s.sourceGroups) bySource.set(g, (bySource.get(g) || 0) + 1);
   }
   for (const [src, count] of bySource) console.log(`  ${src}: ${count} stories`);
+
+  // Enrich links with OG metadata
+  await loadOGCache();
+  let enriched = 0;
+  for (const story of stories) {
+    if (story.links.length === 0) continue;
+    const before = story.links.filter(l => l.title && l.image).length;
+    story.links = await enrichLinks(story.links);
+    const after = story.links.filter(l => l.title && l.image).length;
+    enriched += after - before;
+  }
+  await saveOGCache();
+  console.log(`[build-signals] Enriched ${enriched} links with OG metadata (cache: ${Object.keys(ogCache).length} URLs)`);
 
   // Build graph
   const graph = buildGraph(allSignals, stories);

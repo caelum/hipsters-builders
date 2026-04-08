@@ -18,10 +18,15 @@
     ],
     "links": [
       {
-        "url": "https://www.linkedin.com/posts/viniciushenriquechagas_ap%C3%B3s-apenas-4-meses-o-plano-de-economizar-share-7447283203725299712-Q0xR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+        "url": "https://www.linkedin.com/posts/viniciushenriquechagas_ap%C3%B3s-apenas-4-meses-o-plano-de-economizar-share-7447283203725299712-Q0xR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k",
+        "title": "Após apenas 4 meses, o plano de economizar R$ 200.000,00 reais em 2026 se concretiza.\n\nConstruímos uma plataforma do zero para substituir o Clickup (que usamos durante todo 2025). Mas substituir o… | Vini Chagas",
+        "description": "Após apenas 4 meses, o plano de economizar R$ 200.000,00 reais em 2026 se concretiza.\n\nConstruímos uma plataforma do zero para substituir o Clickup (que usamos durante todo 2025). Mas substituir o Clickup ainda é uma visão muito superficial do que o produto que chamamos de HOUS3 Track realmente faz.\n\nColocamos dentro do sistema todas as nossas regras de gestão e a NOSSA forma de fazer. \n\nA produtividade já aumentou significativamente, principalmente pra mim. \n\nA empresa que não está olhando pra esse tipo de iniciativa, vai se arrepender no próximo ano.\n\ne os SaaS que não pivotarem seus negócios, vão ver sua receita diminuir cada vez mais....não faz mais sentido você ficar preso a um software que não é seu.",
+        "image": "https://media.licdn.com/dms/image/v2/D4D22AQE0KmsB22S2tw/feedshare-shrink_800/B4DZ1oQnE5IwAc-/0/1775570678791?e=2147483647&amp;v=beta&amp;t=DZQJmgdFnynZ_X8NTkYdVaAv41hWPUd1rTJbmKlkFy0",
+        "site": "LinkedIn"
       },
       {
-        "url": "https://x.com/sama/status/2041658719839383945?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA"
+        "url": "https://x.com/sama/status/2041658719839383945?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -164,7 +169,11 @@
     ],
     "links": [
       {
-        "url": "https://www.anthropic.com/glasswing"
+        "url": "https://www.anthropic.com/glasswing",
+        "title": "Project Glasswing: Securing critical software for the AI era",
+        "description": "A new initiative to secure the world’s most critical software and give defenders a durable advantage in the coming AI-driven era of cybersecurity.",
+        "image": "https://cdn.sanity.io/images/4zrzovbb/website/65641e7846f10255c4a3415a10bbf5793ae87b13-1200x630.jpg",
+        "site": "anthropic.com"
       }
     ],
     "sourceGroups": [
@@ -227,7 +236,8 @@
     ],
     "links": [
       {
-        "url": "https://x.com/FarzaTV/status/2041314633978659092"
+        "url": "https://x.com/FarzaTV/status/2041314633978659092",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -276,7 +286,9 @@
     ],
     "links": [
       {
-        "url": "https://vibecoded.vc/cooked/"
+        "url": "https://vibecoded.vc/cooked/",
+        "title": "RSA 2026: The Great Cooking",
+        "site": "vibecoded.vc"
       }
     ],
     "sourceGroups": [
@@ -338,14 +350,21 @@
     ],
     "links": [
       {
-        "url": "https://x.com/katanalarp/status/2039972757048275045?s=46&t=hEF6yU4SYim5zqE7L9JXlg"
+        "url": "https://x.com/katanalarp/status/2039972757048275045?s=46&t=hEF6yU4SYim5zqE7L9JXlg",
+        "site": "x.com"
       },
       {
-        "url": "https://www.alura.com.br/curso-online-engenharia-software-ia-no-fluxo-real-de-desenvolvimento"
+        "url": "https://www.alura.com.br/curso-online-engenharia-software-ia-no-fluxo-real-de-desenvolvimento",
+        "title": "Curso Online Engenharia de software na era da IA: como usar IA no fluxo real de desenvolvimento | Alura",
+        "description": "Para devs e engenheiros que querem usar IA de verdade: aprenda a usar Claude Code para specs, código e automação de pipelines! Matricule-se já!",
+        "image": "https://www.alura.com.br/assets/api/share/curso-engenharia-software-ia-no-fluxo-real-de-desenvolvimento.png",
+        "site": "Alura"
       },
       {
         "url": "https://www.infoq.com/news/2026/02/ai-floods-close-projects/",
         "title": "AI \"Vibe Coding\" Threatens Open Source as Maintainers Face Crisis",
+        "description": "Daniel Stenberg shut down cURL",
+        "image": "https://res.infoq.com/news/2026/02/ai-floods-close-projects/en/headerimage/generatedHeaderImage-1771439339723.jpg",
         "site": "InfoQ"
       }
     ],
@@ -537,6 +556,8 @@
       {
         "url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f?permalink_comment_id=6079483#gistcomment-6079483",
         "title": "llm-wiki",
+        "description": "llm-wiki. GitHub Gist: instantly share code, notes, and snippets.",
+        "image": "https://github.githubassets.com/assets/gist-og-image-54fd7dc0713e.png",
         "site": "Gist"
       }
     ],
@@ -623,10 +644,18 @@
     ],
     "links": [
       {
-        "url": "https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban"
+        "url": "https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban",
+        "title": "Anthropic essentially bans OpenClaw from Claude by making subscribers pay extra",
+        "description": "Claude vs. Claw.",
+        "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/02/STKB382_OPEN_CLAW_D.jpg?quality=90&amp;strip=all&amp;crop=0%2C10.732984293194%2C100%2C78.534031413613&amp;w=1200",
+        "site": "The Verge"
       },
       {
-        "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-industry-leaders-return"
+        "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-industry-leaders-return",
+        "title": "The Pulse: Industry leaders return to coding with AI",
+        "description": "Mark Zuckerberg and Garry Tan join the trend of C-level folks jumping back into coding with AI. Also: a bad week for Claude Code and GitHub, and more",
+        "image": "https://substackcdn.com/image/fetch/$s_!Lw9q!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbf88b1aa-309a-49a2-bf21-63c4b281cefa_1552x456.png",
+        "site": "newsletter.pragmaticengineer.com"
       }
     ],
     "sourceGroups": [
@@ -952,7 +981,11 @@
     ],
     "links": [
       {
-        "url": "https://blog.cloudflare.com/emdash-wordpress"
+        "url": "https://blog.cloudflare.com/emdash-wordpress",
+        "title": "Introducing EmDash — the spiritual successor to WordPress that solves plugin security",
+        "description": "Today we are launching the beta of EmDash, a full-stack serverless JavaScript CMS built on Astro 6.0. It combines the features of a traditional CMS with modern security, running plugins in sandboxed Worker isolates.",
+        "image": "https://cf-assets.www.cloudflare.com/zkvhlag99gkb/hBSrp5YJXIsn2IwBqdg2m/a22cf1285db3826ca159d83ab81076e0/EmDash-OG.png",
+        "site": "The Cloudflare Blog"
       }
     ],
     "sourceGroups": [
@@ -1002,10 +1035,17 @@
     ],
     "links": [
       {
-        "url": "https://www.akitaonrails.com/2026/03/31/codigo-fonte-do-claude-code-vazou-o-que-achamos-dentro/"
+        "url": "https://www.akitaonrails.com/2026/03/31/codigo-fonte-do-claude-code-vazou-o-que-achamos-dentro/",
+        "title": "O código fonte do Claude Code vazou. O que achamos dentro.",
+        "description": "\n    \n      \n  Atualizado em 2 de abril de 2026: se você já tinha lido este texto ontem, vale pular direto para a nova seção de atualização.\n\n\nHoje de manhã (31 de março de 2026), o pesquisador de segurança Chaofan Shou descobriu que o código fonte inteiro do Claude Code, a CLI oficial da Anthropic pra coding com IA, estava disponível pra qualquer pessoa no registry público do npm. 512 mil linhas de TypeScript. 1.900 arquivos. Tudo exposto num arquivo de source map de 59.8MB incluído acidentalmente na versão 2.1.88 do pacote @anthropic-ai/claude-code.\n    \n  ",
+        "site": "akitaonrails.com"
       },
       {
-        "url": "https://open.spotify.com/episode/15lyLLDbqGRGpgEH2Lnspe?si=584befdb2f2041f0"
+        "url": "https://open.spotify.com/episode/15lyLLDbqGRGpgEH2Lnspe?si=584befdb2f2041f0",
+        "title": "238: Por que a Hugging Face não quer ser um frontier lab, com Leandro von Werra",
+        "description": "IA Sob Controle - Inteligência Artificial · Episode",
+        "image": "https://i.scdn.co/image/ab6765630000ba8abaddbd18bcca09793c09a962",
+        "site": "Spotify"
       }
     ],
     "sourceGroups": [
@@ -1083,16 +1123,30 @@
     ],
     "links": [
       {
-        "url": "https://nk4s8wkkwc4w8osgs4088gws.coolify-dev.startse.com/"
+        "url": "https://nk4s8wkkwc4w8osgs4088gws.coolify-dev.startse.com/",
+        "title": "MiroFish - 预测万物",
+        "description": "MiroFish - 社交媒体舆论模拟系统",
+        "site": "nk4s8wkkwc4w8osgs4088gws.coolify-dev.startse.com"
       },
       {
-        "url": "https://www.startse.com/artigos/anthropic-volta-a-negociar-com-o-pentagono-e-a-disputa-sobre-o-uso-militar-da-ia-entra-em-nova-fase/"
+        "url": "https://www.startse.com/artigos/anthropic-volta-a-negociar-com-o-pentagono-e-a-disputa-sobre-o-uso-militar-da-ia-entra-em-nova-fase/",
+        "title": "Anthropic volta a negociar com o Pentágono e a disputa sobre o uso militar da IA entra em nova fase",
+        "description": "Após um conflito público sobre limites éticos da inteligência artificial, a startup por trás do Claude tenta retomar diálogo com o Departamento de Defesa dos EUA enquanto a corrida global por IA militar se intensifica.",
+        "image": "https://startse-uploader.s3.us-east-2.amazonaws.com/small_dario_amodei_e099ae666e.webp",
+        "site": "StartSe Platform"
       },
       {
-        "url": "https://nk4s8wkkwc4w8osgs4088gws.coolify-dev.startse.com/interaction/report_d4afb0b76f8d"
+        "url": "https://nk4s8wkkwc4w8osgs4088gws.coolify-dev.startse.com/interaction/report_d4afb0b76f8d",
+        "title": "MiroFish - 预测万物",
+        "description": "MiroFish - 社交媒体舆论模拟系统",
+        "site": "nk4s8wkkwc4w8osgs4088gws.coolify-dev.startse.com"
       },
       {
-        "url": "https://capybara.com/pt-BR"
+        "url": "https://capybara.com/pt-BR",
+        "title": "Claude Capybara (Mythos) — O modelo de IA mais poderoso da Anthropic",
+        "description": "Um novo nível acima do Opus. Pontuações muito mais altas em programação, raciocínio e cibersegurança. Faça deploy em hosting gerenciado assim que o acesso abrir.",
+        "image": "https://capybara.com/pt-BR/pt-BR/opengraph-image-1yhjss?362ea8ced419726f",
+        "site": "capybara.com"
       }
     ],
     "sourceGroups": [
@@ -1317,7 +1371,8 @@
     ],
     "links": [
       {
-        "url": "https://x.com/gianfrancopiana/status/2037199814694228187?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA"
+        "url": "https://x.com/gianfrancopiana/status/2037199814694228187?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -1441,7 +1496,11 @@
     ],
     "links": [
       {
-        "url": "https://www.businessinsider.com/claude-usage-caps-changes-popularity-anthropic-2026-3"
+        "url": "https://www.businessinsider.com/claude-usage-caps-changes-popularity-anthropic-2026-3",
+        "title": "Claude&#x27;s popularity is forcing it to hit the brakes on users",
+        "description": "\"I know this was frustrating,\" an Anthropic official wrote in an announcement of the changes. \"We&#x27;re continuing to invest in scaling efficiently.",
+        "image": "https://i.insider.com/69c6dec58373a547629c730f?width=1200&format=jpeg",
+        "site": "Business Insider"
       }
     ],
     "sourceGroups": [
@@ -1489,7 +1548,8 @@
     ],
     "links": [
       {
-        "url": "https://x.com/fcoury/status/2037180841097335084?s=46"
+        "url": "https://x.com/fcoury/status/2037180841097335084?s=46",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -1538,10 +1598,12 @@
     ],
     "links": [
       {
-        "url": "https://x.com/thsottiaux/status/2037346989244096581"
+        "url": "https://x.com/thsottiaux/status/2037346989244096581",
+        "site": "x.com"
       },
       {
-        "url": "https://x.com/gergelyorosz/status/2037513643630141623?s=46"
+        "url": "https://x.com/gergelyorosz/status/2037513643630141623?s=46",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -1591,13 +1653,21 @@
     ],
     "links": [
       {
-        "url": "https://lovable.dev/pt-br/blog/announcing-pentesting"
+        "url": "https://lovable.dev/pt-br/blog/announcing-pentesting",
+        "title": "Think your app is secure? Prove It. | Lovable",
+        "description": "Introduced Penetration Testing for all Lovable projects.",
+        "image": "https://lovable.dev/content/news/covers/Lovable%20Partner%20Lockup.png",
+        "site": "Lovable"
       },
       {
-        "url": "https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/"
+        "url": "https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/",
+        "title": "Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli",
+        "image": "https://scontent.fcgh20-1.fna.fbcdn.net/v/t39.2365-6/659112495_952140057346056_1728296311373871062_n.gif?_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=e280be&amp;_nc_ohc=Hq7KJQQ80u4Q7kNvwH0hHgK&amp;_nc_oc=Adqs5LP-5b49iV5GUKQskD0KkrfRzfEzlnxuD0C8kY-Vc9jgZxAkPi1un-Zkhlyry5amazeMq7hCC0WBbzoC7txH&amp;_nc_zt=14&amp;_nc_ht=scontent.fcgh20-1.fna&amp;_nc_gid=UcH3omgZBuxpHmSqK6FKhQ&amp;_nc_ss=7a389&amp;oh=00_Af2UTqpamCCQeJ4vSeVsMb4P_vTRrEHmjEd9lcXvERd1SQ&amp;oe=69F083EB",
+        "site": "ai.meta.com"
       },
       {
-        "url": "https://x.com/trq212/status/2037254607001559305"
+        "url": "https://x.com/trq212/status/2037254607001559305",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -1731,7 +1801,9 @@
     ],
     "links": [
       {
-        "url": "https://www.reddit.com/r/ClaudeCode/comments/1s2ci4f/claude_code_can_now_dream/"
+        "url": "https://www.reddit.com/r/ClaudeCode/comments/1s2ci4f/claude_code_can_now_dream/",
+        "title": "Reddit - Please wait for verification",
+        "site": "reddit.com"
       }
     ],
     "sourceGroups": [
@@ -1944,7 +2016,11 @@
     ],
     "links": [
       {
-        "url": "https://blog.cloudflare.com/dynamic-workers/"
+        "url": "https://blog.cloudflare.com/dynamic-workers/",
+        "title": "Sandboxing AI agents, 100x faster ",
+        "description": "We’re introducing Dynamic Workers, which allow you to execute AI-generated code in secure, lightweight isolates. This approach is 100 times faster than traditional containers, enabling millisecond startup times for AI agent sandboxing.",
+        "image": "https://cf-assets.www.cloudflare.com/zkvhlag99gkb/2YJJRglPS7ApYE7A3em1zB/1fa10da06d8493dcfd1b37e84a4531a2/BLOG-3243_OG.png",
+        "site": "The Cloudflare Blog"
       }
     ],
     "sourceGroups": [
@@ -2022,7 +2098,11 @@
     ],
     "links": [
       {
-        "url": "https://chatgpt.com/s/t_69c2c76ce2548191adc5b3b06d3c049c"
+        "url": "https://chatgpt.com/s/t_69c2c76ce2548191adc5b3b06d3c049c",
+        "title": "ChatGPT",
+        "description": "ChatGPT helps you get answers, find inspiration, and be more productive.",
+        "image": "https://cdn.openai.com/chatgpt/share-og.png",
+        "site": "ChatGPT"
       }
     ],
     "sourceGroups": [
@@ -2354,10 +2434,12 @@
     ],
     "links": [
       {
-        "url": "https://x.com/davidgeorge83/status/2036091262080811265?s=46&t=eUIi7rcC09bcxduho1P1bg"
+        "url": "https://x.com/davidgeorge83/status/2036091262080811265?s=46&t=eUIi7rcC09bcxduho1P1bg",
+        "site": "x.com"
       },
       {
-        "url": "https://x.com/felixrieseberg/status/2036193240509235452?s=46"
+        "url": "https://x.com/felixrieseberg/status/2036193240509235452?s=46",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -2452,7 +2534,11 @@
     ],
     "links": [
       {
-        "url": "https://github.com/tirth8205/code-review-graph?tab=readme-ov-file"
+        "url": "https://github.com/tirth8205/code-review-graph?tab=readme-ov-file",
+        "title": "GitHub - tirth8205/code-review-graph: Local knowledge graph for Claude Code. Builds a persistent map of your codebase so Claude reads only what matters — 6.8× fewer tokens on reviews and up to 49× on daily coding tasks.",
+        "description": "Local knowledge graph for Claude Code. Builds a persistent map of your codebase so Claude reads only what matters — 6.8× fewer tokens on reviews and up to 49× on daily coding tasks. - tirth8205/cod...",
+        "image": "https://opengraph.githubassets.com/afe2a8abe364630b2dcfe352d3ca52cb0d665ed372de4d0e3915a51f549cf185/tirth8205/code-review-graph",
+        "site": "GitHub"
       }
     ],
     "sourceGroups": [
@@ -2506,7 +2592,8 @@
     ],
     "links": [
       {
-        "url": "https://x.com/rodrigofm/status/2036080307409953127"
+        "url": "https://x.com/rodrigofm/status/2036080307409953127",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -2684,7 +2771,11 @@
     ],
     "links": [
       {
-        "url": "https://cursor.com/pt-BR/blog/composer-2"
+        "url": "https://cursor.com/pt-BR/blog/composer-2",
+        "title": "Apresentando o Composer 2 · Cursor",
+        "description": "Programação de ponta com ótimos resultados no CursorBench, maior eficiência de tokens e uma variante padrão mais rápida.",
+        "image": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/blog/og/blog-introducing-composer-2-anim-20260318-110449-optim.gif",
+        "site": "Cursor"
       }
     ],
     "sourceGroups": [
@@ -2860,7 +2951,11 @@
     ],
     "links": [
       {
-        "url": "https://www.linkedin.com/posts/introducing-javaclaw-an-open-source-ai-agent-share-7440425643374366720-HjmH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+        "url": "https://www.linkedin.com/posts/introducing-javaclaw-an-open-source-ai-agent-share-7440425643374366720-HjmH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k",
+        "title": "Introducing JavaClaw: an open source AI agent runtime, built in pure Java.\n\nWe kept seeing AI agents struggle with one thing we've been solving for years: reliable background job processing. So we… | JobRunr",
+        "description": "Introducing JavaClaw: an open source AI agent runtime, built in pure Java.\n\nWe kept seeing AI agents struggle with one thing we",
+        "image": "https://media.licdn.com/dms/image/v2/D4E22AQHqhmzaz4LRaA/feedshare-shrink_800/B4EZ0GzsgRIUAg-/0/1773935708535?e=2147483647&amp;v=beta&amp;t=0aBBtPAUJ0o8vKi2l14G_i1dYUiQtoMkigFmSZSTqI4",
+        "site": "LinkedIn"
       }
     ],
     "sourceGroups": [
@@ -2925,7 +3020,11 @@
     ],
     "links": [
       {
-        "url": "https://laravel.com/blog/which-ai-model-is-best-for-laravel"
+        "url": "https://laravel.com/blog/which-ai-model-is-best-for-laravel",
+        "title": "Which AI Model Is Best for Laravel?  | Laravel - The clean stack for Artisans and agents",
+        "description": "We benchmarked 6 AI models on 17 real Laravel tasks, with and without Laravel Boost. See which model wins, which fails, and by how much.",
+        "image": "https://fls-9f826fcc-b2ad-40d8-813f-9cf7dac049fa.laravel.cloud/posts/og-images/01KM3KRKRNQ0EWECTT07KE0BGM.png",
+        "site": "Laravel"
       }
     ],
     "sourceGroups": [
@@ -2978,7 +3077,11 @@
     ],
     "links": [
       {
-        "url": "https://laravel.com/blog/which-ai-model-is-best-for-laravel"
+        "url": "https://laravel.com/blog/which-ai-model-is-best-for-laravel",
+        "title": "Which AI Model Is Best for Laravel?  | Laravel - The clean stack for Artisans and agents",
+        "description": "We benchmarked 6 AI models on 17 real Laravel tasks, with and without Laravel Boost. See which model wins, which fails, and by how much.",
+        "image": "https://fls-9f826fcc-b2ad-40d8-813f-9cf7dac049fa.laravel.cloud/posts/og-images/01KM3KRKRNQ0EWECTT07KE0BGM.png",
+        "site": "Laravel"
       }
     ],
     "sourceGroups": [
@@ -3031,10 +3134,15 @@
     ],
     "links": [
       {
-        "url": "https://github.com/ledmaster/ml-mania-2026"
+        "url": "https://github.com/ledmaster/ml-mania-2026",
+        "title": "GitHub - ledmaster/ml-mania-2026: An experiment in turning years of machine learning experience into a research loop that could run on its own",
+        "description": "An experiment in turning years of machine learning experience into a research loop that could run on its own - ledmaster/ml-mania-2026",
+        "image": "https://repository-images.githubusercontent.com/1176079250/fc1201bf-210b-42f1-9e7f-2b38a09f8ead",
+        "site": "GitHub"
       },
       {
-        "url": "https://x.com/i/status/2034634698471911858"
+        "url": "https://x.com/i/status/2034634698471911858",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -3084,10 +3192,15 @@
     ],
     "links": [
       {
-        "url": "https://x.com/i/status/2034616934671724639"
+        "url": "https://x.com/i/status/2034616934671724639",
+        "site": "x.com"
       },
       {
-        "url": "https://www.linkedin.com/posts/yann-lecun_v-jepa-21-a-new-jepa-model-trained-on-video-share-7440421828961062913-UWrA?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAYN4gsBjdkaThfPE5ce2OYKK86wggoZsOA&utm_campaign=copy_link"
+        "url": "https://www.linkedin.com/posts/yann-lecun_v-jepa-21-a-new-jepa-model-trained-on-video-share-7440421828961062913-UWrA?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAYN4gsBjdkaThfPE5ce2OYKK86wggoZsOA&utm_campaign=copy_link",
+        "title": "Introducing V-JEPA 2.1: Improved Video JEPA Model | Yann LeCun posted on the topic | LinkedIn",
+        "description": "V-JEPA 2.1: a new JEPA model trained on video.\nUses features from multiple levels in the hierarchy.\nBetter performance than V-JEPA 2 on some dense vision tasks, such as semantic segmentation, object tracking, and short-term action anticipation.\nBetter performance on action planning.\nhttps://lnkd.in/eF-7_sjY\n | 150 comments on LinkedIn",
+        "image": "https://media.licdn.com/dms/image/v2/D4E22AQG2kEbjWcsFJw/feedshare-shrink_2048_1536/B4EZ0GwOoIJUAg-/0/1773934799673?e=2147483647&amp;v=beta&amp;t=KS2SLYJd2HsGa5FbVI55rnshJ2m_hRRYFDCV4TKtSiw",
+        "site": "LinkedIn"
       }
     ],
     "sourceGroups": [
@@ -3149,7 +3262,11 @@
     ],
     "links": [
       {
-        "url": "https://www.linkedin.com/posts/lennyrachitsky_a-non-technical-designer-turned-300-of-my-share-7440106298962214912-Blx3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+        "url": "https://www.linkedin.com/posts/lennyrachitsky_a-non-technical-designer-turned-300-of-my-share-7440106298962214912-Blx3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k",
+        "title": "A non-technical designer turned 300+ of my podcast transcripts into an RPG game.\n\nYou explore an 8-bit pixel world, meet guests like Brian Chesky, Nikita Bier, Elena Verna, Dylan Field, compete with… | Lenny Rachitsky | 200 comments",
+        "description": "A non-technical designer turned 300+ of my podcast transcripts into an RPG game.\n\nYou explore an 8-bit pixel world, meet guests like Brian Chesky, Nikita Bier, Elena Verna, Dylan Field, compete with them to test your product knowledge, and capture them like Pokémon.\n\nSO FUN. And surprisingly educational!\n\nHere",
+        "image": "https://media.licdn.com/dms/image/v2/D5622AQFwWmCyL7oQng/feedshare-shrink_2048_1536/B56Z0CRPvEHkAg-/0/1773859571459?e=2147483647&amp;v=beta&amp;t=cWNUQatlwHs4EPixdWnuX2YYo5hC7iiuMcbQDHKMkmk",
+        "site": "LinkedIn"
       }
     ],
     "sourceGroups": [
@@ -3223,7 +3340,11 @@
     ],
     "links": [
       {
-        "url": "https://www.linkedin.com/posts/lennyrachitsky_a-non-technical-designer-turned-300-of-my-share-7440106298962214912-Blx3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+        "url": "https://www.linkedin.com/posts/lennyrachitsky_a-non-technical-designer-turned-300-of-my-share-7440106298962214912-Blx3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k",
+        "title": "A non-technical designer turned 300+ of my podcast transcripts into an RPG game.\n\nYou explore an 8-bit pixel world, meet guests like Brian Chesky, Nikita Bier, Elena Verna, Dylan Field, compete with… | Lenny Rachitsky | 200 comments",
+        "description": "A non-technical designer turned 300+ of my podcast transcripts into an RPG game.\n\nYou explore an 8-bit pixel world, meet guests like Brian Chesky, Nikita Bier, Elena Verna, Dylan Field, compete with them to test your product knowledge, and capture them like Pokémon.\n\nSO FUN. And surprisingly educational!\n\nHere",
+        "image": "https://media.licdn.com/dms/image/v2/D5622AQFwWmCyL7oQng/feedshare-shrink_2048_1536/B56Z0CRPvEHkAg-/0/1773859571459?e=2147483647&amp;v=beta&amp;t=cWNUQatlwHs4EPixdWnuX2YYo5hC7iiuMcbQDHKMkmk",
+        "site": "LinkedIn"
       }
     ],
     "sourceGroups": [
@@ -3297,10 +3418,15 @@
     ],
     "links": [
       {
-        "url": "https://x.com/brian_scanlan/status/2033978300003987527?s=46"
+        "url": "https://x.com/brian_scanlan/status/2033978300003987527?s=46",
+        "site": "x.com"
       },
       {
-        "url": "https://claude.com/code-with-claude"
+        "url": "https://claude.com/code-with-claude",
+        "title": "Code with Claude — Anthropic&#x27;s Developer Conference",
+        "description": "Join us for a day of hands-on workshops, live demos of new capabilities and conversations with the teams behind Claude.",
+        "image": "https://cdn.sanity.io/images/4zrzovbb/claude-com/1ffaacc95a87cbd3e84084344038c4adb7a8d207-1280x672.jpg",
+        "site": "Code with Claude"
       }
     ],
     "sourceGroups": [
@@ -3359,10 +3485,15 @@
     ],
     "links": [
       {
-        "url": "https://x.com/brian_scanlan/status/2033978300003987527?s=46"
+        "url": "https://x.com/brian_scanlan/status/2033978300003987527?s=46",
+        "site": "x.com"
       },
       {
-        "url": "https://claude.com/code-with-claude"
+        "url": "https://claude.com/code-with-claude",
+        "title": "Code with Claude — Anthropic&#x27;s Developer Conference",
+        "description": "Join us for a day of hands-on workshops, live demos of new capabilities and conversations with the teams behind Claude.",
+        "image": "https://cdn.sanity.io/images/4zrzovbb/claude-com/1ffaacc95a87cbd3e84084344038c4adb7a8d207-1280x672.jpg",
+        "site": "Code with Claude"
       }
     ],
     "sourceGroups": [
@@ -3421,10 +3552,15 @@
     ],
     "links": [
       {
-        "url": "https://x.com/brian_scanlan/status/2033978300003987527?s=46"
+        "url": "https://x.com/brian_scanlan/status/2033978300003987527?s=46",
+        "site": "x.com"
       },
       {
-        "url": "https://claude.com/code-with-claude"
+        "url": "https://claude.com/code-with-claude",
+        "title": "Code with Claude — Anthropic&#x27;s Developer Conference",
+        "description": "Join us for a day of hands-on workshops, live demos of new capabilities and conversations with the teams behind Claude.",
+        "image": "https://cdn.sanity.io/images/4zrzovbb/claude-com/1ffaacc95a87cbd3e84084344038c4adb7a8d207-1280x672.jpg",
+        "site": "Code with Claude"
       }
     ],
     "sourceGroups": [
@@ -3484,7 +3620,9 @@
     ],
     "links": [
       {
-        "url": "https://signal-pulse-feed.vercel.app/recommendations"
+        "url": "https://signal-pulse-feed.vercel.app/recommendations",
+        "title": "Radar AI Hub",
+        "site": "signal-pulse-feed.vercel.app"
       }
     ],
     "sourceGroups": [
@@ -3553,7 +3691,9 @@
     ],
     "links": [
       {
-        "url": "https://signal-pulse-feed.vercel.app/recommendations"
+        "url": "https://signal-pulse-feed.vercel.app/recommendations",
+        "title": "Radar AI Hub",
+        "site": "signal-pulse-feed.vercel.app"
       }
     ],
     "sourceGroups": [
@@ -3622,7 +3762,9 @@
     ],
     "links": [
       {
-        "url": "https://signal-pulse-feed.vercel.app/recommendations"
+        "url": "https://signal-pulse-feed.vercel.app/recommendations",
+        "title": "Radar AI Hub",
+        "site": "signal-pulse-feed.vercel.app"
       }
     ],
     "sourceGroups": [
@@ -3686,7 +3828,11 @@
     ],
     "links": [
       {
-        "url": "https://www.linkedin.com/in/mauricioaniche/"
+        "url": "https://www.linkedin.com/in/mauricioaniche/",
+        "title": "Maurício Aniche - Alura | LinkedIn",
+        "description": "I am the CTO of Alura, the largest tech and business education ecosystem in… · Experiência: Alura · Localidade: São Paulo · + de 500 conexões no LinkedIn. Veja o perfil de Maurício Aniche no LinkedIn, uma comunidade profissional de 1 bilhão de usuários.",
+        "image": "https://media.licdn.com/dms/image/v2/D4D03AQHlEU8RQdNl4A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1704116857144?e=2147483647&amp;v=beta&amp;t=Vd4nduA4ePdhGThov7H-kF_u5pp0Dm3mIKwlEm8kGhY",
+        "site": "linkedin.com"
       }
     ],
     "sourceGroups": [
@@ -3741,7 +3887,11 @@
     ],
     "links": [
       {
-        "url": "https://www.linkedin.com/in/mauricioaniche/"
+        "url": "https://www.linkedin.com/in/mauricioaniche/",
+        "title": "Maurício Aniche - Alura | LinkedIn",
+        "description": "I am the CTO of Alura, the largest tech and business education ecosystem in… · Experiência: Alura · Localidade: São Paulo · + de 500 conexões no LinkedIn. Veja o perfil de Maurício Aniche no LinkedIn, uma comunidade profissional de 1 bilhão de usuários.",
+        "image": "https://media.licdn.com/dms/image/v2/D4D03AQHlEU8RQdNl4A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1704116857144?e=2147483647&amp;v=beta&amp;t=Vd4nduA4ePdhGThov7H-kF_u5pp0Dm3mIKwlEm8kGhY",
+        "site": "linkedin.com"
       }
     ],
     "sourceGroups": [
@@ -3796,7 +3946,11 @@
     ],
     "links": [
       {
-        "url": "https://www.linkedin.com/in/mauricioaniche/"
+        "url": "https://www.linkedin.com/in/mauricioaniche/",
+        "title": "Maurício Aniche - Alura | LinkedIn",
+        "description": "I am the CTO of Alura, the largest tech and business education ecosystem in… · Experiência: Alura · Localidade: São Paulo · + de 500 conexões no LinkedIn. Veja o perfil de Maurício Aniche no LinkedIn, uma comunidade profissional de 1 bilhão de usuários.",
+        "image": "https://media.licdn.com/dms/image/v2/D4D03AQHlEU8RQdNl4A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1704116857144?e=2147483647&amp;v=beta&amp;t=Vd4nduA4ePdhGThov7H-kF_u5pp0Dm3mIKwlEm8kGhY",
+        "site": "linkedin.com"
       }
     ],
     "sourceGroups": [
@@ -3849,7 +4003,11 @@
     ],
     "links": [
       {
-        "url": "https://www.themaestri.app/pt-br"
+        "url": "https://www.themaestri.app/pt-br",
+        "title": "Maestri · A new kind of terminal app",
+        "description": "Orchestrate multiple AI agents, terminals, sketches and notes on one infinite canvas. Built for macOS.",
+        "image": "https://pub-84eb0b1f3fb3420bbe57a88de7443b71.r2.dev/assets/og-image.png",
+        "site": "Maestri"
       }
     ],
     "sourceGroups": [
@@ -3897,7 +4055,11 @@
     ],
     "links": [
       {
-        "url": "https://www.themaestri.app/pt-br"
+        "url": "https://www.themaestri.app/pt-br",
+        "title": "Maestri · A new kind of terminal app",
+        "description": "Orchestrate multiple AI agents, terminals, sketches and notes on one infinite canvas. Built for macOS.",
+        "image": "https://pub-84eb0b1f3fb3420bbe57a88de7443b71.r2.dev/assets/og-image.png",
+        "site": "Maestri"
       }
     ],
     "sourceGroups": [
@@ -3945,7 +4107,11 @@
     ],
     "links": [
       {
-        "url": "https://www.themaestri.app/pt-br"
+        "url": "https://www.themaestri.app/pt-br",
+        "title": "Maestri · A new kind of terminal app",
+        "description": "Orchestrate multiple AI agents, terminals, sketches and notes on one infinite canvas. Built for macOS.",
+        "image": "https://pub-84eb0b1f3fb3420bbe57a88de7443b71.r2.dev/assets/og-image.png",
+        "site": "Maestri"
       }
     ],
     "sourceGroups": [
@@ -3994,7 +4160,11 @@
     ],
     "links": [
       {
-        "url": "https://impeccable.style/"
+        "url": "https://impeccable.style/",
+        "title": "Impeccable: Design skills for AI harnesses",
+        "description": "1 skill, 20 commands, and curated anti-patterns for impeccable frontend design. Works with Cursor, Claude Code, Gemini CLI, and Codex CLI.",
+        "image": "https://impeccable.style/og-image.jpg",
+        "site": "impeccable.style"
       }
     ],
     "sourceGroups": [
@@ -4056,16 +4226,28 @@
     ],
     "links": [
       {
-        "url": "https://code.claude.com/docs/en/remote-control"
+        "url": "https://code.claude.com/docs/en/remote-control",
+        "title": "Continue local sessions from any device with Remote Control - Claude Code Docs",
+        "description": "Continue a local Claude Code session from your phone, tablet, or any browser using Remote Control. Works with claude.ai/code and the Claude mobile app.",
+        "image": "https://claude-code.mintlify.app/_next/image?url=%2F_mintlify%2Fapi%2Fog%3Fdivision%3DPlatforms%2Band%2Bintegrations%26appearance%3Dsystem%26title%3DContinue%2Blocal%2Bsessions%2Bfrom%2Bany%2Bdevice%2Bwith%2BRemote%2BControl%26description%3DContinue%2Ba%2Blocal%2BClaude%2BCode%2Bsession%2Bfrom%2Byour%2Bphone%252C%2Btablet%252C%2Bor%2Bany%2Bbrowser%2Busing%2BRemote%2BControl.%2BWorks%2Bwith%2Bclaude.ai%252Fcode%2Band%2Bthe%2BClaude%2Bmobile%2Bapp.%26logoLight%3Dhttps%253A%252F%252Fmintcdn.com%252Fclaude-code%252Fc5r9_6tjPMzFdDDT%252Flogo%252Flight.svg%253Ffit%253Dmax%2526auto%253Dformat%2526n%253Dc5r9_6tjPMzFdDDT%2526q%253D85%2526s%253D78fd01ff4f4340295a4f66e2ea54903c%26logoDark%3Dhttps%253A%252F%252Fmintcdn.com%252Fclaude-code%252Fc5r9_6tjPMzFdDDT%252Flogo%252Fdark.svg%253Ffit%253Dmax%2526auto%253Dformat%2526n%253Dc5r9_6tjPMzFdDDT%2526q%253D85%2526s%253D1298a0c3b3a1da603b190d0de0e31712%26primaryColor%3D%25230E0E0E%26lightColor%3D%2523D4A27F%26darkColor%3D%25230E0E0E%26backgroundLight%3D%2523FDFDF7%26backgroundDark%3D%252309090B&amp;w=1200&amp;q=100",
+        "site": "code.claude.com"
       },
       {
-        "url": "https://paper.design/"
+        "url": "https://paper.design/",
+        "title": "Paper – design, share, ship",
+        "description": "Paper is a modern and powerful design tool that helps you create, share, and ship your best work.",
+        "image": "https://paper.design/opengraph-image.jpg?opengraph-image.9a84ecdd.jpg",
+        "site": "Paper"
       },
       {
         "url": "http://127.0.0.1:29979/mcp"
       },
       {
-        "url": "https://impeccable.style/"
+        "url": "https://impeccable.style/",
+        "title": "Impeccable: Design skills for AI harnesses",
+        "description": "1 skill, 20 commands, and curated anti-patterns for impeccable frontend design. Works with Cursor, Claude Code, Gemini CLI, and Codex CLI.",
+        "image": "https://impeccable.style/og-image.jpg",
+        "site": "impeccable.style"
       }
     ],
     "sourceGroups": [
@@ -4191,16 +4373,28 @@
     ],
     "links": [
       {
-        "url": "https://code.claude.com/docs/en/remote-control"
+        "url": "https://code.claude.com/docs/en/remote-control",
+        "title": "Continue local sessions from any device with Remote Control - Claude Code Docs",
+        "description": "Continue a local Claude Code session from your phone, tablet, or any browser using Remote Control. Works with claude.ai/code and the Claude mobile app.",
+        "image": "https://claude-code.mintlify.app/_next/image?url=%2F_mintlify%2Fapi%2Fog%3Fdivision%3DPlatforms%2Band%2Bintegrations%26appearance%3Dsystem%26title%3DContinue%2Blocal%2Bsessions%2Bfrom%2Bany%2Bdevice%2Bwith%2BRemote%2BControl%26description%3DContinue%2Ba%2Blocal%2BClaude%2BCode%2Bsession%2Bfrom%2Byour%2Bphone%252C%2Btablet%252C%2Bor%2Bany%2Bbrowser%2Busing%2BRemote%2BControl.%2BWorks%2Bwith%2Bclaude.ai%252Fcode%2Band%2Bthe%2BClaude%2Bmobile%2Bapp.%26logoLight%3Dhttps%253A%252F%252Fmintcdn.com%252Fclaude-code%252Fc5r9_6tjPMzFdDDT%252Flogo%252Flight.svg%253Ffit%253Dmax%2526auto%253Dformat%2526n%253Dc5r9_6tjPMzFdDDT%2526q%253D85%2526s%253D78fd01ff4f4340295a4f66e2ea54903c%26logoDark%3Dhttps%253A%252F%252Fmintcdn.com%252Fclaude-code%252Fc5r9_6tjPMzFdDDT%252Flogo%252Fdark.svg%253Ffit%253Dmax%2526auto%253Dformat%2526n%253Dc5r9_6tjPMzFdDDT%2526q%253D85%2526s%253D1298a0c3b3a1da603b190d0de0e31712%26primaryColor%3D%25230E0E0E%26lightColor%3D%2523D4A27F%26darkColor%3D%25230E0E0E%26backgroundLight%3D%2523FDFDF7%26backgroundDark%3D%252309090B&amp;w=1200&amp;q=100",
+        "site": "code.claude.com"
       },
       {
-        "url": "https://paper.design/"
+        "url": "https://paper.design/",
+        "title": "Paper – design, share, ship",
+        "description": "Paper is a modern and powerful design tool that helps you create, share, and ship your best work.",
+        "image": "https://paper.design/opengraph-image.jpg?opengraph-image.9a84ecdd.jpg",
+        "site": "Paper"
       },
       {
         "url": "http://127.0.0.1:29979/mcp"
       },
       {
-        "url": "https://impeccable.style/"
+        "url": "https://impeccable.style/",
+        "title": "Impeccable: Design skills for AI harnesses",
+        "description": "1 skill, 20 commands, and curated anti-patterns for impeccable frontend design. Works with Cursor, Claude Code, Gemini CLI, and Codex CLI.",
+        "image": "https://impeccable.style/og-image.jpg",
+        "site": "impeccable.style"
       }
     ],
     "sourceGroups": [
@@ -4492,7 +4686,11 @@
     ],
     "links": [
       {
-        "url": "https://www.linkedin.com/posts/pneppalli_agentic-software-engineering-adoption-is-activity-7439402236541157376-6PwV?utm_source=share&utm_medium=member_ios&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+        "url": "https://www.linkedin.com/posts/pneppalli_agentic-software-engineering-adoption-is-activity-7439402236541157376-6PwV?utm_source=share&utm_medium=member_ios&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k",
+        "title": "Uber's Agentic Software Adoption Surges with 1800 Weekly Code Changes | Praveen Neppalli Naga posted on the topic | LinkedIn",
+        "description": "Agentic software engineering adoption is on fire at Uber: 1,800 code changes per week are now written entirely by Uber",
+        "image": "https://static.licdn.com/aero-v1/sc/h/c45fy346jw096z9pbphyyhdz7",
+        "site": "LinkedIn"
       }
     ],
     "sourceGroups": [
@@ -4581,7 +4779,11 @@
     ],
     "links": [
       {
-        "url": "https://www.linkedin.com/posts/pneppalli_agentic-software-engineering-adoption-is-activity-7439402236541157376-6PwV?utm_source=share&utm_medium=member_ios&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+        "url": "https://www.linkedin.com/posts/pneppalli_agentic-software-engineering-adoption-is-activity-7439402236541157376-6PwV?utm_source=share&utm_medium=member_ios&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k",
+        "title": "Uber's Agentic Software Adoption Surges with 1800 Weekly Code Changes | Praveen Neppalli Naga posted on the topic | LinkedIn",
+        "description": "Agentic software engineering adoption is on fire at Uber: 1,800 code changes per week are now written entirely by Uber",
+        "image": "https://static.licdn.com/aero-v1/sc/h/c45fy346jw096z9pbphyyhdz7",
+        "site": "LinkedIn"
       }
     ],
     "sourceGroups": [
@@ -4671,7 +4873,11 @@
     ],
     "links": [
       {
-        "url": "https://www.linkedin.com/posts/pneppalli_agentic-software-engineering-adoption-is-activity-7439402236541157376-6PwV?utm_source=share&utm_medium=member_ios&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+        "url": "https://www.linkedin.com/posts/pneppalli_agentic-software-engineering-adoption-is-activity-7439402236541157376-6PwV?utm_source=share&utm_medium=member_ios&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k",
+        "title": "Uber's Agentic Software Adoption Surges with 1800 Weekly Code Changes | Praveen Neppalli Naga posted on the topic | LinkedIn",
+        "description": "Agentic software engineering adoption is on fire at Uber: 1,800 code changes per week are now written entirely by Uber",
+        "image": "https://static.licdn.com/aero-v1/sc/h/c45fy346jw096z9pbphyyhdz7",
+        "site": "LinkedIn"
       }
     ],
     "sourceGroups": [
@@ -4759,7 +4965,8 @@
     ],
     "links": [
       {
-        "url": "https://x.com/austina_way/status/2032956287168675945?s=46"
+        "url": "https://x.com/austina_way/status/2032956287168675945?s=46",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -4894,7 +5101,8 @@
     ],
     "links": [
       {
-        "url": "https://x.com/austina_way/status/2032956287168675945?s=46"
+        "url": "https://x.com/austina_way/status/2032956287168675945?s=46",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -5216,7 +5424,10 @@
     ],
     "links": [
       {
-        "url": "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
+        "url": "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion",
+        "title": "Claude March 2026 usage promotion | Claude Help Center",
+        "image": "https://downloads.intercomcdn.com/i/o/lupk8zyo/792494/717b10d3ebd874823db64841659b/76f3062d78ebbb04863fb1de3ef9cca0.png",
+        "site": "support.claude.com"
       }
     ],
     "sourceGroups": [
@@ -5274,7 +5485,10 @@
     ],
     "links": [
       {
-        "url": "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
+        "url": "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion",
+        "title": "Claude March 2026 usage promotion | Claude Help Center",
+        "image": "https://downloads.intercomcdn.com/i/o/lupk8zyo/792494/717b10d3ebd874823db64841659b/76f3062d78ebbb04863fb1de3ef9cca0.png",
+        "site": "support.claude.com"
       }
     ],
     "sourceGroups": [
@@ -5332,7 +5546,10 @@
     ],
     "links": [
       {
-        "url": "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
+        "url": "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion",
+        "title": "Claude March 2026 usage promotion | Claude Help Center",
+        "image": "https://downloads.intercomcdn.com/i/o/lupk8zyo/792494/717b10d3ebd874823db64841659b/76f3062d78ebbb04863fb1de3ef9cca0.png",
+        "site": "support.claude.com"
       }
     ],
     "sourceGroups": [
@@ -5518,10 +5735,17 @@
     ],
     "links": [
       {
-        "url": "https://claude.com/blog/1m-context-ga"
+        "url": "https://claude.com/blog/1m-context-ga",
+        "title": "1M context is now generally available for Opus 4.6 and Sonnet 4.6 | Claude",
+        "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_og-claude-generic.jpg",
+        "site": "Claude"
       },
       {
-        "url": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob"
+        "url": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob",
+        "title": "Computer for Enterprise, by Perplexity",
+        "description": "From a single prompt, Perplexity Computer plans and executes complex workflows end-to-end. It can research, analyze data, generate code, update docs, call AP...",
+        "image": "https://i.ytimg.com/vi/atG3OQPmdSY/maxresdefault.jpg",
+        "site": "YouTube"
       }
     ],
     "sourceGroups": [
@@ -5569,10 +5793,17 @@
     ],
     "links": [
       {
-        "url": "https://claude.com/blog/1m-context-ga"
+        "url": "https://claude.com/blog/1m-context-ga",
+        "title": "1M context is now generally available for Opus 4.6 and Sonnet 4.6 | Claude",
+        "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_og-claude-generic.jpg",
+        "site": "Claude"
       },
       {
-        "url": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob"
+        "url": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob",
+        "title": "Computer for Enterprise, by Perplexity",
+        "description": "From a single prompt, Perplexity Computer plans and executes complex workflows end-to-end. It can research, analyze data, generate code, update docs, call AP...",
+        "image": "https://i.ytimg.com/vi/atG3OQPmdSY/maxresdefault.jpg",
+        "site": "YouTube"
       }
     ],
     "sourceGroups": [
@@ -5621,10 +5852,17 @@
     ],
     "links": [
       {
-        "url": "https://claude.com/blog/1m-context-ga"
+        "url": "https://claude.com/blog/1m-context-ga",
+        "title": "1M context is now generally available for Opus 4.6 and Sonnet 4.6 | Claude",
+        "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_og-claude-generic.jpg",
+        "site": "Claude"
       },
       {
-        "url": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob"
+        "url": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob",
+        "title": "Computer for Enterprise, by Perplexity",
+        "description": "From a single prompt, Perplexity Computer plans and executes complex workflows end-to-end. It can research, analyze data, generate code, update docs, call AP...",
+        "image": "https://i.ytimg.com/vi/atG3OQPmdSY/maxresdefault.jpg",
+        "site": "YouTube"
       }
     ],
     "sourceGroups": [
@@ -5673,10 +5911,17 @@
     ],
     "links": [
       {
-        "url": "https://claude.com/blog/1m-context-ga"
+        "url": "https://claude.com/blog/1m-context-ga",
+        "title": "1M context is now generally available for Opus 4.6 and Sonnet 4.6 | Claude",
+        "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_og-claude-generic.jpg",
+        "site": "Claude"
       },
       {
-        "url": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob"
+        "url": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob",
+        "title": "Computer for Enterprise, by Perplexity",
+        "description": "From a single prompt, Perplexity Computer plans and executes complex workflows end-to-end. It can research, analyze data, generate code, update docs, call AP...",
+        "image": "https://i.ytimg.com/vi/atG3OQPmdSY/maxresdefault.jpg",
+        "site": "YouTube"
       }
     ],
     "sourceGroups": [
@@ -5725,10 +5970,17 @@
     ],
     "links": [
       {
-        "url": "https://www.instagram.com/p/DV1CHEplqZf/?igsh=MTZsZjh2YzRqZDhhaw=="
+        "url": "https://www.instagram.com/p/DV1CHEplqZf/?igsh=MTZsZjh2YzRqZDhhaw==",
+        "title": "Adapta.org on Instagram: \"A Adapta acaba de comprar uma nova empresa de IA.\n\nInvestimos 30 milh&#xf5;es de reais para comprar uma das tecnologias mais impressionantes que vimos nos &#xfa;ltimos tempos.\n\nE que provavelmente ser&#xe1; a ferramenta mais impressionante que voc&#xea; ver&#xe1; em 2026.\n\nO time do Skip, incluindo os s&#xf3;cios Giampaolo Lepore (CEO), Allan Baptista (CTO) e Romario Melo (CPO), agora faz parte da Adapta como nova unidade de neg&#xf3;cio, se juntando aos 100 funcion&#xe1;rios em S&#xe3;o Paulo.\n\nN&#xf3;s absorvemos a base de clientes do Skip, que se integram a mais de 150 mil usu&#xe1;rios da plataforma.\n\nO que antes custava entre R$60 mil e R$400 mil em desenvolvimento sob medida e levava 5 meses, o Skip entrega em 2 dias.\n\nEssa &#xe9; a primeira aquisi&#xe7;&#xe3;o. N&#xe3;o a &#xfa;ltima.\n\n\"Estamos buscando times pequenos com &#xf3;timos produtos em alto crescimento, mas que n&#xe3;o conseguem distribu&#xed;-los. O Skip &#xe9; justamente isso.\" Max Peters, CEO da Adapta.\n\nO Mercado Livre definiu a d&#xe9;cada de 2010. O Nubank definiu a de 2020. N&#xf3;s queremos definir a pr&#xf3;xima, levando as melhores solu&#xe7;&#xf5;es de IA para empresas de toda a Am&#xe9;rica Latina.\n\nE o que vem pela frente &#xe9; ainda maior.\"",
+        "description": "906 likes, 76 comments - adapta_org on March 13, 2026: \"A Adapta acaba de comprar uma nova empresa de IA.\n\nInvestimos 30 milh&#xf5;es de reais para comprar uma das tecnologias mais impressionantes que vimos nos &#xfa;ltimos tempos.\n\nE que provavelmente ser&#xe1; a ferramenta mais impressionante que voc&#xea; ver&#xe1; em 2026.\n\nO time do Skip, incluindo os s&#xf3;cios Giampaolo Lepore (CEO), Allan Baptista (CTO) e Romario Melo (CPO), agora faz parte da Adapta como nova unidade de neg&#xf3;cio, se juntando aos 100 funcion&#xe1;rios em S&#xe3;o Paulo.\n\nN&#xf3;s absorvemos a base de clientes do Skip, que se integram a mais de 150 mil usu&#xe1;rios da plataforma.\n\nO que antes custava entre R$60 mil e R$400 mil em desenvolvimento sob medida e levava 5 meses, o Skip entrega em 2 dias.\n\nEssa &#xe9; a primeira aquisi&#xe7;&#xe3;o. N&#xe3;o a &#xfa;ltima.\n\n\"Estamos buscando times pequenos com &#xf3;timos produtos em alto crescimento, mas que n&#xe3;o conseguem distribu&#xed;-los. O Skip &#xe9; justamente isso.\" Max Peters, CEO da Adapta.\n\nO Mercado Livre definiu a d&#xe9;cada de 2010. O Nubank definiu a de 2020. N&#xf3;s queremos definir a pr&#xf3;xima, levando as melhores solu&#xe7;&#xf5;es de IA para empresas de toda a Am&#xe9;rica Latina.\n\nE o que vem pela frente &#xe9; ainda maior.\". ",
+        "image": "https://scontent.cdninstagram.com/v/t51.82787-15/650345186_17982789947972052_8661504669404021420_n.jpg?stp=c216.0.648.648a_dst-jpg_e35_s640x640_tt6&amp;_nc_cat=105&amp;ccb=7-5&amp;_nc_sid=18de74&amp;efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&amp;_nc_ohc=Vv6an08TUQ4Q7kNvwHe6FYO&amp;_nc_oc=AdrVkORPQFYhoi2H2XZlc0L4tWNJ_7v5qw9cBqgoxHM1HG4IwTVErjBM6OLs2l4FPxYwjUgEjKjqWeqt3HzR85f9&amp;_nc_zt=23&amp;_nc_ht=scontent.cdninstagram.com&amp;_nc_gid=-NXWXIbQxTpDFMLoymEgCg&amp;_nc_ss=7a389&amp;oh=00_Af1LgmqgEutAjNj-r5PSxWiChmj38yxXjAmlAYal4iNelg&amp;oe=69DBF4CF",
+        "site": "Instagram"
       },
       {
-        "url": "https://simonwillison.net/2026/Mar/13/liquid/"
+        "url": "https://simonwillison.net/2026/Mar/13/liquid/",
+        "title": "Shopify/liquid: Performance: 53% faster parse+render, 61% fewer allocations",
+        "description": "PR from Shopify CEO Tobias Lütke against Liquid, Shopify&#x27;s open source Ruby template engine that was somewhat inspired by Django when Tobi first created it back in 2005. Tobi found …",
+        "site": "Simon Willison’s Weblog"
       }
     ],
     "sourceGroups": [
@@ -5848,10 +6100,17 @@
     ],
     "links": [
       {
-        "url": "https://www.instagram.com/p/DV1CHEplqZf/?igsh=MTZsZjh2YzRqZDhhaw=="
+        "url": "https://www.instagram.com/p/DV1CHEplqZf/?igsh=MTZsZjh2YzRqZDhhaw==",
+        "title": "Adapta.org on Instagram: \"A Adapta acaba de comprar uma nova empresa de IA.\n\nInvestimos 30 milh&#xf5;es de reais para comprar uma das tecnologias mais impressionantes que vimos nos &#xfa;ltimos tempos.\n\nE que provavelmente ser&#xe1; a ferramenta mais impressionante que voc&#xea; ver&#xe1; em 2026.\n\nO time do Skip, incluindo os s&#xf3;cios Giampaolo Lepore (CEO), Allan Baptista (CTO) e Romario Melo (CPO), agora faz parte da Adapta como nova unidade de neg&#xf3;cio, se juntando aos 100 funcion&#xe1;rios em S&#xe3;o Paulo.\n\nN&#xf3;s absorvemos a base de clientes do Skip, que se integram a mais de 150 mil usu&#xe1;rios da plataforma.\n\nO que antes custava entre R$60 mil e R$400 mil em desenvolvimento sob medida e levava 5 meses, o Skip entrega em 2 dias.\n\nEssa &#xe9; a primeira aquisi&#xe7;&#xe3;o. N&#xe3;o a &#xfa;ltima.\n\n\"Estamos buscando times pequenos com &#xf3;timos produtos em alto crescimento, mas que n&#xe3;o conseguem distribu&#xed;-los. O Skip &#xe9; justamente isso.\" Max Peters, CEO da Adapta.\n\nO Mercado Livre definiu a d&#xe9;cada de 2010. O Nubank definiu a de 2020. N&#xf3;s queremos definir a pr&#xf3;xima, levando as melhores solu&#xe7;&#xf5;es de IA para empresas de toda a Am&#xe9;rica Latina.\n\nE o que vem pela frente &#xe9; ainda maior.\"",
+        "description": "906 likes, 76 comments - adapta_org on March 13, 2026: \"A Adapta acaba de comprar uma nova empresa de IA.\n\nInvestimos 30 milh&#xf5;es de reais para comprar uma das tecnologias mais impressionantes que vimos nos &#xfa;ltimos tempos.\n\nE que provavelmente ser&#xe1; a ferramenta mais impressionante que voc&#xea; ver&#xe1; em 2026.\n\nO time do Skip, incluindo os s&#xf3;cios Giampaolo Lepore (CEO), Allan Baptista (CTO) e Romario Melo (CPO), agora faz parte da Adapta como nova unidade de neg&#xf3;cio, se juntando aos 100 funcion&#xe1;rios em S&#xe3;o Paulo.\n\nN&#xf3;s absorvemos a base de clientes do Skip, que se integram a mais de 150 mil usu&#xe1;rios da plataforma.\n\nO que antes custava entre R$60 mil e R$400 mil em desenvolvimento sob medida e levava 5 meses, o Skip entrega em 2 dias.\n\nEssa &#xe9; a primeira aquisi&#xe7;&#xe3;o. N&#xe3;o a &#xfa;ltima.\n\n\"Estamos buscando times pequenos com &#xf3;timos produtos em alto crescimento, mas que n&#xe3;o conseguem distribu&#xed;-los. O Skip &#xe9; justamente isso.\" Max Peters, CEO da Adapta.\n\nO Mercado Livre definiu a d&#xe9;cada de 2010. O Nubank definiu a de 2020. N&#xf3;s queremos definir a pr&#xf3;xima, levando as melhores solu&#xe7;&#xf5;es de IA para empresas de toda a Am&#xe9;rica Latina.\n\nE o que vem pela frente &#xe9; ainda maior.\". ",
+        "image": "https://scontent.cdninstagram.com/v/t51.82787-15/650345186_17982789947972052_8661504669404021420_n.jpg?stp=c216.0.648.648a_dst-jpg_e35_s640x640_tt6&amp;_nc_cat=105&amp;ccb=7-5&amp;_nc_sid=18de74&amp;efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&amp;_nc_ohc=Vv6an08TUQ4Q7kNvwHe6FYO&amp;_nc_oc=AdrVkORPQFYhoi2H2XZlc0L4tWNJ_7v5qw9cBqgoxHM1HG4IwTVErjBM6OLs2l4FPxYwjUgEjKjqWeqt3HzR85f9&amp;_nc_zt=23&amp;_nc_ht=scontent.cdninstagram.com&amp;_nc_gid=-NXWXIbQxTpDFMLoymEgCg&amp;_nc_ss=7a389&amp;oh=00_Af1LgmqgEutAjNj-r5PSxWiChmj38yxXjAmlAYal4iNelg&amp;oe=69DBF4CF",
+        "site": "Instagram"
       },
       {
-        "url": "https://simonwillison.net/2026/Mar/13/liquid/"
+        "url": "https://simonwillison.net/2026/Mar/13/liquid/",
+        "title": "Shopify/liquid: Performance: 53% faster parse+render, 61% fewer allocations",
+        "description": "PR from Shopify CEO Tobias Lütke against Liquid, Shopify&#x27;s open source Ruby template engine that was somewhat inspired by Django when Tobi first created it back in 2005. Tobi found …",
+        "site": "Simon Willison’s Weblog"
       }
     ],
     "sourceGroups": [
@@ -5969,7 +6228,8 @@
     ],
     "links": [
       {
-        "url": "https://x.com/tomfgoodwin/status/2032104624551854210?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA"
+        "url": "https://x.com/tomfgoodwin/status/2032104624551854210?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -6012,7 +6272,8 @@
     ],
     "links": [
       {
-        "url": "https://x.com/tomfgoodwin/status/2032104624551854210?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA"
+        "url": "https://x.com/tomfgoodwin/status/2032104624551854210?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -6057,7 +6318,8 @@
     ],
     "links": [
       {
-        "url": "https://x.com/tomfgoodwin/status/2032104624551854210?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA"
+        "url": "https://x.com/tomfgoodwin/status/2032104624551854210?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -6101,7 +6363,8 @@
     ],
     "links": [
       {
-        "url": "https://x.com/tomfgoodwin/status/2032104624551854210?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA"
+        "url": "https://x.com/tomfgoodwin/status/2032104624551854210?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -6144,7 +6407,11 @@
     ],
     "links": [
       {
-        "url": "https://github.com/google-ai-edge/gallery"
+        "url": "https://github.com/google-ai-edge/gallery",
+        "title": "GitHub - google-ai-edge/gallery: A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.",
+        "description": "A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally. - google-ai-edge/gallery",
+        "image": "https://opengraph.githubassets.com/be3893949f921b7b43de71bfb16a7e210220c45f7aa29691d64e8df5de6654c0/google-ai-edge/gallery",
+        "site": "GitHub"
       }
     ],
     "sourceGroups": [
@@ -6198,7 +6465,8 @@
     ],
     "links": [
       {
-        "url": "https://x.com/i/status/2032124273587077133"
+        "url": "https://x.com/i/status/2032124273587077133",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -6253,7 +6521,8 @@
     ],
     "links": [
       {
-        "url": "https://x.com/i/status/2032124273587077133"
+        "url": "https://x.com/i/status/2032124273587077133",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -6313,13 +6582,22 @@
     ],
     "links": [
       {
-        "url": "https://arxiv.org/abs/2512.14982"
+        "url": "https://arxiv.org/abs/2512.14982",
+        "title": "Prompt Repetition Improves Non-Reasoning LLMs",
+        "description": "When not using reasoning, repeating the input prompt improves performance for popular models (Gemini, GPT, Claude, and Deepseek) without increasing the number of generated tokens or latency.",
+        "image": "/static/browse/0.3.4/images/arxiv-logo-fb.png",
+        "site": "arXiv.org"
       },
       {
-        "url": "https://x.com/chongdashu/status/2031743032266043687?s=46"
+        "url": "https://x.com/chongdashu/status/2031743032266043687?s=46",
+        "site": "x.com"
       },
       {
-        "url": "https://www.youtube.com/watch?v=gtnt84CDP-s"
+        "url": "https://www.youtube.com/watch?v=gtnt84CDP-s",
+        "title": "Harry Potter by Balenciaga (2026)",
+        "description": "Merch: https://demonflyingfox.com/Spotify: https://bit.ly/4afQdkmPatreon to support this channel: https://www.patreon.com/user?u=87233464Instagram: https://w...",
+        "image": "https://i.ytimg.com/vi/gtnt84CDP-s/maxresdefault.jpg",
+        "site": "YouTube"
       }
     ],
     "sourceGroups": [
@@ -6465,13 +6743,19 @@
     ],
     "links": [
       {
-        "url": "https://newsletter.getdx.com/p/ai-productivity-gains-are-10-not?utm_campaign=post&utm_medium=web"
+        "url": "https://newsletter.getdx.com/p/ai-productivity-gains-are-10-not?utm_campaign=post&utm_medium=web",
+        "title": "AI productivity gains are 10%, not 10x",
+        "description": "Preliminary data from our longitudinal AI impact study",
+        "image": "https://substackcdn.com/image/fetch/$s_!uiJg!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc0dbdda3-eedb-4e2f-a272-16b972208ef0_4000x2800.png",
+        "site": "newsletter.getdx.com"
       },
       {
-        "url": "https://x.com/PawelHuryn/status/2031629378547769446"
+        "url": "https://x.com/PawelHuryn/status/2031629378547769446",
+        "site": "x.com"
       },
       {
-        "url": "https://x.com/andrewchen/status/2031532980032909640"
+        "url": "https://x.com/andrewchen/status/2031532980032909640",
+        "site": "x.com"
       }
     ],
     "sourceGroups": [
@@ -6588,10 +6872,17 @@
     ],
     "links": [
       {
-        "url": "https://wondering.app/"
+        "url": "https://wondering.app/",
+        "title": "Wondering - Learn What You Thought You Couldn",
+        "description": "Wondering is an AI-powered learning platform that helps you learn what you thought you couldn",
+        "site": "wondering.app"
       },
       {
-        "url": "https://www.instagram.com/p/DVvxiY7DOFh/?igsh=dmRzbGt2NWNqaTVx"
+        "url": "https://www.instagram.com/p/DVvxiY7DOFh/?igsh=dmRzbGt2NWNqaTVx",
+        "title": "WIRED on Instagram: \"Millions of software engineers have started delegating their programming tasks to AI, forcing many in Silicon Valley to reckon with the automation of their jobs for the first time. Coding agents have emerged as one of the few areas where enterprises are willing to pay a lot for AI. This moment could, and arguably should, be the next triumphant poster along the stairs for OpenAI. But the name in big print right now belongs to someone else.\n\nAnthropic, a smaller rival started by OpenAI defectors, has found runaway success with its programming agent, Claude Code. The product accounts for nearly a fifth of its business&#x2014;more than $2.5 billion in annualized revenue, the company said in February. By the end of January, OpenAI&#x2019;s version, Codex, was bringing in just over $1 billion in annualized revenue, according to a person with direct knowledge of the matter. What gives?\n\nTap the &#x1f517; in bio to read the full story.\n\n&#x1f4f8;: &#064;markjaysonquines\"",
+        "description": "1,051 likes, 39 comments - wired on March 11, 2026: \"Millions of software engineers have started delegating their programming tasks to AI, forcing many in Silicon Valley to reckon with the automation of their jobs for the first time. Coding agents have emerged as one of the few areas where enterprises are willing to pay a lot for AI. This moment could, and arguably should, be the next triumphant poster along the stairs for OpenAI. But the name in big print right now belongs to someone else.\n\nAnthropic, a smaller rival started by OpenAI defectors, has found runaway success with its programming agent, Claude Code. The product accounts for nearly a fifth of its business&#x2014;more than $2.5 billion in annualized revenue, the company said in February. By the end of January, OpenAI&#x2019;s version, Codex, was bringing in just over $1 billion in annualized revenue, according to a person with direct knowledge of the matter. What gives?\n\nTap the &#x1f517; in bio to read the full story.\n\n&#x1f4f8;: &#064;markjaysonquines\". ",
+        "image": "https://scontent.cdninstagram.com/v/t51.82787-15/649246450_18572006803003370_8117829106383376822_n.jpg?stp=c216.0.648.648a_dst-jpg_e35_s640x640_tt6&amp;_nc_cat=109&amp;ccb=7-5&amp;_nc_sid=18de74&amp;efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&amp;_nc_ohc=tbmhw1cB8GwQ7kNvwETfZaT&amp;_nc_oc=AdoSiFr-mpuVaqt3-o4cntfJFLcjCItUT9y0Oku2aIvIUhfvmgkrcfJQePhKy-8974iMgWRhqgiktpd9zMz382jR&amp;_nc_zt=23&amp;_nc_ht=scontent.cdninstagram.com&amp;_nc_gid=E_2pKsUdwuZM7oL8TSaIBA&amp;_nc_ss=7a389&amp;oh=00_Af14-wSL2SJI8BhspSjTEShW-SkzUlGQVJboOUZhZeNwog&amp;oe=69DBEF6B",
+        "site": "Instagram"
       }
     ],
     "sourceGroups": [
@@ -6648,10 +6939,17 @@
     ],
     "links": [
       {
-        "url": "https://status.claude.com/"
+        "url": "https://status.claude.com/",
+        "title": "Claude Status",
+        "description": "Welcome to Claude's home for real-time and historical data on system performance.",
+        "site": "status.claude.com"
       },
       {
-        "url": "https://tyxter.dev/"
+        "url": "https://tyxter.dev/",
+        "title": "Tyxter Studio | Criador de Apps de IA para WhatsApp",
+        "description": "Crie apps conversacionais de WhatsApp com IA, teste em preview real e publique em minutos.",
+        "image": "https://tyxter.dev/logo-tyxter-1.png",
+        "site": "Tyxter Studio"
       }
     ],
     "sourceGroups": [
