@@ -1,0 +1,160 @@
+---
+import EditorialLayout from "../../layouts/EditorialLayout.astro";
+import storiesData from "../../data/stories.json";
+
+interface Story {
+  id: string;
+  title: string;
+  summary: string;
+  date: string;
+  authors: string[];
+  tags: string[];
+  sources: string[];
+  links: Array<{ url: string; title?: string; site?: string }>;
+  sourceGroups: string[];
+  messageCount: number;
+  authorCount: number;
+  linkCount: number;
+  weight: number;
+}
+
+const stories = (storiesData as Story[]).sort((a, b) => b.weight - a.weight);
+
+// Group labels
+const groupLabels: Record<string, { label: string; color: string; bg: string }> = {
+  "clauders": { label: "Clauders", color: "#1e40af", bg: "#dbeafe" },
+  "ia-sob-controle": { label: "Sob Controle", color: "#9d174d", bg: "#fce7f3" },
+  "telegram-hipsters-builders": { label: "Telegram", color: "#5b21b6", bg: "#ede9fe" },
+  "Hipsters Builders (Telegram)": { label: "Telegram", color: "#5b21b6", bg: "#ede9fe" },
+};
+
+const fmtDate = (d: string) => {
+  if (!d) return "";
+  const date = new Date(d);
+  return date.toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" });
+};
+
+// Stats
+const totalAuthors = new Set(stories.flatMap(s => s.authors)).size;
+const totalLinks = stories.reduce((sum, s) => sum + s.links.length, 0);
+---
+
+<EditorialLayout title="Stories" activeNav="stories" description="Tópicos curados da comunidade Hipsters Builders — discussões destiladas em stories.">
+  <div class="ed-section__label">Stories</div>
+  <p class="ed-section__subtitle">
+    {stories.length} stories de {totalAuthors} autores. Cada story é um tópico discutido na comunidade, destilado de {stories.reduce((s, st) => s + st.messageCount, 0)} mensagens.
+  </p>
+
+  <div class="stories-list">
+    {stories.map((story, i) => {
+      const group = groupLabels[story.sourceGroups[0]] || groupLabels.clauders;
+      return (
+        <>
+          {i > 0 && <hr class="ed-divider" />}
+          <article class="story-item">
+            <div class="story-item__meta">
+              <span class="ed-meta-date">{fmtDate(story.date)}</span>
+              <span class="ed-label ed-label--sm" style={`background:${group.bg};color:${group.color};`}>{group.label}</span>
+              <span class="story-item__msgs">{story.messageCount} msgs &middot; {story.authorCount} autores{story.linkCount > 0 ? ` \u00b7 ${story.linkCount} links` : ""}</span>
+            </div>
+
+            <h2 class="story-item__title">{story.title}</h2>
+
+            {story.summary && (
+              <p class="story-item__summary">{story.summary}</p>
+            )}
+
+            <div class="story-item__authors">
+              {story.authors.map((author, j) => (
+                <span>{author}{j < story.authors.length - 1 ? ", " : ""}</span>
+              ))}
+            </div>
+
+            {story.links.length > 0 && (
+              <div class="story-item__links">
+                {story.links.slice(0, 3).map(link => (
+                  <a href={link.url} target="_blank" rel="noopener" class="story-item__link">
+                    {link.title || link.site || new URL(link.url).hostname} &#8599;
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {story.tags.length > 0 && (
+              <div class="story-item__tags">
+                {story.tags.slice(0, 6).map(tag => (
+                  <span class="ed-tag ed-tag--sm">{tag}</span>
+                ))}
+              </div>
+            )}
+          </article>
+        </>
+      );
+    })}
+  </div>
+</EditorialLayout>
+
+<style>
+  .stories-list {
+    max-width: 48rem;
+  }
+
+  .story-item {
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .story-item__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .story-item__msgs {
+    font-size: 0.6875rem;
+    color: var(--ed-ink-faint);
+  }
+
+  .story-item__title {
+    font-family: var(--ed-serif);
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+    font-weight: 600;
+    color: var(--ed-ink);
+    line-height: 1.35;
+  }
+
+  .story-item__summary {
+    font-family: var(--ed-serif);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ed-ink-secondary);
+  }
+
+  .story-item__authors {
+    font-size: 0.75rem;
+    color: var(--ed-ink-muted);
+  }
+
+  .story-item__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .story-item__link {
+    font-size: 0.75rem;
+    color: var(--ed-accent) !important;
+    border-bottom: 1px solid var(--ed-rule);
+    padding-bottom: 1px;
+  }
+
+  .story-item__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 0.25rem;
+  }
+</style>

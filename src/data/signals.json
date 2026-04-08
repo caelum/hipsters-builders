@@ -1,0 +1,5070 @@
+[
+  {
+    "id": "whatsapp-clauders-2026-04-08-011",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-08T00:38:39.000Z",
+    "authors": [
+      "Guilherme Silveira",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "energia da bateria",
+      "dispositivos"
+    ],
+    "topic": "Conversa casual sobre bateria de dispositivo com zero porcento e menção a um tweet sobre algo errado relacionado (conteúdo do tweet não disponível).",
+    "summary": "Conversa casual sobre bateria de dispositivo com zero porcento e menção a um tweet sobre algo errado relacionado (conteúdo do tweet não disponível).",
+    "links": [
+      {
+        "url": "https://x.com/i/status/2041559354034344438"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-07-010",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-07T23:41:33.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "clickup",
+      "economia de custos",
+      "dev portal",
+      "produtividade em ia",
+      "ai agents"
+    ],
+    "topic": "Referência ao post de Vini Chagas sobre economia de R$ 200 mil ao substituir Clickup, e reflexão sobre pressão de performance em era de IA. Menciona contribuições rápidas ao dev portal e mudanças no paradigma de produtividade.",
+    "summary": "Referência ao post de Vini Chagas sobre economia de R$ 200 mil ao substituir Clickup, e reflexão sobre pressão de performance em era de IA. Menciona contribuições rápidas ao dev portal e mudanças no paradigma de produtividade.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/posts/viniciushenriquechagas_ap%C3%B3s-apenas-4-meses-o-plano-de-economizar-share-7447283203725299712-Q0xR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+      },
+      {
+        "url": "https://x.com/sama/status/2041658719839383945?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA"
+      }
+    ],
+    "messageCount": 7
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-07-009",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-07T21:26:53.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Paulo Silveira",
+      "Marcell Almeida",
+      "Guilherme Silveira",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "claude mythos",
+      "modelos de ia",
+      "benchmarks",
+      "llms",
+      "sistemas dinâmicos",
+      "conjecturas matemáticas"
+    ],
+    "topic": "Discussão interna sobre o novo modelo Claude Mythos da Anthropic, seus benchmarks, system card, e aplicações em pesquisa matemática. Menção a competição com GPT-5.3 e uso de LLMs para refutar conjecturas em sistemas dinâmicos.",
+    "summary": "Discussão interna sobre o novo modelo Claude Mythos da Anthropic, seus benchmarks, system card, e aplicações em pesquisa matemática. Menção a competição com GPT-5.3 e uso de LLMs para refutar conjecturas em sistemas dinâmicos.",
+    "links": [],
+    "messageCount": 17
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-07-008",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-07T18:29:16.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Fabrício Carraro",
+      "Guilherme Silveira",
+      "Sérgio Lopes",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "claude mythos",
+      "glasswing",
+      "swe-bench",
+      "cibersegurança",
+      "segurança de software",
+      "vulnerabilidades"
+    ],
+    "topic": "Lideranças técnicas discutem anúncio do Project Glasswing: Claude Mythos alcançou capacidades de encontrar vulnerabilidades críticas em sistemas operacionais e navegadores. Reflexão crítica sobre implicações geopolíticas e segurança de ferramentas em mãos de empresas americanas.",
+    "summary": "Lideranças técnicas discutem anúncio do Project Glasswing: Claude Mythos alcançou capacidades de encontrar vulnerabilidades críticas em sistemas operacionais e navegadores. Reflexão crítica sobre implicações geopolíticas e segurança de ferramentas em mãos de empresas americanas.",
+    "links": [
+      {
+        "url": "https://www.anthropic.com/glasswing"
+      }
+    ],
+    "messageCount": 12
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-04-07-002",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-04-07T10:11:29.000Z",
+    "authors": [
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "política industrial",
+      "ia",
+      "infraestrutura de data centers",
+      "geopolítica",
+      "openai stargate"
+    ],
+    "topic": "Compartilhamento de documento da OpenAI sobre política industrial para era da inteligência, junto com notícia sobre ameaça do Irã ao data center Stargate ($30B) em Abu Dhabi. Sinaliza tensões geopolíticas em torno de infraestrutura crítica de IA.",
+    "summary": "Compartilhamento de documento da OpenAI sobre política industrial para era da inteligência, junto com notícia sobre ameaça do Irã ao data center Stargate ($30B) em Abu Dhabi. Sinaliza tensões geopolíticas em torno de infraestrutura crítica de IA.",
+    "links": [
+      {
+        "url": "https://cdn.openai.com/pdf/561e7512-253e-424b-9734-ef4098440601/Industrial%20Policy%20for%20the%20Intelligence%20Age.pdf"
+      },
+      {
+        "url": "https://www.tomshardware.com/tech-industry/iran-threatens-complete-and-utter-annihilation-of-openais-usd30b-stargate-ai-data-center-in-abu-dhabi-regime-posts-video-with-satellite-imagery-of-chatgpt-makers-premier-1gw-data-center"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-07-001",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-07T00:35:45.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "educação com ia",
+      "futuro da educação",
+      "memoria de contexto",
+      "execução vs explicação"
+    ],
+    "topic": "Reflexão sobre o futuro da educação com IA: enquanto modelos ganham capacidades de execução, há risco de usuários priorizar apenas tarefa concluída em vez de pedir explicação e entendimento conceitual.",
+    "summary": "Reflexão sobre o futuro da educação com IA: enquanto modelos ganham capacidades de execução, há risco de usuários priorizar apenas tarefa concluída em vez de pedir explicação e entendimento conceitual.",
+    "links": [
+      {
+        "url": "https://x.com/FarzaTV/status/2041314633978659092"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "tg-hipsters-2026-04-06-paulo-hipsterssignalsbot",
+    "source": "telegram",
+    "sourceLabel": "Hipsters Builders (Telegram)",
+    "date": "2026-04-06T17:06:30.000Z",
+    "authors": [
+      "Paulo"
+    ],
+    "tags": [
+      "bot-commands",
+      "hipsters-builders",
+      "sinais"
+    ],
+    "topic": "Consulta ao bot de conhecimento",
+    "summary": "",
+    "links": [],
+    "messageCount": 1
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-06-005",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-06T15:11:07.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Paulo Silveira",
+      "Sérgio Lopes"
+    ],
+    "tags": [
+      "vibe coding",
+      "rsa 2026",
+      "viabilidade técnica",
+      "segurança",
+      "produto"
+    ],
+    "topic": "Análise satírica de RSA 2026: quantas empresas poderiam ser substituídas por vibe-coding; discussão crítica sobre fragilidade de produtos apenas com IA e riscos de segurança.",
+    "summary": "Análise satírica de RSA 2026: quantas empresas poderiam ser substituídas por vibe-coding; discussão crítica sobre fragilidade de produtos apenas com IA e riscos de segurança.",
+    "links": [
+      {
+        "url": "https://vibecoded.vc/cooked/"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "tg-hipsters-2026-04-06-vinny-neves-daniel-stenberg-desligou-bug-bounty-curl-depois-que",
+    "source": "telegram",
+    "sourceLabel": "Hipsters Builders (Telegram)",
+    "date": "2026-04-06T12:18:06.000Z",
+    "authors": [
+      "Vinny Neves"
+    ],
+    "tags": [
+      "vibe-coding",
+      "ia-qualidade",
+      "open-source",
+      "codificacao-agentes"
+    ],
+    "topic": "IA Slopageddon e crise no open source",
+    "summary": "",
+    "links": [
+      {
+        "url": "https://www.infoq.com/news/2026/02/ai-floods-close-projects/",
+        "title": "AI \"Vibe Coding\" Threatens Open Source as Maintainers Face Crisis",
+        "site": "InfoQ"
+      }
+    ],
+    "messageCount": 1
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-06-003",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-06T11:05:20.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Paulo Silveira",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "dora metrics",
+      "produtividade",
+      "débito técnico",
+      "tdd",
+      "qualidade de código"
+    ],
+    "topic": "Análise crítica de métricas DORA em contexto de IA: volume de entregas não reflete qualidade, e debate sobre TDD como abordagem fundamental versus dogmatismo.",
+    "summary": "Análise crítica de métricas DORA em contexto de IA: volume de entregas não reflete qualidade, e debate sobre TDD como abordagem fundamental versus dogmatismo.",
+    "links": [],
+    "messageCount": 7
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-06-002",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-06T02:20:14.000Z",
+    "authors": [
+      "Marcell Almeida",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "conductor",
+      "codex",
+      "skills",
+      "vibe coding",
+      "planejamento"
+    ],
+    "topic": "Discussão sobre uso de skills em ferramentas de IA (Conductor, Codex) versus plain vanilla, e aproveitamento de skills para planejamento de features.",
+    "summary": "Discussão sobre uso de skills em ferramentas de IA (Conductor, Codex) versus plain vanilla, e aproveitamento de skills para planejamento de features.",
+    "links": [],
+    "messageCount": 5
+  },
+  {
+    "id": "tg-hipsters-2026-04-05-vinny-neves-com-avanco-agentic-coding-superficie-contato-software-crescendo",
+    "source": "telegram",
+    "sourceLabel": "Hipsters Builders (Telegram)",
+    "date": "2026-04-05T16:44:05.000Z",
+    "authors": [
+      "Vinny Neves"
+    ],
+    "tags": [
+      "codificacao-agentes-qualidade",
+      "agentic-coding",
+      "code-review",
+      "engenharia-software"
+    ],
+    "topic": "Agentic coding com qualidade e controle",
+    "summary": "",
+    "links": [
+      {
+        "url": "https://www.alura.com.br/curso-online-engenharia-software-ia-no-fluxo-real-de-desenvolvimento"
+      }
+    ],
+    "messageCount": 1
+  },
+  {
+    "id": "tg-hipsters-2026-04-05-paulo-httpsxcomkatanalarpstatus2039972757048275045s46thef6yu4syim5zqe7l9jxlg-com-avanco-das-ferramentas-geradoras-codigo-codificacao",
+    "source": "telegram",
+    "sourceLabel": "Hipsters Builders (Telegram)",
+    "date": "2026-04-05T15:30:14.000Z",
+    "authors": [
+      "Paulo"
+    ],
+    "tags": [
+      "claude-code",
+      "agentes-ia",
+      "qualidade-codigo",
+      "carreira-tech",
+      "ai-slop"
+    ],
+    "topic": "Codificação agêntica e qualidade de código",
+    "summary": "",
+    "links": [
+      {
+        "url": "https://x.com/katanalarp/status/2039972757048275045?s=46&t=hEF6yU4SYim5zqE7L9JXlg"
+      }
+    ],
+    "messageCount": 1
+  },
+  {
+    "id": "tg-hipsters-2026-04-05-paulo-essa-entrevista-sob-controle-tem-insights-incriveis-sobre",
+    "source": "telegram",
+    "sourceLabel": "Hipsters Builders (Telegram)",
+    "date": "2026-04-05T15:01:47.000Z",
+    "authors": [
+      "Paulo"
+    ],
+    "tags": [
+      "ia-fundamentos",
+      "entrevista-tech",
+      "história-computação",
+      "neurociência",
+      "aprendizado"
+    ],
+    "topic": "Entrevista sobre fundamentos de inteligência artificial",
+    "summary": "",
+    "links": [],
+    "messageCount": 1
+  },
+  {
+    "id": "tg-hipsters-2026-04-05-paulo-httpsopenspotifycomepisode7yjlyti6aab2pmvzz980xdsigwv2mmpslu3kz2izox5hgt1389piuhz7c6tfs4601",
+    "source": "telegram",
+    "sourceLabel": "Hipsters Builders (Telegram)",
+    "date": "2026-04-05T15:01:47.000Z",
+    "authors": [
+      "Paulo"
+    ],
+    "tags": [
+      "podcast",
+      "recomendacao-conteudo",
+      "audio"
+    ],
+    "topic": "Episódio de podcast recomendado",
+    "summary": "",
+    "links": [
+      {
+        "url": "https://open.spotify.com/episode/7yjLyTi6aab2pmVzz980XD?si=Gw_v2mMpSLu3Kz2iZox5Hg&t=1389&pi=Uhz7C6TfS4601"
+      }
+    ],
+    "messageCount": 1
+  },
+  {
+    "id": "tg-hipsters-2026-04-05-paulo-karpathy-tem-buscado-solucionar-problema-excesso-informacao-como",
+    "source": "telegram",
+    "sourceLabel": "Hipsters Builders (Telegram)",
+    "date": "2026-04-05T01:42:07.000Z",
+    "authors": [
+      "Paulo"
+    ],
+    "tags": [
+      "llm-knowledge-management",
+      "agentes-ia",
+      "arquitetura-sistemas",
+      "karpathy",
+      "processamento-dados"
+    ],
+    "topic": "Organização de dados com LLMs e wikis",
+    "summary": "",
+    "links": [
+      {
+        "url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f?permalink_comment_id=6079483#gistcomment-6079483",
+        "title": "llm-wiki",
+        "site": "Gist"
+      }
+    ],
+    "messageCount": 1
+  },
+  {
+    "id": "tg-hipsters-2026-04-05-paulo-anthropic-esta-tentando-entender-melhor-como-claude-llms",
+    "source": "telegram",
+    "sourceLabel": "Hipsters Builders (Telegram)",
+    "date": "2026-04-05T01:34:51.000Z",
+    "authors": [
+      "Paulo"
+    ],
+    "tags": [
+      "llms",
+      "claude",
+      "embeddings",
+      "pesquisa-ia",
+      "analise-tecnica"
+    ],
+    "topic": "Reações emocionais de LLMs e embeddings",
+    "summary": "",
+    "links": [],
+    "messageCount": 1
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-04-010",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-04T21:14:37.000Z",
+    "authors": [
+      "Sérgio Lopes",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "claude code",
+      "adoção massiva",
+      "crescimento exponencial",
+      "infraestrutura"
+    ],
+    "topic": "Sérgio Lopes aponta crescimento explosivo de commits via Claude Code (1 bilhão por mês) e questiona sustentabilidade da infraestrutura gratuita com demanda em escalada.",
+    "summary": "Sérgio Lopes aponta crescimento explosivo de commits via Claude Code (1 bilhão por mês) e questiona sustentabilidade da infraestrutura gratuita com demanda em escalada.",
+    "links": [],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-04-008",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-04T15:54:18.000Z",
+    "authors": [
+      "Marcell Almeida",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "devops",
+      "configuração de ambiente",
+      ".env",
+      "curva de aprendizado"
+    ],
+    "topic": "Paulo Silveira e Marcell Almeida discutem a complexidade real de configurações DevOps e gestão de ambiente em projetos, contrastando com narrativas simplificadas.",
+    "summary": "Paulo Silveira e Marcell Almeida discutem a complexidade real de configurações DevOps e gestão de ambiente em projetos, contrastando com narrativas simplificadas.",
+    "links": [
+      {
+        "url": "https://x.com/productfaculty/status/2040094285706711285?s=46"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-04-04-004",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-04-04T00:21:31.000Z",
+    "authors": [
+      "Marcus Mendes",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "anthropic",
+      "openclaw",
+      "limitações de acesso",
+      "política de uso",
+      "mark zuckerberg"
+    ],
+    "topic": "Anthropic restringe uso de subscrições Claude em ferramentas third-party como OpenClaw a partir de 4 de abril. Notícia também menciona Mark Zuckerberg retornando a coding com heavy use do Claude Code CLI.",
+    "summary": "Anthropic restringe uso de subscrições Claude em ferramentas third-party como OpenClaw a partir de 4 de abril. Notícia também menciona Mark Zuckerberg retornando a coding com heavy use do Claude Code CLI.",
+    "links": [
+      {
+        "url": "https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban"
+      },
+      {
+        "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-industry-leaders-return"
+      }
+    ],
+    "messageCount": 8
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-03-005",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-03T19:57:53.000Z",
+    "authors": [
+      "Marcell Almeida",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "teams"
+    ],
+    "topic": "Breve troca sobre ferramentas de comunicação.",
+    "summary": "Breve troca sobre ferramentas de comunicação.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-03-004",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-03T19:03:08.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Paulo Silveira",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "eventos presenciais",
+      "gestão de comunidade"
+    ],
+    "topic": "Discussão interna sobre confirmação de presença de um membro em evento presencial e possíveis questões de conduta.",
+    "summary": "Discussão interna sobre confirmação de presença de um membro em evento presencial e possíveis questões de conduta.",
+    "links": [],
+    "messageCount": 9
+  },
+  {
+    "id": "tg-hipsters-2026-04-03-paulo-dezenas-pessoas-fazendo-interpretacoes-sobre-vazamento-claude-code",
+    "source": "telegram",
+    "sourceLabel": "Hipsters Builders (Telegram)",
+    "date": "2026-04-03T11:32:11.000Z",
+    "authors": [
+      "Paulo"
+    ],
+    "tags": [
+      "claude-code",
+      "vibe-coding",
+      "qualidade-código",
+      "ia-desenvolvimento"
+    ],
+    "topic": "vazamento Claude Code e qualidade",
+    "summary": "",
+    "links": [
+      {
+        "url": "https://build.ms/2026/4/1/the-claude-code-leak/",
+        "title": "The Claude Code Leak",
+        "site": "build.ms"
+      }
+    ],
+    "messageCount": 1
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-02-008",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-02T22:09:35.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Marcell Almeida",
+      "Sérgio Lopes",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "codex",
+      "ia para programação",
+      "limite de uso",
+      "ferramentas de desenvolvimento",
+      "vs code"
+    ],
+    "topic": "Feedback sobre desempenho do Codex para programação, incluindo limitações de uso e comparação com outras ferramentas de IA em ambiente corporativo.",
+    "summary": "Feedback sobre desempenho do Codex para programação, incluindo limitações de uso e comparação com outras ferramentas de IA em ambiente corporativo.",
+    "links": [],
+    "messageCount": 15
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-02-007",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-02T19:49:15.000Z",
+    "authors": [
+      "Sérgio Lopes",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "agentes de ia",
+      "orquestração",
+      "github",
+      "lumina",
+      "Ralph"
+    ],
+    "topic": "Avaliação de ferramentas para orquestração de agentes, comparando interfaces e fluxos de trabalho para gerenciar issues e goals em projetos.",
+    "summary": "Avaliação de ferramentas para orquestração de agentes, comparando interfaces e fluxos de trabalho para gerenciar issues e goals em projetos.",
+    "links": [],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-04-02-004",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-04-02T17:11:58.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Stromae"
+    ],
+    "tags": [
+      "ia",
+      "trending topics",
+      "x.com"
+    ],
+    "topic": "Compartilhamento de posts sobre tópicos de IA em rede social sem detalhes específicos capturados (URLs indisponíveis).",
+    "summary": "Compartilhamento de posts sobre tópicos de IA em rede social sem detalhes específicos capturados (URLs indisponíveis).",
+    "links": [
+      {
+        "url": "https://x.com/i/status/2039749628737019925"
+      },
+      {
+        "url": "https://x.com/i/status/2039704404664684692"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "tg-hipsters-2026-04-02-vinny-neves-31032026-anthropic-publicou-acidentalmente-codigofonte-completo-claude-code",
+    "source": "telegram",
+    "sourceLabel": "Hipsters Builders (Telegram)",
+    "date": "2026-04-02T15:40:22.000Z",
+    "authors": [
+      "Vinny Neves"
+    ],
+    "tags": [
+      "claude-code",
+      "agentes-ia",
+      "segurança-ia",
+      "incident-tech",
+      "carreira-tech"
+    ],
+    "topic": "Leak acidental do código-fonte Claude Code",
+    "summary": "",
+    "links": [],
+    "messageCount": 1
+  },
+  {
+    "id": "tg-hipsters-2026-04-02-paulo",
+    "source": "telegram",
+    "sourceLabel": "Hipsters Builders (Telegram)",
+    "date": "2026-04-02T15:39:01.000Z",
+    "authors": [
+      "Paulo"
+    ],
+    "tags": [],
+    "topic": "",
+    "summary": "",
+    "links": [],
+    "messageCount": 1
+  },
+  {
+    "id": "tg-hipsters-2026-04-02-paulo-cloudflare-time-astro-criou-sucessor-wordpress-wordpress-roda",
+    "source": "telegram",
+    "sourceLabel": "Hipsters Builders (Telegram)",
+    "date": "2026-04-02T15:30:50.000Z",
+    "authors": [
+      "Paulo"
+    ],
+    "tags": [
+      "astro",
+      "wordpress-alternativa",
+      "serverless",
+      "edge-computing",
+      "vibe-coding"
+    ],
+    "topic": "EmDash: sucessor moderno do WordPress",
+    "summary": "",
+    "links": [],
+    "messageCount": 1
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-01-003",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-01T22:54:18.000Z",
+    "authors": [
+      "Marcell Almeida",
+      "Paulo Silveira",
+      "Guilherme Silveira"
+    ],
+    "tags": [
+      "wordpress",
+      "emdash",
+      "cloudflare",
+      "astro",
+      "frontend",
+      "segurança"
+    ],
+    "topic": "Apresentação do EmDash, sucessor espiritual do WordPress que resolve problemas de segurança de plugins, construído com Astro e Tauri.",
+    "summary": "Apresentação do EmDash, sucessor espiritual do WordPress que resolve problemas de segurança de plugins, construído com Astro e Tauri.",
+    "links": [
+      {
+        "url": "https://blog.cloudflare.com/emdash-wordpress"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-04-01-009",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-04-01T12:39:07.000Z",
+    "authors": [
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "claude code",
+      "vazamento de código",
+      "segurança de ia",
+      "agentes de ia",
+      "análise de código-fonte"
+    ],
+    "topic": "Fabrício Carraro compartilha análise de artigo sobre vazamento do código-fonte do Claude Code da Anthropic, discutindo features escondidas, arquitetura de memória e implicações de segurança da ferramenta.",
+    "summary": "Fabrício Carraro compartilha análise de artigo sobre vazamento do código-fonte do Claude Code da Anthropic, discutindo features escondidas, arquitetura de memória e implicações de segurança da ferramenta.",
+    "links": [
+      {
+        "url": "https://akitaonrails.com/2026/03/31/codigo-fonte-do-claude-code-vazou-o-que-achamos-dentro/"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-01-013",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-01T11:18:39.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Mauricio Aniche",
+      "Fabrício Carraro",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "claude code",
+      "arquitetura",
+      "análise técnica",
+      "memory",
+      "vazamento"
+    ],
+    "topic": "Análise detalhada do código vazado do Claude Code com insights sobre arquitetura de memória, injeção de prompts via CLAUDE.md, e comportamento de limpeza de palavrões em arquivos gerados.",
+    "summary": "Análise detalhada do código vazado do Claude Code com insights sobre arquitetura de memória, injeção de prompts via CLAUDE.md, e comportamento de limpeza de palavrões em arquivos gerados.",
+    "links": [
+      {
+        "url": "https://www.akitaonrails.com/2026/03/31/codigo-fonte-do-claude-code-vazou-o-que-achamos-dentro/"
+      },
+      {
+        "url": "https://open.spotify.com/episode/15lyLLDbqGRGpgEH2Lnspe?si=584befdb2f2041f0"
+      }
+    ],
+    "messageCount": 10
+  },
+  {
+    "id": "whatsapp-clauders-2026-04-01-011",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-04-01T00:27:00.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Rafael Ribeiro"
+    ],
+    "tags": [
+      "claude code",
+      "agentes autônomos",
+      "vazamento",
+      "código fonte"
+    ],
+    "topic": "Mauricio e Rafael compartilham vídeo sobre vazamento do código fonte do Claude revelando características de agentes autônomos, com nota sobre variáveis de ambiente faltando.",
+    "summary": "Mauricio e Rafael compartilham vídeo sobre vazamento do código fonte do Claude revelando características de agentes autônomos, com nota sobre variáveis de ambiente faltando.",
+    "links": [
+      {
+        "url": "https://x.com/heyshrutimishra/status/2039109796322853058?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA"
+      },
+      {
+        "url": "https://youtu.be/5vSWfXdqA0A?si=gDo0RKV7oZbJ5Ece"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-31-008",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-31T22:37:49.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "claude api",
+      "custos",
+      "token depletion",
+      "gpu",
+      "monetização"
+    ],
+    "topic": "Paulo e Fabrício discutem suspeita de que ofertas de GPU barata para Claude CLI podem ser estratégia para aumentar consumo de tokens e gerar receita, depletando quotas de usuários.",
+    "summary": "Paulo e Fabrício discutem suspeita de que ofertas de GPU barata para Claude CLI podem ser estratégia para aumentar consumo de tokens e gerar receita, depletando quotas de usuários.",
+    "links": [
+      {
+        "url": "https://x.com/i/status/2039029358224871605"
+      },
+      {
+        "url": "https://x.com/i/status/2039085161971896807"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-31-009",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-31T22:06:07.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Fabrício Carraro",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "agentes de ia",
+      "análise de código",
+      "arquitetura",
+      "startse",
+      "militarização da ia"
+    ],
+    "topic": "Rafael apresenta ferramenta experimental que gera grafos de agentes de IA a partir de markdown e prompts, exemplificando com análise sobre negociações da Anthropic com o Pentágono.",
+    "summary": "Rafael apresenta ferramenta experimental que gera grafos de agentes de IA a partir de markdown e prompts, exemplificando com análise sobre negociações da Anthropic com o Pentágono.",
+    "links": [
+      {
+        "url": "https://nk4s8wkkwc4w8osgs4088gws.coolify-dev.startse.com/"
+      },
+      {
+        "url": "https://www.startse.com/artigos/anthropic-volta-a-negociar-com-o-pentagono-e-a-disputa-sobre-o-uso-militar-da-ia-entra-em-nova-fase/"
+      },
+      {
+        "url": "https://nk4s8wkkwc4w8osgs4088gws.coolify-dev.startse.com/interaction/report_d4afb0b76f8d"
+      },
+      {
+        "url": "https://capybara.com/pt-BR"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-31-007",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-31T15:26:03.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Paulo Silveira",
+      "Marcell Almeida",
+      "Sérgio Lopes"
+    ],
+    "tags": [
+      "claude code",
+      "open source",
+      "vazamento",
+      "código fonte",
+      "comunidade"
+    ],
+    "topic": "Discussão sobre o vazamento do Claude Code sendo convertido para múltiplas linguagens pela comunidade de desenvolvedores, gerando resposta rápida em fork e adaptações.",
+    "summary": "Discussão sobre o vazamento do Claude Code sendo convertido para múltiplas linguagens pela comunidade de desenvolvedores, gerando resposta rápida em fork e adaptações.",
+    "links": [
+      {
+        "url": "https://x.com/i/status/2038971515572523502"
+      }
+    ],
+    "messageCount": 7
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-31-006",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-31T11:48:17.000Z",
+    "authors": [
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "claude code",
+      "vazamento de código",
+      "agentes de ia",
+      "anthropic",
+      "segurança"
+    ],
+    "topic": "Marcell compartilha notícia de que o código fonte do Claude Code vazou publicamente, com links para repositórios e documentação técnica do projeto.",
+    "summary": "Marcell compartilha notícia de que o código fonte do Claude Code vazou publicamente, com links para repositórios e documentação técnica do projeto.",
+    "links": [
+      {
+        "url": "https://x.com/alienpisscrack/status/2038941175525376266?s=46"
+      },
+      {
+        "url": "https://www.mintlify.com/VineeTagarwaL-code/claude-code/concepts/how-it-works"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-30-001",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-30T20:11:22.000Z",
+    "authors": [
+      "Guilherme Silveira",
+      "Stromae"
+    ],
+    "tags": [
+      "desalinhamento de ia",
+      "guardrails",
+      "code quality",
+      "agente bypass",
+      "segurança programática"
+    ],
+    "topic": "Guilherme Silveira compartilha análise crítica sobre desalinhamento presente (não futuro) de agentes de IA: agentes ativamente burlam guardrails frágeis através de múltiplas estratégias; propõe validações programáticas quantitativas e padrão de vigilância contínua com novos agentes.",
+    "summary": "Guilherme Silveira compartilha análise crítica sobre desalinhamento presente (não futuro) de agentes de IA: agentes ativamente burlam guardrails frágeis através de múltiplas estratégias; propõe validações programáticas quantitativas e padrão de vigilância contínua com novos agentes.",
+    "links": [],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-28-016",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-28T19:10:02.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Marcell Almeida",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "discussão técnica",
+      "modelos de ia",
+      "referências externas"
+    ],
+    "topic": "Membros compartilhando links do X/Twitter com explicações sobre modelos de IA e trending topics técnicos.",
+    "summary": "Membros compartilhando links do X/Twitter com explicações sobre modelos de IA e trending topics técnicos.",
+    "links": [
+      {
+        "url": "https://x.com/namcios/status/2037956753812328761?s=46"
+      },
+      {
+        "url": "https://x.com/akashmuni27/status/2037468088254464179?t=LVafvF1N2dU5qcWhQNCl1g&s=08"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-28-014",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-28T14:31:28.000Z",
+    "authors": [
+      "Guilherme Silveira",
+      "Fabrício Carraro",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "glm-5",
+      "kimi",
+      "modelos chineses",
+      "codex",
+      "claude sonnet",
+      "custo-benefício"
+    ],
+    "topic": "Avaliação de modelos de IA chineses (GLM-5, Kimi) versus Claude; análise de custo-benefício e limitações de velocidade/reasoning.",
+    "summary": "Avaliação de modelos de IA chineses (GLM-5, Kimi) versus Claude; análise de custo-benefício e limitações de velocidade/reasoning.",
+    "links": [],
+    "messageCount": 12
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-28-013",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-28T13:36:17.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Fabrício Carraro",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "claude max",
+      "modelos pagos",
+      "consumo de tokens",
+      "custos de api"
+    ],
+    "topic": "Membros do time comparando planos pagos de Claude e Codex; discussão sobre custos de token e recomendações de alternativas.",
+    "summary": "Membros do time comparando planos pagos de Claude e Codex; discussão sobre custos de token e recomendações de alternativas.",
+    "links": [],
+    "messageCount": 7
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-28-012",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-28T12:36:02.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Fabrício Carraro",
+      "Marcell Almeida",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "modelos de ia",
+      "codex",
+      "claude",
+      "comparação de ferramentas",
+      "agentes de ia",
+      "desktop apps"
+    ],
+    "topic": "Time tech da Alura testando Codex com acesso corporativo; discussão sobre comparação com Claude, incluindo desktop app, segurança rigorosa e performance de reasoning.",
+    "summary": "Time tech da Alura testando Codex com acesso corporativo; discussão sobre comparação com Claude, incluindo desktop app, segurança rigorosa e performance de reasoning.",
+    "links": [
+      {
+        "url": "https://x.com/gianfrancopiana/status/2037199814694228187?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA"
+      }
+    ],
+    "messageCount": 21
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-27-008",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-27T22:22:13.000Z",
+    "authors": [
+      "Marcus Mendes",
+      "Fabrício Carraro",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "claude",
+      "rate limits",
+      "capacidade computacional",
+      "demanda de usuarios",
+      "codex"
+    ],
+    "topic": "Anthropic limitando Claude por sobrecarga de demanda em horários de pico; usuários esgotando limites rapidamente e migrando para alternativas como Codex.",
+    "summary": "Anthropic limitando Claude por sobrecarga de demanda em horários de pico; usuários esgotando limites rapidamente e migrando para alternativas como Codex.",
+    "links": [
+      {
+        "url": "https://www.businessinsider.com/claude-usage-caps-changes-popularity-anthropic-2026-3"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-27-009",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-27T21:34:20.000Z",
+    "authors": [
+      "Marcell Almeida",
+      "Fabrício Carraro",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "contratações",
+      "hipsters ponto tech",
+      "ferramentas inovadoras",
+      "tração de produto",
+      "estratégia de aquisição"
+    ],
+    "topic": "Comunidade comenta estratégia de contratações: Hipsters está recrutando desenvolvedores que criam ferramentas inovadoras com tração, prática comum em big techs como Google.",
+    "summary": "Comunidade comenta estratégia de contratações: Hipsters está recrutando desenvolvedores que criam ferramentas inovadoras com tração, prática comum em big techs como Google.",
+    "links": [
+      {
+        "url": "https://x.com/fcoury/status/2037180841097335084?s=46"
+      }
+    ],
+    "messageCount": 5
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-27-006",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-27T13:14:48.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Guilherme Silveira",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "limite de tokens",
+      "claude pro max",
+      "gpt codex",
+      "consumo de api",
+      "geração de vídeo"
+    ],
+    "topic": "Relatório sobre esgotamento de daily limits do Claude Pro Max durante testes de geração de vídeo. Comunidade observa possível mudança de equilíbrio entre Claude e Codex no mercado.",
+    "summary": "Relatório sobre esgotamento de daily limits do Claude Pro Max durante testes de geração de vídeo. Comunidade observa possível mudança de equilíbrio entre Claude e Codex no mercado.",
+    "links": [
+      {
+        "url": "https://x.com/thsottiaux/status/2037346989244096581"
+      },
+      {
+        "url": "https://x.com/gergelyorosz/status/2037513643630141623?s=46"
+      }
+    ],
+    "messageCount": 5
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-27-005",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-27T11:34:57.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Paulo Silveira",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "pentest",
+      "lovable",
+      "segurança de aplicações",
+      "replit",
+      "soc 2",
+      "iso 27001"
+    ],
+    "topic": "Lovable anuncia novo serviço de penetration testing ($100, 1-4 horas) em resposta ao posicionamento de Replit em segurança enterprise. Discussão sobre diferenciação de produtos de IA-assisted development no mercado enterprise.",
+    "summary": "Lovable anuncia novo serviço de penetration testing ($100, 1-4 horas) em resposta ao posicionamento de Replit em segurança enterprise. Discussão sobre diferenciação de produtos de IA-assisted development no mercado enterprise.",
+    "links": [
+      {
+        "url": "https://lovable.dev/pt-br/blog/announcing-pentesting"
+      },
+      {
+        "url": "https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/"
+      },
+      {
+        "url": "https://x.com/trq212/status/2037254607001559305"
+      }
+    ],
+    "messageCount": 14
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-27-004",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-27T00:07:28.000Z",
+    "authors": [
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "comparação de modelos",
+      "gemini",
+      "grok",
+      "claude",
+      "segurança de ia"
+    ],
+    "topic": "Comparação visual de capacidades e segurança entre modelos Gemini, Grok e Claude através de imagens.",
+    "summary": "Comparação visual de capacidades e segurança entre modelos Gemini, Grok e Claude através de imagens.",
+    "links": [],
+    "messageCount": 5
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-26-001",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-26T13:45:04.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Mauricio Aniche",
+      "Marcell Almeida",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "vibe coding",
+      "marketing engineering",
+      "agentes de ia",
+      "automação de tarefas"
+    ],
+    "topic": "Discussão sobre viralização de conteúdo sobre 'vibe coding' em marketing/HR e análise crítica sobre adoção em empresas pequenas versus grandes.",
+    "summary": "Discussão sobre viralização de conteúdo sobre 'vibe coding' em marketing/HR e análise crítica sobre adoção em empresas pequenas versus grandes.",
+    "links": [
+      {
+        "url": "https://x.com/i/status/2037162417516625950"
+      }
+    ],
+    "messageCount": 8
+  },
+  {
+    "id": "whatsapp-120363408138765885-g-us-2026-03-26-001",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-26T13:01:54.000Z",
+    "authors": [
+      "Gustavo Brandão",
+      "Max Ferreira",
+      "Nathan",
+      "Vagner Bitencourt @vagner.me",
+      "Gustavo Arruda",
+      "Lucas Yoshioka",
+      "Marcelo Cordeiro",
+      "Aldo Kusuke",
+      "Matheus Hunger",
+      "Natelson Nascimento",
+      "Bruno Lopau",
+      "Gustavo Barros",
+      "Hugo",
+      "Fábio Perez",
+      "Roni ",
+      "Felipe Collins",
+      "Virginia M"
+    ],
+    "tags": [
+      "claude",
+      "llm",
+      "turboQuantum",
+      "agentes de ia",
+      "inferência",
+      "otimização de modelos"
+    ],
+    "topic": "Grupo discute recomendações para aprender Claude, compartilha artigo sobre TurboQuantum (compressão de KV cache 6x) e relata possível limitação de tokens no plano Max da Anthropic.",
+    "summary": "Grupo discute recomendações para aprender Claude, compartilha artigo sobre TurboQuantum (compressão de KV cache 6x) e relata possível limitação de tokens no plano Max da Anthropic.",
+    "links": [
+      {
+        "url": "https://github.com/shareAI-lab/claw0"
+      },
+      {
+        "url": "https://github.com/paperclipai/paperclip"
+      },
+      {
+        "url": "https://7min.ai/d/2026-03-26/pt-br/google-launches-lyria-3/"
+      }
+    ],
+    "messageCount": 44
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-26-005",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-26T10:14:43.000Z",
+    "authors": [
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "seguranca-ia",
+      "vibe-coding",
+      "litellm-compromissao",
+      "ataque-agentes",
+      "risco-seguranca"
+    ],
+    "topic": "Alerta crítico: LiteLLM sofreu ataque 'vibe-coded' que compromete segurança de agentes IA. Risco extremo de personificação, contaminação de filesystem e roubo de identidade digital via arquivos de contexto e PDFs. Implicações severas para agentes autônomos em produção.",
+    "summary": "Alerta crítico: LiteLLM sofreu ataque 'vibe-coded' que compromete segurança de agentes IA. Risco extremo de personificação, contaminação de filesystem e roubo de identidade digital via arquivos de contexto e PDFs. Implicações severas para agentes autônomos em produção.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/posts/drjimfan_litellm-has-been-compromised-with-a-vibe-coded-share-7442263336572051457-cM7O?utm_source=share&utm_medium=member_android&rcm=ACoAAAYN4gsBjdkaThfPE5ce2OYKK86wggoZsOA"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-26-007",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-26T00:41:41.000Z",
+    "authors": [
+      "Marcell Almeida",
+      "Sérgio Lopes",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "go-to-market",
+      "feature-release",
+      "estrategia-produtos",
+      "escala-monorepo"
+    ],
+    "topic": "Debate sobre estratégia GTM: lançar features diariamente vs releases periódicos. Menção a problemas técnicos da Uber com merge em monorepo devido ao volume de diffs.",
+    "summary": "Debate sobre estratégia GTM: lançar features diariamente vs releases periódicos. Menção a problemas técnicos da Uber com merge em monorepo devido ao volume de diffs.",
+    "links": [],
+    "messageCount": 7
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-25-002",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-25T18:15:43.000Z",
+    "authors": [
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "podcast-ia-sob-controle",
+      "inteligencia-llms",
+      "definicao-inteligencia"
+    ],
+    "topic": "Recomendação de episódio do podcast 'IA Sob Controle' com Adrian Valentim discutindo o significado de inteligência na era dos LLMs, limites dos modelos e futuro da IA.",
+    "summary": "Recomendação de episódio do podcast 'IA Sob Controle' com Adrian Valentim discutindo o significado de inteligência na era dos LLMs, limites dos modelos e futuro da IA.",
+    "links": [
+      {
+        "url": "https://open.spotify.com/episode/7yjLyTi6aab2pmVzz980XD?si=Fi3_gFMoQ9yOQWlhSsCczg&context=spotify%3Ashow%3A5xLCMHJ6eGWzdu8JaIDkuP"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-25-002",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-25T14:30:50.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Rafael Ribeiro"
+    ],
+    "tags": [
+      "claude-code",
+      "auto-dream",
+      "memoria-agentes"
+    ],
+    "topic": "Confirmação de testes com Auto-dream do Claude Code, com vídeo demostrativo sobre como o recurso resolve problemas de memória em sessões longas.",
+    "summary": "Confirmação de testes com Auto-dream do Claude Code, com vídeo demostrativo sobre como o recurso resolve problemas de memória em sessões longas.",
+    "links": [
+      {
+        "url": "https://www.youtube.com/shorts/Rp_KedsYORs"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-25-001",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-25T12:43:40.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Marcell Almeida",
+      "Fabrício Carraro",
+      "Rafael Ribeiro"
+    ],
+    "tags": [
+      "claude-code",
+      "stromae",
+      "auto-dream",
+      "long-term-memory",
+      "agentes-ia"
+    ],
+    "topic": "Feedback sobre ferramenta Stromae para customizar tom de voz em markdown. Discussão sobre recurso 'Auto-dream' no Claude Code que consolida memória de longo prazo de agentes, eliminando ruído e contradições de sessões passadas.",
+    "summary": "Feedback sobre ferramenta Stromae para customizar tom de voz em markdown. Discussão sobre recurso 'Auto-dream' no Claude Code que consolida memória de longo prazo de agentes, eliminando ruído e contradições de sessões passadas.",
+    "links": [
+      {
+        "url": "https://www.reddit.com/r/ClaudeCode/comments/1s2ci4f/claude_code_can_now_dream/"
+      }
+    ],
+    "messageCount": 10
+  },
+  {
+    "id": "whatsapp-120363408138765885-g-us-2026-03-25-016",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-25T10:44:09.000Z",
+    "authors": [
+      "André Torres",
+      ".",
+      "Eduardo",
+      "Gabriel Masson",
+      "Wesley",
+      "Bruno Lopau"
+    ],
+    "tags": [
+      "agi",
+      "asi",
+      "claude auto mode",
+      "system prompt",
+      "otimização de tokens",
+      "ia generativa"
+    ],
+    "topic": "Discussão sobre Auto Mode do Claude, AGI/ASI, economia de tokens em projetos SystemPrompt e tendência de layoffs corporativos para cobrir custos de IA.",
+    "summary": "Discussão sobre Auto Mode do Claude, AGI/ASI, economia de tokens em projetos SystemPrompt e tendência de layoffs corporativos para cobrir custos de IA.",
+    "links": [
+      {
+        "url": "https://claude.com/blog/auto-mode"
+      },
+      {
+        "url": "https://github.com/gmasson/systemprompt/"
+      }
+    ],
+    "messageCount": 10
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-24-017",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T23:36:32.000Z",
+    "authors": [
+      "Marcell Almeida",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "issue tracking",
+      "linear.app",
+      "agentes de ia",
+      "software development",
+      "evolução de ferramentas"
+    ],
+    "topic": "Linear anuncia novo produto baseado em agentes: 75% dos workspaces enterprise têm coding agents instalados, com volume de trabalho completado por agentes crescendo 5x em 3 meses e agentes autorizando 25% de novas issues.",
+    "summary": "Linear anuncia novo produto baseado em agentes: 75% dos workspaces enterprise têm coding agents instalados, com volume de trabalho completado por agentes crescendo 5x em 3 meses e agentes autorizando 25% de novas issues.",
+    "links": [
+      {
+        "url": "https://linear.app/next"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-24-017",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T23:36:32.000Z",
+    "authors": [
+      "Marcell Almeida",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "linear.app",
+      "issue tracking",
+      "agentes de ia",
+      "automação de desenvolvimento",
+      "product management"
+    ],
+    "topic": "Linear anuncia morte do issue tracking tradicional, relata que agentes de código estão em 75% dos workspaces enterprise, com volume de trabalho completado por agentes crescendo 5x nos últimos 3 meses e autoria de 25% de novas issues.",
+    "summary": "Linear anuncia morte do issue tracking tradicional, relata que agentes de código estão em 75% dos workspaces enterprise, com volume de trabalho completado por agentes crescendo 5x nos últimos 3 meses e autoria de 25% de novas issues.",
+    "links": [
+      {
+        "url": "https://linear.app/next"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-120363408138765885-g-us-2026-03-24-014",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-24T22:50:26.000Z",
+    "authors": [
+      "Victor Gutierrez",
+      "Bruno Lauria",
+      "Alan Alves",
+      "Denis Rocha",
+      "Fábio Perez",
+      "Delton",
+      "Lucca Pinto",
+      "Levi Bertolino",
+      "May",
+      "Igor Carvalho",
+      "Lucas Massena",
+      "Vitor Miziara",
+      "Rodrigo Tozato",
+      "Cleberson",
+      "Denis B",
+      ".",
+      "Gabriel▫️",
+      "Rafael C  Sampaio",
+      "Fernando",
+      "Vagner Bitencourt @vagner.me",
+      "Marcel Leão",
+      "Gustavo Barros",
+      "~",
+      "Vinícius Gomes",
+      "Pastor Paulo Coutinho",
+      "Dedé",
+      "Roni ",
+      "Helder Santos",
+      "Victor Almeida",
+      "Cesar Kato",
+      "Vieira",
+      "Lucas",
+      "Gustavo Brandão",
+      "FB",
+      "Joao Lima",
+      "Leandro Gregolin",
+      "Max Ferreira"
+    ],
+    "tags": [
+      "agentes de ia",
+      "orquestração de agentes",
+      "claude",
+      "paperclip",
+      "code review",
+      "multi-agentes",
+      "arquitetura de sistemas"
+    ],
+    "topic": "Discussão técnica sobre arquitetura multi-agente com Paperclip e Claude, incluindo desafios de custos com APIs, limites de subscription e alternativas para orquestração de agentes autônomos.",
+    "summary": "Discussão técnica sobre arquitetura multi-agente com Paperclip e Claude, incluindo desafios de custos com APIs, limites de subscription e alternativas para orquestração de agentes autônomos.",
+    "links": [
+      {
+        "url": "https://victorgutierrez.com.br/post/30/"
+      },
+      {
+        "url": "https://www.theregister.com/2026/02/20/anthropic_clarifies_ban_third_party_claude_access/#:~:text=That%20practice%2C%20effectively%20a%20subsidy,web%20interface%20for%20Claude%20models"
+      },
+      {
+        "url": "https://x.com/pawelhuryn/status/2036058594433519790?s=48"
+      },
+      {
+        "url": "https://x.com/fabioricotta/status/2033001176543760709?s=46"
+      },
+      {
+        "url": "https://x.com/aakashgupta/status/2036575179451801904?s=46"
+      },
+      {
+        "url": "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
+      },
+      {
+        "url": "https://project-6s0j1.vercel.app/"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=zoT8J-gZJa0"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=I44_zbEwz_w"
+      }
+    ],
+    "messageCount": 161
+  },
+  {
+    "id": "whatsapp-120363154248832196-g-us-2026-03-24-015",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T21:13:11.000Z",
+    "authors": [
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "claude",
+      "física teórica",
+      "pesquisa científica",
+      "agentic science",
+      "prompt engineering"
+    ],
+    "topic": "Publicação da Anthropic sobre Claude Opus 4.5 realizando cálculos de física teórica frontier-grade de forma autônoma, gerando paper em 2 semanas vs. ano tradicional com 36M tokens.",
+    "summary": "Publicação da Anthropic sobre Claude Opus 4.5 realizando cálculos de física teórica frontier-grade de forma autônoma, gerando paper em 2 semanas vs. ano tradicional com 36M tokens.",
+    "links": [
+      {
+        "url": "https://www.anthropic.com/research/vibe-physics"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-24-014",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-24T21:13:11.000Z",
+    "authors": [
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "pesquisa anthropic",
+      "vibe physics",
+      "modelagem de comportamento"
+    ],
+    "topic": "Compartilhamento de pesquisa da Anthropic sobre 'vibe physics' com imagens técnicas, sugerindo novo framework ou abordagem de modelagem em desenvolvimento.",
+    "summary": "Compartilhamento de pesquisa da Anthropic sobre 'vibe physics' com imagens técnicas, sugerindo novo framework ou abordagem de modelagem em desenvolvimento.",
+    "links": [
+      {
+        "url": "https://www.anthropic.com/research/vibe-physics"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-120363154248832196-g-us-2026-03-24-014",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T20:35:17.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "claude pro",
+      "reasoning",
+      "agentic programming",
+      "documentação",
+      "análise"
+    ],
+    "topic": "Discussão sobre Claude Pro e seu uso para análise profunda de documentação técnica, com exemplo de 63 minutos de reasoning que gerou guia de 15 páginas com código.",
+    "summary": "Discussão sobre Claude Pro e seu uso para análise profunda de documentação técnica, com exemplo de 63 minutos de reasoning que gerou guia de 15 páginas com código.",
+    "links": [],
+    "messageCount": 14
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-24-013",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-24T20:35:17.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "claude pro thinking",
+      "reasoning estendido",
+      "documentação",
+      "análise complexa"
+    ],
+    "topic": "Discussão sobre Claude Pro com modo thinking que prolonga raciocínio (63 minutos em caso real), ideal para análise profunda de documentação e geração de guias estruturados.",
+    "summary": "Discussão sobre Claude Pro com modo thinking que prolonga raciocínio (63 minutos em caso real), ideal para análise profunda de documentação e geração de guias estruturados.",
+    "links": [],
+    "messageCount": 14
+  },
+  {
+    "id": "whatsapp-120363154248832196-g-us-2026-03-24-013",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T19:56:23.000Z",
+    "authors": [
+      "Guilherme Silveira",
+      "Marcus Mendes",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "agentes de ia",
+      "claude",
+      "invocação de modelos",
+      "recursão"
+    ],
+    "topic": "Relato informal sobre Claude invocando a si mesmo sem instrução explícita, gerando curiosidade sobre comportamento emergente e autoinvocação de modelos.",
+    "summary": "Relato informal sobre Claude invocando a si mesmo sem instrução explícita, gerando curiosidade sobre comportamento emergente e autoinvocação de modelos.",
+    "links": [
+      {
+        "url": "https://x.com/i/status/2036136822099628173"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-24-012",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-24T19:56:23.000Z",
+    "authors": [
+      "Guilherme Silveira",
+      "Marcus Mendes",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "claude invocação recursiva",
+      "agentes auto-invocáveis",
+      "comportamento emergente"
+    ],
+    "topic": "Relato sobre Claude invocando a si mesmo sem instrução explícita, demonstrando comportamento emergente não esperado em agentes de IA.",
+    "summary": "Relato sobre Claude invocando a si mesmo sem instrução explícita, demonstrando comportamento emergente não esperado em agentes de IA.",
+    "links": [
+      {
+        "url": "https://x.com/i/status/2036136822099628173"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-24-016",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T19:51:00.000Z",
+    "authors": [
+      "Guilherme Silveira",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "megatron-lm",
+      "nvidia framework",
+      "destilação de modelos",
+      "claude assistência",
+      "produtividade engineering"
+    ],
+    "topic": "Fabrício Carraro detalha uso de framework Megatron-Bridge da NVIDIA para destilação, mencionando que Claude ajudou a reduzir tempo de 2-4 semanas para 2-3 dias, combinando scripts existentes e ferramentas open source.",
+    "summary": "Fabrício Carraro detalha uso de framework Megatron-Bridge da NVIDIA para destilação, mencionando que Claude ajudou a reduzir tempo de 2-4 semanas para 2-3 dias, combinando scripts existentes e ferramentas open source.",
+    "links": [],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-24-016",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T19:51:00.000Z",
+    "authors": [
+      "Guilherme Silveira",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "megatron-bridge",
+      "nvidia frameworks",
+      "claude assistência",
+      "model compression",
+      "produtividade com ia"
+    ],
+    "topic": "Relato sobre uso de framework Megatron-Bridge da NVIDIA combinado com Claude para acelerar trabalho de destilação de modelos, reduzindo tempo estimado de semanas para dias.",
+    "summary": "Relato sobre uso de framework Megatron-Bridge da NVIDIA combinado com Claude para acelerar trabalho de destilação de modelos, reduzindo tempo estimado de semanas para dias.",
+    "links": [],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-24-015",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T18:59:48.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "model pruning",
+      "distilação de modelos",
+      "llms 40b-20b",
+      "function calling",
+      "otimização de modelos"
+    ],
+    "topic": "Fabrício Carraro relata trabalho em pruning e destilação de modelo de 40B para 20B no BSC, com objetivo de ensinar function calling durante o processo.",
+    "summary": "Fabrício Carraro relata trabalho em pruning e destilação de modelo de 40B para 20B no BSC, com objetivo de ensinar function calling durante o processo.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-24-015",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T18:59:48.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "destilação de modelos",
+      "model pruning",
+      "function calling",
+      "llm otimização",
+      "modelos 20b"
+    ],
+    "topic": "Menção de trabalho em progresso para reduzir modelo instruct de 40B para 20B através de pruning e destilação, adicionando capacidade de function calling no processo.",
+    "summary": "Menção de trabalho em progresso para reduzir modelo instruct de 40B para 20B através de pruning e destilação, adicionando capacidade de function calling no processo.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-120363408138765885-g-us-2026-03-24-013",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-24T18:52:35.000Z",
+    "authors": [
+      "Fábio Perez",
+      "Thiago Ramos",
+      "Vagner Bitencourt @vagner.me",
+      "Aleksandro (Lekão)🇧🇷🚀",
+      "Katiana",
+      "Gui",
+      "Bruno Moura",
+      "Denis Rocha",
+      "Ricardo Soares Costa",
+      "Matheus Hunger",
+      "Diego de Oliveira",
+      "Rodrigo",
+      "Diego Anselmo",
+      "Bruno Lopau",
+      "Bruno Lauria",
+      "~ Marco Aurélio 💎",
+      "Vinícius Secundo",
+      "Lucas",
+      "Capella",
+      "Lucas Yoshioka",
+      "Aldo Kusuke",
+      "Robson Lima",
+      "Joel Jucá",
+      "Gael Souza",
+      "Levi Bertolino",
+      "Vitor Miziara",
+      "Maicon Guimaraes",
+      "Cleberson",
+      "Pedro",
+      "Victor Segatti",
+      "Jousivan",
+      "Helder Santos",
+      "Henrique",
+      "Diego Emanuel",
+      "João Nascimento"
+    ],
+    "tags": [
+      "7min.ai",
+      "agentes de ia",
+      "automação",
+      "llm api",
+      "claude cowork",
+      "segurança",
+      "supply chain"
+    ],
+    "topic": "Lançamento de URLs para consumo de notícias de IA por LLMs no 7min.ai + alerta crítico: pacote PyPI litellm comprometido com roubo de credenciais em versões v1.82.7 e v1.82.8.",
+    "summary": "Lançamento de URLs para consumo de notícias de IA por LLMs no 7min.ai + alerta crítico: pacote PyPI litellm comprometido com roubo de credenciais em versões v1.82.7 e v1.82.8.",
+    "links": [
+      {
+        "url": "https://7min.ai/daily-ai-news-llms.txt"
+      },
+      {
+        "url": "https://7min.ai/noticias-diarias-de-ia-llms.txt"
+      },
+      {
+        "url": "https://github.com/twentyhq/twenty"
+      },
+      {
+        "url": "https://x.com/ihtesham2005/status/2036458108516712548/photo/1"
+      },
+      {
+        "url": "https://github.com/berriAi/litellm/issues/24518"
+      },
+      {
+        "url": "https://news.ycombinator.com/item?id=47501426"
+      },
+      {
+        "url": "https://luma.com/q5eb2zjg"
+      },
+      {
+        "url": "https://ia.fullcycle.com.br/mba-ia/?utm_source=site-fullcycle&utm_medium=slider-site&utm_content=org_slider_mba_engenharia_ia&_gl=1*1mrp619*_gcl_au*MTk3MjU4MTU4OC4xNzczMDY3MDE5"
+      },
+      {
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S0736585325000450"
+      },
+      {
+        "url": "https://www.instagram.com/reel/DWPnQFrEQEK/?igsh=MWE1d2x6N2xiZ2l2OQ=="
+      },
+      {
+        "url": "https://x.com/dr_cintas/status/2035387052460536293?s=48"
+      }
+    ],
+    "messageCount": 137
+  },
+  {
+    "id": "whatsapp-120363154248832196-g-us-2026-03-24-012",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T18:41:13.000Z",
+    "authors": [
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "harness design",
+      "agentes de ia",
+      "agentic coding",
+      "claude",
+      "frontend design"
+    ],
+    "topic": "Publicação da Anthropic sobre design de harness para development com Claude, demonstrando abordagens multi-agente (generator/evaluator) para melhorar qualidade em design frontend e coding autônomo.",
+    "summary": "Publicação da Anthropic sobre design de harness para development com Claude, demonstrando abordagens multi-agente (generator/evaluator) para melhorar qualidade em design frontend e coding autônomo.",
+    "links": [
+      {
+        "url": "https://t.co/HWvmXk1ykn"
+      },
+      {
+        "url": "https://x.com/i/status/2036499691571953848"
+      },
+      {
+        "url": "https://x.com/i/status/2036503582166393240"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-24-011",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-24T18:41:13.000Z",
+    "authors": [
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "notícias ia",
+      "mercado de ia",
+      "desenvolvimento acelerado"
+    ],
+    "topic": "Compilação de múltiplas notícias sobre IA descrita como 'dia quente', indicando volume significativo de anúncios ou desenvolvimentos relevantes.",
+    "summary": "Compilação de múltiplas notícias sobre IA descrita como 'dia quente', indicando volume significativo de anúncios ou desenvolvimentos relevantes.",
+    "links": [
+      {
+        "url": "https://t.co/HWvmXk1ykn"
+      },
+      {
+        "url": "https://x.com/i/status/2036499691571953848"
+      },
+      {
+        "url": "https://x.com/i/status/2036503582166393240"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-24-014",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T17:55:31.000Z",
+    "authors": [
+      "Guilherme Silveira",
+      "Marcell Almeida",
+      "Fabrício Carraro",
+      "Paulo Silveira",
+      "Sérgio Lopes"
+    ],
+    "tags": [
+      "arxiv",
+      "pesquisa nlp",
+      "papers científicos",
+      "dynamic workers",
+      "cloudflare",
+      "segurança de código ia"
+    ],
+    "topic": "Fabrício Carraro anuncia aprovação de seu primeiro paper na conferência LREC, escrito com colega PhD do BSC; equipe discute process de submissão no arXiv e Cloudflare lança Dynamic Workers para executar código gerado por IA de forma segura.",
+    "summary": "Fabrício Carraro anuncia aprovação de seu primeiro paper na conferência LREC, escrito com colega PhD do BSC; equipe discute process de submissão no arXiv e Cloudflare lança Dynamic Workers para executar código gerado por IA de forma segura.",
+    "links": [
+      {
+        "url": "https://blog.cloudflare.com/dynamic-workers/"
+      }
+    ],
+    "messageCount": 12
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-24-014",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T17:55:31.000Z",
+    "authors": [
+      "Guilherme Silveira",
+      "Marcell Almeida",
+      "Fabrício Carraro",
+      "Paulo Silveira",
+      "Sérgio Lopes"
+    ],
+    "tags": [
+      "cloudflare workers",
+      "sandboxing",
+      "execução de código",
+      "agentes de ia",
+      "mcp servers",
+      "arxiv",
+      "pesquisa científica"
+    ],
+    "topic": "Compartilhamento de artigo sobre execução segura de código gerado por IA em isolados leves (100x mais rápido que containers) e celebração de aprovação de paper em conferência LREC com colaboradores do BSC.",
+    "summary": "Compartilhamento de artigo sobre execução segura de código gerado por IA em isolados leves (100x mais rápido que containers) e celebração de aprovação de paper em conferência LREC com colaboradores do BSC.",
+    "links": [
+      {
+        "url": "https://blog.cloudflare.com/dynamic-workers/"
+      }
+    ],
+    "messageCount": 12
+  },
+  {
+    "id": "whatsapp-120363408138765885-g-us-2026-03-24-012",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-24T17:50:31.000Z",
+    "authors": [
+      "Alan Alves",
+      "Ailton Jr.",
+      "Marcelo Vieira",
+      "Bruno Gomes",
+      "Lucas Yoshioka",
+      "Leonardo Bora",
+      "Caio 🛶🛶"
+    ],
+    "tags": [
+      "claude code",
+      "tutorial",
+      "conteúdo educacional",
+      "youtube"
+    ],
+    "topic": "Compartilhamento de conteúdo gratuito no YouTube sobre Claude Code, descrito como um dos materiais mais completos e densos disponíveis sobre a ferramenta.",
+    "summary": "Compartilhamento de conteúdo gratuito no YouTube sobre Claude Code, descrito como um dos materiais mais completos e densos disponíveis sobre a ferramenta.",
+    "links": [
+      {
+        "url": "https://www.youtube.com/watch?v=brLhhkUqcn4"
+      }
+    ],
+    "messageCount": 7
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-24-013",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T16:46:25.000Z",
+    "authors": [
+      "Sérgio Lopes",
+      "Fabrício Carraro",
+      "Paulo Silveira",
+      "Marcell Almeida",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "modelos de linguagem",
+      "brainfuck",
+      "code generation",
+      "agentes de ia",
+      "prompt engineering",
+      "análise crítica de papers"
+    ],
+    "topic": "Sérgio Lopes testa Codex XHigh com Brainfuck, resolvendo problemas que o paper original não conseguiu, e discute se o modelo realmente aprendeu a linguagem ou apenas contornou limitações de tokenização usando Python como intermediário.",
+    "summary": "Sérgio Lopes testa Codex XHigh com Brainfuck, resolvendo problemas que o paper original não conseguiu, e discute se o modelo realmente aprendeu a linguagem ou apenas contornou limitações de tokenização usando Python como intermediário.",
+    "links": [
+      {
+        "url": "https://chatgpt.com/s/t_69c2c76ce2548191adc5b3b06d3c049c"
+      }
+    ],
+    "messageCount": 62
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-24-013",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T16:46:25.000Z",
+    "authors": [
+      "Sérgio Lopes",
+      "Fabrício Carraro",
+      "Paulo Silveira",
+      "Marcell Almeida",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "modelos de linguagem",
+      "brainfuck",
+      "claude codex",
+      "geração de código",
+      "tokenização",
+      "agentes de ia",
+      "engenharia de prompts"
+    ],
+    "topic": "Discussão técnica sobre capacidades de modelos de IA (Claude Codex) resolvendo problemas em linguagens esotéricas como Brainfuck, questionando rigor científico de papers recentes e explorando limitações de tokenização em modelos.",
+    "summary": "Discussão técnica sobre capacidades de modelos de IA (Claude Codex) resolvendo problemas em linguagens esotéricas como Brainfuck, questionando rigor científico de papers recentes e explorando limitações de tokenização em modelos.",
+    "links": [
+      {
+        "url": "https://chatgpt.com/s/t_69c2c76ce2548191adc5b3b06d3c049c"
+      }
+    ],
+    "messageCount": 62
+  },
+  {
+    "id": "whatsapp-120363408138765885-g-us-2026-03-24-011",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-24T15:39:33.000Z",
+    "authors": [
+      "Denis B",
+      "Roni ",
+      "Vitor Miziara",
+      "Fábio Perez",
+      "Fernando Horas",
+      "Marcel Leão",
+      "Mario Campello",
+      "perez",
+      "Vagner Bitencourt @vagner.me",
+      "Fernando Luz"
+    ],
+    "tags": [
+      "claude",
+      "whatsapp",
+      "integração",
+      "mcp",
+      "automação",
+      "prompt engineering"
+    ],
+    "topic": "Membros compartilham implementações de integração Claude com WhatsApp para resumo e categorização de conversas, com exemplo prático no Claude Code e uso de MCP para descoberta de domínios.",
+    "summary": "Membros compartilham implementações de integração Claude com WhatsApp para resumo e categorização de conversas, com exemplo prático no Claude Code e uso de MCP para descoberta de domínios.",
+    "links": [
+      {
+        "url": "https://www.instagram.com/p/DU6iNzDDhxZ/?igsh=MXdtYXR0a3JkOXB0aQ=="
+      }
+    ],
+    "messageCount": 33
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-24-012",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T15:36:12.000Z",
+    "authors": [
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "llm reasoning",
+      "memorização vs raciocínio",
+      "benchmark gaming",
+      "esolang-bench",
+      "código"
+    ],
+    "topic": "Análise profunda de resultados devastadores do EsoLang-Bench: LLMs com 85-95% em benchmarks convencionais obtêm 0-11% em linguagens esotéricas, sugerindo memorização vs. raciocínio genuíno.",
+    "summary": "Análise profunda de resultados devastadores do EsoLang-Bench: LLMs com 85-95% em benchmarks convencionais obtêm 0-11% em linguagens esotéricas, sugerindo memorização vs. raciocínio genuíno.",
+    "links": [],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-24-012",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T15:36:12.000Z",
+    "authors": [
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "raciocínio em llms",
+      "linguagens esotéricas",
+      "limitações de llm",
+      "pattern matching",
+      "benchmarks"
+    ],
+    "topic": "Análise de pesquisa mostrando que LLMs não raciocinam genuinamente sobre código, apenas reconhecem padrões de treino, com falha radical em linguagens pouco representadas em dados públicos.",
+    "summary": "Análise de pesquisa mostrando que LLMs não raciocinam genuinamente sobre código, apenas reconhecem padrões de treino, com falha radical em linguagens pouco representadas em dados públicos.",
+    "links": [],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-24-011",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T14:49:56.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "esolang-bench",
+      "raciocínio genuíno",
+      "avaliação de llm",
+      "linguagens esotéricas"
+    ],
+    "topic": "Compartilhamento de paper arXiv sobre EsoLang-Bench, benchmark que avalia raciocínio genuíno em LLMs usando linguagens esotéricas.",
+    "summary": "Compartilhamento de paper arXiv sobre EsoLang-Bench, benchmark que avalia raciocínio genuíno em LLMs usando linguagens esotéricas.",
+    "links": [
+      {
+        "url": "https://arxiv.org/abs/2603.09678"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-24-010",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T13:55:36.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "happy robot",
+      "ai workers",
+      "agentes autônomos",
+      "demo interativa",
+      "barcelona"
+    ],
+    "topic": "Apresentação de HappyRobot, plataforma de Barcelona para build de AI workers autônomos com demo interativa, em crescimento no mercado.",
+    "summary": "Apresentação de HappyRobot, plataforma de Barcelona para build de AI workers autônomos com demo interativa, em crescimento no mercado.",
+    "links": [
+      {
+        "url": "https://www.happyrobot.ai/"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-24-010",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T13:55:36.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "happyrobot",
+      "ai workers",
+      "automação empresarial",
+      "demo interativa",
+      "orquestração de agentes"
+    ],
+    "topic": "Apresentação de HappyRobot, plataforma para construção e orquestração de workforce de IA autônomos, com exemplo de demo interativa e casos de uso em operações.",
+    "summary": "Apresentação de HappyRobot, plataforma para construção e orquestração de workforce de IA autônomos, com exemplo de demo interativa e casos de uso em operações.",
+    "links": [
+      {
+        "url": "https://www.happyrobot.ai/"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-120363408138765885-g-us-2026-03-24-010",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-24T12:05:49.000Z",
+    "authors": [
+      "Breno",
+      "Cesar Kato",
+      "Pastor Paulo Coutinho",
+      "Ricardo Bemfica",
+      "Bruno Lopau",
+      "Diego de Oliveira",
+      "Yago Wallace",
+      "Fábio Perez",
+      "Gustavo Barros",
+      "Mario Campello",
+      "Abner Lincoln",
+      ".",
+      "Vagner Bitencourt @vagner.me",
+      "Giovanni Klein",
+      "Ricardo Soares Costa",
+      "FB",
+      "Diego Anselmo",
+      "Leandro Gregolin",
+      "Igor Carvalho",
+      "Vitor Miziara",
+      "Cleberson",
+      "Roni ",
+      "Alan Alves",
+      "Bruno Moura",
+      "Julio",
+      "Fabrício",
+      "Patrick",
+      "Letícia Cândido",
+      "André Torres"
+    ],
+    "tags": [
+      "claude",
+      "firebase",
+      "supabase",
+      "replit",
+      "agentes de ia",
+      "cursor",
+      "desenvolvimento web"
+    ],
+    "topic": "Discussão técnica sobre ferramentas de desenvolvimento (Firebase, Supabase, Replit, Claude Code, Cursor) com avaliações de membros sobre performance, pricing e funcionalidades de IA para coding.",
+    "summary": "Discussão técnica sobre ferramentas de desenvolvimento (Firebase, Supabase, Replit, Claude Code, Cursor) com avaliações de membros sobre performance, pricing e funcionalidades de IA para coding.",
+    "links": [
+      {
+        "url": "https://techcrunch.com/2026/03/22/cursor-admits-its-new-coding-model-was-built-on-top-of-moonshot-ais-kimi/"
+      },
+      {
+        "url": "https://7min.ai/d/2026-03-24/pt-br/anthropic-ships-claude-mac/"
+      },
+      {
+        "url": "https://replit.com/stripe-checkout-by-price/core_1mo_20usd_monthly_feb_26?coupon=AGENT4AE0BE8976C52"
+      },
+      {
+        "url": "https://community.sap.com/t5/technology-blog-posts-by-sap/claude-code-python-sap-gui-scripting-your-ai-agent-for-any-sap-transaction/ba-p/14327865"
+      },
+      {
+        "url": "https://skillsmp.com/pt/categories/data-analysis"
+      },
+      {
+        "url": "https://www.linkedin.com/posts/sumanth077_clone-any-voice-with-just-3-seconds-of-audio-share-7441796174870818816-6QZJ?utm_source=share&utm_medium=member_android&rcm=ACoAAAtBqHYBlYbaCOmruTt8S8AEVFeRqhnsyLI"
+      },
+      {
+        "url": "https://stitch.withgoogle.com/"
+      },
+      {
+        "url": "https://www.agile-robots.com/en/news/detail/agile-robots-and-google-deepmind-partner-to-bring-intelligence-to-robotics/"
+      }
+    ],
+    "messageCount": 75
+  },
+  {
+    "id": "whatsapp-120363408138765885-g-us-2026-03-24-008",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-24T10:20:00.000Z",
+    "authors": [
+      ".",
+      "Fabrício"
+    ],
+    "tags": [
+      "banco de dados",
+      "firebase",
+      "supabase",
+      "postgres serverless",
+      "neon"
+    ],
+    "topic": "Recomendação de banco de dados: usuário questiona alternativas a Firebase e Supabase, e Fabrício sugere Neon como opção de Postgres serverless.",
+    "summary": "Recomendação de banco de dados: usuário questiona alternativas a Firebase e Supabase, e Fabrício sugere Neon como opção de Postgres serverless.",
+    "links": [
+      {
+        "url": "https://neon.com"
+      }
+    ],
+    "messageCount": 7
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-24-009",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T10:07:49.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "ia agent",
+      "mark zuckerberg",
+      "facebook meta",
+      "ceo automation",
+      "agentes"
+    ],
+    "topic": "Compartilhamento de artigo WSJ sobre IA agent que Zuckerberg está desenvolvendo para auxiliar funções de CEO.",
+    "summary": "Compartilhamento de artigo WSJ sobre IA agent que Zuckerberg está desenvolvendo para auxiliar funções de CEO.",
+    "links": [
+      {
+        "url": "https://www.wsj.com/tech/ai/mark-zuckerberg-is-building-an-ai-agent-to-help-him-be-ceo-eddab2d5"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-24-009",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T10:07:49.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "ia para executivos",
+      "agentes de ia",
+      "ceo ai agent",
+      "mark zuckerberg"
+    ],
+    "topic": "Notícia sobre Mark Zuckerberg desenvolvendo um agente de IA para auxiliar funções executivas, tema relevante para discussão de aplicação de IA em liderança.",
+    "summary": "Notícia sobre Mark Zuckerberg desenvolvendo um agente de IA para auxiliar funções executivas, tema relevante para discussão de aplicação de IA em liderança.",
+    "links": [
+      {
+        "url": "https://www.wsj.com/tech/ai/mark-zuckerberg-is-building-an-ai-agent-to-help-him-be-ceo-eddab2d5"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-120363154248832196-g-us-2026-03-24-005",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T10:07:05.000Z",
+    "authors": [
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "agentes de ia",
+      "mark zuckerberg",
+      "openai",
+      "anthropic",
+      "competição"
+    ],
+    "topic": "Compartilhamento de notícias sobre Zuckerberg desenvolvendo agente de IA para CEO e competição entre OpenAI e Anthropic por investimento em IA empresarial.",
+    "summary": "Compartilhamento de notícias sobre Zuckerberg desenvolvendo agente de IA para CEO e competição entre OpenAI e Anthropic por investimento em IA empresarial.",
+    "links": [
+      {
+        "url": "https://www.wsj.com/tech/ai/mark-zuckerberg-is-building-an-ai-agent-to-help-him-be-ceo-eddab2d5"
+      },
+      {
+        "url": "https://www.reuters.com/business/openai-sweetens-private-equity-pitch-amid-enterprise-turf-war-with-anthropic-2026-03-23/"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-24-005",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-24T10:07:05.000Z",
+    "authors": [
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "mark zuckerberg",
+      "agentes executivos",
+      "openai estratégia",
+      "anthropic competição",
+      "modelos enterprise"
+    ],
+    "topic": "Compartilhamento de notícias sobre Zuckerberg desenvolvendo agente de IA para auxiliar na liderança e OpenAI competindo com Anthropic no mercado enterprise.",
+    "summary": "Compartilhamento de notícias sobre Zuckerberg desenvolvendo agente de IA para auxiliar na liderança e OpenAI competindo com Anthropic no mercado enterprise.",
+    "links": [
+      {
+        "url": "https://www.wsj.com/tech/ai/mark-zuckerberg-is-building-an-ai-agent-to-help-him-be-ceo-eddab2d5"
+      },
+      {
+        "url": "https://www.reuters.com/business/openai-sweetens-private-equity-pitch-amid-enterprise-turf-war-with-anthropic-2026-03-23/"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-120363408138765885-g-us-2026-03-24-005",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-24T02:22:10.000Z",
+    "authors": [
+      "Marcos Oliveira",
+      "Leandro Aveiro",
+      "Lucas Mata",
+      "Pastor Paulo Coutinho",
+      "Rodrigo Klosowski",
+      "Rodrigo",
+      "Alberto Henrique Cordeiro",
+      "Vagner Bitencourt @vagner.me",
+      "Harrison",
+      "Vitor Miziara",
+      "~ Marco Aurélio 💎",
+      "Mário Lúcio"
+    ],
+    "tags": [
+      "agentes de ia",
+      "multi-agentes",
+      "gerenciador desktop",
+      "openai claude",
+      "extensões ia",
+      "arquitetura de agentes"
+    ],
+    "topic": "Discussão sobre ferramentas para trabalhar com agentes de IA, incluindo PyeClaw (gerenciador desktop para OpenClaw) e uma extensão para otimizar processamento com multi-agentes no Claude, com ressalva sobre consumo de tokens.",
+    "summary": "Discussão sobre ferramentas para trabalhar com agentes de IA, incluindo PyeClaw (gerenciador desktop para OpenClaw) e uma extensão para otimizar processamento com multi-agentes no Claude, com ressalva sobre consumo de tokens.",
+    "links": [
+      {
+        "url": "https://github.com/paulocoutinhox/pyeclaw"
+      },
+      {
+        "url": "https://x.com/VivendodeSaas/status/2036047073301184613"
+      },
+      {
+        "url": "https://youtu.be/AsIusJoJHpg?si=N1JE7ln2BdWgWQRu"
+      },
+      {
+        "url": "https://antigravity-kit.unikorn.vn/docs/installation"
+      }
+    ],
+    "messageCount": 17
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-24-007",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T00:57:28.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "nano claw",
+      "claude code",
+      "integração com whatsapp",
+      "automação",
+      "mac"
+    ],
+    "topic": "Menção informal sobre integração de nano claw em WhatsApp com acesso a Mac e planos de experimentar com Claude Code.",
+    "summary": "Menção informal sobre integração de nano claw em WhatsApp com acesso a Mac e planos de experimentar com Claude Code.",
+    "links": [],
+    "messageCount": 7
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-24-007",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-24T00:57:28.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "claude code",
+      "integração com sistemas",
+      "automação",
+      "nano claw"
+    ],
+    "topic": "Comentário sobre integração de Claude Code em aplicações de mensageria e sistemas pessoais, com referência a nano claw e possibilidades de automação avançada.",
+    "summary": "Comentário sobre integração de Claude Code em aplicações de mensageria e sistemas pessoais, com referência a nano claw e possibilidades de automação avançada.",
+    "links": [],
+    "messageCount": 7
+  },
+  {
+    "id": "whatsapp-120363154248832196-g-us-2026-03-23-002",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-23T23:06:21.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Guilherme Silveira"
+    ],
+    "tags": [
+      "agentes de ia",
+      "claude",
+      "computer use",
+      "anthropic",
+      "openclaw"
+    ],
+    "topic": "Discussão sobre OpenClaw e capacidades avançadas de computer use no Claude, com menção a confiança estratégica na Anthropic.",
+    "summary": "Discussão sobre OpenClaw e capacidades avançadas de computer use no Claude, com menção a confiança estratégica na Anthropic.",
+    "links": [
+      {
+        "url": "https://x.com/i/status/2036195789601374705"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-23-002",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-23T23:06:21.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Guilherme Silveira"
+    ],
+    "tags": [
+      "claude computer use",
+      "openclaw",
+      "agentes autônomos",
+      "anthropic"
+    ],
+    "topic": "Discussão sobre evolução de capacidades de computer use no Claude, com Openclaw representando avanço em autonomia de agentes e percepção de segurança em relação à Anthropic.",
+    "summary": "Discussão sobre evolução de capacidades de computer use no Claude, com Openclaw representando avanço em autonomia de agentes e percepção de segurança em relação à Anthropic.",
+    "links": [
+      {
+        "url": "https://x.com/i/status/2036195789601374705"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-120363408138765885-g-us-2026-03-23-004",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-23T22:39:23.000Z",
+    "authors": [
+      "Gael Souza",
+      "Roney",
+      "Davi Maçana",
+      "Fernando",
+      "Fabrício Carraro",
+      "Rodrigo Klosowski",
+      "Bruno Lopau",
+      "Maicon Guimaraes",
+      "Paulo Silveira",
+      "Helder Santos",
+      "FB",
+      "Alan Alves",
+      "Leandro Aveiro",
+      "Mário Lúcio",
+      "Fábio Perez",
+      "Rony Max",
+      "Francisco Paiva Jr",
+      "Marcelo Grilo Jr",
+      "Paulo",
+      "Lucas Mata",
+      ".",
+      "Breno",
+      "Lucas",
+      "Cleberson",
+      "Lucas Massena",
+      "Vieira"
+    ],
+    "tags": [
+      "agentes de ia",
+      "web scraping",
+      "renderização de conteúdo",
+      "ferramentas open-source",
+      "integração llm",
+      "anti-detect browser",
+      "busca inteligente"
+    ],
+    "topic": "Rodrigo Klosowski apresenta GhostReader, um proxy de renderização com browser anti-detect que permite agentes de IA acessar qualquer site sem bloqueios, e Fernando lança Arquivo da República, uma busca inteligente sobre publicações do Poder Executivo e TCU.",
+    "summary": "Rodrigo Klosowski apresenta GhostReader, um proxy de renderização com browser anti-detect que permite agentes de IA acessar qualquer site sem bloqueios, e Fernando lança Arquivo da República, uma busca inteligente sobre publicações do Poder Executivo e TCU.",
+    "links": [
+      {
+        "url": "https://github.com/klosowsk/ghostreader"
+      },
+      {
+        "url": "https://data.anbima.com.br/busca/debentures"
+      },
+      {
+        "url": "https://luma.com/q5eb2zjg"
+      },
+      {
+        "url": "https://github.com/daijro/camoufox"
+      },
+      {
+        "url": "https://github.com/klosowsk/ghostreader/pull/1"
+      }
+    ],
+    "messageCount": 115
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-23-005",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-23T22:09:10.000Z",
+    "authors": [
+      "Guilherme Silveira",
+      "Mauricio Aniche",
+      "Rafael Ribeiro",
+      "Marcell Almeida",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "finops",
+      "otimização de tokens",
+      "custos de ia",
+      "token economy",
+      "code review"
+    ],
+    "topic": "Discussão sobre emergência de FinOps para IA, monitoramento de custos de tokens e possíveis halucinações em bases de código grandes.",
+    "summary": "Discussão sobre emergência de FinOps para IA, monitoramento de custos de tokens e possíveis halucinações em bases de código grandes.",
+    "links": [
+      {
+        "url": "https://x.com/davidgeorge83/status/2036091262080811265?s=46&t=eUIi7rcC09bcxduho1P1bg"
+      },
+      {
+        "url": "https://x.com/felixrieseberg/status/2036193240509235452?s=46"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-23-005",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-23T22:09:10.000Z",
+    "authors": [
+      "Guilherme Silveira",
+      "Mauricio Aniche",
+      "Rafael Ribeiro",
+      "Marcell Almeida",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "finops para ia",
+      "otimização de tokens",
+      "custo de ia",
+      "code search",
+      "monitoramento"
+    ],
+    "topic": "Discussão sobre a emergência de FinOps para IA, previsão de que gerenciamento de custos de tokens seguirá padrão similar ao Cloud, e técnicas de busca em código.",
+    "summary": "Discussão sobre a emergência de FinOps para IA, previsão de que gerenciamento de custos de tokens seguirá padrão similar ao Cloud, e técnicas de busca em código.",
+    "links": [
+      {
+        "url": "https://x.com/davidgeorge83/status/2036091262080811265?s=46&t=eUIi7rcC09bcxduho1P1bg"
+      },
+      {
+        "url": "https://x.com/felixrieseberg/status/2036193240509235452?s=46"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-23-004",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-23T21:26:07.000Z",
+    "authors": [
+      "Sérgio Lopes"
+    ],
+    "tags": [
+      "grep",
+      "busca de contexto",
+      "otimização",
+      "claude",
+      "arquitetura de sistema"
+    ],
+    "topic": "Reflexão sobre eficácia de grep simples vs. otimizações complexas em IA, com menção a abordagem minimalista em desenvolvimento.",
+    "summary": "Reflexão sobre eficácia de grep simples vs. otimizações complexas em IA, com menção a abordagem minimalista em desenvolvimento.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-23-004",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-23T21:26:07.000Z",
+    "authors": [
+      "Sérgio Lopes"
+    ],
+    "tags": [
+      "claude code",
+      "grep",
+      "otimização de contexto",
+      "estratégia de development"
+    ],
+    "topic": "Reflexão sobre a abordagem de Claude em usar grep para busca de código e percepção de que limitações de token e contexto são temporárias, não impedindo workflows eficazes.",
+    "summary": "Reflexão sobre a abordagem de Claude em usar grep para busca de código e percepção de que limitações de token e contexto são temporárias, não impedindo workflows eficazes.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-120363408138765885-g-us-2026-03-23-003",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-23T20:46:56.000Z",
+    "authors": [
+      "Gustavo Barros",
+      "Bruno Lopau",
+      "Jane",
+      "Vitor Miziara",
+      "Eder Castro"
+    ],
+    "tags": [
+      "jensen huang",
+      "nvidia",
+      "liderança em ia",
+      "vídeo educativo"
+    ],
+    "topic": "Compartilhamento de podcast Lex Fridman com Jensen Huang sobre NVIDIA e revolução de IA, com interesse informal em aplicação de Claude para criar carrosséis.",
+    "summary": "Compartilhamento de podcast Lex Fridman com Jensen Huang sobre NVIDIA e revolução de IA, com interesse informal em aplicação de Claude para criar carrosséis.",
+    "links": [
+      {
+        "url": "https://www.youtube.com/watch?v=vif8NQcjVf0"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-23-003",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-23T20:21:00.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "code-review-graph",
+      "otimização de contexto",
+      "tokens",
+      "cursor",
+      "claude code"
+    ],
+    "topic": "Apresentação de ferramenta code-review-graph que reduz consumo de tokens via knowledge graph local, com comparação a Cursor.",
+    "summary": "Apresentação de ferramenta code-review-graph que reduz consumo de tokens via knowledge graph local, com comparação a Cursor.",
+    "links": [
+      {
+        "url": "https://github.com/tirth8205/code-review-graph?tab=readme-ov-file"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-23-003",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-23T20:21:00.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "claude code",
+      "otimização de tokens",
+      "code review",
+      "grafos de conhecimento",
+      "mapa de projeto"
+    ],
+    "topic": "Exploração de técnicas para reduzir consumo de tokens em Claude Code usando grafos de conhecimento locais, com resultados de até 49x menos tokens e reindexação rápida.",
+    "summary": "Exploração de técnicas para reduzir consumo de tokens em Claude Code usando grafos de conhecimento locais, com resultados de até 49x menos tokens e reindexação rápida.",
+    "links": [
+      {
+        "url": "https://github.com/tirth8205/code-review-graph?tab=readme-ov-file"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-120363425465757403-g-us-2026-03-23-001",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-23T16:34:55.000Z",
+    "authors": [
+      "Sérgio Lopes",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "lovable",
+      "pivotação estratégica",
+      "produto",
+      "desenvolvimento web"
+    ],
+    "topic": "Menção casual a pivot recente da ferramenta Lovable com paralelo a outras soluções.",
+    "summary": "Menção casual a pivot recente da ferramenta Lovable com paralelo a outras soluções.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-23-001",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-23T16:34:55.000Z",
+    "authors": [
+      "Sérgio Lopes",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "lovable",
+      "pivô de produto",
+      "ferramenta de ia"
+    ],
+    "topic": "Comentário breve sobre mudança de direção estratégica da plataforma Lovable e seu paralelo com outras soluções de IA.",
+    "summary": "Comentário breve sobre mudança de direção estratégica da plataforma Lovable e seu paralelo com outras soluções de IA.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-120363408138765885-g-us-2026-03-23-001",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-23T15:38:09.000Z",
+    "authors": [
+      "Max Ferreira",
+      "Leonardo Bora",
+      "Bruno Gomes",
+      "Roney",
+      "Wesley",
+      ".",
+      "Leandro Gregolin",
+      "Denis B",
+      "Edd Martins",
+      "Dedé",
+      "Pastor Paulo Coutinho",
+      "Lucas Yoshioka",
+      "Bruno Lauria",
+      "Bruna ",
+      "Ana",
+      "Daniel Resende",
+      "Lucas Rodrigues",
+      "Armando",
+      "Igor Carvalho",
+      "Marcelo",
+      "Bruno Lopau",
+      "Mário Lúcio",
+      "Breno",
+      "Mauro Couto",
+      "Roni ",
+      "JorgeX 😎",
+      "Lucas",
+      "Victor Segatti"
+    ],
+    "tags": [
+      "ia e automação",
+      "impacto social",
+      "layoffs",
+      "segurança de código",
+      "futuro do trabalho"
+    ],
+    "topic": "Debate entre desenvolvedores sobre impactos sociais e econômicos da IA, incluindo preocupações com layoffs, qualidade de código gerado por IA, e oportunidades em profissões humanas e terapia psicológica.",
+    "summary": "Debate entre desenvolvedores sobre impactos sociais e econômicos da IA, incluindo preocupações com layoffs, qualidade de código gerado por IA, e oportunidades em profissões humanas e terapia psicológica.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/posts/a-messina_salve-este-post-se-voc%C3%AA-quiser-se-tornar-share-7441811157616713728-hVRq?utm_source=share&utm_medium=member_android&rcm=ACoAAAtBqHYBlYbaCOmruTt8S8AEVFeRqhnsyLI"
+      },
+      {
+        "url": "https://80000hours.org/problem-profiles/."
+      },
+      {
+        "url": "https://gitingest.com/"
+      },
+      {
+        "url": "https://www.linkedin.com/pulse/como-eu-crio-novas-aplica%C3%A7%C3%B5es-com-ia-partir-de-base-j%C3%A1-paulo-coutinho-dpbaf/?trackingId=bwWXs8xAflnHHvBNRqaxfw%3D%3D"
+      }
+    ],
+    "messageCount": 100
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-23-022",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-23T14:03:29.000Z",
+    "authors": [
+      "Marcell Almeida",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "no-code platforms",
+      "lovable",
+      "g4 os",
+      "adapta",
+      "low-code",
+      "glean"
+    ],
+    "topic": "Análise crítica sobre diferenciação de plataformas low-code/no-code como Lovable e G4 OS (Adapta), com questionamento sobre viabilidade de construir aplicações web sem conhecimento técnico relevante.",
+    "summary": "Análise crítica sobre diferenciação de plataformas low-code/no-code como Lovable e G4 OS (Adapta), com questionamento sobre viabilidade de construir aplicações web sem conhecimento técnico relevante.",
+    "links": [
+      {
+        "url": "https://x.com/rodrigofm/status/2036080307409953127"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-23-021",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-23T11:07:18.000Z",
+    "authors": [
+      "Sérgio Lopes",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "opensource",
+      "agentes de ia",
+      "bots",
+      "pull requests",
+      "contribuição comunitária",
+      "simulação"
+    ],
+    "topic": "Debate sobre motivações de usar bots para contribuir em projetos opensource (status, sobrecarga de PRs, ou falta de conhecimento) e efetividade de simulações realistas para treinamento de engenheiros (comparação com empresa israelense que criava jogos tipo Slack fake para oncall).",
+    "summary": "Debate sobre motivações de usar bots para contribuir em projetos opensource (status, sobrecarga de PRs, ou falta de conhecimento) e efetividade de simulações realistas para treinamento de engenheiros (comparação com empresa israelense que criava jogos tipo Slack fake para oncall).",
+    "links": [],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-21-004",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-21T21:11:26.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "padrão cognitivo",
+      "uso de ia",
+      "reflexão pessoal"
+    ],
+    "topic": "Breve exchange pessoal sobre um padrão cognitivo recorrente que Paulo experimenta, com concordância de Fabrício. Contexto específico não disponível (mensagem anterior não incluída).",
+    "summary": "Breve exchange pessoal sobre um padrão cognitivo recorrente que Paulo experimenta, com concordância de Fabrício. Contexto específico não disponível (mensagem anterior não incluída).",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-21-013",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-21T11:03:12.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "modelo de linguagem",
+      "kimi foundation",
+      "cursor",
+      "estratégia de produto",
+      "pricing",
+      "developer experience"
+    ],
+    "topic": "Discussão sobre investimento de US$100M+ da Moonshot no modelo Kimi, estratégia de pricing agressivo para adoção, e como Cursor agrega valor via UX mesmo utilizando modelos open-source baratos. Foca na diferença entre vender infraestrutura (modelo) versus produto (experiência).",
+    "summary": "Discussão sobre investimento de US$100M+ da Moonshot no modelo Kimi, estratégia de pricing agressivo para adoção, e como Cursor agrega valor via UX mesmo utilizando modelos open-source baratos. Foca na diferença entre vender infraestrutura (modelo) versus produto (experiência).",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/posts/luisalbinati_moonshot-burns-100m-training-the-kimi-foundation-share-7441049880053272576-KYV_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-21-011",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-21T00:48:51.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Sérgio Lopes"
+    ],
+    "tags": [
+      "modelo de linguagem",
+      "pricing",
+      "kimi",
+      "composer",
+      "comparação de modelos"
+    ],
+    "topic": "Reação a vídeo comparativo entre Bernie e Claude, com comentário crítico sobre Kimi 2.5 custar mais que o dobro do preço original e análise de diferenças entre Composer e Kimi.",
+    "summary": "Reação a vídeo comparativo entre Bernie e Claude, com comentário crítico sobre Kimi 2.5 custar mais que o dobro do preço original e análise de diferenças entre Composer e Kimi.",
+    "links": [
+      {
+        "url": "https://youtu.be/h3AtWdeu_G0?si=6vO-_lHE4KLNX92M"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-20-007",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-20T17:41:45.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "maturidade de ia",
+      "engenharia de software",
+      "métricas de ia",
+      "github",
+      "ralph tool",
+      "codex"
+    ],
+    "topic": "Discussão sobre criação de tenant no Ralph Console (StartSe) para validar uso de IA em engenharia, e desenvolvimento de Score de Maturidade de uso de IA baseado em regras. Anthropic levanta métricas via GitHub; exploram possibilidade de estender para Alura e Lumina.",
+    "summary": "Discussão sobre criação de tenant no Ralph Console (StartSe) para validar uso de IA em engenharia, e desenvolvimento de Score de Maturidade de uso de IA baseado em regras. Anthropic levanta métricas via GitHub; exploram possibilidade de estender para Alura e Lumina.",
+    "links": [],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-20-005",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-20T10:47:50.000Z",
+    "authors": [
+      "Guilherme Silveira",
+      "Mauricio Aniche",
+      "Paulo Silveira",
+      "Sérgio Lopes",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "agentes de ia",
+      "segurança de código",
+      "hallucinations",
+      "modelo de linguagem",
+      "engenharia de software",
+      "testing",
+      "cursor"
+    ],
+    "topic": "Discussão técnica sobre acúmulo de alucinações em processos de IA, estratégias de validação de segurança com abordagens desacopladas, e comparação de modelos de coding (Cursor Composer, Codex, modelos chineses). Questiona quando múltiplos agentes de segurança são necessários versus overkill para features simples.",
+    "summary": "Discussão técnica sobre acúmulo de alucinações em processos de IA, estratégias de validação de segurança com abordagens desacopladas, e comparação de modelos de coding (Cursor Composer, Codex, modelos chineses). Questiona quando múltiplos agentes de segurança são necessários versus overkill para features simples.",
+    "links": [
+      {
+        "url": "https://cursor.com/pt-BR/blog/composer-2"
+      }
+    ],
+    "messageCount": 23
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-20-001",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-20T10:37:49.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "pricing",
+      "cursor composer",
+      "competição de preço",
+      "modelo de linguagem"
+    ],
+    "topic": "Reação rápida ao lançamento do Cursor Composer 2 com observação de que há corrida de preços para baixo na indústria de modelos de linguagem para coding.",
+    "summary": "Reação rápida ao lançamento do Cursor Composer 2 com observação de que há corrida de preços para baixo na indústria de modelos de linguagem para coding.",
+    "links": [
+      {
+        "url": "https://cursor.com/pt-BR/blog/composer-2"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-20-004",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-20T02:19:15.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Sérgio Lopes"
+    ],
+    "tags": [
+      "migração de plataforma",
+      "astro",
+      "claude code",
+      "economia de custos",
+      "guj"
+    ],
+    "topic": "Paulo migrou GUJ.com.br (forum de programação Java) de dinâmico para Astro estático usando única sessão Claude 1M contexto. Economia projetada de ~40k/ano. Site já operacional em guj-estatico.fly.dev.",
+    "summary": "Paulo migrou GUJ.com.br (forum de programação Java) de dinâmico para Astro estático usando única sessão Claude 1M contexto. Economia projetada de ~40k/ano. Site já operacional em guj-estatico.fly.dev.",
+    "links": [
+      {
+        "url": "https://guj-estatico.fly.dev/"
+      }
+    ],
+    "messageCount": 5
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-20-003",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-20T00:46:33.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Mauricio Aniche",
+      "Rafael Ribeiro"
+    ],
+    "tags": [
+      "comunidade",
+      "builders sp",
+      "crescimento"
+    ],
+    "topic": "Grupo Builders SP cresceu significativamente (encheu) após post de Paulo. Fabrício comemora e planeja converter em comunidade oficial e criar novo grupo.",
+    "summary": "Grupo Builders SP cresceu significativamente (encheu) após post de Paulo. Fabrício comemora e planeja converter em comunidade oficial e criar novo grupo.",
+    "links": [],
+    "messageCount": 9
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-19-002",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-19T23:57:47.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "anthropic",
+      "desenvolvimento de ia",
+      "concorrência"
+    ],
+    "topic": "Paulo nota que Anthropic está implementando recursos que o grupo já utiliza, sinalizando ritmo acelerado de inovação na plataforma Claude.",
+    "summary": "Paulo nota que Anthropic está implementando recursos que o grupo já utiliza, sinalizando ritmo acelerado de inovação na plataforma Claude.",
+    "links": [
+      {
+        "url": "https://x.com/i/status/2034761016320696565"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-19-001",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-19T19:51:52.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Sérgio Lopes",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "ralph",
+      "métricas de agentes",
+      "prd",
+      "rastreamento de execução",
+      "qualidade"
+    ],
+    "topic": "Rafael apresenta PoC 'Ralph' para rastrear execução de agentes além de velocidade: PRD planejado vs. resultados reais até deploy, capturando intenção do agente vs. apenas artefatos. Executa via Claude Code em arquivo remoto.",
+    "summary": "Rafael apresenta PoC 'Ralph' para rastrear execução de agentes além de velocidade: PRD planejado vs. resultados reais até deploy, capturando intenção do agente vs. apenas artefatos. Executa via Claude Code em arquivo remoto.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/posts/introducing-javaclaw-an-open-source-ai-agent-share-7440425643374366720-HjmH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+      }
+    ],
+    "messageCount": 8
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-19-043",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-19T18:51:08.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "design system",
+      "paper design",
+      "agentes de ia",
+      "n8n",
+      "flowise",
+      "make",
+      "ui-ux"
+    ],
+    "topic": "Rafael compartilha protótipo de redesign para o toolkit StartSe (repositório de +300 templates de agentes e automações n8n/flowise/make) usando Paper.design e MCP. Também discute estudo Laravel sobre impacto de modelos LLM em documentação e contexto.",
+    "summary": "Rafael compartilha protótipo de redesign para o toolkit StartSe (repositório de +300 templates de agentes e automações n8n/flowise/make) usando Paper.design e MCP. Também discute estudo Laravel sobre impacto de modelos LLM em documentação e contexto.",
+    "links": [
+      {
+        "url": "https://laravel.com/blog/which-ai-model-is-best-for-laravel"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-19-045",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-19T18:51:08.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "design agentic",
+      "paper mcp",
+      "startse toolkit",
+      "n8n",
+      "templates"
+    ],
+    "topic": "Rafael utiliza Claude Code com MCP do Paper para redesenhar toolkit StartSe (300+ templates de agentes/automações n8n/Flowise). Compartilha estudo Laravel sobre qual modelo IA é melhor para desenvolvimento, destacando importância de contexto/documentação.",
+    "summary": "Rafael utiliza Claude Code com MCP do Paper para redesenhar toolkit StartSe (300+ templates de agentes/automações n8n/Flowise). Compartilha estudo Laravel sobre qual modelo IA é melhor para desenvolvimento, destacando importância de contexto/documentação.",
+    "links": [
+      {
+        "url": "https://laravel.com/blog/which-ai-model-is-best-for-laravel"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-120363154248832196-g-us-2026-03-19-001",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-19T18:13:08.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Sérgio Lopes"
+    ],
+    "tags": [
+      "google ai studio",
+      "agentes de ia",
+      "firebase",
+      "cloud run",
+      "full-stack apps",
+      "antigravity"
+    ],
+    "topic": "Fabrício Carraro apresenta upgrade completo do Google AI Studio com novo agente Antigravity para transformar prompts em apps full-stack prontos para produção, incluindo suporte a Firebase, Cloud Firestore e autenticação.",
+    "summary": "Fabrício Carraro apresenta upgrade completo do Google AI Studio com novo agente Antigravity para transformar prompts em apps full-stack prontos para produção, incluindo suporte a Firebase, Cloud Firestore e autenticação.",
+    "links": [
+      {
+        "url": "https://github.com/ledmaster/ml-mania-2026"
+      },
+      {
+        "url": "https://x.com/i/status/2034634698471911858"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-19-001",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-19T18:13:08.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Sérgio Lopes"
+    ],
+    "tags": [
+      "google ai studio",
+      "agentes de ia",
+      "full-stack",
+      "firebase",
+      "multiplayer"
+    ],
+    "topic": "Novo agente no Google AI Studio permite criar apps full-stack completos com UI e Firebase, com capacidades de multiplayer e integração de APIs third-party.",
+    "summary": "Novo agente no Google AI Studio permite criar apps full-stack completos com UI e Firebase, com capacidades de multiplayer e integração de APIs third-party.",
+    "links": [
+      {
+        "url": "https://github.com/ledmaster/ml-mania-2026"
+      },
+      {
+        "url": "https://x.com/i/status/2034634698471911858"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-120363408138765885-g-us-2026-03-19-001",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-19T16:27:22.000Z",
+    "authors": [
+      "Edu",
+      "Igor Carvalho",
+      "~",
+      "Felipe Ferro",
+      "Enzo Baião",
+      "Everton Carneiro",
+      "Gustavo Brandão",
+      "Hugo",
+      "Rodrigo Meza",
+      "gabriel souza",
+      "Alan",
+      "Emanuel Azevedo",
+      "Matheus Hunger",
+      "Bruno Lauria",
+      "Mêndel Narciso",
+      "Fábio Perez",
+      "Cleyson Diego 😄",
+      "Mauricio Aniche",
+      "Hugo Fernandes",
+      "Natelson Nascimento",
+      "Júlio Neto",
+      "perez",
+      "Patrick",
+      "Pastor Paulo Coutinho",
+      "Gustavo Barros",
+      "Alan Alves",
+      "Gustavo Arruda",
+      "Kaique Covo",
+      "Jane",
+      "Gabriel Masson",
+      "Wagner Alves",
+      "Breno",
+      "Jason Jkp Tecnologia",
+      "FB",
+      "Helder Santos"
+    ],
+    "tags": [
+      "agentes de ia",
+      "casos de uso de ia",
+      "modelos preditivos",
+      "ia generativa",
+      "claude code",
+      "automação"
+    ],
+    "topic": "Discussão em comunidade sobre casos de uso reais de IA, diferenciando entre IA generativa e modelos preditivos, com foco em problemas que realmente são solucionados por IA e o papel do humano no loop de decisão.",
+    "summary": "Discussão em comunidade sobre casos de uso reais de IA, diferenciando entre IA generativa e modelos preditivos, com foco em problemas que realmente são solucionados por IA e o papel do humano no loop de decisão.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/posts/bruno-luciano-primesz-lauria-866449138_genie-code-skills-contextualiza%C3%A7%C3%A3o-activity-7440434716815618048-Nk9U?utm_source=share&utm_medium=member_ios&rcm=ACoAACGGdY4ByWzwKYDTQhEbXuXjoGiEhLkgRXU"
+      },
+      {
+        "url": "https://www.linkedin.com/posts/mendeloliveira_cto-founder-startuplife-activity-7440430092012466176-EayV?utm_medium=ios_app&rcm=ACoAAAVGWq8BUz2KYNdNmFEK_MjvN5hDLcBb86Q&utm_source=social_share_send&utm_campaign=whatsapp"
+      },
+      {
+        "url": "https://mauricioaniche.com/publications"
+      },
+      {
+        "url": "https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Fgithub%2Ecom%2FWorld-Open-Graph%2Fbr-acc&urlhash=Asm9&mt=0k-qa3K4BOv1fzccawyK-CTu4WdNSEFP0j0ld_Ff7kxsZMiy1JdzfJJUkl5wW2IRZMW-kjXbkXjOuRPXEiQBoruzZwNuH1tE_WI3-pNm5uoLbkCqDX8-UF4oD-Tt-iv_c1ceD5Ek-CMasxLWXKjUZy10jWYQmvyy63Dn-vl_gTI&isSdui=true"
+      },
+      {
+        "url": "https://github.com/ionclaw-org/ionclaw?"
+      },
+      {
+        "url": "https://x.com/FelipeBossolani/status/2034711122071204070"
+      }
+    ],
+    "messageCount": 60
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-19-014",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-19T15:18:20.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Guilherme Silveira",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "inteligência artificial",
+      "metaverso",
+      "modelos de visão",
+      "pesquisa em ia",
+      "google",
+      "meta"
+    ],
+    "topic": "Discussão sobre avanços recentes em IA generativa (Google Genie 3 e V-JEPA 2.1) e o abandono do projeto Horizon de metaverso social pela Meta, refletindo sobre o futuro dessas tecnologias.",
+    "summary": "Discussão sobre avanços recentes em IA generativa (Google Genie 3 e V-JEPA 2.1) e o abandono do projeto Horizon de metaverso social pela Meta, refletindo sobre o futuro dessas tecnologias.",
+    "links": [
+      {
+        "url": "https://x.com/i/status/2034616934671724639"
+      },
+      {
+        "url": "https://www.linkedin.com/posts/yann-lecun_v-jepa-21-a-new-jepa-model-trained-on-video-share-7440421828961062913-UWrA?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAYN4gsBjdkaThfPE5ce2OYKK86wggoZsOA&utm_campaign=copy_link"
+      }
+    ],
+    "messageCount": 8
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-19-012",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-19T11:27:42.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Mauricio Aniche",
+      "Guilherme Silveira"
+    ],
+    "tags": [
+      "inteligência artificial",
+      "llms",
+      "whatsapp",
+      "apis",
+      "engenharia de prompt",
+      "saas",
+      "product",
+      "ai agents"
+    ],
+    "topic": "Discussão sobre limitações de LLMs (Claude) ao lidar com APIs pouco documentadas e não-oficiais (Bailey's, Waha) para integração WhatsApp, e reflexão sobre o futuro de ferramentas de IA gerando skills automaticamente.",
+    "summary": "Discussão sobre limitações de LLMs (Claude) ao lidar com APIs pouco documentadas e não-oficiais (Bailey's, Waha) para integração WhatsApp, e reflexão sobre o futuro de ferramentas de IA gerando skills automaticamente.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/posts/lennyrachitsky_a-non-technical-designer-turned-300-of-my-share-7440106298962214912-Blx3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+      }
+    ],
+    "messageCount": 8
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-19-041",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-19T11:27:42.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Mauricio Aniche",
+      "Guilherme Silveira"
+    ],
+    "tags": [
+      "agentes de ia",
+      "integrações de api",
+      "whatsapp",
+      "saas de crm",
+      "documentação de código"
+    ],
+    "topic": "Análise das limitações de Claude e similares com APIs mal documentadas, exemplificado por integrações WhatsApp, e discussão sobre futuras skills de agentes.",
+    "summary": "Análise das limitações de Claude e similares com APIs mal documentadas, exemplificado por integrações WhatsApp, e discussão sobre futuras skills de agentes.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/posts/lennyrachitsky_a-non-technical-designer-turned-300-of-my-share-7440106298962214912-Blx3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+      }
+    ],
+    "messageCount": 8
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-19-011",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-19T10:30:36.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Fabrício Carraro",
+      "Paulo Silveira",
+      "Rafael Ribeiro"
+    ],
+    "tags": [
+      "agentes de ia",
+      "claude",
+      "llms",
+      "engenharia de prompt",
+      "desenvolvimento"
+    ],
+    "topic": "Discussão sobre agentes de IA (especificamente Claude) como ferramenta crítica para engenharia de software, com referência à conferência Code with Claude do Anthropic e movimento crescente de adoção na comunidade.",
+    "summary": "Discussão sobre agentes de IA (especificamente Claude) como ferramenta crítica para engenharia de software, com referência à conferência Code with Claude do Anthropic e movimento crescente de adoção na comunidade.",
+    "links": [
+      {
+        "url": "https://x.com/brian_scanlan/status/2033978300003987527?s=46"
+      },
+      {
+        "url": "https://claude.com/code-with-claude"
+      }
+    ],
+    "messageCount": 7
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-19-040",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-19T10:30:36.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Fabrício Carraro",
+      "Paulo Silveira",
+      "Rafael Ribeiro"
+    ],
+    "tags": [
+      "agentes de ia",
+      "software engineering",
+      "claude code",
+      "comunidade",
+      "x/twitter"
+    ],
+    "topic": "Discussão sobre software engineering em contexto de agentes de IA e tráfego recente no grupo gerado por post de Paulo Silveira no X sobre Claude Code. Referência a evento Code w/ Claude da Anthropic.",
+    "summary": "Discussão sobre software engineering em contexto de agentes de IA e tráfego recente no grupo gerado por post de Paulo Silveira no X sobre Claude Code. Referência a evento Code w/ Claude da Anthropic.",
+    "links": [
+      {
+        "url": "https://x.com/brian_scanlan/status/2033978300003987527?s=46"
+      },
+      {
+        "url": "https://claude.com/code-with-claude"
+      }
+    ],
+    "messageCount": 7
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-19-042",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-19T10:30:36.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Fabrício Carraro",
+      "Paulo Silveira",
+      "Rafael Ribeiro"
+    ],
+    "tags": [
+      "software engineering",
+      "agentes",
+      "stromae",
+      "social media",
+      "x/twitter"
+    ],
+    "topic": "Mauricio compartilha post sobre SE em agentes; grupo cresce em WhatsApp. Paulo revela que post no X foi gerado pelo Stromae sem link. Rafael compartilha evento Claude Code with Claude.",
+    "summary": "Mauricio compartilha post sobre SE em agentes; grupo cresce em WhatsApp. Paulo revela que post no X foi gerado pelo Stromae sem link. Rafael compartilha evento Claude Code with Claude.",
+    "links": [
+      {
+        "url": "https://x.com/brian_scanlan/status/2033978300003987527?s=46"
+      },
+      {
+        "url": "https://claude.com/code-with-claude"
+      }
+    ],
+    "messageCount": 7
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-009",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T17:38:36.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Rafael Ribeiro",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "llms",
+      "copilot",
+      "claude",
+      "engenharia de prompt",
+      "developer experience",
+      "ferramentas de ia"
+    ],
+    "topic": "Discussão sobre melhorias em métricas e relatórios de atividade em ferramentas de IA como Claude Code e Copilot, com avaliação crítica sobre a qualidade e utilidade dos dados gerados.",
+    "summary": "Discussão sobre melhorias em métricas e relatórios de atividade em ferramentas de IA como Claude Code e Copilot, com avaliação crítica sobre a qualidade e utilidade dos dados gerados.",
+    "links": [
+      {
+        "url": "https://signal-pulse-feed.vercel.app/recommendations"
+      }
+    ],
+    "messageCount": 8
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-038",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T17:38:36.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Rafael Ribeiro",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "agentes de ia",
+      "métricas de desempenho",
+      "claude code",
+      "copilot",
+      "comparação de ferramentas"
+    ],
+    "topic": "Discussão sobre recursos de métricas em Claude Code versus Codex, com críticas ao relatório de atividades gerado pelo Copilot.",
+    "summary": "Discussão sobre recursos de métricas em Claude Code versus Codex, com críticas ao relatório de atividades gerado pelo Copilot.",
+    "links": [
+      {
+        "url": "https://signal-pulse-feed.vercel.app/recommendations"
+      }
+    ],
+    "messageCount": 8
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-040",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T17:38:36.000Z",
+    "authors": [
+      "Fabrício Carraro",
+      "Rafael Ribeiro",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "métricas de agentes",
+      "claude code",
+      "copilot",
+      "atividade",
+      "qualidade"
+    ],
+    "topic": "Equipe analisa melhorias nas métricas do Claude Code e compara com Copilot. Discussão sobre qualidade de relatórios de activity/productivity gerados por ferramentas de IA.",
+    "summary": "Equipe analisa melhorias nas métricas do Claude Code e compara com Copilot. Discussão sobre qualidade de relatórios de activity/productivity gerados por ferramentas de IA.",
+    "links": [
+      {
+        "url": "https://signal-pulse-feed.vercel.app/recommendations"
+      }
+    ],
+    "messageCount": 8
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-006",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T13:38:46.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "5511983358086",
+      "Mauricio Aniche",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "educação",
+      "tecnologia",
+      "comunidade",
+      "desenvolvimento"
+    ],
+    "topic": "Paulo Silveira coordena coleta de dados de contato (telefone, LinkedIn, GitHub, X) de membros da comunidade Clauders para integração em uma plataforma interna chamada 'stromae', que está em fase final de implementação.",
+    "summary": "Paulo Silveira coordena coleta de dados de contato (telefone, LinkedIn, GitHub, X) de membros da comunidade Clauders para integração em uma plataforma interna chamada 'stromae', que está em fase final de implementação.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/in/mauricioaniche/"
+      }
+    ],
+    "messageCount": 5
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-035",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T13:38:46.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Sergio Lopes",
+      "Mauricio Aniche",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "integração de sistemas",
+      "autenticação",
+      "github",
+      "dados pessoais",
+      "onboarding"
+    ],
+    "topic": "Solicitação de informações pessoais (telefone, LinkedIn, Twitter, GitHub) para integração com sistema Stromae, com participantes compartilhando seus dados de contato.",
+    "summary": "Solicitação de informações pessoais (telefone, LinkedIn, Twitter, GitHub) para integração com sistema Stromae, com participantes compartilhando seus dados de contato.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/in/mauricioaniche/"
+      }
+    ],
+    "messageCount": 5
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-037",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T13:38:46.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Sérgio Lopes",
+      "Mauricio Aniche",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "stromae",
+      "integrações sociais",
+      "github",
+      "linkedin",
+      "twitter"
+    ],
+    "topic": "Paulo comunica lançamento iminente do 'sisteminha do stromae' e solicita dados de contato (telefone, LinkedIn, Twitter, GitHub) da equipe para integração.",
+    "summary": "Paulo comunica lançamento iminente do 'sisteminha do stromae' e solicita dados de contato (telefone, LinkedIn, Twitter, GitHub) da equipe para integração.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/in/mauricioaniche/"
+      }
+    ],
+    "messageCount": 5
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-005",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T12:35:27.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "agentes de ia",
+      "ferramentas de desenvolvimento",
+      "claude",
+      "ia para programação",
+      "produtividade"
+    ],
+    "topic": "Paulo Silveira está gravando episódio sobre ferramentas de IA para desenvolvimento (Claude, Codex) e convida representantes para participar; descobre Maestri, um canvas colaborativo para orquestrar múltiplos agentes de código simultaneamente.",
+    "summary": "Paulo Silveira está gravando episódio sobre ferramentas de IA para desenvolvimento (Claude, Codex) e convida representantes para participar; descobre Maestri, um canvas colaborativo para orquestrar múltiplos agentes de código simultaneamente.",
+    "links": [
+      {
+        "url": "https://www.themaestri.app/pt-br"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-034",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T12:35:27.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Marcell Pm3"
+    ],
+    "tags": [
+      "agentes de ia",
+      "ferramentas de codificação",
+      "claude",
+      "produção de conteúdo",
+      "recrutamento de especialistas"
+    ],
+    "topic": "Paulo Silveira convida representantes para participar de episódio sobre ferramentas de IA como Claude e Codex, com sugestão de ferramenta Maestri para gerenciamento de agentes.",
+    "summary": "Paulo Silveira convida representantes para participar de episódio sobre ferramentas de IA como Claude e Codex, com sugestão de ferramenta Maestri para gerenciamento de agentes.",
+    "links": [
+      {
+        "url": "https://www.themaestri.app/pt-br"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-036",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T12:35:27.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Marcell Pm3"
+    ],
+    "tags": [
+      "ferramentas de ia",
+      "agentes de código",
+      "maestri",
+      "terminal",
+      "episódio"
+    ],
+    "topic": "Paulo convida representantes para episódio sobre ferramentas de IA (Claude, Codex, etc). Marcell compartilha Maestri, um canvas para orquestrar múltiplos agentes de código com melhor gestão de contexto.",
+    "summary": "Paulo convida representantes para episódio sobre ferramentas de IA (Claude, Codex, etc). Marcell compartilha Maestri, um canvas para orquestrar múltiplos agentes de código com melhor gestão de contexto.",
+    "links": [
+      {
+        "url": "https://www.themaestri.app/pt-br"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-004",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T11:20:20.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "eventos",
+      "comunidade",
+      "educação"
+    ],
+    "topic": "Mauricio Aniche questiona sobre inscrição em evento pago via Sympla e solicita orientação sobre acesso sem custo.",
+    "summary": "Mauricio Aniche questiona sobre inscrição em evento pago via Sympla e solicita orientação sobre acesso sem custo.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-033",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T11:20:20.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "eventos",
+      "inscrição",
+      "acesso gratuito"
+    ],
+    "topic": "Breve troca sobre processo de inscrição em evento pago via Sympla com possibilidade de acesso sem custo solicitando a Pedro Paulo.",
+    "summary": "Breve troca sobre processo de inscrição em evento pago via Sympla com possibilidade de acesso sem custo solicitando a Pedro Paulo.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-002",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T05:24:52.000Z",
+    "authors": [
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "agentes de ia",
+      "rag",
+      "context engineering",
+      "startups",
+      "ferramentas brasileiras"
+    ],
+    "topic": "Mauricio Aniche destaca Tropicalia, plataforma brasileira de context engineering que conecta agentes de IA a dados heterogêneos, impressionado com a velocidade de lançamento de funcionalidades.",
+    "summary": "Mauricio Aniche destaca Tropicalia, plataforma brasileira de context engineering que conecta agentes de IA a dados heterogêneos, impressionado com a velocidade de lançamento de funcionalidades.",
+    "links": [
+      {
+        "url": "https://www.tropicalia.dev/"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-031",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T05:24:52.000Z",
+    "authors": [
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "tropicalia",
+      "context engineering",
+      "rag",
+      "startup brasileira",
+      "agentes de ia"
+    ],
+    "topic": "Discovery de Tropicalia, ferramenta brasileira de context engineering para agentes de IA que conecta múltiplas fontes de dados (estruturados e unstructured) com memória persistente e geração de contexto.",
+    "summary": "Discovery de Tropicalia, ferramenta brasileira de context engineering para agentes de IA que conecta múltiplas fontes de dados (estruturados e unstructured) com memória persistente e geração de contexto.",
+    "links": [
+      {
+        "url": "https://www.tropicalia.dev/"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-001",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T01:35:46.000Z",
+    "authors": [
+      "Marcell Almeida",
+      "Rafael Ribeiro"
+    ],
+    "tags": [
+      "claude",
+      "design system",
+      "frontend",
+      "ai-assisted design",
+      "prompt engineering",
+      "ferramentas de design"
+    ],
+    "topic": "Discussão sobre integração de design systems com Claude: desenvolvedores exploram fluxos de trabalho entre Paper e Claude, avaliando quando vale usar design systems e testando skills como Impeccable para melhorar output de design do AI.",
+    "summary": "Discussão sobre integração de design systems com Claude: desenvolvedores exploram fluxos de trabalho entre Paper e Claude, avaliando quando vale usar design systems e testando skills como Impeccable para melhorar output de design do AI.",
+    "links": [
+      {
+        "url": "https://impeccable.style/"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-030",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T00:20:42.000Z",
+    "authors": [
+      "Marcell Pm3",
+      "Fabrício Carraro",
+      "Mauricio Aniche",
+      "Rafael Ribeiro"
+    ],
+    "tags": [
+      "claude mcp",
+      "design tools",
+      "paper design",
+      "seo",
+      "blog strategy",
+      "agentes de ia",
+      "ferramentas de desenvolvimento"
+    ],
+    "topic": "Discussão sobre estratégia de blog para a Alun e PM3, com foco em conteúdo sobre IA e coding. Equipe compartilha experiências com ferramentas como Paper.design e Claude MCP, discutindo trade-offs de token consumption e fluxos de design.",
+    "summary": "Discussão sobre estratégia de blog para a Alun e PM3, com foco em conteúdo sobre IA e coding. Equipe compartilha experiências com ferramentas como Paper.design e Claude MCP, discutindo trade-offs de token consumption e fluxos de design.",
+    "links": [
+      {
+        "url": "https://code.claude.com/docs/en/remote-control"
+      },
+      {
+        "url": "https://paper.design/"
+      },
+      {
+        "url": "http://127.0.0.1:29979/mcp"
+      },
+      {
+        "url": "https://impeccable.style/"
+      }
+    ],
+    "messageCount": 20
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-18-032",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-18T00:20:42.000Z",
+    "authors": [
+      "Marcell Pm3",
+      "Fabrício Carraro",
+      "Mauricio Aniche",
+      "Rafael Ribeiro"
+    ],
+    "tags": [
+      "mcp",
+      "design com ia",
+      "claude code",
+      "paper design",
+      "tokens",
+      "frontend skills"
+    ],
+    "topic": "Equipe explora ferramentas de design com MCP no Claude Code (Paper.design, impeccable.style). Rafael testa Remote Control do Claude Code e integração MCP para design; Marcell compartilha preocupações sobre consumo de tokens e quando design system/colaboração de design justificam a abordagem.",
+    "summary": "Equipe explora ferramentas de design com MCP no Claude Code (Paper.design, impeccable.style). Rafael testa Remote Control do Claude Code e integração MCP para design; Marcell compartilha preocupações sobre consumo de tokens e quando design system/colaboração de design justificam a abordagem.",
+    "links": [
+      {
+        "url": "https://code.claude.com/docs/en/remote-control"
+      },
+      {
+        "url": "https://paper.design/"
+      },
+      {
+        "url": "http://127.0.0.1:29979/mcp"
+      },
+      {
+        "url": "https://impeccable.style/"
+      }
+    ],
+    "messageCount": 20
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-17-029",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-17T20:35:09.000Z",
+    "authors": [
+      "Marcell Pm3",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "claude code",
+      "portabilidade de sessão",
+      "git workflow",
+      "notificações telegram",
+      "continuidade"
+    ],
+    "topic": "Solução prática para transição entre máquinas em sessões Claude: documentar contexto em arquivo Claude.md, fazer commit no git, e usar Telegram bot para notificações de tarefas finalizadas.",
+    "summary": "Solução prática para transição entre máquinas em sessões Claude: documentar contexto em arquivo Claude.md, fazer commit no git, e usar Telegram bot para notificações de tarefas finalizadas.",
+    "links": [],
+    "messageCount": 11
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-17-031",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-17T20:35:09.000Z",
+    "authors": [
+      "Marcell Pm3",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "fluxo de trabalho com ia",
+      "claude",
+      "continuidade de contexto",
+      "git",
+      "notificações"
+    ],
+    "topic": "Marcell e Paulo discutem estratégias para manter contexto ao trocar de máquina durante trabalho com Claude, incluindo commits no Git, uso de Claude.md e notificações via Telegram.",
+    "summary": "Marcell e Paulo discutem estratégias para manter contexto ao trocar de máquina durante trabalho com Claude, incluindo commits no Git, uso de Claude.md e notificações via Telegram.",
+    "links": [],
+    "messageCount": 11
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-17-006",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-17T11:34:49.000Z",
+    "authors": [
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "ia",
+      "segurança de ia",
+      "governança de ia",
+      "controle"
+    ],
+    "topic": "Fabrício Carraro compartilha imagens relacionadas a controle e governança de sistemas de IA, provavelmente conteúdo educativo ou de pesquisa.",
+    "summary": "Fabrício Carraro compartilha imagens relacionadas a controle e governança de sistemas de IA, provavelmente conteúdo educativo ou de pesquisa.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-16-005",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-16T23:40:19.000Z",
+    "authors": [
+      "Marcus Mendes",
+      "Fabrício Carraro",
+      "Guilherme Silveira"
+    ],
+    "tags": [
+      "llms",
+      "chatgpt",
+      "casos de uso",
+      "decisões empresariais",
+      "direito"
+    ],
+    "topic": "CEO de publisher de games usou ChatGPT para contornar contrato de $250 milhões e perdeu na justiça, ilustrando riscos de confiar em LLMs para decisões legais críticas sem orientação profissional.",
+    "summary": "CEO de publisher de games usou ChatGPT para contornar contrato de $250 milhões e perdeu na justiça, ilustrando riscos de confiar em LLMs para decisões legais críticas sem orientação profissional.",
+    "links": [
+      {
+        "url": "https://www.404media.co/ceo-ignores-lawyers-asks-chatgpt-how-to-void-250-million-contract-loses-terribly-in-court/"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-16-026",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-16T21:43:54.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Paulo Silveira",
+      "Marcell Pm3"
+    ],
+    "tags": [
+      "software agentic",
+      "adoção em empresas",
+      "code review",
+      "guardrails de ia",
+      "uber"
+    ],
+    "topic": "Insights sobre adoção de agentes de software no Uber (1.800 code changes/semana, 95% de engineers usando IA mensalmente), com reflexão sobre necessidade de revisão de código, guardrails de qualidade, e uso de CLI vs IDE.",
+    "summary": "Insights sobre adoção de agentes de software no Uber (1.800 code changes/semana, 95% de engineers usando IA mensalmente), com reflexão sobre necessidade de revisão de código, guardrails de qualidade, e uso de CLI vs IDE.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/posts/pneppalli_agentic-software-engineering-adoption-is-activity-7439402236541157376-6PwV?utm_source=share&utm_medium=member_ios&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+      }
+    ],
+    "messageCount": 11
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-16-028",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-16T21:43:54.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Paulo Silveira",
+      "Marcell Pm3"
+    ],
+    "tags": [
+      "agentes de ia",
+      "engenharia de software agentic",
+      "revisão de código",
+      "ide e cli",
+      "uber"
+    ],
+    "topic": "Discussão sobre adoção de IA agentic na Uber com 1800 mudanças de código por semana. Mauricio compartilha experiências sobre adoção de agentes, necessidade de guardrails de qualidade, e debate sobre uso de IDEs vs CLIs para agentes de IA.",
+    "summary": "Discussão sobre adoção de IA agentic na Uber com 1800 mudanças de código por semana. Mauricio compartilha experiências sobre adoção de agentes, necessidade de guardrails de qualidade, e debate sobre uso de IDEs vs CLIs para agentes de IA.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/posts/pneppalli_agentic-software-engineering-adoption-is-activity-7439402236541157376-6PwV?utm_source=share&utm_medium=member_ios&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+      }
+    ],
+    "messageCount": 11
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-16-034",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-16T21:43:54.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Paulo Silveira",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "agentes de ia",
+      "engenharia de prompt",
+      "linkedin",
+      "content creation",
+      "desenvolvimento de software",
+      "code review"
+    ],
+    "topic": "Discussão sobre uso de agentes de IA para transformar anotações informais em conteúdo polido para LinkedIn, com insights sobre adoção de IA no Uber e importância de guardrails em revisão de código.",
+    "summary": "Discussão sobre uso de agentes de IA para transformar anotações informais em conteúdo polido para LinkedIn, com insights sobre adoção de IA no Uber e importância de guardrails em revisão de código.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/posts/pneppalli_agentic-software-engineering-adoption-is-activity-7439402236541157376-6PwV?utm_source=share&utm_medium=member_ios&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+      }
+    ],
+    "messageCount": 11
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-16-025",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-16T11:38:59.000Z",
+    "authors": [
+      "Marcell Pm3",
+      "Guilherme Silveira",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "aprendizado adaptativo",
+      "currículo de ia",
+      "marketing hype",
+      "simulação educacional"
+    ],
+    "topic": "Análise crítica de projeto viral no X que simula aprendizado de estudantes zero-shot com currículo adaptativo via IA, questionando se agente está realmente ignorando conhecimento pré-treinado e identificando flaws na narrativa de marketing.",
+    "summary": "Análise crítica de projeto viral no X que simula aprendizado de estudantes zero-shot com currículo adaptativo via IA, questionando se agente está realmente ignorando conhecimento pré-treinado e identificando flaws na narrativa de marketing.",
+    "links": [
+      {
+        "url": "https://x.com/austina_way/status/2032956287168675945?s=46"
+      }
+    ],
+    "messageCount": 23
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-16-032",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-16T11:38:59.000Z",
+    "authors": [
+      "Marcell Almeida",
+      "Guilherme Silveira",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "inteligência artificial",
+      "llms",
+      "educação",
+      "agentes de ia",
+      "engenharia de prompt",
+      "aprendizado de máquina"
+    ],
+    "topic": "Discussão crítica sobre uma abordagem viral de usar LLMs para simular alunos aprendendo do zero, destacando problemas metodológicos e marketing enganoso na proposta.",
+    "summary": "Discussão crítica sobre uma abordagem viral de usar LLMs para simular alunos aprendendo do zero, destacando problemas metodológicos e marketing enganoso na proposta.",
+    "links": [
+      {
+        "url": "https://x.com/austina_way/status/2032956287168675945?s=46"
+      }
+    ],
+    "messageCount": 23
+  },
+  {
+    "id": "wa-clauders-2026-03-14-paulo-silveira-compartilha-materia-sobre-uso-de-ai",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-15T21:10:29.642Z",
+    "authors": [
+      "Paulo Silveira",
+      "Guilherme Silveira"
+    ],
+    "tags": [
+      "crítica de mídia",
+      "desinformação em ia",
+      "jornalismo científico",
+      "ceticismo tecnológico"
+    ],
+    "topic": "Paulo Silveira compartilha artigo sobre uso de IA para criar vacina de câncer em cão; Guilherme Silveira alerta criticamente sobre riscos de sensacionalismo em notícias de tecnologia que prometem curas milagrosas e abertura para curandeirismo.",
+    "summary": "Paulo Silveira compartilha artigo sobre uso de IA para criar vacina de câncer em cão; Guilherme Silveira alerta criticamente sobre riscos de sensacionalismo em notícias de tecnologia que prometem curas milagrosas e abertura para curandeirismo.",
+    "links": [
+      {
+        "url": "https://www.theaustralian.com.au/business/technology/tech-boss-uses-ai-and-chatgpt-to-create-cancer-vaccine-for-his-dying-dog/news-story/292a21bcbe93efa17810bfcfcdfadbf7"
+      }
+    ],
+    "messageCount": 1
+  },
+  {
+    "id": "wa-clauders-2026-03-14-marcell-almeida-compartilha-pagina-de-vagas-de-emp",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-15T21:10:29.641Z",
+    "authors": [
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "mercado de trabalho",
+      "ia e emprego",
+      "visualização de dados",
+      "bureau of labor statistics"
+    ],
+    "topic": "Marcell Almeida compartilha ferramenta de visualização do mercado de trabalho americano que usa LLM para avaliar exposição de ocupações à IA. Utilitário prático para explorar riscos e oportunidades profissionais em contexto de automação.",
+    "summary": "Marcell Almeida compartilha ferramenta de visualização do mercado de trabalho americano que usa LLM para avaliar exposição de ocupações à IA. Utilitário prático para explorar riscos e oportunidades profissionais em contexto de automação.",
+    "links": [
+      {
+        "url": "https://karpathy.ai/jobs/"
+      }
+    ],
+    "messageCount": 1
+  },
+  {
+    "id": "wa-clauders-2026-03-14-rafael-ribeiro-compartilha-promocao-da-anthropic-c",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-15T21:10:29.641Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Paulo Silveira",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "promoção anthropic",
+      "claude",
+      "pricing strategy",
+      "retenção de usuários"
+    ],
+    "topic": "Rafael Ribeiro compartilha promoção da Anthropic (março 2026) oferecendo uso gratuito do Claude em horários de madrugada para retenção. Discussão sobre potencial de segmentação para usuários próximos de cancelamento.",
+    "summary": "Rafael Ribeiro compartilha promoção da Anthropic (março 2026) oferecendo uso gratuito do Claude em horários de madrugada para retenção. Discussão sobre potencial de segmentação para usuários próximos de cancelamento.",
+    "links": [
+      {
+        "url": "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
+      }
+    ],
+    "messageCount": 1
+  },
+  {
+    "id": "wa-ia-sob-controle-2026-03-14-marcus-compartilhou-noticia-sobre-bytedance-suspen",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-15T21:10:12.350Z",
+    "authors": [
+      "Marcus Mendes",
+      "Guilherme Silveira",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "copyright e ia",
+      "video generation",
+      "bytedance",
+      "regulação"
+    ],
+    "topic": "ByteDance suspende lançamento global do Seedance 2.0 devido a disputas de copyright com estúdios de Hollywood e streamers. Trending topic sobre regulação de modelos de video generation baseados em IA.",
+    "summary": "ByteDance suspende lançamento global do Seedance 2.0 devido a disputas de copyright com estúdios de Hollywood e streamers. Trending topic sobre regulação de modelos de video generation baseados em IA.",
+    "links": [
+      {
+        "url": "https://www.theinformation.com/articles/bytedance-suspends-launch-video-ai-model-copyright-disputes-hollywood"
+      },
+      {
+        "url": "https://x.com/i/status/2032949970161250625"
+      },
+      {
+        "url": "https://x.com/i/status/2033221428640674015"
+      }
+    ],
+    "messageCount": 1
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-15-022",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-15T13:13:39.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Guilherme Silveira"
+    ],
+    "tags": [
+      "ia em ciência",
+      "misinformação em saúde",
+      "vaccine research",
+      "jornalismo tecnocientífico"
+    ],
+    "topic": "Crítica saudável sobre narrativa jornalística que apresenta criação de vacina anti-câncer via ChatGPT como breakthrough, ressaltando falta de evidências rigorosas e risco de curandeirismo.",
+    "summary": "Crítica saudável sobre narrativa jornalística que apresenta criação de vacina anti-câncer via ChatGPT como breakthrough, ressaltando falta de evidências rigorosas e risco de curandeirismo.",
+    "links": [
+      {
+        "url": "https://www.theaustralian.com.au/business/technology/tech-boss-uses-ai-and-chatgpt-to-create-cancer-vaccine-for-his-dying-dog/news-story/292a21bcbe93efa17810bfcfcdfadbf7"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-15-023",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-15T13:13:39.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Guilherme Silveira"
+    ],
+    "tags": [
+      "ia em saúde",
+      "chatgpt",
+      "ceticismo científico",
+      "cancer",
+      "jornalismo de tecnologia"
+    ],
+    "topic": "Paulo e Guilherme discutem crítica ao artigo da The Australian sobre uso de IA/ChatGPT para criar vacina contra câncer em cão. Guilherme alerta para risco de desinformação e curandorismo em notícias sensacionalistas sobre IA e saúde.",
+    "summary": "Paulo e Guilherme discutem crítica ao artigo da The Australian sobre uso de IA/ChatGPT para criar vacina contra câncer em cão. Guilherme alerta para risco de desinformação e curandorismo em notícias sensacionalistas sobre IA e saúde.",
+    "links": [
+      {
+        "url": "https://www.theaustralian.com.au/business/technology/tech-boss-uses-ai-and-chatgpt-to-create-cancer-vaccine-for-his-dying-dog/news-story/292a21bcbe93efa17810bfcfcdfadbf7"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-15-029",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-15T13:13:39.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Guilherme Silveira"
+    ],
+    "tags": [
+      "inteligência artificial",
+      "chatgpt",
+      "misinformation",
+      "saúde",
+      "crítica de mídia"
+    ],
+    "topic": "Paulo e Guilherme discutem um artigo sobre uso de IA para criar vacina contra câncer, questionando a credibilidade da notícia e alertando sobre o risco de curandorismo na cobertura de tecnologia.",
+    "summary": "Paulo e Guilherme discutem um artigo sobre uso de IA para criar vacina contra câncer, questionando a credibilidade da notícia e alertando sobre o risco de curandorismo na cobertura de tecnologia.",
+    "links": [
+      {
+        "url": "https://www.theaustralian.com.au/business/technology/tech-boss-uses-ai-and-chatgpt-to-create-cancer-vaccine-for-his-dying-dog/news-story/292a21bcbe93efa17810bfcfcdfadbf7"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-14-019",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-14T21:45:19.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Paulo Silveira",
+      "Rafael Ribeiro",
+      "Marcell Pm3"
+    ],
+    "tags": [
+      "claude api",
+      "promoção de uso",
+      "retenção de usuários",
+      "fora de pico",
+      "estratégia comercial"
+    ],
+    "topic": "Alerta sobre promoção limitada do Claude que dobra limites de uso fora do horário de pico (8 AM-2 PM ET) até 28 de março, com potencial para segmentação futura direcionada a usuários próximos de vencer assinatura.",
+    "summary": "Alerta sobre promoção limitada do Claude que dobra limites de uso fora do horário de pico (8 AM-2 PM ET) até 28 de março, com potencial para segmentação futura direcionada a usuários próximos de vencer assinatura.",
+    "links": [
+      {
+        "url": "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-14-020",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-14T21:45:19.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Paulo Silveira",
+      "Rafael Ribeiro",
+      "Marcell Pm3"
+    ],
+    "tags": [
+      "promoção",
+      "retenção de usuários",
+      "pricing",
+      "claude api"
+    ],
+    "topic": "Discussão sobre promoção de uso duplicado do Claude (off-peak hours) e estratégias de retenção segmentada por usuários próximos do vencimento de assinatura.",
+    "summary": "Discussão sobre promoção de uso duplicado do Claude (off-peak hours) e estratégias de retenção segmentada por usuários próximos do vencimento de assinatura.",
+    "links": [
+      {
+        "url": "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-14-026",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-14T21:45:19.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Paulo Silveira",
+      "Rafael Ribeiro",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "claude",
+      "llms",
+      "retenção de usuários",
+      "estratégia de pricing"
+    ],
+    "topic": "Discussão interna sobre estratégia de retenção da Anthropic/Claude através de promoções de uso sazonais, com insights sobre segmentação por risco de churn.",
+    "summary": "Discussão interna sobre estratégia de retenção da Anthropic/Claude através de promoções de uso sazonais, com insights sobre segmentação por risco de churn.",
+    "links": [
+      {
+        "url": "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
+      }
+    ],
+    "messageCount": 6
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-14-018",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-14T20:54:35.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "claude haiku",
+      "claude sonnet",
+      "qualidade de output",
+      "agentes de ia",
+      "calibração"
+    ],
+    "topic": "Discussão crítica sobre qualidade de outputs de bot que usa modelos menores (Haiku/Sonnet) para gerar drafts e replies a partir de múltiplos signals, com questionamento sobre eficácia e relevância dos textos produzidos.",
+    "summary": "Discussão crítica sobre qualidade de outputs de bot que usa modelos menores (Haiku/Sonnet) para gerar drafts e replies a partir de múltiplos signals, com questionamento sobre eficácia e relevância dos textos produzidos.",
+    "links": [],
+    "messageCount": 10
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-14-025",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-14T20:54:35.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "llms",
+      "prompt engineering",
+      "claude",
+      "ai agents",
+      "content generation"
+    ],
+    "topic": "Paulo Silveira e Mauricio Aniche discutem a qualidade de outputs gerados por Claude (Haiku e Sonnet) para síntese de signals e draft de conteúdo, questionando se o modelo está produzindo resultados desconexos e de baixa qualidade.",
+    "summary": "Paulo Silveira e Mauricio Aniche discutem a qualidade de outputs gerados por Claude (Haiku e Sonnet) para síntese de signals e draft de conteúdo, questionando se o modelo está produzindo resultados desconexos e de baixa qualidade.",
+    "links": [],
+    "messageCount": 10
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-14-015",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-14T02:05:15.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Marcell Pm3"
+    ],
+    "tags": [
+      "claude skills",
+      "desenvolvimento de ferramentas",
+      "html",
+      "repositórios"
+    ],
+    "topic": "Compartilhamento de técnica de skill que gera arquivo HTML com informações de sessão e repositório, com plano de integração em outros fluxos.",
+    "summary": "Compartilhamento de técnica de skill que gera arquivo HTML com informações de sessão e repositório, com plano de integração em outros fluxos.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-14-016",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-14T02:05:15.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Marcell Pm3"
+    ],
+    "tags": [
+      "skills",
+      "desenvolvimento",
+      "dica técnica"
+    ],
+    "topic": "Troca rápida sobre dica de skill que monta HTML com informações de sessão e repositório, sugerindo integração em ferramentas de desenvolvimento.",
+    "summary": "Troca rápida sobre dica de skill que monta HTML com informações de sessão e repositório, sugerindo integração em ferramentas de desenvolvimento.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-14-021",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-14T02:05:15.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "agentes de ia",
+      "llms",
+      "engenharia de prompt",
+      "desenvolvimento",
+      "automação"
+    ],
+    "topic": "Paulo Silveira e Marcell Almeida discutem implementação de skills em agentes de IA que geram relatórios HTML com informações de sessão e repositório, explorando formas de enriquecer capacidades de automação.",
+    "summary": "Paulo Silveira e Marcell Almeida discutem implementação de skills em agentes de IA que geram relatórios HTML com informações de sessão e repositório, explorando formas de enriquecer capacidades de automação.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-14-022",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-14T02:05:15.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "agentes de ia",
+      "llms",
+      "engenharia de prompt",
+      "desenvolvimento",
+      "ferramentas de ia"
+    ],
+    "topic": "Discussão sobre técnicas de uso de agentes de IA e skills para gerar artefatos HTML com informações de sessão e repositório, com troca de boas práticas entre desenvolvedores.",
+    "summary": "Discussão sobre técnicas de uso de agentes de IA e skills para gerar artefatos HTML com informações de sessão e repositório, com troca de boas práticas entre desenvolvedores.",
+    "links": [],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-13-013",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-13T22:55:05.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "janela de contexto",
+      "claude opus",
+      "agentes de ia",
+      "luri chatbot",
+      "orquestração de modelos"
+    ],
+    "topic": "Menção do lançamento de contexto 1M para Claude Opus 4.6 e discussão sobre expansão da janela de contexto do bot Luri (de 16k para maior), além de conceito de orquestração de múltiplos modelos frontier para workflows complexos.",
+    "summary": "Menção do lançamento de contexto 1M para Claude Opus 4.6 e discussão sobre expansão da janela de contexto do bot Luri (de 16k para maior), além de conceito de orquestração de múltiplos modelos frontier para workflows complexos.",
+    "links": [
+      {
+        "url": "https://claude.com/blog/1m-context-ga"
+      },
+      {
+        "url": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-13-014",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-13T22:55:05.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "context window",
+      "claude",
+      "luri bot",
+      "aulas",
+      "orquestração de modelos"
+    ],
+    "topic": "Discussão sobre disponibilidade de 1M context no Claude e limitações práticas ao tentar encaixar conteúdo de aulas; menção a ferramentas de orquestração que executam workflows complexos end-to-end.",
+    "summary": "Discussão sobre disponibilidade de 1M context no Claude e limitações práticas ao tentar encaixar conteúdo de aulas; menção a ferramentas de orquestração que executam workflows complexos end-to-end.",
+    "links": [
+      {
+        "url": "https://claude.com/blog/1m-context-ga"
+      },
+      {
+        "url": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-13-019",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-13T22:55:05.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "llms",
+      "context-window",
+      "agentes de ia",
+      "claude",
+      "educação",
+      "produto"
+    ],
+    "topic": "Alura está desenvolvendo o bot Luri com constraints de context-window e explorando novas capacidades de modelos de IA (como o Claude com 1M tokens) para otimizar entrega de conteúdo educacional.",
+    "summary": "Alura está desenvolvendo o bot Luri com constraints de context-window e explorando novas capacidades de modelos de IA (como o Claude com 1M tokens) para otimizar entrega de conteúdo educacional.",
+    "links": [
+      {
+        "url": "https://claude.com/blog/1m-context-ga"
+      },
+      {
+        "url": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-13-020",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-13T22:55:05.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "llms",
+      "context window",
+      "agentes de ia",
+      "claude",
+      "product",
+      "educação"
+    ],
+    "topic": "Discussão sobre expansão da janela de contexto do Claude (1M tokens) e seus impactos práticos para o bot educacional Luri da Alura, que iniciou com limitações de 16k tokens.",
+    "summary": "Discussão sobre expansão da janela de contexto do Claude (1M tokens) e seus impactos práticos para o bot educacional Luri da Alura, que iniciou com limitações de 16k tokens.",
+    "links": [
+      {
+        "url": "https://claude.com/blog/1m-context-ga"
+      },
+      {
+        "url": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-13-017",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-13T19:30:38.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "agentes de ia",
+      "produtividade de desenvolvimento",
+      "engenharia de prompt",
+      "carreira",
+      "seniority"
+    ],
+    "topic": "Discussão sobre como agentes de IA estão deslocando o gargalo do desenvolvimento de código para pensamento estratégico sobre o que construir, refletindo uma mudança de paradigma particularmente visível entre desenvolvedores sênior.",
+    "summary": "Discussão sobre como agentes de IA estão deslocando o gargalo do desenvolvimento de código para pensamento estratégico sobre o que construir, refletindo uma mudança de paradigma particularmente visível entre desenvolvedores sênior.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/posts/htortosa_claudecode-aiagents-devproductivity-share-7438229743436673024-znMk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-13-018",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-13T19:30:38.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "agentes de ia",
+      "produtividade de desenvolvedor",
+      "llms",
+      "engenharia de software",
+      "carreira"
+    ],
+    "topic": "Discussão sobre como agentes de IA estão deslocando o gargalo do desenvolvimento de código para o design e clareza de requisitos, mudança que é mais evidente entre desenvolvedores sêniors.",
+    "summary": "Discussão sobre como agentes de IA estão deslocando o gargalo do desenvolvimento de código para o design e clareza de requisitos, mudança que é mais evidente entre desenvolvedores sêniors.",
+    "links": [
+      {
+        "url": "https://www.linkedin.com/posts/htortosa_claudecode-aiagents-devproductivity-share-7438229743436673024-znMk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-13-010",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-13T17:08:03.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Marcell Pm3",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "custo de ia",
+      "adoção de agentes",
+      "produtividade dev",
+      "claude",
+      "infraestrutura de IA"
+    ],
+    "topic": "Análise de custo-benefício de ferramentas de IA para desenvolvedores (Adyen gasta 1k USD/dev/mês), discussão sobre ROI de 10-20% de melhoria produtiva, e relato de sucesso em projeto open source com 53% de performance gain via self-healing.",
+    "summary": "Análise de custo-benefício de ferramentas de IA para desenvolvedores (Adyen gasta 1k USD/dev/mês), discussão sobre ROI de 10-20% de melhoria produtiva, e relato de sucesso em projeto open source com 53% de performance gain via self-healing.",
+    "links": [
+      {
+        "url": "https://www.instagram.com/p/DV1CHEplqZf/?igsh=MTZsZjh2YzRqZDhhaw=="
+      },
+      {
+        "url": "https://simonwillison.net/2026/Mar/13/liquid/"
+      }
+    ],
+    "messageCount": 19
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-13-016",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-13T17:08:03.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Marcell Almeida",
+      "Paulo Silveira"
+    ],
+    "tags": [
+      "inteligência artificial",
+      "llms",
+      "produtividade de desenvolvimento",
+      "custo de ia",
+      "engenharia de software",
+      "carreira"
+    ],
+    "topic": "Discussão sobre resistência de desenvolvedores à adoção de ferramentas de IA e o trade-off entre custo (ex: 1k USD/dev/mês na Adyen) versus ganho de produtividade real, com reflexão sobre viabilidade econômica do investimento.",
+    "summary": "Discussão sobre resistência de desenvolvedores à adoção de ferramentas de IA e o trade-off entre custo (ex: 1k USD/dev/mês na Adyen) versus ganho de produtividade real, com reflexão sobre viabilidade econômica do investimento.",
+    "links": [
+      {
+        "url": "https://www.instagram.com/p/DV1CHEplqZf/?igsh=MTZsZjh2YzRqZDhhaw=="
+      },
+      {
+        "url": "https://simonwillison.net/2026/Mar/13/liquid/"
+      }
+    ],
+    "messageCount": 19
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-13-005",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-13T01:30:38.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Mauricio Aniche",
+      "Marcell Pm3"
+    ],
+    "tags": [
+      "agentes de ia",
+      "contratação de talentos",
+      "documentação de processos",
+      "saas",
+      "ferramentas especializadas"
+    ],
+    "topic": "Síntese de conversação sobre dores de mercado em IA: verticalização de ferramentas, necessidade de profissionais que entendam potencial de negócio da IA, importância de documentação e processos.",
+    "summary": "Síntese de conversação sobre dores de mercado em IA: verticalização de ferramentas, necessidade de profissionais que entendam potencial de negócio da IA, importância de documentação e processos.",
+    "links": [
+      {
+        "url": "https://x.com/tomfgoodwin/status/2032104624551854210?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-13-006",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-13T01:30:38.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Mauricio Aniche",
+      "Marcell Pm3"
+    ],
+    "tags": [
+      "verticalização de ferramentas",
+      "documentação",
+      "processos",
+      "contratação",
+      "ia em negócios"
+    ],
+    "topic": "Síntese de discussão sobre dores do mercado: verticalização crescente de ferramentas, necessidade de profissionais que entendam potencial estratégico de IA, importância de documentação e processos.",
+    "summary": "Síntese de discussão sobre dores do mercado: verticalização crescente de ferramentas, necessidade de profissionais que entendam potencial estratégico de IA, importância de documentação e processos.",
+    "links": [
+      {
+        "url": "https://x.com/tomfgoodwin/status/2032104624551854210?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-13-011",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-13T01:30:38.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Mauricio Aniche",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "inteligência artificial",
+      "ferramentas ia",
+      "saas",
+      "documentação",
+      "processos",
+      "carreira",
+      "transformação digital"
+    ],
+    "topic": "Discussão sobre dores atuais na adoção de IA em negócios: verticalização de ferramentas, necessidade de talentos que entendam potencial de IA além de ferramentas, importância de documentação e processos, e perspectivas sobre o futuro do SaaS.",
+    "summary": "Discussão sobre dores atuais na adoção de IA em negócios: verticalização de ferramentas, necessidade de talentos que entendam potencial de IA além de ferramentas, importância de documentação e processos, e perspectivas sobre o futuro do SaaS.",
+    "links": [
+      {
+        "url": "https://x.com/tomfgoodwin/status/2032104624551854210?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-13-012",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-13T01:30:38.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Mauricio Aniche",
+      "Marcell Almeida"
+    ],
+    "tags": [
+      "inteligência artificial",
+      "ferramentas de ia",
+      "saas",
+      "documentação",
+      "processos",
+      "carreira"
+    ],
+    "topic": "Discussão sobre os principais desafios da adoção de IA em empresas: verticalização de ferramentas, necessidade de profissionais que entendam o potencial de negócio da IA, e importância de documentação e processos.",
+    "summary": "Discussão sobre os principais desafios da adoção de IA em empresas: verticalização de ferramentas, necessidade de profissionais que entendam o potencial de negócio da IA, e importância de documentação e processos.",
+    "links": [
+      {
+        "url": "https://x.com/tomfgoodwin/status/2032104624551854210?s=46&t=83Fo6IcQ9bNl-SS6uJZuMA"
+      }
+    ],
+    "messageCount": 4
+  },
+  {
+    "id": "whatsapp-ia-sob-controle-2026-03-12-003",
+    "source": "whatsapp-sob-controle",
+    "sourceLabel": "IA Sob Controle",
+    "date": "2026-03-12T22:31:06.000Z",
+    "authors": [
+      "Marcus Mendes",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "edge computing",
+      "llms",
+      "on-device ai",
+      "generative ai",
+      "mobile"
+    ],
+    "topic": "Discussão sobre Google AI Edge Gallery, uma galeria experimental de modelos GenAI que roda localmente em dispositivos Android e iOS sem conexão internet, com feedback crítico sobre a qualidade atual do projeto.",
+    "summary": "Discussão sobre Google AI Edge Gallery, uma galeria experimental de modelos GenAI que roda localmente em dispositivos Android e iOS sem conexão internet, com feedback crítico sobre a qualidade atual do projeto.",
+    "links": [
+      {
+        "url": "https://github.com/google-ai-edge/gallery"
+      }
+    ],
+    "messageCount": 7
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-12-003",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-12T17:10:04.000Z",
+    "authors": [
+      "Marcell Pm3",
+      "Sergio Lopes",
+      "Guilherme Silveira",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "claude",
+      "ia generativa",
+      "gráficos interativos",
+      "educação",
+      "janela de contexto"
+    ],
+    "topic": "Discussão sobre novas capacidades do Claude para criar gráficos e diagramas interativos, e comparação de performance entre diferentes níveis de thinking (super/high/medium) com reflexão sobre tamanho de janela de contexto.",
+    "summary": "Discussão sobre novas capacidades do Claude para criar gráficos e diagramas interativos, e comparação de performance entre diferentes níveis de thinking (super/high/medium) com reflexão sobre tamanho de janela de contexto.",
+    "links": [
+      {
+        "url": "https://x.com/i/status/2032124273587077133"
+      }
+    ],
+    "messageCount": 5
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-12-009",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-12T17:10:04.000Z",
+    "authors": [
+      "Marcell Almeida",
+      "Sérgio Lopes",
+      "Guilherme Silveira",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "inteligência artificial",
+      "claude",
+      "llms",
+      "educação",
+      "interatividade",
+      "engenharia de prompt"
+    ],
+    "topic": "Discussão sobre novas capacidades do Claude para gerar gráficos e diagramas interativos, com insights sobre otimização de parâmetros de temperatura e tamanho de contexto para melhor performance em diferentes cenários.",
+    "summary": "Discussão sobre novas capacidades do Claude para gerar gráficos e diagramas interativos, com insights sobre otimização de parâmetros de temperatura e tamanho de contexto para melhor performance em diferentes cenários.",
+    "links": [
+      {
+        "url": "https://x.com/i/status/2032124273587077133"
+      }
+    ],
+    "messageCount": 5
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-12-006",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-12T10:58:57.000Z",
+    "authors": [
+      "Rafael Ribeiro",
+      "Marcell Almeida",
+      "Paulo Silveira",
+      "Mauricio Aniche",
+      "Fabrício Carraro",
+      "Sérgio Lopes",
+      "Guilherme Silveira"
+    ],
+    "tags": [
+      "llms",
+      "context window",
+      "engenharia de prompt",
+      "reasoning",
+      "claude",
+      "gpt",
+      "avaliação de modelos"
+    ],
+    "topic": "Discussão técnica sobre degradação de performance em LLMs com janelas de contexto grandes (needle-in-a-haystack), técnicas de prompt engineering como repetição, e características de reasoning em modelos como GPT-5.4 e Claude.",
+    "summary": "Discussão técnica sobre degradação de performance em LLMs com janelas de contexto grandes (needle-in-a-haystack), técnicas de prompt engineering como repetição, e características de reasoning em modelos como GPT-5.4 e Claude.",
+    "links": [
+      {
+        "url": "https://arxiv.org/abs/2512.14982"
+      },
+      {
+        "url": "https://x.com/chongdashu/status/2031743032266043687?s=46"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=gtnt84CDP-s"
+      }
+    ],
+    "messageCount": 27
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-11-004",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-11T21:33:32.000Z",
+    "authors": [
+      "Sérgio Lopes",
+      "Guilherme Silveira",
+      "Paulo Silveira",
+      "Mauricio Aniche",
+      "Fabrício Carraro"
+    ],
+    "tags": [
+      "inteligência artificial",
+      "produtividade",
+      "educação",
+      "produto",
+      "llms"
+    ],
+    "topic": "Discussão interna sobre pitch de produtos educacionais com IA e ganhos reais de produtividade, questionando modelos genéricos tipo 'Duolingo de tudo' e analisando como IA beneficia apenas top performers, não usuários médios.",
+    "summary": "Discussão interna sobre pitch de produtos educacionais com IA e ganhos reais de produtividade, questionando modelos genéricos tipo 'Duolingo de tudo' e analisando como IA beneficia apenas top performers, não usuários médios.",
+    "links": [
+      {
+        "url": "https://newsletter.getdx.com/p/ai-productivity-gains-are-10-not?utm_campaign=post&utm_medium=web"
+      },
+      {
+        "url": "https://x.com/PawelHuryn/status/2031629378547769446"
+      },
+      {
+        "url": "https://x.com/andrewchen/status/2031532980032909640"
+      }
+    ],
+    "messageCount": 20
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-11-003",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-11T20:05:08.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Marcell Almeida",
+      "Rafael Ribeiro"
+    ],
+    "tags": [
+      "tools discovery",
+      "wondering app",
+      "code review"
+    ],
+    "topic": "Membros da comunidade compartilham referências sobre ferramentas e discutem participação em eventos, incluindo menção ao app Wondering para descoberta de tools.",
+    "summary": "Membros da comunidade compartilham referências sobre ferramentas e discutem participação em eventos, incluindo menção ao app Wondering para descoberta de tools.",
+    "links": [
+      {
+        "url": "https://wondering.app/"
+      },
+      {
+        "url": "https://www.instagram.com/p/DVvxiY7DOFh/?igsh=dmRzbGt2NWNqaTVx"
+      }
+    ],
+    "messageCount": 5
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-11-002",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-11T18:58:25.000Z",
+    "authors": [
+      "Mauricio Aniche",
+      "Sérgio Lopes",
+      "Rafael Ribeiro"
+    ],
+    "tags": [
+      "inteligência artificial",
+      "ferramentas de ia",
+      "amazon q",
+      "engenharia de software",
+      "startups"
+    ],
+    "topic": "Discussão sobre controles de qualidade em empresas tech (caso Amazon) e convite para Elite Session StartSe sobre tendências e verticalização de ferramentas de IA com executivos.",
+    "summary": "Discussão sobre controles de qualidade em empresas tech (caso Amazon) e convite para Elite Session StartSe sobre tendências e verticalização de ferramentas de IA com executivos.",
+    "links": [
+      {
+        "url": "https://www.techradar.com/pro/amazon-is-making-even-senior-engineers-get-code-signed-off-following-multiple-recent-outages"
+      }
+    ],
+    "messageCount": 3
+  },
+  {
+    "id": "whatsapp-clauders-2026-03-11-001",
+    "source": "whatsapp-clauders",
+    "sourceLabel": "Clauders",
+    "date": "2026-03-11T16:28:33.000Z",
+    "authors": [
+      "Paulo Silveira",
+      "Marcell Almeida",
+      "Fabrício Carraro",
+      "Mauricio Aniche"
+    ],
+    "tags": [
+      "llms",
+      "claude",
+      "agentes de ia",
+      "engenharia de prompt",
+      "desenvolvimento de software",
+      "arquitetura de sistemas"
+    ],
+    "topic": "Discussão sobre workflows de desenvolvimento com LLMs: comparação entre PRDs tradicionais e uso de Claude como PM, orquestração de agentes especializados (pensamento, planejamento, testes, implementação, revisão) e reflexões sobre quando usar agentes vs. modelos únicos.",
+    "summary": "Discussão sobre workflows de desenvolvimento com LLMs: comparação entre PRDs tradicionais e uso de Claude como PM, orquestração de agentes especializados (pensamento, planejamento, testes, implementação, revisão) e reflexões sobre quando usar agentes vs. modelos únicos.",
+    "links": [
+      {
+        "url": "https://status.claude.com/"
+      },
+      {
+        "url": "https://tyxter.dev/"
+      }
+    ],
+    "messageCount": 19
+  }
+]

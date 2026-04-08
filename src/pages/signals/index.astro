@@ -1,0 +1,244 @@
+---
+import EditorialLayout from "../../layouts/EditorialLayout.astro";
+import signalsData from "../../data/signals.json";
+import graphData from "../../data/graph.json";
+
+interface Signal {
+  id: string;
+  source: string;
+  sourceLabel: string;
+  date: string;
+  authors: string[];
+  tags: string[];
+  topic: string;
+  summary: string;
+  links: Array<{ url: string; title?: string; site?: string }>;
+  messageCount: number;
+}
+
+const signals = signalsData as Signal[];
+
+// Source colors
+const sourceColors: Record<string, { bg: string; border: string; text: string; label: string }> = {
+  telegram: { bg: "#ede9fe", border: "#c4b5fd", text: "#5b21b6", label: "Telegram" },
+  "whatsapp-clauders": { bg: "#dbeafe", border: "#93c5fd", text: "#1e40af", label: "Clauders" },
+  "whatsapp-sob-controle": { bg: "#fce7f3", border: "#f9a8d4", text: "#9d174d", label: "Sob Controle" },
+};
+
+// Top tags
+const tagFreq = new Map<string, number>();
+for (const s of signals) for (const t of s.tags) tagFreq.set(t, (tagFreq.get(t) || 0) + 1);
+const topTags = [...tagFreq.entries()].sort((a, b) => b[1] - a[1]).slice(0, 20);
+
+// Stats
+const bySource = new Map<string, number>();
+for (const s of signals) bySource.set(s.source, (bySource.get(s.source) || 0) + 1);
+
+const fmtDate = (d: string) => {
+  if (!d) return "";
+  const date = new Date(d);
+  return date.toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" });
+};
+---
+
+<EditorialLayout title="Signals" activeNav="signals" description="Sinais capturados da comunidade Hipsters Builders — links, discussões e reflexões.">
+  <div class="ed-section__label">Signals</div>
+  <p class="ed-section__subtitle">{signals.length} sinais capturados de {bySource.size} fontes. Cada card é uma mensagem ou thread da comunidade.</p>
+
+  <!-- Graph -->
+  {graphData.nodes.length > 0 && (
+    <div style="margin-bottom:2rem;">
+      <div id="builders-graph" style="width:100%;height:50vh;background:#0d1117;border-radius:6px;border:1px solid #d4d0c8;overflow:hidden;position:relative;"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;font-size:11px;color:#8a8a8a;">
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:8px;height:8px;border-radius:50%;background:#6366f1;"></span> Story</span>
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:8px;height:8px;border-radius:50%;background:#10b981;"></span> Tag</span>
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:8px;height:8px;border-radius:50%;background:#ea580c;"></span> Person</span>
+      </div>
+    </div>
+  )}
+
+  <!-- Tag cloud -->
+  {topTags.length > 0 && (
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:2rem;">
+      {topTags.map(([tag, count]) => (
+        <span class="ed-tag ed-tag--sm">{tag} <span style="color:#b5b5b5;">{count}</span></span>
+      ))}
+    </div>
+  )}
+
+  <!-- Signals grid -->
+  <div class="signals-grid">
+    {signals.map((signal) => {
+      const sc = sourceColors[signal.source] || sourceColors.telegram;
+      return (
+        <article class="signal-card" style={`border-left:3px solid ${sc.border};`}>
+          <div class="signal-card__header">
+            <span class="ed-label ed-label--sm" style={`background:${sc.bg};color:${sc.text};`}>{sc.label}</span>
+            <span class="ed-meta-date">{fmtDate(signal.date)}</span>
+          </div>
+          <p class="signal-card__topic">{signal.topic || signal.summary}</p>
+          {signal.authors.length > 0 && (
+            <p class="signal-card__authors">{signal.authors.join(", ")}</p>
+          )}
+          {signal.links.length > 0 && (
+            <div class="signal-card__links">
+              {signal.links.slice(0, 2).map(link => (
+                <a href={link.url} target="_blank" rel="noopener" class="signal-card__link">
+                  {link.title || link.site || new URL(link.url).hostname}
+                </a>
+              ))}
+            </div>
+          )}
+          {signal.tags.length > 0 && (
+            <div class="signal-card__tags">
+              {signal.tags.slice(0, 4).map(tag => (
+                <span class="ed-tag ed-tag--sm">{tag}</span>
+              ))}
+            </div>
+          )}
+        </article>
+      );
+    })}
+  </div>
+</EditorialLayout>
+
+<script type="application/json" id="graph-data" set:html={JSON.stringify(graphData)} />
+
+<script>
+  import ForceGraph from "force-graph";
+
+  function boot() {
+    const el = document.getElementById("builders-graph");
+    if (!el || el.clientWidth < 10) { setTimeout(boot, 150); return; }
+    const raw = JSON.parse(document.getElementById("graph-data")!.textContent!);
+    if (!raw.nodes.length) return;
+    const data = JSON.parse(JSON.stringify(raw));
+
+    const TC: Record<string, string> = {
+      story: "#6366f1", tag: "#10b981", person: "#ea580c",
+    };
+
+    const adj = new Map<string, Set<string>>();
+    for (const n of data.nodes) adj.set(n.id, new Set());
+    for (const l of data.links) {
+      const s = typeof l.source === "object" ? l.source.id : l.source;
+      const t = typeof l.target === "object" ? l.target.id : l.target;
+      adj.get(s)?.add(t); adj.get(t)?.add(s);
+    }
+
+    let locked: any = null;
+    let hovered: any = null;
+    const hl = new Set<string>();
+
+    function activate(n: any) {
+      hl.clear();
+      if (!n) return;
+      hl.add(n.id);
+      for (const id of adj.get(n.id) || []) hl.add(id);
+    }
+
+    function active() { return locked || hovered; }
+
+    const g = ForceGraph()(el)
+      .graphData(data).nodeId("id").backgroundColor("#0d1117")
+      .nodeVal((n: any) => {
+        const deg = adj.get(n.id)?.size || 0;
+        return n.type === "story" ? Math.max(3, 1.5 + deg) : Math.max(1.5, 0.5 + deg * 0.5);
+      })
+      .nodeColor((n: any) => {
+        const a = active();
+        if (!a) return TC[n.type] || "#94a3b8";
+        if (hl.has(n.id)) return TC[n.type] || "#94a3b8";
+        return "#222";
+      })
+      .nodeLabel((n: any) => n.title)
+      .linkColor(() => {
+        return active() ? "rgba(255,255,255,0.03)" : "rgba(255,255,255,0.08)";
+      })
+      .linkWidth((l: any) => {
+        const s = typeof l.source === "object" ? l.source.id : l.source;
+        const t = typeof l.target === "object" ? l.target.id : l.target;
+        return (hl.has(s) && hl.has(t)) ? 2 : 0.3;
+      })
+      .onNodeHover((n: any) => {
+        if (locked) return;
+        hovered = n; activate(n);
+        el!.style.cursor = n ? "pointer" : "default";
+      })
+      .onNodeClick((n: any) => {
+        if (locked?.id === n.id) { locked = null; activate(hovered); return; }
+        locked = n; activate(n);
+      })
+      .onBackgroundClick(() => { locked = null; hovered = null; activate(null); })
+      .warmupTicks(60).cooldownTicks(200)
+      .onEngineStop(() => g.zoomToFit(400, 20));
+
+    const ch = g.d3Force("charge"); if (ch) (ch as any).strength(-80).distanceMax(250);
+    const cn = g.d3Force("center"); if (cn) (cn as any).strength(0.05);
+    const lf = g.d3Force("link"); if (lf) (lf as any).distance(40);
+    (g as any).d3VelocityDecay(0.35);
+  }
+
+  if (document.readyState === "complete") boot(); else window.addEventListener("load", boot);
+</script>
+
+<style>
+  .signals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .signal-card {
+    background: var(--ed-bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .signal-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .signal-card__topic {
+    font-family: var(--ed-serif);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--ed-ink);
+  }
+
+  .signal-card__authors {
+    font-size: 0.75rem;
+    color: var(--ed-ink-muted);
+  }
+
+  .signal-card__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .signal-card__link {
+    font-size: 0.75rem;
+    color: var(--ed-accent) !important;
+    border-bottom: 1px solid var(--ed-rule);
+    display: inline;
+    width: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+
+  .signal-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 0.25rem;
+  }
+</style>
