@@ -107,47 +107,92 @@ function countMessages(body: string): number {
 }
 
 /** Extract conversation messages from signal body.
- *  Format: **[Author · HH:MM]** Message text...
+ *  Handles two formats:
+ *  1. WhatsApp: **[Author · HH:MM]** Message text...
+ *  2. Telegram: # Author — Group\n**DD/MM/YYYY, HH:MM**\n\nMessage text...
  *  Returns only messages with actual text content (not just links). */
 function extractConversation(body: string): ConversationMsg[] {
   const msgs: ConversationMsg[] = [];
-  // Split by message headers
-  const parts = body.split(/\*\*\[/);
-  for (const part of parts) {
-    if (!part.trim()) continue;
-    const headerEnd = part.indexOf("**");
-    if (headerEnd < 0) continue;
-    const header = part.slice(0, headerEnd);
-    const text = part.slice(headerEnd + 2).trim();
 
-    // Parse author and time from "Author · HH:MM]"
-    const match = header.match(/^(.+?)(?:\s*[·]\s*(\d{1,2}:\d{2}))?\]/);
-    if (!match) continue;
-    const author = match[1].trim();
-    const time = match[2] || undefined;
+  // Try WhatsApp format first: **[Author · HH:MM]**
+  const whatsappParts = body.split(/\*\*\[/);
+  if (whatsappParts.length > 1) {
+    for (const part of whatsappParts) {
+      if (!part.trim()) continue;
+      const headerEnd = part.indexOf("**");
+      if (headerEnd < 0) continue;
+      const header = part.slice(0, headerEnd);
+      const text = part.slice(headerEnd + 2).trim();
 
-    // Skip messages that are ONLY a URL (no commentary)
-    const stripped = text.replace(/https?:\/\/[^\s]+/g, "").trim();
-    if (stripped.length < 10) continue;
+      const match = header.match(/^(.+?)(?:\s*[·]\s*(\d{1,2}:\d{2}))?\]/);
+      if (!match) continue;
+      const author = match[1].trim();
+      const time = match[2] || undefined;
 
-    // Clean up: remove markdown image refs, keep text
-    const clean = text
-      .replace(/!\[.*?\]\(.*?\)/g, "") // remove images
-      .replace(/\n{3,}/g, "\n\n")
-      .trim();
+      const clean = cleanMsgText(text);
+      if (!clean) continue;
 
-    if (clean.length < 10) continue;
-
-    msgs.push({ author, text: clean, time });
+      msgs.push({ author, text: clean, time });
+    }
   }
+
+  // Try Telegram format: # Author — Group\n**date**\n\nBody
+  if (msgs.length === 0) {
+    const authorMatch = body.match(/^#\s+(.+?)\s*(?:—|–|-)\s*.+$/m);
+    const timeMatch = body.match(/\*\*(\d{2}\/\d{2}\/\d{4},?\s*\d{2}:\d{2})\*\*/);
+    if (authorMatch) {
+      // Everything after the date line is the message body
+      const dateLineEnd = timeMatch ? body.indexOf(timeMatch[0]) + timeMatch[0].length : 0;
+      const text = body.slice(dateLineEnd).trim();
+      const clean = cleanMsgText(text);
+      if (clean) {
+        msgs.push({
+          author: authorMatch[1].trim(),
+          text: clean,
+          time: timeMatch?.[1]?.split(",")[1]?.trim(),
+        });
+      }
+    }
+  }
+
   return msgs;
 }
 
-/** Check if a signal has enough real discussion to be a story.
- *  Needs at least 2 messages with actual text (not just shared links). */
-function hasSubstantiveDiscussion(body: string): boolean {
-  const msgs = extractConversation(body);
-  return msgs.length >= 2;
+/** Clean a message text: remove link-only content, images, emoji-only lines */
+function cleanMsgText(text: string): string | null {
+  // Strip markdown images
+  let clean = text.replace(/!\[.*?\]\(.*?\)/g, "").trim();
+  // Strip lines that are ONLY a URL
+  clean = clean.split("\n").filter(line => {
+    const stripped = line.replace(/https?:\/\/[^\s]+/g, "").replace(/🔗/g, "").trim();
+    return stripped.length > 0;
+  }).join("\n").trim();
+  // Remove excessive newlines
+  clean = clean.replace(/\n{3,}/g, "\n\n");
+  // Skip if too short after cleanup
+  if (clean.length < 15) return null;
+  return clean;
+}
+
+/** Calculate total substantive text in a conversation (chars of actual commentary). */
+function conversationTextLength(msgs: ConversationMsg[]): number {
+  return msgs.reduce((sum, m) => sum + m.text.length, 0);
+}
+
+/** Check if a signal qualifies as a story.
+ *  - Long single-author post (>300 chars) = story (Telegram editorial posts)
+ *  - Thread with 3+ substantive messages AND >200 chars total = story
+ *  - Otherwise just a signal */
+function qualifiesAsStory(msgs: ConversationMsg[]): boolean {
+  if (msgs.length === 0) return false;
+  const totalChars = conversationTextLength(msgs);
+  // Single author with substantial text (editorial post)
+  if (msgs.length === 1 && totalChars >= 300) return true;
+  // Thread with real discussion
+  if (msgs.length >= 3 && totalChars >= 200) return true;
+  // 2 messages but with real substance
+  if (msgs.length >= 2 && totalChars >= 400) return true;
+  return false;
 }
 
 function extractLinks(body: string, frontmatterLinks?: any[]): Array<{ url: string; title?: string; site?: string }> {
@@ -238,9 +283,7 @@ function buildStories(signals: RawSignal[]): Story[] {
     const sortedByDate = group.sort((a, b) => a.date.localeCompare(b.date));
     const combinedBody = sortedByDate.map(s => s.body).join("\n\n");
     const conversation = extractConversation(combinedBody);
-
-    // Story quality: need real discussion (2+ messages with text)
-    if (conversation.length < 2) continue;
+    if (!qualifiesAsStory(conversation)) continue;
 
     const allAuthors = [...new Set(conversation.map(m => m.author))];
     const allTags = [...new Set(group.flatMap(s => s.tags))];
@@ -259,16 +302,14 @@ function buildStories(signals: RawSignal[]): Story[] {
       messageCount: conversation.length,
       authorCount: allAuthors.length,
       linkCount: allLinks.length,
-      weight: conversation.length + allAuthors.length * 3 + allLinks.length * 2,
+      weight: conversation.length + allAuthors.length * 3 + allLinks.length * 2 + Math.floor(conversationTextLength(conversation) / 100),
     });
   }
 
   // WhatsApp signals → stories (already consolidated threads)
   for (const s of standaloneSignals) {
     const conversation = extractConversation(s.body);
-
-    // Story quality: need real discussion (2+ messages with text)
-    if (conversation.length < 2) continue;
+    if (!qualifiesAsStory(conversation)) continue;
 
     const groupLabel = s.source === "whatsapp-clauders" ? "Clauders"
       : s.source === "whatsapp-sob-controle" ? "IA Sob Controle"
@@ -289,7 +330,7 @@ function buildStories(signals: RawSignal[]): Story[] {
       messageCount: conversation.length,
       authorCount: conversationAuthors.length,
       linkCount: s.links.length,
-      weight: conversation.length + conversationAuthors.length * 3 + s.links.length * 2,
+      weight: conversation.length + conversationAuthors.length * 3 + s.links.length * 2 + Math.floor(conversationTextLength(conversation) / 100),
     });
   }
 

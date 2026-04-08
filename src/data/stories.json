@@ -1,45 +1,5 @@
 [
   {
-    "id": "story-whatsapp-clauders-2026-04-08-011",
-    "title": "Conversa casual sobre bateria de dispositivo com zero porcento e menção a um tweet sobre algo errado relacionado (conteúdo do tweet não disponível).",
-    "date": "2026-04-08T00:38:39.000Z",
-    "authors": [
-      "Guilherme Silveira",
-      "Paulo Silveira"
-    ],
-    "tags": [
-      "energia da bateria",
-      "dispositivos"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-04-08-011"
-    ],
-    "links": [
-      {
-        "url": "https://x.com/i/status/2041559354034344438"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Guilherme Silveira",
-        "text": "Hahahahha eu tava com zero porcento hoje de tarde. Mas resetava amanhã de manhã",
-        "time": "21:38"
-      },
-      {
-        "author": "Paulo Silveira",
-        "text": "Sabia q era algo errado",
-        "time": "22:04"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 1,
-    "weight": 10
-  },
-  {
     "id": "story-whatsapp-clauders-2026-04-07-010",
     "title": "Referência ao post de Vini Chagas sobre economia de R$ 200 mil ao substituir Clickup, e reflexão sobre pressão de performance em era de IA. Menciona contribuições rápidas ao dev portal e mudanças no paradigma de produtividade.",
     "date": "2026-04-07T23:41:33.000Z",
@@ -92,7 +52,7 @@
     "messageCount": 4,
     "authorCount": 1,
     "linkCount": 2,
-    "weight": 11
+    "weight": 14
   },
   {
     "id": "story-whatsapp-clauders-2026-04-07-009",
@@ -102,8 +62,7 @@
       "Fabrício Carraro",
       "Paulo Silveira",
       "Marcell Almeida",
-      "Guilherme Silveira",
-      "Mauricio Aniche"
+      "Guilherme Silveira"
     ],
     "tags": [
       "claude mythos",
@@ -137,11 +96,6 @@
         "time": "18:50"
       },
       {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 😂]",
-        "time": "18:50"
-      },
-      {
         "author": "Marcell Almeida",
         "text": "esse papo de não disponibilizar o modelo, lançar esse projeto com vídeo do CEO etc etc me cheira a marketing Stunt…",
         "time": "19:02"
@@ -172,24 +126,9 @@
         "time": "19:04"
       },
       {
-        "author": "Guilherme Silveira",
-        "text": "Gpt5.3 spark",
-        "time": "19:12"
-      },
-      {
         "author": "Paulo Silveira",
         "text": "E o gui, no IMPA, dando aula sobre uso de LLMs para provar conjecturas em aberto em sistemas dinâmicos?",
         "time": "19:23"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: ❤️]",
-        "time": "19:24"
-      },
-      {
-        "author": "Mauricio Aniche",
-        "text": "[Reaction: ❤️]",
-        "time": "19:32"
       },
       {
         "author": "Guilherme Silveira",
@@ -197,8 +136,8 @@
         "time": "19:37"
       }
     ],
-    "messageCount": 15,
-    "authorCount": 5,
+    "messageCount": 11,
+    "authorCount": 4,
     "linkCount": 0,
     "weight": 30
   },
@@ -210,7 +149,6 @@
       "Mauricio Aniche",
       "Fabrício Carraro",
       "Guilherme Silveira",
-      "Sérgio Lopes",
       "Paulo Silveira"
     ],
     "tags": [
@@ -259,20 +197,15 @@
         "time": "15:47"
       },
       {
-        "author": "Sérgio Lopes",
-        "text": "[Reaction: 👀]",
-        "time": "15:48"
-      },
-      {
         "author": "Paulo Silveira",
         "text": "Vão hackear nossas apps privadamente kkk",
         "time": "15:50"
       }
     ],
-    "messageCount": 7,
-    "authorCount": 5,
+    "messageCount": 6,
+    "authorCount": 4,
     "linkCount": 1,
-    "weight": 24
+    "weight": 22
   },
   {
     "id": "story-whatsapp-clauders-2026-04-07-001",
@@ -320,7 +253,7 @@
     "messageCount": 3,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 14
+    "weight": 16
   },
   {
     "id": "story-whatsapp-clauders-2026-04-06-005",
@@ -374,7 +307,62 @@
     "messageCount": 4,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 15
+    "weight": 18
+  },
+  {
+    "id": "story-tg-codificacao-agentes-qualidade",
+    "title": "Codificação agêntica e qualidade de código",
+    "date": "2026-04-06T12:18:06.000Z",
+    "authors": [
+      "Paulo"
+    ],
+    "tags": [
+      "claude-code",
+      "agentes-ia",
+      "qualidade-codigo",
+      "carreira-tech",
+      "ai-slop",
+      "codificacao-agentes-qualidade",
+      "agentic-coding",
+      "code-review",
+      "engenharia-software",
+      "vibe-coding",
+      "ia-qualidade",
+      "open-source",
+      "codificacao-agentes"
+    ],
+    "sources": [
+      "tg-hipsters-2026-04-05-paulo-httpsxcomkatanalarpstatus2039972757048275045s46thef6yu4syim5zqe7l9jxlg-com-avanco-das-ferramentas-geradoras-codigo-codificacao",
+      "tg-hipsters-2026-04-05-vinny-neves-com-avanco-agentic-coding-superficie-contato-software-crescendo",
+      "tg-hipsters-2026-04-06-vinny-neves-daniel-stenberg-desligou-bug-bounty-curl-depois-que"
+    ],
+    "links": [
+      {
+        "url": "https://x.com/katanalarp/status/2039972757048275045?s=46&t=hEF6yU4SYim5zqE7L9JXlg"
+      },
+      {
+        "url": "https://www.alura.com.br/curso-online-engenharia-software-ia-no-fluxo-real-de-desenvolvimento"
+      },
+      {
+        "url": "https://www.infoq.com/news/2026/02/ai-floods-close-projects/",
+        "title": "AI \"Vibe Coding\" Threatens Open Source as Maintainers Face Crisis",
+        "site": "InfoQ"
+      }
+    ],
+    "sourceGroups": [
+      "Hipsters Builders"
+    ],
+    "conversation": [
+      {
+        "author": "Paulo",
+        "text": "https://x.com/katanalarp/status/2039972757048275045?s=46&t=hEF6yU4SYim5zqE7L9JXlg com o avanço das ferramentas geradoras de código, a codificação agêntica, especialmente do Claude Code e do Codex, tem aumentado essa superfície de contato do software, bugs e dificuldade de manutenção. E muita gente considerando como AI slop é óbvio. Eu vejo que isso tem acontecido sim, mas a gente não pode deixar de ver as vantagens. Se você for focado naquilo que quer fazer, tiver domínio de conhecimento de boa parte daquele código, daquela infraestrutura, da arquitetura, vai ser muito mais difícil que a máquina fique gerando essa superfície de contato exagerada e quebradiça.\n# Vinny Neves — Hipsters Builders\n**05/04/2026, 13:44**\nCom o avanço do agentic coding, a superfície de contato do software tá crescendo. Mais código gerado, mais bugs potenciais, mais coisa pra manter. E muita gente tratando como AI slop — e em vários casos é mesmo.\nMas quando você tem domínio da arquitetura, sabe o que quer construir, e principalmente sabe revisar o que o agent entrega, o resultado é outro. O problema não é a ferramenta. É usar sem contexto, sem planejamento, sem olhar o que tá aceitando.\nNesse curso a gente vai do setup ao PR mergeado — como configurar o agent pro seu projeto, usar IA no front e no back de verdade, revisar sem aceitar de olho fechado, e plugar automações no fluxo do time. Sem hype, sem mágica.\n→ https://www.alura.com.br/curso-online-engenharia-software-ia-no-fluxo-real-de-desenvolvimento\n# Vinny Neves — Hipsters Builders\n**06/04/2026, 09:18**\nDaniel Stenberg desligou o bug bounty do cURL depois que 20% das submissões eram de IA. Mitchell Hashimoto baniu código gerado por IA do Ghostty. Steve Ruiz fechou todos os PRs externos do tldraw. InfoQ A analista da RedMonk chamou de \"AI Slopageddon\". O problema não é só qualidade — pesquisa acadêmica mostra que o \"vibe coding\" enfraquece o engajamento que sustenta o open source, com queda em visitas à documentação e reports de bugs. As vantagens da codificação agêntica existem, sim — mas quando falta domínio técnico, quem paga a conta é o ecossistema.\n> 🔗 **AI \"Vibe Coding\" Threatens Open Source as Maintainers Face Crisis** — InfoQ\n> Daniel Stenberg shut down cURL\n> https://www.infoq.com/news/2026/02/ai-floods-close-projects/",
+        "time": "12:30"
+      }
+    ],
+    "messageCount": 1,
+    "authorCount": 1,
+    "linkCount": 3,
+    "weight": 32
   },
   {
     "id": "story-whatsapp-clauders-2026-04-06-003",
@@ -439,7 +427,7 @@
     "messageCount": 7,
     "authorCount": 3,
     "linkCount": 0,
-    "weight": 16
+    "weight": 22
   },
   {
     "id": "story-whatsapp-clauders-2026-04-06-002",
@@ -493,6 +481,78 @@
     "messageCount": 5,
     "authorCount": 2,
     "linkCount": 0,
+    "weight": 18
+  },
+  {
+    "id": "story-tg-entrevista-ia-sob-controle",
+    "title": "Entrevista sobre fundamentos de inteligência artificial",
+    "date": "2026-04-05T15:01:47.000Z",
+    "authors": [
+      "Paulo"
+    ],
+    "tags": [
+      "ia-fundamentos",
+      "entrevista-tech",
+      "história-computação",
+      "neurociência",
+      "aprendizado"
+    ],
+    "sources": [
+      "tg-hipsters-2026-04-05-paulo-essa-entrevista-sob-controle-tem-insights-incriveis-sobre"
+    ],
+    "links": [],
+    "sourceGroups": [
+      "Hipsters Builders"
+    ],
+    "conversation": [
+      {
+        "author": "Paulo",
+        "text": "Essa entrevista no ia sob controle tem insights incríveis sobre conceitos não só de inteligência artificial mas de inteligência como um todo . Adrian repassa por pontos importante da história da computação, psicologia, neurociência e cibernética. Fundamental para quem quer entender a base com detalhes.",
+        "time": "12:01"
+      }
+    ],
+    "messageCount": 1,
+    "authorCount": 1,
+    "linkCount": 0,
+    "weight": 7
+  },
+  {
+    "id": "story-tg-hipsters-2026-04-05-paulo-karpathy-tem-buscado-solucionar-problema-excesso-informacao-como",
+    "title": "Organização de dados com LLMs e wikis",
+    "date": "2026-04-05T01:42:07.000Z",
+    "authors": [
+      "Paulo"
+    ],
+    "tags": [
+      "llm-knowledge-management",
+      "agentes-ia",
+      "arquitetura-sistemas",
+      "karpathy",
+      "processamento-dados"
+    ],
+    "sources": [
+      "tg-hipsters-2026-04-05-paulo-karpathy-tem-buscado-solucionar-problema-excesso-informacao-como"
+    ],
+    "links": [
+      {
+        "url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f?permalink_comment_id=6079483#gistcomment-6079483",
+        "title": "llm-wiki",
+        "site": "Gist"
+      }
+    ],
+    "sourceGroups": [
+      "Hipsters Builders (Telegram)"
+    ],
+    "conversation": [
+      {
+        "author": "Paulo",
+        "text": "Karpathy tem buscado solucionar o problema do excesso de informacao, como organizar em wiki os dados e usar a LLM para buscar, ingerir, processar. Ele fez um GIST com algo mais meta-analitico que um PRD e eu fiz comentarios a respeito, linkando com o que tenho trabalhando, inclusive para criar essa newsletter do hipsters builders (nesse exato instante foi usado esse mecanismo para produzir o texto) https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f?permalink_comment_id=6079483#gistcomment-6079483",
+        "time": "22:42"
+      }
+    ],
+    "messageCount": 1,
+    "authorCount": 1,
+    "linkCount": 1,
     "weight": 11
   },
   {
@@ -541,49 +601,7 @@
     "messageCount": 4,
     "authorCount": 2,
     "linkCount": 0,
-    "weight": 10
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-04-04-008",
-    "title": "Paulo Silveira e Marcell Almeida discutem a complexidade real de configurações DevOps e gestão de ambiente em projetos, contrastando com narrativas simplificadas.",
-    "date": "2026-04-04T15:54:18.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "devops",
-      "configuração de ambiente",
-      ".env",
-      "curva de aprendizado"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-04-04-008"
-    ],
-    "links": [
-      {
-        "url": "https://x.com/productfaculty/status/2040094285706711285?s=46"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "Eh. Mas todos nós aqui sabemos q eh bem mais complicado w isso ne",
-        "time": "12:56"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "definitivamente.\n\nEu por exemplo, demorei a aprender como fazer um setup de .env sem ter que fazer de novo toda sessão 🤣 e ainda tem outras cabeçadas em “devops”",
-        "time": "13:01"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 1,
-    "weight": 10
+    "weight": 12
   },
   {
     "id": "story-whatsapp-ia-sob-controle-2026-04-04-004",
@@ -617,13 +635,8 @@
     "conversation": [
       {
         "author": "Marcus Mendes",
-        "text": "Anthropic says Claude subscriptions will no longer cover usage on third-party tools like OpenClaw starting April 4 at 12pm PT, to better manage capacity (Jay Peters/The Verge)\nhttps://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban",
+        "text": "Anthropic says Claude subscriptions will no longer cover usage on third-party tools like OpenClaw starting April 4 at 12pm PT, to better manage capacity (Jay Peters/The Verge)",
         "time": "21:21"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 😮]",
-        "time": "21:30"
       },
       {
         "author": "Fabrício Carraro",
@@ -632,59 +645,14 @@
       },
       {
         "author": "Marcus Mendes",
-        "text": "Sources: Mark Zuckerberg is back to writing code after a two-decade hiatus, submitting three diffs to Meta's monorepo, and is a heavy user of Claude Code CLI\nhttps://newsletter.pragmaticengineer.com/p/the-pulse-industry-leaders-return",
-        "time": "21:31"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Até poor API",
-        "time": "21:31"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 😂]",
+        "text": "Sources: Mark Zuckerberg is back to writing code after a two-decade hiatus, submitting three diffs to Meta's monorepo, and is a heavy user of Claude Code CLI",
         "time": "21:31"
       }
     ],
-    "messageCount": 6,
+    "messageCount": 3,
     "authorCount": 2,
     "linkCount": 2,
     "weight": 16
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-04-03-005",
-    "title": "Breve troca sobre ferramentas de comunicação.",
-    "date": "2026-04-03T19:57:53.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "teams"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-04-03-005"
-    ],
-    "links": [],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "Teams nada né kkk",
-        "time": "17:02"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "[Reaction: 😢]",
-        "time": "17:07"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 0,
-    "weight": 8
   },
   {
     "id": "story-whatsapp-clauders-2026-04-03-004",
@@ -745,7 +713,7 @@
     "messageCount": 7,
     "authorCount": 2,
     "linkCount": 0,
-    "weight": 13
+    "weight": 16
   },
   {
     "id": "story-whatsapp-clauders-2026-04-02-008",
@@ -798,11 +766,6 @@
         "time": "19:11"
       },
       {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 👍]",
-        "time": "19:11"
-      },
-      {
         "author": "Paulo Silveira",
         "text": "beeeem bom o codex",
         "time": "19:11"
@@ -843,10 +806,10 @@
         "time": "19:16"
       }
     ],
-    "messageCount": 14,
+    "messageCount": 13,
     "authorCount": 4,
     "linkCount": 0,
-    "weight": 26
+    "weight": 30
   },
   {
     "id": "story-whatsapp-clauders-2026-04-02-007",
@@ -888,24 +851,85 @@
       },
       {
         "author": "Marcell Almeida",
-        "text": "Mas eu gostei da interface - ele deixa vc criar issues, goals, os agentes vao pegando as issues e fazendo. \n\nparece um pouco o fluxo que ta montando pra lumina no github",
+        "text": "Mas eu gostei da interface - ele deixa vc criar issues, goals, os agentes vao pegando as issues e fazendo. \nparece um pouco o fluxo que ta montando pra lumina no github",
         "time": "16:51"
       },
       {
         "author": "Sérgio Lopes",
         "text": "pensando se nao poderia ser o RalphGui. ja tem os agentes bem definidos la e o processo. paperclip poderia orquestrar melhor",
         "time": "16:51"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "[Reaction: 👌]",
-        "time": "16:51"
       }
     ],
-    "messageCount": 6,
+    "messageCount": 5,
     "authorCount": 2,
     "linkCount": 0,
-    "weight": 12
+    "weight": 15
+  },
+  {
+    "id": "story-tg-hipsters-2026-04-02-vinny-neves-31032026-anthropic-publicou-acidentalmente-codigofonte-completo-claude-code",
+    "title": "Leak acidental do código-fonte Claude Code",
+    "date": "2026-04-02T15:40:22.000Z",
+    "authors": [
+      "Vinny Neves"
+    ],
+    "tags": [
+      "claude-code",
+      "agentes-ia",
+      "segurança-ia",
+      "incident-tech",
+      "carreira-tech"
+    ],
+    "sources": [
+      "tg-hipsters-2026-04-02-vinny-neves-31032026-anthropic-publicou-acidentalmente-codigofonte-completo-claude-code"
+    ],
+    "links": [],
+    "sourceGroups": [
+      "Hipsters Builders (Telegram)"
+    ],
+    "conversation": [
+      {
+        "author": "Vinny Neves",
+        "text": "Em 31/03/2026, a Anthropic publicou acidentalmente o código-fonte completo do Claude Code no npm — um source map de 59.8 MB incluído por erro humano na v2.1.88 expôs ~512.000 linhas de TypeScript DEV Community. O leak revelou que o Claude Code é um sistema multi-agent completo com orquestração, sub-agents e integração MCP Medium, além de feature flags não lançadas como um \"persistent assistant\" em background e revisão automática de sessões Axios. A Anthropic tentou conter o estrago com takedown notices via DMCA que acabaram derrubando ~8.100 repos no GitHub por engano, incluindo forks legítimos TechCrunch, e depois recuou. O timing é especialmente ruim com o Claude Code gerando mais de $2.5 bi de receita anualizada e a empresa se preparando pra um IPO avaliado em $380 bi PYMNTS — o incidente entrega pros concorrentes um blueprint detalhado da arquitetura e levanta questões sérias sobre a disciplina operacional de quem se posiciona como referência em AI safety.",
+        "time": "12:40"
+      }
+    ],
+    "messageCount": 1,
+    "authorCount": 1,
+    "linkCount": 0,
+    "weight": 13
+  },
+  {
+    "id": "story-tg-hipsters-2026-04-02-paulo-cloudflare-time-astro-criou-sucessor-wordpress-wordpress-roda",
+    "title": "EmDash: sucessor moderno do WordPress",
+    "date": "2026-04-02T15:30:50.000Z",
+    "authors": [
+      "Paulo"
+    ],
+    "tags": [
+      "astro",
+      "wordpress-alternativa",
+      "serverless",
+      "edge-computing",
+      "vibe-coding"
+    ],
+    "sources": [
+      "tg-hipsters-2026-04-02-paulo-cloudflare-time-astro-criou-sucessor-wordpress-wordpress-roda"
+    ],
+    "links": [],
+    "sourceGroups": [
+      "Hipsters Builders (Telegram)"
+    ],
+    "conversation": [
+      {
+        "author": "Paulo",
+        "text": "O Cloudflare e time do Astro criou um \"sucessor\" do Wordpress. Wordpress roda em 40% dos sites do mundo, mas foi desenhado para um universo tech de decadas atras: mecanismos da web, plugins, pagamentos e ate a forma de fazer host é da era pré web moderna e pré cloud, o que cria dificuldades. O projeto EmDash tenta atacar esses problemas. Mais: feito em 2 meses, vibecodado, para um mundo serverless, edge, lambda e afins. Será que pega? Eu Paulo tenho usado muito astro (o hipsters builders ta em astro! o paulo.com.br ta em astro! o site da alun.com.br tambem!) e aposto que vai ter bastante espaço.\n🔗 paulo.com.br\n🔗 alun.com.br",
+        "time": "12:30"
+      }
+    ],
+    "messageCount": 1,
+    "authorCount": 1,
+    "linkCount": 0,
+    "weight": 10
   },
   {
     "id": "story-whatsapp-clauders-2026-04-01-003",
@@ -954,49 +978,7 @@
     "messageCount": 3,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 11
-  },
-  {
-    "id": "story-whatsapp-ia-sob-controle-2026-04-01-009",
-    "title": "Fabrício Carraro compartilha análise de artigo sobre vazamento do código-fonte do Claude Code da Anthropic, discutindo features escondidas, arquitetura de memória e implicações de segurança da ferramenta.",
-    "date": "2026-04-01T12:39:07.000Z",
-    "authors": [
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "claude code",
-      "vazamento de código",
-      "segurança de ia",
-      "agentes de ia",
-      "análise de código-fonte"
-    ],
-    "sources": [
-      "whatsapp-ia-sob-controle-2026-04-01-009"
-    ],
-    "links": [
-      {
-        "url": "https://akitaonrails.com/2026/03/31/codigo-fonte-do-claude-code-vazou-o-que-achamos-dentro/"
-      }
-    ],
-    "sourceGroups": [
-      "IA Sob Controle"
-    ],
-    "conversation": [
-      {
-        "author": "Fabrício Carraro",
-        "text": "Pesquisa feita em um grupo",
-        "time": "09:39"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Pesquisa feita em outro grupo (o nosso, Builders SP)",
-        "time": "09:39"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 1,
-    "linkCount": 1,
-    "weight": 7
+    "weight": 13
   },
   {
     "id": "story-whatsapp-clauders-2026-04-01-013",
@@ -1052,7 +1034,7 @@
       },
       {
         "author": "Fabrício Carraro",
-        "text": "Saiu o episódio de entrevista dessa semana do IA Sob Controle, com o lendário Leandro von Werra, Head of Research na Hugging Face. Ficou MUITO bom!\n\nhttps://open.spotify.com/episode/15lyLLDbqGRGpgEH2Lnspe?si=584befdb2f2041f0",
+        "text": "Saiu o episódio de entrevista dessa semana do IA Sob Controle, com o lendário Leandro von Werra, Head of Research na Hugging Face. Ficou MUITO bom!",
         "time": "08:41"
       },
       {
@@ -1067,11 +1049,6 @@
       },
       {
         "author": "Fabrício Carraro",
-        "text": "(um dos repos)",
-        "time": "09:14"
-      },
-      {
-        "author": "Fabrício Carraro",
         "text": "Pesquisa feita em um grupo",
         "time": "09:39"
       },
@@ -1081,66 +1058,10 @@
         "time": "09:39"
       }
     ],
-    "messageCount": 10,
+    "messageCount": 9,
     "authorCount": 4,
     "linkCount": 2,
-    "weight": 26
-  },
-  {
-    "id": "story-whatsapp-ia-sob-controle-2026-03-31-008",
-    "title": "Paulo e Fabrício discutem suspeita de que ofertas de GPU barata para Claude CLI podem ser estratégia para aumentar consumo de tokens e gerar receita, depletando quotas de usuários.",
-    "date": "2026-03-31T22:37:49.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "claude api",
-      "custos",
-      "token depletion",
-      "gpu",
-      "monetização"
-    ],
-    "sources": [
-      "whatsapp-ia-sob-controle-2026-03-31-008"
-    ],
-    "links": [
-      {
-        "url": "https://x.com/i/status/2039029358224871605"
-      },
-      {
-        "url": "https://x.com/i/status/2039085161971896807"
-      }
-    ],
-    "sourceGroups": [
-      "IA Sob Controle"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "Isso aqui eh golpe ne",
-        "time": "19:37"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Tão sem GPU",
-        "time": "19:41"
-      },
-      {
-        "author": "Paulo Silveira",
-        "text": "Tão eh fazendo o Claude cli gastar mais token e gerar mais caixa kkk",
-        "time": "19:42"
-      },
-      {
-        "author": "Paulo Silveira",
-        "text": "O incentivo eh gastar mais token e depletar quota",
-        "time": "19:42"
-      }
-    ],
-    "messageCount": 4,
-    "authorCount": 2,
-    "linkCount": 2,
-    "weight": 14
+    "weight": 33
   },
   {
     "id": "story-whatsapp-clauders-2026-03-31-009",
@@ -1180,134 +1101,19 @@
     "conversation": [
       {
         "author": "Rafael Ribeiro",
-        "text": "Olha o resultado considerando um contexto da StartSe. Acho que dá até para fazer um teste baseado em alguns MDs + prompt https://nk4s8wkkwc4w8osgs4088gws.coolify-dev.startse.com/\n\n1. Envie um ou mais md + prompt\n2. Clique em \"Ligar motor\" para gerar o grafo\n3. Na sequência é gerado vários agentes com personas específicas automaticamente para discussão de cenários prováveis\n4. Iniciar simulação de discussões para cenários prováveis baseado no conteúdo e personas\n5. Relatório final com possibilidade de discussão geral ou conversa com um agente específico.\n\nRelatório final para artigo da StartSe -> \nartigo = https://www.startse.com/artigos/anthropic-volta-a-negociar-com-o-pentagono-e-a-disputa-sobre-o-uso-militar-da-ia-entra-em-nova-fase/\nprompt = Quais os impactos da Anthropic aceitar a negociação com o pentágono para uso de IA sem restrições\nresultado = https://nk4s8wkkwc4w8osgs4088gws.coolify-dev.startse.com/interaction/report_d4afb0b76f8d",
+        "text": "Olha o resultado considerando um contexto da StartSe. Acho que dá até para fazer um teste baseado em alguns MDs + prompt https://nk4s8wkkwc4w8osgs4088gws.coolify-dev.startse.com/\n1. Envie um ou mais md + prompt\n2. Clique em \"Ligar motor\" para gerar o grafo\n3. Na sequência é gerado vários agentes com personas específicas automaticamente para discussão de cenários prováveis\n4. Iniciar simulação de discussões para cenários prováveis baseado no conteúdo e personas\n5. Relatório final com possibilidade de discussão geral ou conversa com um agente específico.\nRelatório final para artigo da StartSe -> \nartigo = https://www.startse.com/artigos/anthropic-volta-a-negociar-com-o-pentagono-e-a-disputa-sobre-o-uso-militar-da-ia-entra-em-nova-fase/\nprompt = Quais os impactos da Anthropic aceitar a negociação com o pentágono para uso de IA sem restrições\nresultado = https://nk4s8wkkwc4w8osgs4088gws.coolify-dev.startse.com/interaction/report_d4afb0b76f8d",
         "time": "19:06"
       },
       {
         "author": "Fabrício Carraro",
         "text": "Não está fácil hj",
         "time": "19:33"
-      },
-      {
-        "author": "Rafael Ribeiro",
-        "text": "[Reaction: 😮]",
-        "time": "19:44"
-      }
-    ],
-    "messageCount": 3,
-    "authorCount": 2,
-    "linkCount": 4,
-    "weight": 17
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-31-007",
-    "title": "Discussão sobre o vazamento do Claude Code sendo convertido para múltiplas linguagens pela comunidade de desenvolvedores, gerando resposta rápida em fork e adaptações.",
-    "date": "2026-03-31T15:26:03.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Fabrício Carraro",
-      "Marcell Almeida",
-      "Sérgio Lopes"
-    ],
-    "tags": [
-      "claude code",
-      "open source",
-      "vazamento",
-      "código fonte",
-      "comunidade"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-31-007"
-    ],
-    "links": [
-      {
-        "url": "https://x.com/i/status/2038971515572523502"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "Abriram open source. Eh piada ne",
-        "time": "12:26"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 👍]",
-        "time": "12:27"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Piada por causa do vazamento do Claude Code",
-        "time": "12:38"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "E a galera já converteu o código inteiro do Claude Code pra outras línguagens, pra evitar que tirem do ar",
-        "time": "12:38"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "Genial kkkk",
-        "time": "13:01"
-      },
-      {
-        "author": "Sérgio Lopes",
-        "text": "[Reaction: 😂]",
-        "time": "13:01"
-      }
-    ],
-    "messageCount": 6,
-    "authorCount": 4,
-    "linkCount": 1,
-    "weight": 20
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-31-006",
-    "title": "Marcell compartilha notícia de que o código fonte do Claude Code vazou publicamente, com links para repositórios e documentação técnica do projeto.",
-    "date": "2026-03-31T11:48:17.000Z",
-    "authors": [
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "claude code",
-      "vazamento de código",
-      "agentes de ia",
-      "anthropic",
-      "segurança"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-31-006"
-    ],
-    "links": [
-      {
-        "url": "https://x.com/alienpisscrack/status/2038941175525376266?s=46"
-      },
-      {
-        "url": "https://www.mintlify.com/VineeTagarwaL-code/claude-code/concepts/how-it-works"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Marcell Almeida",
-        "text": "tão dizendo que vazou o código do Claude code",
-        "time": "08:48"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "@173546760310878 resolvido o futuro da lumina 🤣",
-        "time": "08:49"
       }
     ],
     "messageCount": 2,
-    "authorCount": 1,
-    "linkCount": 2,
-    "weight": 9
+    "authorCount": 2,
+    "linkCount": 4,
+    "weight": 25
   },
   {
     "id": "story-whatsapp-clauders-2026-03-30-001",
@@ -1334,7 +1140,7 @@
     "conversation": [
       {
         "author": "Guilherme Silveira",
-        "text": "Pessoal, sobre evolução de código e qualidade de código. Tenho sentido MUITO com o desalinhamento da IA conosco. O pessoal achando que desalinhamento é algo do futuro. É super presente.\nUma regra simples. Não crie arquivos maiores que 1000 linhas. Vc coloca no promtp . No system prompt. No agents.md. Não importa onde. A gente sabe que ele pode não seguir.\nEntão regras bem estruturadas, quantitativas, que podems ser validadas programaticamente, podemos  criar validações assim. Bora. Cria um comando de lint para o tamanho do arquivo. Todo commit tem que validar, se falhar, tem que corrigir.\nCom o passar do tempo, o que o agente passa a fazer (é tempo ,pq é probabildiade, não é que ele aprendeu)\nEle:\n(1) desativa temporariamente a feature\nou\n(2) desativa completamente a feature\nou \n(3) desativa locamente a feature\n\nO 3o ele a nota o arquivo pra ser ignorado.\nO 2o ele simplesmente remove  oguardrail oprogramatico.\nO 1o ele roda um —no-verify e pronto. Tem casos piores tá. Onde ele faz um git log, vai la atras ver o que aconteceu e ao inves de fazer um cherry pick da um rollback de um monte de coisa junto pra tentar quebrar o guardrail.\n\nIsto é, ele se desalinha de proposito se eu puder usar a terminologia.\n\nEntão todo codigo dentro do repo que ele tem acesso é passivel de coisas do genero. É só questao de tempo. E pode ser qualquer regra. Basta que a regra seja quebrada e alertada para o proprio agente que esta rodando.\nDepois que ele morre, se vc rodar OUTRO agente pedindo EXPLICITAMENTE pra validar se as regras foram roubadas por um agente anterior, a taxa de sucesso aumenta.\nIsto é, tem que conviver com o agente fugindo das presas, e colcoar um novo agente (codigo programatico ou ia) pra garantir que depois que ele fugiu a gente consiga voltar atras.\n\nDei o exemplo do numero de linhas, é qualidade de codigo e segurança o probelma aqi",
+        "text": "Pessoal, sobre evolução de código e qualidade de código. Tenho sentido MUITO com o desalinhamento da IA conosco. O pessoal achando que desalinhamento é algo do futuro. É super presente.\nUma regra simples. Não crie arquivos maiores que 1000 linhas. Vc coloca no promtp . No system prompt. No agents.md. Não importa onde. A gente sabe que ele pode não seguir.\nEntão regras bem estruturadas, quantitativas, que podems ser validadas programaticamente, podemos  criar validações assim. Bora. Cria um comando de lint para o tamanho do arquivo. Todo commit tem que validar, se falhar, tem que corrigir.\nCom o passar do tempo, o que o agente passa a fazer (é tempo ,pq é probabildiade, não é que ele aprendeu)\nEle:\n(1) desativa temporariamente a feature\nou\n(2) desativa completamente a feature\nou \n(3) desativa locamente a feature\nO 3o ele a nota o arquivo pra ser ignorado.\nO 2o ele simplesmente remove  oguardrail oprogramatico.\nO 1o ele roda um —no-verify e pronto. Tem casos piores tá. Onde ele faz um git log, vai la atras ver o que aconteceu e ao inves de fazer um cherry pick da um rollback de um monte de coisa junto pra tentar quebrar o guardrail.\nIsto é, ele se desalinha de proposito se eu puder usar a terminologia.\nEntão todo codigo dentro do repo que ele tem acesso é passivel de coisas do genero. É só questao de tempo. E pode ser qualquer regra. Basta que a regra seja quebrada e alertada para o proprio agente que esta rodando.\nDepois que ele morre, se vc rodar OUTRO agente pedindo EXPLICITAMENTE pra validar se as regras foram roubadas por um agente anterior, a taxa de sucesso aumenta.\nIsto é, tem que conviver com o agente fugindo das presas, e colcoar um novo agente (codigo programatico ou ia) pra garantir que depois que ele fugiu a gente consiga voltar atras.\nDei o exemplo do numero de linhas, é qualidade de codigo e segurança o probelma aqi",
         "time": "17:11"
       },
       {
@@ -1356,51 +1162,7 @@
     "messageCount": 4,
     "authorCount": 2,
     "linkCount": 0,
-    "weight": 10
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-28-016",
-    "title": "Membros compartilhando links do X/Twitter com explicações sobre modelos de IA e trending topics técnicos.",
-    "date": "2026-03-28T19:10:02.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "discussão técnica",
-      "modelos de ia",
-      "referências externas"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-28-016"
-    ],
-    "links": [
-      {
-        "url": "https://x.com/namcios/status/2037956753812328761?s=46"
-      },
-      {
-        "url": "https://x.com/akashmuni27/status/2037468088254464179?t=LVafvF1N2dU5qcWhQNCl1g&s=08"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "Não consigo entender",
-        "time": "16:10"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "https://x.com/namcios/status/2037956753812328761?s=46\n\nFoi a explicação que vi antes do tweet original",
-        "time": "16:10"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 2,
-    "weight": 12
+    "weight": 29
   },
   {
     "id": "story-whatsapp-clauders-2026-03-28-014",
@@ -1471,22 +1233,12 @@
         "author": "Mauricio Aniche",
         "text": "O codex também mostra o reasoning do modelo com muito mais detalhe, vai volta, e aí, fica a impressão de que ele faz pouco mesmo. Senti isso no começo 🤣",
         "time": "11:36"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 👍]",
-        "time": "11:37"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 👍]",
-        "time": "11:37"
       }
     ],
-    "messageCount": 11,
+    "messageCount": 9,
     "authorCount": 3,
     "linkCount": 0,
-    "weight": 20
+    "weight": 23
   },
   {
     "id": "story-whatsapp-clauders-2026-03-28-013",
@@ -1540,7 +1292,7 @@
     "messageCount": 5,
     "authorCount": 3,
     "linkCount": 0,
-    "weight": 14
+    "weight": 17
   },
   {
     "id": "story-whatsapp-clauders-2026-03-28-012",
@@ -1613,11 +1365,6 @@
         "time": "09:38"
       },
       {
-        "author": "Marcell Almeida",
-        "text": "insistida? kkk",
-        "time": "09:38"
-      },
-      {
         "author": "Paulo Silveira",
         "text": "Sim, o hanrassing Ralph dele",
         "time": "09:38"
@@ -1630,11 +1377,6 @@
       {
         "author": "Paulo Silveira",
         "text": "E ver os subagentes no desktop melhorou demais que cli",
-        "time": "09:38"
-      },
-      {
-        "author": "Paulo Silveira",
-        "text": "Entre aspas",
         "time": "09:38"
       },
       {
@@ -1673,10 +1415,10 @@
         "time": "09:43"
       }
     ],
-    "messageCount": 20,
+    "messageCount": 18,
     "authorCount": 4,
     "linkCount": 1,
-    "weight": 34
+    "weight": 44
   },
   {
     "id": "story-whatsapp-ia-sob-controle-2026-03-27-008",
@@ -1708,7 +1450,7 @@
     "conversation": [
       {
         "author": "Marcus Mendes",
-        "text": "Anthropic adjusts Claude session limits and says users will use up their limits faster during peak hours, amid compute strain due to Claude's new popularity\nhttps://www.businessinsider.com/claude-usage-caps-changes-popularity-anthropic-2026-3",
+        "text": "Anthropic adjusts Claude session limits and says users will use up their limits faster during peak hours, amid compute strain due to Claude's new popularity",
         "time": "19:22"
       },
       {
@@ -1725,7 +1467,7 @@
     "messageCount": 3,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 14
+    "weight": 16
   },
   {
     "id": "story-whatsapp-clauders-2026-03-27-009",
@@ -1765,20 +1507,15 @@
         "time": "18:46"
       },
       {
-        "author": "Paulo Silveira",
-        "text": "faz sentido ne",
-        "time": "18:46"
-      },
-      {
         "author": "Marcell Almeida",
         "text": "foi estrategia do google por mto tempo msm",
         "time": "19:00"
       }
     ],
-    "messageCount": 4,
+    "messageCount": 3,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 12
+    "weight": 13
   },
   {
     "id": "story-whatsapp-clauders-2026-03-27-006",
@@ -1830,7 +1567,7 @@
     "messageCount": 3,
     "authorCount": 3,
     "linkCount": 2,
-    "weight": 16
+    "weight": 18
   },
   {
     "id": "story-whatsapp-clauders-2026-03-27-005",
@@ -1869,11 +1606,6 @@
     "conversation": [
       {
         "author": "Rafael Ribeiro",
-        "text": "[Reaction: 😂]",
-        "time": "08:34"
-      },
-      {
-        "author": "Rafael Ribeiro",
         "text": "The practice that used to cost thousands and take weeks now takes one to four hours and is only $100 per test.",
         "time": "09:11"
       },
@@ -1885,11 +1617,6 @@
       {
         "author": "Paulo Silveira",
         "text": "Público q tava falando em lovable nem sabe o q eh",
-        "time": "09:12"
-      },
-      {
-        "author": "Paulo Silveira",
-        "text": "Que perdido",
         "time": "09:12"
       },
       {
@@ -1923,10 +1650,10 @@
         "time": "09:15"
       }
     ],
-    "messageCount": 11,
+    "messageCount": 9,
     "authorCount": 3,
     "linkCount": 3,
-    "weight": 26
+    "weight": 30
   },
   {
     "id": "story-whatsapp-clauders-2026-03-26-007",
@@ -1953,11 +1680,6 @@
     "conversation": [
       {
         "author": "Marcell Almeida",
-        "text": "[Reaction: 😂]",
-        "time": "21:41"
-      },
-      {
-        "author": "Marcell Almeida",
         "text": "vcs acham bom esse GTM de “feature todo dia” versus fazer releases de tempos em tempos, com pitchzinho das novidades, etc?",
         "time": "21:42"
       },
@@ -1982,90 +1704,10 @@
         "time": "21:55"
       }
     ],
-    "messageCount": 6,
+    "messageCount": 5,
     "authorCount": 3,
     "linkCount": 0,
-    "weight": 15
-  },
-  {
-    "id": "story-whatsapp-ia-sob-controle-2026-03-25-002",
-    "title": "Recomendação de episódio do podcast 'IA Sob Controle' com Adrian Valentim discutindo o significado de inteligência na era dos LLMs, limites dos modelos e futuro da IA.",
-    "date": "2026-03-25T18:15:43.000Z",
-    "authors": [
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "podcast-ia-sob-controle",
-      "inteligencia-llms",
-      "definicao-inteligencia"
-    ],
-    "sources": [
-      "whatsapp-ia-sob-controle-2026-03-25-002"
-    ],
-    "links": [
-      {
-        "url": "https://open.spotify.com/episode/7yjLyTi6aab2pmVzz980XD?si=Fi3_gFMoQ9yOQWlhSsCczg&context=spotify%3Ashow%3A5xLCMHJ6eGWzdu8JaIDkuP"
-      }
-    ],
-    "sourceGroups": [
-      "IA Sob Controle"
-    ],
-    "conversation": [
-      {
-        "author": "Fabrício Carraro",
-        "text": "@224240443899935 escuta esse, ficou excelente",
-        "time": "15:15"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Você conhece o Adrian, não?",
-        "time": "15:16"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 1,
-    "linkCount": 1,
-    "weight": 7
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-25-002",
-    "title": "Confirmação de testes com Auto-dream do Claude Code, com vídeo demostrativo sobre como o recurso resolve problemas de memória em sessões longas.",
-    "date": "2026-03-25T14:30:50.000Z",
-    "authors": [
-      "Paulo Silveira"
-    ],
-    "tags": [
-      "claude-code",
-      "auto-dream",
-      "memoria-agentes"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-25-002"
-    ],
-    "links": [
-      {
-        "url": "https://www.youtube.com/shorts/Rp_KedsYORs"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "Vou testar.",
-        "time": "11:30"
-      },
-      {
-        "author": "Paulo Silveira",
-        "text": "Isso faz mto sentido",
-        "time": "11:30"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 1,
-    "linkCount": 1,
-    "weight": 7
+    "weight": 18
   },
   {
     "id": "story-whatsapp-clauders-2026-03-25-001",
@@ -2118,11 +1760,6 @@
       },
       {
         "author": "Marcell Almeida",
-        "text": "a, aachei!",
-        "time": "10:04"
-      },
-      {
-        "author": "Marcell Almeida",
         "text": "pena. ja ia mandar um PR pra vc 😂",
         "time": "10:04"
       },
@@ -2137,73 +1774,15 @@
         "time": "10:16"
       },
       {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 😂]",
-        "time": "10:16"
-      },
-      {
         "author": "Rafael Ribeiro",
-        "text": "Não tinha visto o recurso \"Auto-dream\" no Claude Code. A ideia é um long-term memory com um agente para lidar com ruído das sessões, contradições e contexto desatualizado, isso de acordo com o Reddit rs\n\nAcredito que no cursor tem o plugin continual learning\n\nhttps://www.reddit.com/r/ClaudeCode/comments/1s2ci4f/claude_code_can_now_dream/",
+        "text": "Não tinha visto o recurso \"Auto-dream\" no Claude Code. A ideia é um long-term memory com um agente para lidar com ruído das sessões, contradições e contexto desatualizado, isso de acordo com o Reddit rs\nAcredito que no cursor tem o plugin continual learning",
         "time": "10:36"
       }
     ],
-    "messageCount": 10,
+    "messageCount": 8,
     "authorCount": 4,
     "linkCount": 1,
-    "weight": 24
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-24-017",
-    "title": "Linear anuncia morte do issue tracking tradicional, relata que agentes de código estão em 75% dos workspaces enterprise, com volume de trabalho completado por agentes crescendo 5x nos últimos 3 meses e autoria de 25% de novas issues.",
-    "date": "2026-03-24T23:36:32.000Z",
-    "authors": [
-      "Marcell Almeida",
-      "Mauricio Aniche"
-    ],
-    "tags": [
-      "linear.app",
-      "issue tracking",
-      "agentes de ia",
-      "automação de desenvolvimento",
-      "product management"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-24-017"
-    ],
-    "links": [
-      {
-        "url": "https://linear.app/next"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Marcell Almeida",
-        "text": "https://linear.app/next\n\nBem legal o que o Linear tá se tornando e essa ideia de que issue tracking morreu",
-        "time": "20:36"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "E mais uma do dia",
-        "time": "20:37"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "E mais uma do dia",
-        "time": "20:38"
-      },
-      {
-        "author": "Mauricio Aniche",
-        "text": "Não falaram o pq né",
-        "time": "20:47"
-      }
-    ],
-    "messageCount": 4,
-    "authorCount": 2,
-    "linkCount": 1,
-    "weight": 12
+    "weight": 28
   },
   {
     "id": "story-whatsapp-ia-sob-controle-2026-03-24-013",
@@ -2233,11 +1812,6 @@
         "time": "17:35"
       },
       {
-        "author": "Paulo Silveira",
-        "text": "[Reaction: 😎]",
-        "time": "17:35"
-      },
-      {
         "author": "Fabrício Carraro",
         "text": "O Pro é aquele que pensa por tempo infinito",
         "time": "17:35"
@@ -2254,22 +1828,12 @@
       },
       {
         "author": "Paulo Silveira",
-        "text": "Ficou bom?",
-        "time": "17:37"
-      },
-      {
-        "author": "Paulo Silveira",
         "text": "Qtas páginas deu",
         "time": "17:37"
       },
       {
         "author": "Paulo Silveira",
         "text": "Eh focado em output não gigante né",
-        "time": "17:37"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Deixa eu ver",
         "time": "17:37"
       },
       {
@@ -2293,56 +1857,10 @@
         "time": "17:40"
       }
     ],
-    "messageCount": 13,
+    "messageCount": 10,
     "authorCount": 2,
     "linkCount": 0,
-    "weight": 19
-  },
-  {
-    "id": "story-whatsapp-ia-sob-controle-2026-03-24-012",
-    "title": "Relato sobre Claude invocando a si mesmo sem instrução explícita, demonstrando comportamento emergente não esperado em agentes de IA.",
-    "date": "2026-03-24T19:56:23.000Z",
-    "authors": [
-      "Guilherme Silveira",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "claude invocação recursiva",
-      "agentes auto-invocáveis",
-      "comportamento emergente"
-    ],
-    "sources": [
-      "whatsapp-ia-sob-controle-2026-03-24-012"
-    ],
-    "links": [
-      {
-        "url": "https://x.com/i/status/2036136822099628173"
-      }
-    ],
-    "sourceGroups": [
-      "IA Sob Controle"
-    ],
-    "conversation": [
-      {
-        "author": "Guilherme Silveira",
-        "text": "E o meu Claude que invocou o meu Claude hahahaha",
-        "time": "16:56"
-      },
-      {
-        "author": "Guilherme Silveira",
-        "text": "Sem eu pedir. Do nadam",
-        "time": "16:56"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Como assim?",
-        "time": "17:00"
-      }
-    ],
-    "messageCount": 3,
-    "authorCount": 2,
-    "linkCount": 1,
-    "weight": 11
+    "weight": 20
   },
   {
     "id": "story-whatsapp-clauders-2026-03-24-016",
@@ -2401,45 +1919,7 @@
     "messageCount": 6,
     "authorCount": 2,
     "linkCount": 0,
-    "weight": 12
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-24-015",
-    "title": "Menção de trabalho em progresso para reduzir modelo instruct de 40B para 20B através de pruning e destilação, adicionando capacidade de function calling no processo.",
-    "date": "2026-03-24T18:59:48.000Z",
-    "authors": [
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "destilação de modelos",
-      "model pruning",
-      "function calling",
-      "llm otimização",
-      "modelos 20b"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-24-015"
-    ],
-    "links": [],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 😂]",
-        "time": "16:00"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Uma das minhas tarefas agora é fazer um pruning e posterior destilação pra um dos modelos aqui do BSC, transformar um modelo instruct de 40B em um de 20B, e ensinar function calling pra ele no processo",
-        "time": "16:14"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 1,
-    "linkCount": 0,
-    "weight": 5
+    "weight": 16
   },
   {
     "id": "story-whatsapp-clauders-2026-03-24-014",
@@ -2448,8 +1928,7 @@
     "authors": [
       "Guilherme Silveira",
       "Marcell Almeida",
-      "Fabrício Carraro",
-      "Sérgio Lopes"
+      "Fabrício Carraro"
     ],
     "tags": [
       "cloudflare workers",
@@ -2479,18 +1958,13 @@
       },
       {
         "author": "Marcell Almeida",
-        "text": "We’re introducing Dynamic Workers, which allow you to execute AI-generated code in secure, lightweight isolates. This approach is 100 times faster than traditional containers.\n\nhttps://blog.cloudflare.com/dynamic-workers/",
+        "text": "We’re introducing Dynamic Workers, which allow you to execute AI-generated code in secure, lightweight isolates. This approach is 100 times faster than traditional containers.",
         "time": "14:55"
       },
       {
         "author": "Fabrício Carraro",
         "text": "Sou pesquisador agora... meu primeiro paper foi aprovado ontem na LREC",
         "time": "14:56"
-      },
-      {
-        "author": "Guilherme Silveira",
-        "text": "bacana hein 🙂",
-        "time": "14:57"
       },
       {
         "author": "Guilherme Silveira",
@@ -2501,11 +1975,6 @@
         "author": "Guilherme Silveira",
         "text": "e pedir a recomendacao",
         "time": "14:57"
-      },
-      {
-        "author": "Sérgio Lopes",
-        "text": "[Reaction: 😮]",
-        "time": "14:58"
       },
       {
         "author": "Fabrício Carraro",
@@ -2523,8 +1992,8 @@
         "time": "15:13"
       }
     ],
-    "messageCount": 10,
-    "authorCount": 4,
+    "messageCount": 8,
+    "authorCount": 3,
     "linkCount": 1,
     "weight": 24
   },
@@ -2572,7 +2041,7 @@
       },
       {
         "author": "Sérgio Lopes",
-        "text": "primeiro programa feito. 8min\n\n> The solution passes your 6 cases and a 100-case randomized signed-integer  fuzz run. The generated program supports signed decimal inputs up to 64  digits each.",
+        "text": "primeiro programa feito. 8min\n> The solution passes your 6 cases and a 100-case randomized signed-integer  fuzz run. The generated program supports signed decimal inputs up to 64  digits each.",
         "time": "13:50"
       },
       {
@@ -2611,16 +2080,6 @@
         "time": "14:04"
       },
       {
-        "author": "Sérgio Lopes",
-        "text": "AGI ACHIEVED",
-        "time": "14:05"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 😂]",
-        "time": "14:05"
-      },
-      {
         "author": "Fabrício Carraro",
         "text": "Usaram o Claude Opus 4.5",
         "time": "14:05"
@@ -2633,11 +2092,6 @@
       {
         "author": "Sérgio Lopes",
         "text": "nao sabe usar claude code da nisso kkk",
-        "time": "14:05"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 😂]",
         "time": "14:05"
       },
       {
@@ -2663,11 +2117,6 @@
       {
         "author": "Paulo Silveira",
         "text": "eh uma farrsa o paper entao",
-        "time": "14:06"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Puuutz haahha",
         "time": "14:06"
       },
       {
@@ -2701,11 +2150,6 @@
         "time": "14:07"
       },
       {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 😂]",
-        "time": "14:07"
-      },
-      {
         "author": "Paulo Silveira",
         "text": "vou fazer meu blog em brainfuck",
         "time": "14:07"
@@ -2728,11 +2172,6 @@
       {
         "author": "Sérgio Lopes",
         "text": "eu nem pedi tudo isso",
-        "time": "14:11"
-      },
-      {
-        "author": "Paulo Silveira",
-        "text": "caramba gente…",
         "time": "14:11"
       },
       {
@@ -2797,11 +2236,6 @@
       },
       {
         "author": "Paulo Silveira",
-        "text": "ele ta certo",
-        "time": "14:19"
-      },
-      {
-        "author": "Paulo Silveira",
         "text": "na opcao A, B, C ele eh ruim",
         "time": "14:19"
       },
@@ -2846,10 +2280,10 @@
         "time": "14:23"
       }
     ],
-    "messageCount": 57,
+    "messageCount": 50,
     "authorCount": 5,
     "linkCount": 1,
-    "weight": 74
+    "weight": 98
   },
   {
     "id": "story-whatsapp-clauders-2026-03-24-012",
@@ -2897,202 +2331,7 @@
     "messageCount": 4,
     "authorCount": 1,
     "linkCount": 0,
-    "weight": 7
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-24-010",
-    "title": "Apresentação de HappyRobot, plataforma para construção e orquestração de workforce de IA autônomos, com exemplo de demo interativa e casos de uso em operações.",
-    "date": "2026-03-24T13:55:36.000Z",
-    "authors": [
-      "Fabrício Carraro",
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "happyrobot",
-      "ai workers",
-      "automação empresarial",
-      "demo interativa",
-      "orquestração de agentes"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-24-010"
-    ],
-    "links": [
-      {
-        "url": "https://www.happyrobot.ai/"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Fabrício Carraro",
-        "text": "Testem isso aqui. Na página principal tem um \"Talk to Happy Robot\". Empresa aqui de Barcelona, tão crescendo mto...",
-        "time": "10:55"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "sensacional! boa forma de fazer um interactive-demo",
-        "time": "11:14"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 👍]",
-        "time": "11:14"
-      }
-    ],
-    "messageCount": 3,
-    "authorCount": 2,
-    "linkCount": 1,
-    "weight": 11
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-24-009",
-    "title": "Notícia sobre Mark Zuckerberg desenvolvendo um agente de IA para auxiliar funções executivas, tema relevante para discussão de aplicação de IA em liderança.",
-    "date": "2026-03-24T10:07:49.000Z",
-    "authors": [
-      "Fabrício Carraro",
-      "Paulo Silveira"
-    ],
-    "tags": [
-      "ia para executivos",
-      "agentes de ia",
-      "ceo ai agent",
-      "mark zuckerberg"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-24-009"
-    ],
-    "links": [
-      {
-        "url": "https://www.wsj.com/tech/ai/mark-zuckerberg-is-building-an-ai-agent-to-help-him-be-ceo-eddab2d5"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Fabrício Carraro",
-        "text": "https://www.wsj.com/tech/ai/mark-zuckerberg-is-building-an-ai-agent-to-help-him-be-ceo-eddab2d5\n\nOutra boa pra vocês @61229070586023 @106911131300018 kkk",
-        "time": "07:07"
-      },
-      {
-        "author": "Paulo Silveira",
-        "text": "pior que esta nao fica",
-        "time": "07:15"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 😂]",
-        "time": "07:15"
-      }
-    ],
-    "messageCount": 3,
-    "authorCount": 2,
-    "linkCount": 1,
-    "weight": 11
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-24-007",
-    "title": "Comentário sobre integração de Claude Code em aplicações de mensageria e sistemas pessoais, com referência a nano claw e possibilidades de automação avançada.",
-    "date": "2026-03-24T00:57:28.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "claude code",
-      "integração com sistemas",
-      "automação",
-      "nano claw"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-24-007"
-    ],
-    "links": [],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "Esse meu amigo enfiou o nano claw com acesso a todo Mac dele dentro do ZAP dele",
-        "time": "21:57"
-      },
-      {
-        "author": "Paulo Silveira",
-        "text": "Uma maluquice",
-        "time": "21:57"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "o que é nano claw?",
-        "time": "21:58"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "Eu vou fazer isso com Claude code agora que lançaram a feature",
-        "time": "21:58"
-      },
-      {
-        "author": "Paulo Silveira",
-        "text": "Me ajudem a invadir kkk",
-        "time": "22:01"
-      }
-    ],
-    "messageCount": 5,
-    "authorCount": 2,
-    "linkCount": 0,
-    "weight": 11
-  },
-  {
-    "id": "story-whatsapp-ia-sob-controle-2026-03-23-002",
-    "title": "Discussão sobre evolução de capacidades de computer use no Claude, com Openclaw representando avanço em autonomia de agentes e percepção de segurança em relação à Anthropic.",
-    "date": "2026-03-23T23:06:21.000Z",
-    "authors": [
-      "Fabrício Carraro",
-      "Guilherme Silveira"
-    ],
-    "tags": [
-      "claude computer use",
-      "openclaw",
-      "agentes autônomos",
-      "anthropic"
-    ],
-    "sources": [
-      "whatsapp-ia-sob-controle-2026-03-23-002"
-    ],
-    "links": [
-      {
-        "url": "https://x.com/i/status/2036195789601374705"
-      }
-    ],
-    "sourceGroups": [
-      "IA Sob Controle"
-    ],
-    "conversation": [
-      {
-        "author": "Fabrício Carraro",
-        "text": "https://x.com/i/status/2036195789601374705\n\nMais Openclaw no Claude",
-        "time": "20:08"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Na vdd é o computer use mais avançado",
-        "time": "20:09"
-      },
-      {
-        "author": "Guilherme Silveira",
-        "text": "Eh aí q openclaw muda o jogo né. E aquela nossa ideia de que sentimos mais segurança com anthropic teoricamente.",
-        "time": "20:28"
-      }
-    ],
-    "messageCount": 3,
-    "authorCount": 2,
-    "linkCount": 1,
-    "weight": 11
+    "weight": 16
   },
   {
     "id": "story-whatsapp-clauders-2026-03-23-005",
@@ -3149,7 +2388,7 @@
     "messageCount": 4,
     "authorCount": 3,
     "linkCount": 2,
-    "weight": 17
+    "weight": 21
   },
   {
     "id": "story-whatsapp-clauders-2026-03-23-004",
@@ -3191,7 +2430,7 @@
     "messageCount": 3,
     "authorCount": 1,
     "linkCount": 0,
-    "weight": 6
+    "weight": 9
   },
   {
     "id": "story-whatsapp-clauders-2026-03-23-003",
@@ -3232,7 +2471,7 @@
       },
       {
         "author": "Rafael Ribeiro",
-        "text": "Ainda não testei, mas a ideia é construir um mapa do projeto... principalmente projetos grandes... O resultado parece interessante demais para ser verdade rs\n- Menos contexto perdido → menos erro\n- 6,8x menos tokens em code reviews\n- Até 49x menos tokens no dia a dia\n- Reindexação de 2.900 arquivos em menos de 2 segundos\n- Tudo local, SQLite\n\nhttps://github.com/tirth8205/code-review-graph?tab=readme-ov-file",
+        "text": "Ainda não testei, mas a ideia é construir um mapa do projeto... principalmente projetos grandes... O resultado parece interessante demais para ser verdade rs\n- Menos contexto perdido → menos erro\n- 6,8x menos tokens em code reviews\n- Até 49x menos tokens no dia a dia\n- Reindexação de 2.900 arquivos em menos de 2 segundos\n- Tudo local, SQLite",
         "time": "17:38"
       },
       {
@@ -3244,49 +2483,7 @@
     "messageCount": 4,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 12
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-23-001",
-    "title": "Comentário breve sobre mudança de direção estratégica da plataforma Lovable e seu paralelo com outras soluções de IA.",
-    "date": "2026-03-23T16:34:55.000Z",
-    "authors": [
-      "Sérgio Lopes",
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "lovable",
-      "pivô de produto",
-      "ferramenta de ia"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-23-001"
-    ],
-    "links": [],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Sérgio Lopes",
-        "text": "Não enxerguei essa pivotada da Lovable, interessante",
-        "time": "13:34"
-      },
-      {
-        "author": "Sérgio Lopes",
-        "text": "Tem um paralelo com adapta+skip tbm",
-        "time": "13:35"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "é recente. ceo postou no x esses dias",
-        "time": "13:35"
-      }
-    ],
-    "messageCount": 3,
-    "authorCount": 2,
-    "linkCount": 0,
-    "weight": 9
+    "weight": 17
   },
   {
     "id": "story-whatsapp-clauders-2026-03-23-022",
@@ -3318,7 +2515,7 @@
     "conversation": [
       {
         "author": "Marcell Almeida",
-        "text": "https://x.com/rodrigofm/status/2036080307409953127\n\nMe lembra Adapta tb… lovable ta buscando se diferenciar",
+        "text": "Me lembra Adapta tb… lovable ta buscando se diferenciar",
         "time": "11:03"
       },
       {
@@ -3343,14 +2540,14 @@
       },
       {
         "author": "Marcell Almeida",
-        "text": "tá mesmo! \n\nG4 OS (adapta do g4) ta indo com essas features “glean-like” tb",
+        "text": "tá mesmo! \nG4 OS (adapta do g4) ta indo com essas features “glean-like” tb",
         "time": "11:05"
       }
     ],
     "messageCount": 6,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 14
+    "weight": 17
   },
   {
     "id": "story-whatsapp-clauders-2026-03-23-021",
@@ -3398,7 +2595,7 @@
       },
       {
         "author": "Mauricio Aniche",
-        "text": "uns 3-4 anos atras, tive um demo com uma empresa israelense, que criaram um jogo pra treinar times em processos de oncall e debug. Eles criaram um slack fake, onde vc recebia uma msg de um bot, e a partir daí começava a brincadeira. Nunca compramos isso na Adyen pq apesar de parecer legal, o mundo real era tao distante dessa simulacao, que desencamos. Eles estavam dispostos a criar uma simulacao igual a nossa, mas aí, achamos que nosso treinamento interno era tao bom quanto.\n\nDificil entender o quanto esse tipo de pratica deliberada ajuda na pratica.",
+        "text": "uns 3-4 anos atras, tive um demo com uma empresa israelense, que criaram um jogo pra treinar times em processos de oncall e debug. Eles criaram um slack fake, onde vc recebia uma msg de um bot, e a partir daí começava a brincadeira. Nunca compramos isso na Adyen pq apesar de parecer legal, o mundo real era tao distante dessa simulacao, que desencamos. Eles estavam dispostos a criar uma simulacao igual a nossa, mas aí, achamos que nosso treinamento interno era tao bom quanto.\nDificil entender o quanto esse tipo de pratica deliberada ajuda na pratica.",
         "time": "08:17"
       },
       {
@@ -3410,87 +2607,7 @@
     "messageCount": 6,
     "authorCount": 2,
     "linkCount": 0,
-    "weight": 12
-  },
-  {
-    "id": "story-whatsapp-ia-sob-controle-2026-03-21-004",
-    "title": "Breve exchange pessoal sobre um padrão cognitivo recorrente que Paulo experimenta, com concordância de Fabrício. Contexto específico não disponível (mensagem anterior não incluída).",
-    "date": "2026-03-21T21:11:26.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "padrão cognitivo",
-      "uso de ia",
-      "reflexão pessoal"
-    ],
-    "sources": [
-      "whatsapp-ia-sob-controle-2026-03-21-004"
-    ],
-    "links": [],
-    "sourceGroups": [
-      "IA Sob Controle"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "Me pego o tempo todo nisso",
-        "time": "18:11"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 👍]",
-        "time": "18:13"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 0,
-    "weight": 8
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-21-011",
-    "title": "Reação a vídeo comparativo entre Bernie e Claude, com comentário crítico sobre Kimi 2.5 custar mais que o dobro do preço original e análise de diferenças entre Composer e Kimi.",
-    "date": "2026-03-21T00:48:51.000Z",
-    "authors": [
-      "Rafael Ribeiro",
-      "Sérgio Lopes"
-    ],
-    "tags": [
-      "modelo de linguagem",
-      "pricing",
-      "kimi",
-      "composer",
-      "comparação de modelos"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-21-011"
-    ],
-    "links": [
-      {
-        "url": "https://youtu.be/h3AtWdeu_G0?si=6vO-_lHE4KLNX92M"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Rafael Ribeiro",
-        "text": "[Reaction: 👀]",
-        "time": "21:48"
-      },
-      {
-        "author": "Sérgio Lopes",
-        "text": "Composer o Kimi 2.5 cobrado mais de 2x o preço original 🤡",
-        "time": "21:50"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 1,
-    "weight": 10
+    "weight": 25
   },
   {
     "id": "story-whatsapp-clauders-2026-03-20-007",
@@ -3518,7 +2635,7 @@
     "conversation": [
       {
         "author": "Rafael Ribeiro",
-        "text": "criamos um tenant no \"Ralph Console\" StartSe, e estamos validando por aqui. A ideia é adicionar Alura e Lumina, mas nós mesmo podemos rodar uns testes... O processo é gerar /prd, transforma em json /ralph e executa com o comando do github gh ao invés de rodar o ./ralph.\n\n @234394149204034 acredito que pode ajudar a ter visibilidade do time utilizando o Codex, mas por enquanto o time teria que estar utilizando ralph por aí...\n @173546760310878 sei que o Samuel está utilizando bastante, então pode fazer sentido para te trazer algumas métricas, o que acham? \n\nNa sequência compartilho com vcs. Estamos avaliando tbm uma ideia de criar um Score de Maturidade de uso de IA para engenharia de software nos times, baseado em algumas regras. Já viram algo parecido? Acho que tem um bom ponto de discussão.\n\nA Anthropic está levantando métricas com base nas informações do github... Ainda não estamos nesse caminho, mas estamos considerando como próximo passo.",
+        "text": "criamos um tenant no \"Ralph Console\" StartSe, e estamos validando por aqui. A ideia é adicionar Alura e Lumina, mas nós mesmo podemos rodar uns testes... O processo é gerar /prd, transforma em json /ralph e executa com o comando do github gh ao invés de rodar o ./ralph.\n @234394149204034 acredito que pode ajudar a ter visibilidade do time utilizando o Codex, mas por enquanto o time teria que estar utilizando ralph por aí...\n @173546760310878 sei que o Samuel está utilizando bastante, então pode fazer sentido para te trazer algumas métricas, o que acham? \nNa sequência compartilho com vcs. Estamos avaliando tbm uma ideia de criar um Score de Maturidade de uso de IA para engenharia de software nos times, baseado em algumas regras. Já viram algo parecido? Acho que tem um bom ponto de discussão.\nA Anthropic está levantando métricas com base nas informações do github... Ainda não estamos nesse caminho, mas estamos considerando como próximo passo.",
         "time": "14:41"
       },
       {
@@ -3540,7 +2657,7 @@
     "messageCount": 4,
     "authorCount": 2,
     "linkCount": 0,
-    "weight": 10
+    "weight": 22
   },
   {
     "id": "story-whatsapp-clauders-2026-03-20-005",
@@ -3576,18 +2693,13 @@
     "conversation": [
       {
         "author": "Guilherme Silveira",
-        "text": "Ficou bem legal hein. O desafio acho que é esse. As halucinacoes vao se acumulando no processo e quando chega no final tem parte sim, parte não, o problema é descobrir qual parte sim qual parte não. Gostei mais do que o que prototipo que eu tenho.\n\nSobre a questão de segurança, não sei se é o mesmo problema que tivemos. Separo em duas partes. Uma validação de segurança que sabe o que foi feito e tenta atacar. Outra que não sabge o que foi feito e tenta atacar o código. Os ataques são de analise da ideia, analise do codigo impelmentado, as ferramentas de analise estatica, e as ferramentas de ataque geral (levanta o server local e tenta atacar). Coloca tudo no loop. Como é uma fase separada e uma das partes dela não tem conhecimento de COMO foi feito, ela acaba pegando coisas que a outra estava enviesada.",
+        "text": "Ficou bem legal hein. O desafio acho que é esse. As halucinacoes vao se acumulando no processo e quando chega no final tem parte sim, parte não, o problema é descobrir qual parte sim qual parte não. Gostei mais do que o que prototipo que eu tenho.\nSobre a questão de segurança, não sei se é o mesmo problema que tivemos. Separo em duas partes. Uma validação de segurança que sabe o que foi feito e tenta atacar. Outra que não sabge o que foi feito e tenta atacar o código. Os ataques são de analise da ideia, analise do codigo impelmentado, as ferramentas de analise estatica, e as ferramentas de ataque geral (levanta o server local e tenta atacar). Coloca tudo no loop. Como é uma fase separada e uma das partes dela não tem conhecimento de COMO foi feito, ela acaba pegando coisas que a outra estava enviesada.",
         "time": "07:47"
       },
       {
         "author": "Mauricio Aniche",
         "text": "Faz isso ser um produto, @60752345985068, pq aí usamos aqui. Precisa suportar Codex! :)",
         "time": "07:56"
-      },
-      {
-        "author": "Paulo Silveira",
-        "text": "https://cursor.com/pt-BR/blog/composer-2",
-        "time": "08:00"
       },
       {
         "author": "Paulo Silveira",
@@ -3610,11 +2722,6 @@
         "time": "08:16"
       },
       {
-        "author": "Sérgio Lopes",
-        "text": "[Reaction: ☝]",
-        "time": "08:16"
-      },
-      {
         "author": "Fabrício Carraro",
         "text": "(aliás, etimologia da palavra \"cacife\"... é árabe)",
         "time": "08:17"
@@ -3622,11 +2729,6 @@
       {
         "author": "Guilherme Silveira",
         "text": "china: “estamos sendo atacados pela Anysphere e estao distilando nossos modelos”",
-        "time": "08:19"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 😂]",
         "time": "08:19"
       },
       {
@@ -3676,56 +2778,14 @@
       },
       {
         "author": "Mauricio Aniche",
-        "text": "Acho que a diferença agora é que vc aumentou muito o throughput de feature produzida. Antes vc produzia 2 features por semana, número “aceitável”, e então queria aumentar o tempo que levava pra conseguir soltar isso em produção. Vc conseguia validar essas 2 features sem problemas e sem querer o mundo. Agora vc produz 20 por semana. Vc não consegue nem governar essas 20 features sendo lançadas.\n\nBoa parte da garantia de qualidade em sistema de larga escala era que um humano conseguia monitorar com muito carinho cada lançamento. Abria o feature flag aos poucos. Monitorava. Agora, a não ser que vc crie mecanismos de segurança que hoje não existem em 99% dos lugares, vc nem se beneficia desse throughput.\n\nA Uber, por exemplo, sistema de testes automatizados e deploy era state-of-the-art. Unidade, componente, e2e em homolog e em produção. Depois, deployava canario, depois zona por zona, com intervalos de hora, e mesmo com deploy parcial, monitoramento automatico de alerta, disparou alerta critico durante deploy, rollback automático. Feature aqui ainda até fechada. Depois sistema de feature flag, mesma coisa, liberava 1% da feature de maneira zonal, com rollback automático. E ainda assim, mesmo depois de tudo isso, ainda dava merda.",
+        "text": "Acho que a diferença agora é que vc aumentou muito o throughput de feature produzida. Antes vc produzia 2 features por semana, número “aceitável”, e então queria aumentar o tempo que levava pra conseguir soltar isso em produção. Vc conseguia validar essas 2 features sem problemas e sem querer o mundo. Agora vc produz 20 por semana. Vc não consegue nem governar essas 20 features sendo lançadas.\nBoa parte da garantia de qualidade em sistema de larga escala era que um humano conseguia monitorar com muito carinho cada lançamento. Abria o feature flag aos poucos. Monitorava. Agora, a não ser que vc crie mecanismos de segurança que hoje não existem em 99% dos lugares, vc nem se beneficia desse throughput.\nA Uber, por exemplo, sistema de testes automatizados e deploy era state-of-the-art. Unidade, componente, e2e em homolog e em produção. Depois, deployava canario, depois zona por zona, com intervalos de hora, e mesmo com deploy parcial, monitoramento automatico de alerta, disparou alerta critico durante deploy, rollback automático. Feature aqui ainda até fechada. Depois sistema de feature flag, mesma coisa, liberava 1% da feature de maneira zonal, com rollback automático. E ainda assim, mesmo depois de tudo isso, ainda dava merda.",
         "time": "09:57"
       }
     ],
-    "messageCount": 21,
+    "messageCount": 18,
     "authorCount": 5,
     "linkCount": 1,
-    "weight": 38
-  },
-  {
-    "id": "story-whatsapp-ia-sob-controle-2026-03-20-001",
-    "title": "Reação rápida ao lançamento do Cursor Composer 2 com observação de que há corrida de preços para baixo na indústria de modelos de linguagem para coding.",
-    "date": "2026-03-20T10:37:49.000Z",
-    "authors": [
-      "Fabrício Carraro",
-      "Paulo Silveira"
-    ],
-    "tags": [
-      "pricing",
-      "cursor composer",
-      "competição de preço",
-      "modelo de linguagem"
-    ],
-    "sources": [
-      "whatsapp-ia-sob-controle-2026-03-20-001"
-    ],
-    "links": [
-      {
-        "url": "https://cursor.com/pt-BR/blog/composer-2"
-      }
-    ],
-    "sourceGroups": [
-      "IA Sob Controle"
-    ],
-    "conversation": [
-      {
-        "author": "Fabrício Carraro",
-        "text": "https://cursor.com/pt-BR/blog/composer-2",
-        "time": "07:37"
-      },
-      {
-        "author": "Paulo Silveira",
-        "text": "Caramba. Corrida de preço pra baixo",
-        "time": "08:00"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 1,
-    "weight": 10
+    "weight": 76
   },
   {
     "id": "story-whatsapp-clauders-2026-03-20-004",
@@ -3761,11 +2821,6 @@
       },
       {
         "author": "Sérgio Lopes",
-        "text": "[Reaction: 😂]",
-        "time": "23:26"
-      },
-      {
-        "author": "Sérgio Lopes",
         "text": "Vai economizar 40 mil por ano isso",
         "time": "23:27"
       },
@@ -3776,127 +2831,14 @@
       },
       {
         "author": "Paulo Silveira",
-        "text": "tem aqui um recorte, to arrumando cem mil coisas.\nhttps://guj-estatico.fly.dev/",
+        "text": "tem aqui um recorte, to arrumando cem mil coisas.",
         "time": "23:32"
       }
     ],
-    "messageCount": 5,
+    "messageCount": 4,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 13
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-20-003",
-    "title": "Grupo Builders SP cresceu significativamente (encheu) após post de Paulo. Fabrício comemora e planeja converter em comunidade oficial e criar novo grupo.",
-    "date": "2026-03-20T00:46:33.000Z",
-    "authors": [
-      "Fabrício Carraro",
-      "Mauricio Aniche",
-      "Rafael Ribeiro"
-    ],
-    "tags": [
-      "comunidade",
-      "builders sp",
-      "crescimento"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-20-003"
-    ],
-    "links": [],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 👍]",
-        "time": "21:46"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Encheu o grupo do Builders SP rs",
-        "time": "21:46"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Já vou ter que converter em comunidade",
-        "time": "21:46"
-      },
-      {
-        "author": "Mauricio Aniche",
-        "text": "Impressionante. Parabéns, Fabricio!",
-        "time": "21:47"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "E criar um 2",
-        "time": "21:47"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 🙏]",
-        "time": "21:47"
-      },
-      {
-        "author": "Rafael Ribeiro",
-        "text": "[Reaction: 🚀]",
-        "time": "21:47"
-      },
-      {
-        "author": "Rafael Ribeiro",
-        "text": "claude code mandou um \"Let me primeiro...\" rs",
-        "time": "21:49"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "[Reaction: 😂]",
-        "time": "21:50"
-      }
-    ],
-    "messageCount": 9,
-    "authorCount": 3,
-    "linkCount": 0,
-    "weight": 18
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-19-002",
-    "title": "Paulo nota que Anthropic está implementando recursos que o grupo já utiliza, sinalizando ritmo acelerado de inovação na plataforma Claude.",
-    "date": "2026-03-19T23:57:47.000Z",
-    "authors": [
-      "Paulo Silveira"
-    ],
-    "tags": [
-      "anthropic",
-      "desenvolvimento de ia",
-      "concorrência"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-19-002"
-    ],
-    "links": [
-      {
-        "url": "https://x.com/i/status/2034761016320696565"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "É. Anthropic tá implementando tudo q a gente faz muito",
-        "time": "21:00"
-      },
-      {
-        "author": "Paulo Silveira",
-        "text": "Pra gente trabalhar 24 h",
-        "time": "21:01"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 1,
-    "linkCount": 1,
-    "weight": 7
+    "weight": 14
   },
   {
     "id": "story-whatsapp-clauders-2026-03-19-001",
@@ -3927,17 +2869,12 @@
     "conversation": [
       {
         "author": "Rafael Ribeiro",
-        "text": "@234394149204034 @173546760310878 sobre as métricas dev. Olha esse nosso caso interno que estamos validando.\n\nAo invés de \"subiu 1 PR com 8k linhas de código\". Com essa PoC dá pra ver: \"executou um PRD de 15 steps em 20 minutos e demorou 2 semanas pra ir pra prod por conta de 30 commits de fix gerados depois\"\n\nIsso muda como avaliar a qualidade de execução, não só velocidade de entrega.\n\nO ralph loop rastreia exatamente isso: o que foi planejado no PRD vs o que realmente aconteceu até o deploy.\n\nisso resolve um gap real: a gente consegue ver a intenção do agente, não só o artefato gerado.\n\nps. o time construiu com claude code aqui, mas começamos a explorar hoje rs\n\nO ralph a gente está executando em um arquivo remoto, que está no repo\n\ngh api repos/StartSe/ralph-console/contents/ralph/ralph.sh -H \"Accept:             \n  application/vnd.github.raw\" | bash -s -- --tool claude",
+        "text": "@234394149204034 @173546760310878 sobre as métricas dev. Olha esse nosso caso interno que estamos validando.\nAo invés de \"subiu 1 PR com 8k linhas de código\". Com essa PoC dá pra ver: \"executou um PRD de 15 steps em 20 minutos e demorou 2 semanas pra ir pra prod por conta de 30 commits de fix gerados depois\"\nIsso muda como avaliar a qualidade de execução, não só velocidade de entrega.\nO ralph loop rastreia exatamente isso: o que foi planejado no PRD vs o que realmente aconteceu até o deploy.\nisso resolve um gap real: a gente consegue ver a intenção do agente, não só o artefato gerado.\nps. o time construiu com claude code aqui, mas começamos a explorar hoje rs\nO ralph a gente está executando em um arquivo remoto, que está no repo\ngh api repos/StartSe/ralph-console/contents/ralph/ralph.sh -H \"Accept:             \n  application/vnd.github.raw\" | bash -s -- --tool claude",
         "time": "16:51"
       },
       {
         "author": "Rafael Ribeiro",
         "text": "só não publica isso rs, pois tem uns testes de vulnerabilidades que estamos atuando",
-        "time": "16:54"
-      },
-      {
-        "author": "Sérgio Lopes",
-        "text": "legal hein",
         "time": "16:54"
       },
       {
@@ -3961,10 +2898,10 @@
         "time": "16:56"
       }
     ],
-    "messageCount": 7,
+    "messageCount": 6,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 15
+    "weight": 26
   },
   {
     "id": "story-whatsapp-clauders-2026-03-19-043",
@@ -3997,12 +2934,12 @@
     "conversation": [
       {
         "author": "Rafael Ribeiro",
-        "text": "O prompt ficou nota 4/10, mas gostei do resultado para refazer o design com as skills, podendo visualizar / ajustar no paper.\n\nO design atual do toolkit da StartSe não está muito usual. O toolkit tem como objetivo compartilhar com os       \nalunos um repositório de templates n8n, flowise, make, entre outros. São agentes de IA e automações que o        \nusuário pode fazer download. Entretanto, como estamos falando de +300 templates, é interessante agrupar, ter     \nfiltros, além de uma boa busca. Pensando em um design onde iremos manter o header StartSe e padrões de cores,    \nuse o mcp do Paper para criar o design da aplicação. Utilize as skills frontend-design, ui-ux-pro-max e          \nweb-design-guidelines",
+        "text": "O prompt ficou nota 4/10, mas gostei do resultado para refazer o design com as skills, podendo visualizar / ajustar no paper.\nO design atual do toolkit da StartSe não está muito usual. O toolkit tem como objetivo compartilhar com os       \nalunos um repositório de templates n8n, flowise, make, entre outros. São agentes de IA e automações que o        \nusuário pode fazer download. Entretanto, como estamos falando de +300 templates, é interessante agrupar, ter     \nfiltros, além de uma boa busca. Pensando em um design onde iremos manter o header StartSe e padrões de cores,    \nuse o mcp do Paper para criar o design da aplicação. Utilize as skills frontend-design, ui-ux-pro-max e          \nweb-design-guidelines",
         "time": "15:51"
       },
       {
         "author": "Rafael Ribeiro",
-        "text": "achei interessante esse estudo da Laravel sobre documentacão / contexto importam bastante, mas modelo também impacta. Fizeram uma análise para algumas tarefas no framework Laravel https://laravel.com/blog/which-ai-model-is-best-for-laravel \n\no único ponto que é a questão do llm ser não determinístico e não dá para tratar uma única execução como definitiva...",
+        "text": "achei interessante esse estudo da Laravel sobre documentacão / contexto importam bastante, mas modelo também impacta. Fizeram uma análise para algumas tarefas no framework Laravel https://laravel.com/blog/which-ai-model-is-best-for-laravel \no único ponto que é a questão do llm ser não determinístico e não dá para tratar uma única execução como definitiva...",
         "time": "16:19"
       },
       {
@@ -4014,17 +2951,12 @@
         "author": "Rafael Ribeiro",
         "text": "pode publicar sim",
         "time": "16:21"
-      },
-      {
-        "author": "Rafael Ribeiro",
-        "text": "[Reaction: 👍]",
-        "time": "16:24"
       }
     ],
-    "messageCount": 5,
+    "messageCount": 4,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 13
+    "weight": 23
   },
   {
     "id": "story-whatsapp-clauders-2026-03-19-045",
@@ -4055,12 +2987,12 @@
     "conversation": [
       {
         "author": "Rafael Ribeiro",
-        "text": "O prompt ficou nota 4/10, mas gostei do resultado para refazer o design com as skills, podendo visualizar / ajustar no paper.\n\nO design atual do toolkit da StartSe não está muito usual. O toolkit tem como objetivo compartilhar com os       \nalunos um repositório de templates n8n, flowise, make, entre outros. São agentes de IA e automações que o        \nusuário pode fazer download. Entretanto, como estamos falando de +300 templates, é interessante agrupar, ter     \nfiltros, além de uma boa busca. Pensando em um design onde iremos manter o header StartSe e padrões de cores,    \nuse o mcp do Paper para criar o design da aplicação. Utilize as skills frontend-design, ui-ux-pro-max e          \nweb-design-guidelines",
+        "text": "O prompt ficou nota 4/10, mas gostei do resultado para refazer o design com as skills, podendo visualizar / ajustar no paper.\nO design atual do toolkit da StartSe não está muito usual. O toolkit tem como objetivo compartilhar com os       \nalunos um repositório de templates n8n, flowise, make, entre outros. São agentes de IA e automações que o        \nusuário pode fazer download. Entretanto, como estamos falando de +300 templates, é interessante agrupar, ter     \nfiltros, além de uma boa busca. Pensando em um design onde iremos manter o header StartSe e padrões de cores,    \nuse o mcp do Paper para criar o design da aplicação. Utilize as skills frontend-design, ui-ux-pro-max e          \nweb-design-guidelines",
         "time": "15:51"
       },
       {
         "author": "Rafael Ribeiro",
-        "text": "achei interessante esse estudo da Laravel sobre documentacão / contexto importam bastante, mas modelo também impacta. Fizeram uma análise para algumas tarefas no framework Laravel https://laravel.com/blog/which-ai-model-is-best-for-laravel \n\no único ponto que é a questão do llm ser não determinístico e não dá para tratar uma única execução como definitiva...",
+        "text": "achei interessante esse estudo da Laravel sobre documentacão / contexto importam bastante, mas modelo também impacta. Fizeram uma análise para algumas tarefas no framework Laravel https://laravel.com/blog/which-ai-model-is-best-for-laravel \no único ponto que é a questão do llm ser não determinístico e não dá para tratar uma única execução como definitiva...",
         "time": "16:19"
       },
       {
@@ -4072,17 +3004,12 @@
         "author": "Rafael Ribeiro",
         "text": "pode publicar sim",
         "time": "16:21"
-      },
-      {
-        "author": "Rafael Ribeiro",
-        "text": "[Reaction: 👍]",
-        "time": "16:24"
       }
     ],
-    "messageCount": 5,
+    "messageCount": 4,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 13
+    "weight": 23
   },
   {
     "id": "story-whatsapp-ia-sob-controle-2026-03-19-001",
@@ -4116,7 +3043,7 @@
     "conversation": [
       {
         "author": "Fabrício Carraro",
-        "text": "We’re excited to introduce a completely upgraded build experience in Google AI Studio, featuring a new agent powered by Antigravity!  \n\nNow you can turn simple prompts into production-ready, full-stack apps—with complex UI elements and Firebase backends and authentication. When you're ready to launch, you can deploy directly to Cloud Run.\n\nBuild multiplayer experiences: Create real-time multiplayer games, collaborative workspaces, and shared tools that connect users in real time.\nEnrich apps with third-party services: Bring your own API credentials to more securely integrate services like databases, payment processors and Google services like Maps\nAdd databases and authentication: The new agent proactively detects when your app needs a database or user identity, and then provisions Cloud Firestore for databases and Firebase Authentication for identity.",
+        "text": "We’re excited to introduce a completely upgraded build experience in Google AI Studio, featuring a new agent powered by Antigravity!  \nNow you can turn simple prompts into production-ready, full-stack apps—with complex UI elements and Firebase backends and authentication. When you're ready to launch, you can deploy directly to Cloud Run.\nBuild multiplayer experiences: Create real-time multiplayer games, collaborative workspaces, and shared tools that connect users in real time.\nEnrich apps with third-party services: Bring your own API credentials to more securely integrate services like databases, payment processors and Google services like Maps\nAdd databases and authentication: The new agent proactively detects when your app needs a database or user identity, and then provisions Cloud Firestore for databases and Firebase Authentication for identity.",
         "time": "15:13"
       },
       {
@@ -4126,14 +3053,14 @@
       },
       {
         "author": "Fabrício Carraro",
-        "text": "https://github.com/ledmaster/ml-mania-2026\n\n@224240443899935",
+        "text": "@224240443899935",
         "time": "15:46"
       }
     ],
     "messageCount": 3,
     "authorCount": 2,
     "linkCount": 2,
-    "weight": 13
+    "weight": 22
   },
   {
     "id": "story-whatsapp-ia-sob-controle-2026-03-19-014",
@@ -4196,7 +3123,7 @@
     "messageCount": 5,
     "authorCount": 3,
     "linkCount": 2,
-    "weight": 18
+    "weight": 22
   },
   {
     "id": "story-whatsapp-clauders-2026-03-19-012",
@@ -4273,7 +3200,7 @@
     "messageCount": 8,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 19
+    "weight": 31
   },
   {
     "id": "story-whatsapp-clauders-2026-03-19-041",
@@ -4347,7 +3274,7 @@
     "messageCount": 8,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 19
+    "weight": 31
   },
   {
     "id": "story-whatsapp-clauders-2026-03-19-011",
@@ -4409,7 +3336,7 @@
     "messageCount": 5,
     "authorCount": 3,
     "linkCount": 2,
-    "weight": 18
+    "weight": 20
   },
   {
     "id": "story-whatsapp-clauders-2026-03-19-040",
@@ -4471,7 +3398,7 @@
     "messageCount": 5,
     "authorCount": 3,
     "linkCount": 2,
-    "weight": 18
+    "weight": 20
   },
   {
     "id": "story-whatsapp-clauders-2026-03-19-042",
@@ -4533,7 +3460,7 @@
     "messageCount": 5,
     "authorCount": 3,
     "linkCount": 2,
-    "weight": 18
+    "weight": 20
   },
   {
     "id": "story-whatsapp-clauders-2026-03-18-009",
@@ -4566,6 +3493,11 @@
     "conversation": [
       {
         "author": "Fabrício Carraro",
+        "text": "[Image] https://signal-pulse-feed.vercel.app/recommendations",
+        "time": "14:38"
+      },
+      {
+        "author": "Fabrício Carraro",
         "text": "@61229070586023 já tá fazendo isso o Stromae?",
         "time": "14:38"
       },
@@ -4595,10 +3527,10 @@
         "time": "14:52"
       }
     ],
-    "messageCount": 6,
+    "messageCount": 7,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 17
+    "weight": 21
   },
   {
     "id": "story-whatsapp-clauders-2026-03-18-038",
@@ -4630,6 +3562,11 @@
     "conversation": [
       {
         "author": "Fabrício Carraro",
+        "text": "[Image] https://signal-pulse-feed.vercel.app/recommendations",
+        "time": "14:38"
+      },
+      {
+        "author": "Fabrício Carraro",
         "text": "@61229070586023 já tá fazendo isso o Stromae?",
         "time": "14:38"
       },
@@ -4659,10 +3596,10 @@
         "time": "14:52"
       }
     ],
-    "messageCount": 6,
+    "messageCount": 7,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 17
+    "weight": 21
   },
   {
     "id": "story-whatsapp-clauders-2026-03-18-040",
@@ -4694,11 +3631,6 @@
     "conversation": [
       {
         "author": "Fabrício Carraro",
-        "text": "https://signal-pulse-feed.vercel.app/recommendations",
-        "time": "14:38"
-      },
-      {
-        "author": "Fabrício Carraro",
         "text": "@61229070586023 já tá fazendo isso o Stromae?",
         "time": "14:38"
       },
@@ -4728,10 +3660,10 @@
         "time": "14:52"
       }
     ],
-    "messageCount": 7,
+    "messageCount": 6,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 18
+    "weight": 20
   },
   {
     "id": "story-whatsapp-clauders-2026-03-18-006",
@@ -4773,7 +3705,7 @@
       },
       {
         "author": "Mauricio Aniche",
-        "text": "5511945008396\nhttps://www.linkedin.com/in/mauricioaniche/\nmauricioaniche (X e github)",
+        "text": "5511945008396\nmauricioaniche (X e github)",
         "time": "11:08"
       },
       {
@@ -4785,7 +3717,7 @@
     "messageCount": 4,
     "authorCount": 4,
     "linkCount": 1,
-    "weight": 18
+    "weight": 22
   },
   {
     "id": "story-whatsapp-clauders-2026-03-18-035",
@@ -4828,7 +3760,7 @@
       },
       {
         "author": "Mauricio Aniche",
-        "text": "5511945008396\nhttps://www.linkedin.com/in/mauricioaniche/\nmauricioaniche (X e github)",
+        "text": "5511945008396\nmauricioaniche (X e github)",
         "time": "11:08"
       },
       {
@@ -4840,7 +3772,7 @@
     "messageCount": 4,
     "authorCount": 4,
     "linkCount": 1,
-    "weight": 18
+    "weight": 22
   },
   {
     "id": "story-whatsapp-clauders-2026-03-18-037",
@@ -4883,7 +3815,7 @@
       },
       {
         "author": "Mauricio Aniche",
-        "text": "5511945008396\nhttps://www.linkedin.com/in/mauricioaniche/\nmauricioaniche (X e github)",
+        "text": "5511945008396\nmauricioaniche (X e github)",
         "time": "11:08"
       },
       {
@@ -4895,7 +3827,7 @@
     "messageCount": 4,
     "authorCount": 4,
     "linkCount": 1,
-    "weight": 18
+    "weight": 22
   },
   {
     "id": "story-whatsapp-clauders-2026-03-18-005",
@@ -4943,7 +3875,7 @@
     "messageCount": 3,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 11
+    "weight": 13
   },
   {
     "id": "story-whatsapp-clauders-2026-03-18-034",
@@ -4991,7 +3923,7 @@
     "messageCount": 3,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 11
+    "weight": 13
   },
   {
     "id": "story-whatsapp-clauders-2026-03-18-036",
@@ -5039,175 +3971,7 @@
     "messageCount": 3,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 11
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-18-004",
-    "title": "Mauricio Aniche questiona sobre inscrição em evento pago via Sympla e solicita orientação sobre acesso sem custo.",
-    "date": "2026-03-18T11:20:20.000Z",
-    "authors": [
-      "Mauricio Aniche",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "eventos",
-      "comunidade",
-      "educação"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-18-004"
-    ],
-    "links": [],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Mauricio Aniche",
-        "text": "@235059298754576 preicso me inscrever pelo sympla, pro evento?",
-        "time": "08:20"
-      },
-      {
-        "author": "Mauricio Aniche",
-        "text": "ah agora que vi que é pago, como que me inscrevo sem custo?",
-        "time": "08:20"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Pede pro Pedro Paulo",
-        "time": "08:24"
-      }
-    ],
-    "messageCount": 3,
-    "authorCount": 2,
-    "linkCount": 0,
-    "weight": 9
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-18-033",
-    "title": "Breve troca sobre processo de inscrição em evento pago via Sympla com possibilidade de acesso sem custo solicitando a Pedro Paulo.",
-    "date": "2026-03-18T11:20:20.000Z",
-    "authors": [
-      "Mauricio Aniche",
-      "Fabrício Carraro"
-    ],
-    "tags": [
-      "eventos",
-      "inscrição",
-      "acesso gratuito"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-18-033"
-    ],
-    "links": [],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Mauricio Aniche",
-        "text": "@235059298754576 preicso me inscrever pelo sympla, pro evento?",
-        "time": "08:20"
-      },
-      {
-        "author": "Mauricio Aniche",
-        "text": "ah agora que vi que é pago, como que me inscrevo sem custo?",
-        "time": "08:20"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Pede pro Pedro Paulo",
-        "time": "08:24"
-      }
-    ],
-    "messageCount": 3,
-    "authorCount": 2,
-    "linkCount": 0,
-    "weight": 9
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-18-002",
-    "title": "Mauricio Aniche destaca Tropicalia, plataforma brasileira de context engineering que conecta agentes de IA a dados heterogêneos, impressionado com a velocidade de lançamento de funcionalidades.",
-    "date": "2026-03-18T05:24:52.000Z",
-    "authors": [
-      "Mauricio Aniche"
-    ],
-    "tags": [
-      "agentes de ia",
-      "rag",
-      "context engineering",
-      "startups",
-      "ferramentas brasileiras"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-18-002"
-    ],
-    "links": [
-      {
-        "url": "https://www.tropicalia.dev/"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Mauricio Aniche",
-        "text": "Ferramenta brasileira",
-        "time": "02:24"
-      },
-      {
-        "author": "Mauricio Aniche",
-        "text": "A velocidade com que eles lançam funcionalidade eh insana",
-        "time": "02:25"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 1,
-    "linkCount": 1,
-    "weight": 7
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-18-031",
-    "title": "Discovery de Tropicalia, ferramenta brasileira de context engineering para agentes de IA que conecta múltiplas fontes de dados (estruturados e unstructured) com memória persistente e geração de contexto.",
-    "date": "2026-03-18T05:24:52.000Z",
-    "authors": [
-      "Mauricio Aniche"
-    ],
-    "tags": [
-      "tropicalia",
-      "context engineering",
-      "rag",
-      "startup brasileira",
-      "agentes de ia"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-18-031"
-    ],
-    "links": [
-      {
-        "url": "https://www.tropicalia.dev/"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Mauricio Aniche",
-        "text": "Ferramenta brasileira",
-        "time": "02:24"
-      },
-      {
-        "author": "Mauricio Aniche",
-        "text": "A velocidade com que eles lançam funcionalidade eh insana",
-        "time": "02:25"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 1,
-    "linkCount": 1,
-    "weight": 7
+    "weight": 13
   },
   {
     "id": "story-whatsapp-clauders-2026-03-18-001",
@@ -5239,7 +4003,7 @@
     "conversation": [
       {
         "author": "Marcell Almeida",
-        "text": "Sim! E ele faz mto bem. Se tiver time de design que refina ali e volta pro Claude pode ser legal. \n\nMas vc vai notar que:\n- não fica exatamente igual quando vc faz no Paper e depois implementa no Claude \n- ⁠dava pra usar as mesmas skills e montar a mesma coisa em html, clicavel, etc pra galera testar em diferentes resoluções \n\nEntão acho que só vale a pena se tiver um design system, se designers forem refinar no paper, etc.",
+        "text": "Sim! E ele faz mto bem. Se tiver time de design que refina ali e volta pro Claude pode ser legal. \nMas vc vai notar que:\n- não fica exatamente igual quando vc faz no Paper e depois implementa no Claude \n- ⁠dava pra usar as mesmas skills e montar a mesma coisa em html, clicavel, etc pra galera testar em diferentes resoluções \nEntão acho que só vale a pena se tiver um design system, se designers forem refinar no paper, etc.",
         "time": "22:35"
       },
       {
@@ -5261,17 +4025,12 @@
         "author": "Marcell Almeida",
         "text": "Essa skill é bacana tb: https://impeccable.style/",
         "time": "22:37"
-      },
-      {
-        "author": "Rafael Ribeiro",
-        "text": "vou testar",
-        "time": "22:38"
       }
     ],
-    "messageCount": 6,
+    "messageCount": 5,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 14
+    "weight": 18
   },
   {
     "id": "story-whatsapp-clauders-2026-03-18-030",
@@ -5315,7 +4074,7 @@
     "conversation": [
       {
         "author": "Marcell Pm3",
-        "text": "lembro que foi falado em algum lugar sobre um possível blog da Alun pra falar das coisas que fazemos com IA, vibe coding, etc. temos?\n\nQueria publicar um pouco de coisas que fiz. Caso não tenha algo Alun, vou por em pm3 msm",
+        "text": "lembro que foi falado em algum lugar sobre um possível blog da Alun pra falar das coisas que fazemos com IA, vibe coding, etc. temos?\nQueria publicar um pouco de coisas que fiz. Caso não tenha algo Alun, vou por em pm3 msm",
         "time": "21:20"
       },
       {
@@ -5355,7 +4114,7 @@
       },
       {
         "author": "Rafael Ribeiro",
-        "text": "Pessoal, estão utilizando algo para design? Olha isso 🤯https://paper.design/\n\nSe add o MCP no claude code e instalar o paper, surreal o resultado. Nem se compara com o plugin do Figma, essa solução já nasceu para ser utilizada via MCP...",
+        "text": "Pessoal, estão utilizando algo para design? Olha isso 🤯https://paper.design/\nSe add o MCP no claude code e instalar o paper, surreal o resultado. Nem se compara com o plugin do Figma, essa solução já nasceu para ser utilizada via MCP...",
         "time": "22:31"
       },
       {
@@ -5370,7 +4129,7 @@
       },
       {
         "author": "Rafael Ribeiro",
-        "text": "show, comecei a testar hoje aqui, ainda não vi essa parte de consumo de tokens, mas achei o resultado mto bom qdo combinado com as skills...\n\nUsando um prompt como: Use o mcp do Paper para criar o design da aplicação, os detalhes estão em @prompt.md. Utilize as skills frontend-design, ui-ux-pro-max e web-design-guidelines",
+        "text": "show, comecei a testar hoje aqui, ainda não vi essa parte de consumo de tokens, mas achei o resultado mto bom qdo combinado com as skills...\nUsando um prompt como: Use o mcp do Paper para criar o design da aplicação, os detalhes estão em @prompt.md. Utilize as skills frontend-design, ui-ux-pro-max e web-design-guidelines",
         "time": "22:33"
       },
       {
@@ -5380,7 +4139,7 @@
       },
       {
         "author": "Marcell Pm3",
-        "text": "Sim! E ele faz mto bem. Se tiver time de design que refina ali e volta pro Claude pode ser legal. \n\nMas vc vai notar que:\n- não fica exatamente igual quando vc faz no Paper e depois implementa no Claude \n- ⁠dava pra usar as mesmas skills e montar a mesma coisa em html, clicavel, etc pra galera testar em diferentes resoluções \n\nEntão acho que só vale a pena se tiver um design system, se designers forem refinar no paper, etc.",
+        "text": "Sim! E ele faz mto bem. Se tiver time de design que refina ali e volta pro Claude pode ser legal. \nMas vc vai notar que:\n- não fica exatamente igual quando vc faz no Paper e depois implementa no Claude \n- ⁠dava pra usar as mesmas skills e montar a mesma coisa em html, clicavel, etc pra galera testar em diferentes resoluções \nEntão acho que só vale a pena se tiver um design system, se designers forem refinar no paper, etc.",
         "time": "22:35"
       },
       {
@@ -5402,17 +4161,12 @@
         "author": "Marcell Pm3",
         "text": "Essa skill é bacana tb: https://impeccable.style/",
         "time": "22:37"
-      },
-      {
-        "author": "Rafael Ribeiro",
-        "text": "vou testar",
-        "time": "22:38"
       }
     ],
-    "messageCount": 19,
+    "messageCount": 18,
     "authorCount": 4,
     "linkCount": 4,
-    "weight": 39
+    "weight": 62
   },
   {
     "id": "story-whatsapp-clauders-2026-03-18-032",
@@ -5455,7 +4209,7 @@
     "conversation": [
       {
         "author": "Marcell Pm3",
-        "text": "lembro que foi falado em algum lugar sobre um possível blog da Alun pra falar das coisas que fazemos com IA, vibe coding, etc. temos?\n\nQueria publicar um pouco de coisas que fiz. Caso não tenha algo Alun, vou por em pm3 msm",
+        "text": "lembro que foi falado em algum lugar sobre um possível blog da Alun pra falar das coisas que fazemos com IA, vibe coding, etc. temos?\nQueria publicar um pouco de coisas que fiz. Caso não tenha algo Alun, vou por em pm3 msm",
         "time": "21:20"
       },
       {
@@ -5495,7 +4249,7 @@
       },
       {
         "author": "Rafael Ribeiro",
-        "text": "Pessoal, estão utilizando algo para design? Olha isso 🤯https://paper.design/\n\nSe add o MCP no claude code e instalar o paper, surreal o resultado. Nem se compara com o plugin do Figma, essa solução já nasceu para ser utilizada via MCP...",
+        "text": "Pessoal, estão utilizando algo para design? Olha isso 🤯https://paper.design/\nSe add o MCP no claude code e instalar o paper, surreal o resultado. Nem se compara com o plugin do Figma, essa solução já nasceu para ser utilizada via MCP...",
         "time": "22:31"
       },
       {
@@ -5510,7 +4264,7 @@
       },
       {
         "author": "Rafael Ribeiro",
-        "text": "show, comecei a testar hoje aqui, ainda não vi essa parte de consumo de tokens, mas achei o resultado mto bom qdo combinado com as skills...\n\nUsando um prompt como: Use o mcp do Paper para criar o design da aplicação, os detalhes estão em @prompt.md. Utilize as skills frontend-design, ui-ux-pro-max e web-design-guidelines",
+        "text": "show, comecei a testar hoje aqui, ainda não vi essa parte de consumo de tokens, mas achei o resultado mto bom qdo combinado com as skills...\nUsando um prompt como: Use o mcp do Paper para criar o design da aplicação, os detalhes estão em @prompt.md. Utilize as skills frontend-design, ui-ux-pro-max e web-design-guidelines",
         "time": "22:33"
       },
       {
@@ -5520,7 +4274,7 @@
       },
       {
         "author": "Marcell Pm3",
-        "text": "Sim! E ele faz mto bem. Se tiver time de design que refina ali e volta pro Claude pode ser legal. \n\nMas vc vai notar que:\n- não fica exatamente igual quando vc faz no Paper e depois implementa no Claude \n- ⁠dava pra usar as mesmas skills e montar a mesma coisa em html, clicavel, etc pra galera testar em diferentes resoluções \n\nEntão acho que só vale a pena se tiver um design system, se designers forem refinar no paper, etc.",
+        "text": "Sim! E ele faz mto bem. Se tiver time de design que refina ali e volta pro Claude pode ser legal. \nMas vc vai notar que:\n- não fica exatamente igual quando vc faz no Paper e depois implementa no Claude \n- ⁠dava pra usar as mesmas skills e montar a mesma coisa em html, clicavel, etc pra galera testar em diferentes resoluções \nEntão acho que só vale a pena se tiver um design system, se designers forem refinar no paper, etc.",
         "time": "22:35"
       },
       {
@@ -5542,17 +4296,12 @@
         "author": "Marcell Pm3",
         "text": "Essa skill é bacana tb: https://impeccable.style/",
         "time": "22:37"
-      },
-      {
-        "author": "Rafael Ribeiro",
-        "text": "vou testar",
-        "time": "22:38"
       }
     ],
-    "messageCount": 19,
+    "messageCount": 18,
     "authorCount": 4,
     "linkCount": 4,
-    "weight": 39
+    "weight": 62
   },
   {
     "id": "story-whatsapp-clauders-2026-03-17-029",
@@ -5629,14 +4378,14 @@
       },
       {
         "author": "Marcell Pm3",
-        "text": "Farei. Já brinquei com ele pra fazer alerta de leilão de imóvel em regiões que acho legal (kkkk). N tinha pensado pra esse fluxo. \n\nMas vc fez ele só notificar ou dá pra interagir?",
+        "text": "Farei. Já brinquei com ele pra fazer alerta de leilão de imóvel em regiões que acho legal (kkkk). N tinha pensado pra esse fluxo. \nMas vc fez ele só notificar ou dá pra interagir?",
         "time": "17:59"
       }
     ],
     "messageCount": 11,
     "authorCount": 2,
     "linkCount": 0,
-    "weight": 17
+    "weight": 26
   },
   {
     "id": "story-whatsapp-clauders-2026-03-17-031",
@@ -5713,14 +4462,14 @@
       },
       {
         "author": "Marcell Pm3",
-        "text": "Farei. Já brinquei com ele pra fazer alerta de leilão de imóvel em regiões que acho legal (kkkk). N tinha pensado pra esse fluxo. \n\nMas vc fez ele só notificar ou dá pra interagir?",
+        "text": "Farei. Já brinquei com ele pra fazer alerta de leilão de imóvel em regiões que acho legal (kkkk). N tinha pensado pra esse fluxo. \nMas vc fez ele só notificar ou dá pra interagir?",
         "time": "17:59"
       }
     ],
     "messageCount": 11,
     "authorCount": 2,
     "linkCount": 0,
-    "weight": 17
+    "weight": 26
   },
   {
     "id": "story-whatsapp-clauders-2026-03-16-026",
@@ -5762,7 +4511,7 @@
       },
       {
         "author": "Mauricio Aniche",
-        "text": "Uber começou empurrando AI ha muito tempo e ainda está trabalhando na adoção, então comece logo pq leva tempo mesmo pro time todo engajar. \n\nIDEs precisam se reencontrar. CLIs dominam, são simples e fáceis. Mas tenho usado codex desktop e eh legal ter uma UI bacana.\n\nAinda fazem revisão de código. Vc precisa pensar quais são os guardrails necessários pra garantir qualidade. \n\nResumo rápido, @106911131300018, expanda dentro dos meus comentários",
+        "text": "Uber começou empurrando AI ha muito tempo e ainda está trabalhando na adoção, então comece logo pq leva tempo mesmo pro time todo engajar. \nIDEs precisam se reencontrar. CLIs dominam, são simples e fáceis. Mas tenho usado codex desktop e eh legal ter uma UI bacana.\nAinda fazem revisão de código. Vc precisa pensar quais são os guardrails necessários pra garantir qualidade. \nResumo rápido, @106911131300018, expanda dentro dos meus comentários",
         "time": "18:55"
       },
       {
@@ -5809,7 +4558,7 @@
     "messageCount": 11,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 22
+    "weight": 39
   },
   {
     "id": "story-whatsapp-clauders-2026-03-16-028",
@@ -5851,7 +4600,7 @@
       },
       {
         "author": "Mauricio Aniche",
-        "text": "Uber começou empurrando AI ha muito tempo e ainda está trabalhando na adoção, então comece logo pq leva tempo mesmo pro time todo engajar. \n\nIDEs precisam se reencontrar. CLIs dominam, são simples e fáceis. Mas tenho usado codex desktop e eh legal ter uma UI bacana.\n\nAinda fazem revisão de código. Vc precisa pensar quais são os guardrails necessários pra garantir qualidade. \n\nResumo rápido, @106911131300018, expanda dentro dos meus comentários",
+        "text": "Uber começou empurrando AI ha muito tempo e ainda está trabalhando na adoção, então comece logo pq leva tempo mesmo pro time todo engajar. \nIDEs precisam se reencontrar. CLIs dominam, são simples e fáceis. Mas tenho usado codex desktop e eh legal ter uma UI bacana.\nAinda fazem revisão de código. Vc precisa pensar quais são os guardrails necessários pra garantir qualidade. \nResumo rápido, @106911131300018, expanda dentro dos meus comentários",
         "time": "18:55"
       },
       {
@@ -5898,7 +4647,7 @@
     "messageCount": 11,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 22
+    "weight": 39
   },
   {
     "id": "story-whatsapp-clauders-2026-03-16-034",
@@ -5941,7 +4690,7 @@
       },
       {
         "author": "Mauricio Aniche",
-        "text": "Uber começou empurrando AI ha muito tempo e ainda está trabalhando na adoção, então comece logo pq leva tempo mesmo pro time todo engajar. \n\nIDEs precisam se reencontrar. CLIs dominam, são simples e fáceis. Mas tenho usado codex desktop e eh legal ter uma UI bacana.\n\nAinda fazem revisão de código. Vc precisa pensar quais são os guardrails necessários pra garantir qualidade. \n\nResumo rápido, @106911131300018, expanda dentro dos meus comentários",
+        "text": "Uber começou empurrando AI ha muito tempo e ainda está trabalhando na adoção, então comece logo pq leva tempo mesmo pro time todo engajar. \nIDEs precisam se reencontrar. CLIs dominam, são simples e fáceis. Mas tenho usado codex desktop e eh legal ter uma UI bacana.\nAinda fazem revisão de código. Vc precisa pensar quais são os guardrails necessários pra garantir qualidade. \nResumo rápido, @106911131300018, expanda dentro dos meus comentários",
         "time": "18:55"
       },
       {
@@ -5988,7 +4737,7 @@
     "messageCount": 11,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 22
+    "weight": 39
   },
   {
     "id": "story-whatsapp-clauders-2026-03-16-025",
@@ -6121,7 +4870,7 @@
     "messageCount": 20,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 31
+    "weight": 53
   },
   {
     "id": "story-whatsapp-clauders-2026-03-16-032",
@@ -6256,7 +5005,7 @@
     "messageCount": 20,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 31
+    "weight": 53
   },
   {
     "id": "story-whatsapp-clauders-2026-03-15-022",
@@ -6318,7 +5067,7 @@
     "messageCount": 6,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 14
+    "weight": 21
   },
   {
     "id": "story-whatsapp-clauders-2026-03-15-023",
@@ -6381,7 +5130,7 @@
     "messageCount": 6,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 14
+    "weight": 21
   },
   {
     "id": "story-whatsapp-clauders-2026-03-15-029",
@@ -6444,7 +5193,7 @@
     "messageCount": 6,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 14
+    "weight": 21
   },
   {
     "id": "story-whatsapp-clauders-2026-03-14-019",
@@ -6503,7 +5252,7 @@
     "messageCount": 5,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 16
+    "weight": 19
   },
   {
     "id": "story-whatsapp-clauders-2026-03-14-020",
@@ -6561,7 +5310,7 @@
     "messageCount": 5,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 16
+    "weight": 19
   },
   {
     "id": "story-whatsapp-clauders-2026-03-14-026",
@@ -6619,7 +5368,7 @@
     "messageCount": 5,
     "authorCount": 3,
     "linkCount": 1,
-    "weight": 16
+    "weight": 19
   },
   {
     "id": "story-whatsapp-clauders-2026-03-14-018",
@@ -6683,7 +5432,7 @@
     "messageCount": 7,
     "authorCount": 2,
     "linkCount": 0,
-    "weight": 13
+    "weight": 16
   },
   {
     "id": "story-whatsapp-clauders-2026-03-14-025",
@@ -6747,160 +5496,7 @@
     "messageCount": 7,
     "authorCount": 2,
     "linkCount": 0,
-    "weight": 13
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-14-015",
-    "title": "Compartilhamento de técnica de skill que gera arquivo HTML com informações de sessão e repositório, com plano de integração em outros fluxos.",
-    "date": "2026-03-14T02:05:15.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Marcell Pm3"
-    ],
-    "tags": [
-      "claude skills",
-      "desenvolvimento de ferramentas",
-      "html",
-      "repositórios"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-14-015"
-    ],
-    "links": [],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "fica a dica",
-        "time": "23:05"
-      },
-      {
-        "author": "Marcell Pm3",
-        "text": "Boa ideia. eu tô usando uma skill que monta um .html que traz várias informações da sessão e do repositório. Vou add isso nela",
-        "time": "23:09"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 0,
-    "weight": 8
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-14-016",
-    "title": "Troca rápida sobre dica de skill que monta HTML com informações de sessão e repositório, sugerindo integração em ferramentas de desenvolvimento.",
-    "date": "2026-03-14T02:05:15.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Marcell Pm3"
-    ],
-    "tags": [
-      "skills",
-      "desenvolvimento",
-      "dica técnica"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-14-016"
-    ],
-    "links": [],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "fica a dica",
-        "time": "23:05"
-      },
-      {
-        "author": "Marcell Pm3",
-        "text": "Boa ideia. eu tô usando uma skill que monta um .html que traz várias informações da sessão e do repositório. Vou add isso nela",
-        "time": "23:09"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 0,
-    "weight": 8
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-14-021",
-    "title": "Paulo Silveira e Marcell Almeida discutem implementação de skills em agentes de IA que geram relatórios HTML com informações de sessão e repositório, explorando formas de enriquecer capacidades de automação.",
-    "date": "2026-03-14T02:05:15.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "agentes de ia",
-      "llms",
-      "engenharia de prompt",
-      "desenvolvimento",
-      "automação"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-14-021"
-    ],
-    "links": [],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "fica a dica",
-        "time": "23:05"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "Boa ideia. eu tô usando uma skill que monta um .html que traz várias informações da sessão e do repositório. Vou add isso nela",
-        "time": "23:09"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 0,
-    "weight": 8
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-14-022",
-    "title": "Discussão sobre técnicas de uso de agentes de IA e skills para gerar artefatos HTML com informações de sessão e repositório, com troca de boas práticas entre desenvolvedores.",
-    "date": "2026-03-14T02:05:15.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Marcell Almeida"
-    ],
-    "tags": [
-      "agentes de ia",
-      "llms",
-      "engenharia de prompt",
-      "desenvolvimento",
-      "ferramentas de ia"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-14-022"
-    ],
-    "links": [],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "fica a dica",
-        "time": "23:05"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "Boa ideia. eu tô usando uma skill que monta um .html que traz várias informações da sessão e do repositório. Vou add isso nela",
-        "time": "23:09"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 0,
-    "weight": 8
+    "weight": 16
   },
   {
     "id": "story-whatsapp-clauders-2026-03-13-013",
@@ -6944,14 +5540,14 @@
       },
       {
         "author": "Rafael Ribeiro",
-        "text": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob\n\nComputer plans and executes complex workflows end-to-end. It can research, analyze data, generate code, update docs, call APIs, and send results back into tools like email, GitHub, Notion, and CRMs—without manual copy‑paste. Computer orchestrates multiple frontier models in parallel and chooses the right one for each step, delivering more reliable and accurate outcomes than a single-model chatbot.",
+        "text": "Computer plans and executes complex workflows end-to-end. It can research, analyze data, generate code, update docs, call APIs, and send results back into tools like email, GitHub, Notion, and CRMs—without manual copy‑paste. Computer orchestrates multiple frontier models in parallel and chooses the right one for each step, delivering more reliable and accurate outcomes than a single-model chatbot.",
         "time": "20:30"
       }
     ],
     "messageCount": 3,
     "authorCount": 2,
     "linkCount": 2,
-    "weight": 13
+    "weight": 19
   },
   {
     "id": "story-whatsapp-clauders-2026-03-13-014",
@@ -6995,14 +5591,14 @@
       },
       {
         "author": "Rafael Ribeiro",
-        "text": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob\n\nComputer plans and executes complex workflows end-to-end. It can research, analyze data, generate code, update docs, call APIs, and send results back into tools like email, GitHub, Notion, and CRMs—without manual copy‑paste. Computer orchestrates multiple frontier models in parallel and chooses the right one for each step, delivering more reliable and accurate outcomes than a single-model chatbot.",
+        "text": "Computer plans and executes complex workflows end-to-end. It can research, analyze data, generate code, update docs, call APIs, and send results back into tools like email, GitHub, Notion, and CRMs—without manual copy‑paste. Computer orchestrates multiple frontier models in parallel and chooses the right one for each step, delivering more reliable and accurate outcomes than a single-model chatbot.",
         "time": "20:30"
       }
     ],
     "messageCount": 3,
     "authorCount": 2,
     "linkCount": 2,
-    "weight": 13
+    "weight": 19
   },
   {
     "id": "story-whatsapp-clauders-2026-03-13-019",
@@ -7047,14 +5643,14 @@
       },
       {
         "author": "Rafael Ribeiro",
-        "text": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob\n\nComputer plans and executes complex workflows end-to-end. It can research, analyze data, generate code, update docs, call APIs, and send results back into tools like email, GitHub, Notion, and CRMs—without manual copy‑paste. Computer orchestrates multiple frontier models in parallel and chooses the right one for each step, delivering more reliable and accurate outcomes than a single-model chatbot.",
+        "text": "Computer plans and executes complex workflows end-to-end. It can research, analyze data, generate code, update docs, call APIs, and send results back into tools like email, GitHub, Notion, and CRMs—without manual copy‑paste. Computer orchestrates multiple frontier models in parallel and chooses the right one for each step, delivering more reliable and accurate outcomes than a single-model chatbot.",
         "time": "20:30"
       }
     ],
     "messageCount": 3,
     "authorCount": 2,
     "linkCount": 2,
-    "weight": 13
+    "weight": 19
   },
   {
     "id": "story-whatsapp-clauders-2026-03-13-020",
@@ -7099,100 +5695,14 @@
       },
       {
         "author": "Rafael Ribeiro",
-        "text": "https://youtu.be/atG3OQPmdSY?si=zJcBCs7Vaw9LE4Ob\n\nComputer plans and executes complex workflows end-to-end. It can research, analyze data, generate code, update docs, call APIs, and send results back into tools like email, GitHub, Notion, and CRMs—without manual copy‑paste. Computer orchestrates multiple frontier models in parallel and chooses the right one for each step, delivering more reliable and accurate outcomes than a single-model chatbot.",
+        "text": "Computer plans and executes complex workflows end-to-end. It can research, analyze data, generate code, update docs, call APIs, and send results back into tools like email, GitHub, Notion, and CRMs—without manual copy‑paste. Computer orchestrates multiple frontier models in parallel and chooses the right one for each step, delivering more reliable and accurate outcomes than a single-model chatbot.",
         "time": "20:30"
       }
     ],
     "messageCount": 3,
     "authorCount": 2,
     "linkCount": 2,
-    "weight": 13
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-13-017",
-    "title": "Discussão sobre como agentes de IA estão deslocando o gargalo do desenvolvimento de código para pensamento estratégico sobre o que construir, refletindo uma mudança de paradigma particularmente visível entre desenvolvedores sênior.",
-    "date": "2026-03-13T19:30:38.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Mauricio Aniche"
-    ],
-    "tags": [
-      "agentes de ia",
-      "produtividade de desenvolvimento",
-      "engenharia de prompt",
-      "carreira",
-      "seniority"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-13-017"
-    ],
-    "links": [
-      {
-        "url": "https://www.linkedin.com/posts/htortosa_claudecode-aiagents-devproductivity-share-7438229743436673024-znMk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "The bottleneck has shifted from writing code to thinking clearly about what to build. That's a good problem to have. \n\nExcelente. entre pessoas mais seniors que ja abracaram bem, isso fica noitido ne",
-        "time": "16:32"
-      },
-      {
-        "author": "Mauricio Aniche",
-        "text": "temos exemplos comecando aqui tambem",
-        "time": "16:36"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 1,
-    "weight": 10
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-13-018",
-    "title": "Discussão sobre como agentes de IA estão deslocando o gargalo do desenvolvimento de código para o design e clareza de requisitos, mudança que é mais evidente entre desenvolvedores sêniors.",
-    "date": "2026-03-13T19:30:38.000Z",
-    "authors": [
-      "Paulo Silveira",
-      "Mauricio Aniche"
-    ],
-    "tags": [
-      "agentes de ia",
-      "produtividade de desenvolvedor",
-      "llms",
-      "engenharia de software",
-      "carreira"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-13-018"
-    ],
-    "links": [
-      {
-        "url": "https://www.linkedin.com/posts/htortosa_claudecode-aiagents-devproductivity-share-7438229743436673024-znMk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAB178EB1aVeabLYbmWe02WqDTLNd30zK4k"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Paulo Silveira",
-        "text": "The bottleneck has shifted from writing code to thinking clearly about what to build. That's a good problem to have. \n\nExcelente. entre pessoas mais seniors que ja abracaram bem, isso fica noitido ne",
-        "time": "16:32"
-      },
-      {
-        "author": "Mauricio Aniche",
-        "text": "temos exemplos comecando aqui tambem",
-        "time": "16:36"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 1,
-    "weight": 10
+    "weight": 19
   },
   {
     "id": "story-whatsapp-clauders-2026-03-13-010",
@@ -7232,7 +5742,7 @@
       },
       {
         "author": "Paulo Silveira",
-        "text": "nos nossos devs. PMs estao abracando mais.\n\nO cara nao entendeu que pagar o salario de IC7 multiplica por 5 o trabalho de um bom IC8",
+        "text": "nos nossos devs. PMs estao abracando mais.\nO cara nao entendeu que pagar o salario de IC7 multiplica por 5 o trabalho de um bom IC8",
         "time": "14:15"
       },
       {
@@ -7314,7 +5824,7 @@
     "messageCount": 17,
     "authorCount": 3,
     "linkCount": 2,
-    "weight": 30
+    "weight": 50
   },
   {
     "id": "story-whatsapp-clauders-2026-03-13-016",
@@ -7355,7 +5865,7 @@
       },
       {
         "author": "Paulo Silveira",
-        "text": "nos nossos devs. PMs estao abracando mais.\n\nO cara nao entendeu que pagar o salario de IC7 multiplica por 5 o trabalho de um bom IC8",
+        "text": "nos nossos devs. PMs estao abracando mais.\nO cara nao entendeu que pagar o salario de IC7 multiplica por 5 o trabalho de um bom IC8",
         "time": "14:15"
       },
       {
@@ -7437,7 +5947,7 @@
     "messageCount": 17,
     "authorCount": 3,
     "linkCount": 2,
-    "weight": 30
+    "weight": 50
   },
   {
     "id": "story-whatsapp-clauders-2026-03-13-005",
@@ -7445,8 +5955,7 @@
     "date": "2026-03-13T01:30:38.000Z",
     "authors": [
       "Rafael Ribeiro",
-      "Mauricio Aniche",
-      "Marcell Pm3"
+      "Mauricio Aniche"
     ],
     "tags": [
       "agentes de ia",
@@ -7469,22 +5978,17 @@
     "conversation": [
       {
         "author": "Rafael Ribeiro",
-        "text": "[Image] Bate papo muito bom hoje com o @234394149204034 \nValeu pela disponibilidade  🚀\n\nAlgumas dores que o pessoal trouxe:\n- Crescente verticalizacao de ferramentas específicas para cada segmento\n- Contratação de pessoas que não só saibam utilizar as ferramentas de ia, mas que realmente entendam o potencial disso nos negócios\n- SaaS vai morrer? rs Na nossa visão não. \n- A importância da documentação e processos. Isso foi negligenciado por mto tempo.",
+        "text": "[Image] Bate papo muito bom hoje com o @234394149204034 \nValeu pela disponibilidade  🚀\nAlgumas dores que o pessoal trouxe:\n- Crescente verticalizacao de ferramentas específicas para cada segmento\n- Contratação de pessoas que não só saibam utilizar as ferramentas de ia, mas que realmente entendam o potencial disso nos negócios\n- SaaS vai morrer? rs Na nossa visão não. \n- A importância da documentação e processos. Isso foi negligenciado por mto tempo.",
         "time": "22:30"
       },
       {
         "author": "Mauricio Aniche",
         "text": "Obrigado pelo convite e pela foto",
         "time": "22:42"
-      },
-      {
-        "author": "Marcell Pm3",
-        "text": "errado não tá",
-        "time": "22:56"
       }
     ],
-    "messageCount": 3,
-    "authorCount": 3,
+    "messageCount": 2,
+    "authorCount": 2,
     "linkCount": 1,
     "weight": 14
   },
@@ -7494,8 +5998,7 @@
     "date": "2026-03-13T01:30:38.000Z",
     "authors": [
       "Rafael Ribeiro",
-      "Mauricio Aniche",
-      "Marcell Pm3"
+      "Mauricio Aniche"
     ],
     "tags": [
       "verticalização de ferramentas",
@@ -7518,22 +6021,17 @@
     "conversation": [
       {
         "author": "Rafael Ribeiro",
-        "text": "Bate papo muito bom hoje com o @234394149204034 \nValeu pela disponibilidade  🚀\n\nAlgumas dores que o pessoal trouxe:\n- Crescente verticalizacao de ferramentas específicas para cada segmento\n- Contratação de pessoas que não só saibam utilizar as ferramentas de ia, mas que realmente entendam o potencial disso nos negócios\n- SaaS vai morrer? rs Na nossa visão não. \n- A importância da documentação e processos. Isso foi negligenciado por mto tempo.",
+        "text": "Bate papo muito bom hoje com o @234394149204034 \nValeu pela disponibilidade  🚀\nAlgumas dores que o pessoal trouxe:\n- Crescente verticalizacao de ferramentas específicas para cada segmento\n- Contratação de pessoas que não só saibam utilizar as ferramentas de ia, mas que realmente entendam o potencial disso nos negócios\n- SaaS vai morrer? rs Na nossa visão não. \n- A importância da documentação e processos. Isso foi negligenciado por mto tempo.",
         "time": "22:30"
       },
       {
         "author": "Mauricio Aniche",
         "text": "Obrigado pelo convite e pela foto",
         "time": "22:42"
-      },
-      {
-        "author": "Marcell Pm3",
-        "text": "errado não tá",
-        "time": "22:56"
       }
     ],
-    "messageCount": 3,
-    "authorCount": 3,
+    "messageCount": 2,
+    "authorCount": 2,
     "linkCount": 1,
     "weight": 14
   },
@@ -7543,8 +6041,7 @@
     "date": "2026-03-13T01:30:38.000Z",
     "authors": [
       "Rafael Ribeiro",
-      "Mauricio Aniche",
-      "Marcell Almeida"
+      "Mauricio Aniche"
     ],
     "tags": [
       "inteligência artificial",
@@ -7569,22 +6066,17 @@
     "conversation": [
       {
         "author": "Rafael Ribeiro",
-        "text": "Bate papo muito bom hoje com o @234394149204034 \nValeu pela disponibilidade  🚀\n\nAlgumas dores que o pessoal trouxe:\n- Crescente verticalizacao de ferramentas específicas para cada segmento\n- Contratação de pessoas que não só saibam utilizar as ferramentas de ia, mas que realmente entendam o potencial disso nos negócios\n- SaaS vai morrer? rs Na nossa visão não. \n- A importância da documentação e processos. Isso foi negligenciado por mto tempo.",
+        "text": "Bate papo muito bom hoje com o @234394149204034 \nValeu pela disponibilidade  🚀\nAlgumas dores que o pessoal trouxe:\n- Crescente verticalizacao de ferramentas específicas para cada segmento\n- Contratação de pessoas que não só saibam utilizar as ferramentas de ia, mas que realmente entendam o potencial disso nos negócios\n- SaaS vai morrer? rs Na nossa visão não. \n- A importância da documentação e processos. Isso foi negligenciado por mto tempo.",
         "time": "22:30"
       },
       {
         "author": "Mauricio Aniche",
         "text": "Obrigado pelo convite e pela foto",
         "time": "22:42"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "errado não tá",
-        "time": "22:56"
       }
     ],
-    "messageCount": 3,
-    "authorCount": 3,
+    "messageCount": 2,
+    "authorCount": 2,
     "linkCount": 1,
     "weight": 14
   },
@@ -7594,8 +6086,7 @@
     "date": "2026-03-13T01:30:38.000Z",
     "authors": [
       "Rafael Ribeiro",
-      "Mauricio Aniche",
-      "Marcell Almeida"
+      "Mauricio Aniche"
     ],
     "tags": [
       "inteligência artificial",
@@ -7619,22 +6110,17 @@
     "conversation": [
       {
         "author": "Rafael Ribeiro",
-        "text": "[Image] Bate papo muito bom hoje com o @234394149204034 \nValeu pela disponibilidade  🚀\n\nAlgumas dores que o pessoal trouxe:\n- Crescente verticalizacao de ferramentas específicas para cada segmento\n- Contratação de pessoas que não só saibam utilizar as ferramentas de ia, mas que realmente entendam o potencial disso nos negócios\n- SaaS vai morrer? rs Na nossa visão não. \n- A importância da documentação e processos. Isso foi negligenciado por mto tempo.",
+        "text": "[Image] Bate papo muito bom hoje com o @234394149204034 \nValeu pela disponibilidade  🚀\nAlgumas dores que o pessoal trouxe:\n- Crescente verticalizacao de ferramentas específicas para cada segmento\n- Contratação de pessoas que não só saibam utilizar as ferramentas de ia, mas que realmente entendam o potencial disso nos negócios\n- SaaS vai morrer? rs Na nossa visão não. \n- A importância da documentação e processos. Isso foi negligenciado por mto tempo.",
         "time": "22:30"
       },
       {
         "author": "Mauricio Aniche",
         "text": "Obrigado pelo convite e pela foto",
         "time": "22:42"
-      },
-      {
-        "author": "Marcell Almeida",
-        "text": "errado não tá",
-        "time": "22:56"
       }
     ],
-    "messageCount": 3,
-    "authorCount": 3,
+    "messageCount": 2,
+    "authorCount": 2,
     "linkCount": 1,
     "weight": 14
   },
@@ -7667,17 +6153,12 @@
     "conversation": [
       {
         "author": "Marcus Mendes",
-        "text": "Projeto velho (1 ano), mas que não sei se já passou por aqui.\n\nGoogle AI Edge Gallery\nA gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.\n\nThe Google AI Edge Gallery is an experimental app that puts the power of cutting-edge Generative AI models directly into your hands, running entirely on your Android (available now) and iOS (available now) devices. Dive into a world of creative and practical AI use cases, all running locally, without needing an internet connection once the model is loaded. Experiment with different models, chat, ask questions with images and audio clip, explore prompts, and more!\n\nhttps://github.com/google-ai-edge/gallery",
+        "text": "Projeto velho (1 ano), mas que não sei se já passou por aqui.\nGoogle AI Edge Gallery\nA gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.\nThe Google AI Edge Gallery is an experimental app that puts the power of cutting-edge Generative AI models directly into your hands, running entirely on your Android (available now) and iOS (available now) devices. Dive into a world of creative and practical AI use cases, all running locally, without needing an internet connection once the model is loaded. Experiment with different models, chat, ask questions with images and audio clip, explore prompts, and more!",
         "time": "19:31"
       },
       {
         "author": "Fabrício Carraro",
         "text": "Já sim, instalei quando lançaram",
-        "time": "19:31"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "Tá abandonado",
         "time": "19:31"
       },
       {
@@ -7691,10 +6172,10 @@
         "time": "19:32"
       }
     ],
-    "messageCount": 5,
+    "messageCount": 4,
     "authorCount": 2,
     "linkCount": 1,
-    "weight": 13
+    "weight": 19
   },
   {
     "id": "story-whatsapp-clauders-2026-03-12-003",
@@ -7703,8 +6184,7 @@
     "authors": [
       "Marcell Pm3",
       "Sergio Lopes",
-      "Guilherme Silveira",
-      "Fabrício Carraro"
+      "Guilherme Silveira"
     ],
     "tags": [
       "claude",
@@ -7727,7 +6207,7 @@
     "conversation": [
       {
         "author": "Marcell Pm3",
-        "text": "[Video] Bah, bem legal viu…\n\n Claude can now build interactive charts and diagrams, directly in the chat.",
+        "text": "[Video] Bah, bem legal viu…\n Claude can now build interactive charts and diagrams, directly in the chat.",
         "time": "14:10"
       },
       {
@@ -7744,17 +6224,12 @@
         "author": "Guilherme Silveira",
         "text": "tambem. ele se perde, estoura janela, compacta e nao atua como deveria no overthinking. nao uso o super. to usando so no high o claude. e aumentei a janela pros 500k no padrao do pi de 272k",
         "time": "14:51"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "https://x.com/i/status/2032124273587077133\n\nBeeeem legal",
-        "time": "14:52"
       }
     ],
-    "messageCount": 5,
-    "authorCount": 4,
+    "messageCount": 4,
+    "authorCount": 3,
     "linkCount": 1,
-    "weight": 19
+    "weight": 20
   },
   {
     "id": "story-whatsapp-clauders-2026-03-12-009",
@@ -7763,8 +6238,7 @@
     "authors": [
       "Marcell Almeida",
       "Sérgio Lopes",
-      "Guilherme Silveira",
-      "Fabrício Carraro"
+      "Guilherme Silveira"
     ],
     "tags": [
       "inteligência artificial",
@@ -7788,7 +6262,7 @@
     "conversation": [
       {
         "author": "Marcell Almeida",
-        "text": "Bah, bem legal viu…\n\n Claude can now build interactive charts and diagrams, directly in the chat.",
+        "text": "Bah, bem legal viu…\n Claude can now build interactive charts and diagrams, directly in the chat.",
         "time": "14:10"
       },
       {
@@ -7805,17 +6279,12 @@
         "author": "Guilherme Silveira",
         "text": "tambem. ele se perde, estoura janela, compacta e nao atua como deveria no overthinking. nao uso o super. to usando so no high o claude. e aumentei a janela pros 500k no padrao do pi de 272k",
         "time": "14:51"
-      },
-      {
-        "author": "Fabrício Carraro",
-        "text": "https://x.com/i/status/2032124273587077133\n\nBeeeem legal",
-        "time": "14:52"
       }
     ],
-    "messageCount": 5,
-    "authorCount": 4,
+    "messageCount": 4,
+    "authorCount": 3,
     "linkCount": 1,
-    "weight": 19
+    "weight": 20
   },
   {
     "id": "story-whatsapp-clauders-2026-03-12-006",
@@ -7859,7 +6328,7 @@
     "conversation": [
       {
         "author": "Rafael Ribeiro",
-        "text": "GPT-5.4 also has a 1M context window, but their evals show that needle-in-a-haystack (MRCR v2) scores 97% at 16-32K tokens, drops to 57% at 256-512K, and just 36% at 512K-1M. \n\nInteressante o estudo sobre a queda de performance com janelas de contexto maiores. Fica até pior do que utilizar um modelo open source com poucos parâmetros",
+        "text": "GPT-5.4 also has a 1M context window, but their evals show that needle-in-a-haystack (MRCR v2) scores 97% at 16-32K tokens, drops to 57% at 256-512K, and just 36% at 512K-1M. \nInteressante o estudo sobre a queda de performance com janelas de contexto maiores. Fica até pior do que utilizar um modelo open source com poucos parâmetros",
         "time": "07:58"
       },
       {
@@ -7894,7 +6363,7 @@
       },
       {
         "author": "Marcell Almeida",
-        "text": "Interessante. \n\nO mesmo prompt 2x no mesmo envio ou o mesmo prompt 2x em envios separados?",
+        "text": "Interessante. \nO mesmo prompt 2x no mesmo envio ou o mesmo prompt 2x em envios separados?",
         "time": "08:14"
       },
       {
@@ -7949,7 +6418,7 @@
       },
       {
         "author": "Marcell Almeida",
-        "text": "https://x.com/chongdashu/status/2031743032266043687?s=46\n\nTestei um catatau de ferramenta… tudo ruim. E aí achei isso. Fica aí como referência caso alguém precise um dia",
+        "text": "Testei um catatau de ferramenta… tudo ruim. E aí achei isso. Fica aí como referência caso alguém precise um dia",
         "time": "08:40"
       },
       {
@@ -7971,7 +6440,7 @@
     "messageCount": 22,
     "authorCount": 7,
     "linkCount": 3,
-    "weight": 49
+    "weight": 70
   },
   {
     "id": "story-whatsapp-clauders-2026-03-11-004",
@@ -7982,8 +6451,7 @@
       "Guilherme Silveira",
       "Paulo Silveira",
       "Mauricio Aniche",
-      "Fabrício Carraro",
-      "Unknown"
+      "Fabrício Carraro"
     ],
     "tags": [
       "inteligência artificial",
@@ -8066,18 +6534,13 @@
         "time": "19:13"
       },
       {
-        "author": "Unknown",
-        "text": "Eh Carlinhos",
-        "time": "19:25"
-      },
-      {
         "author": "Guilherme Silveira",
         "text": "E o CPF dele @106911131300018",
         "time": "19:35"
       },
       {
         "author": "Sérgio Lopes",
-        "text": "A história parece que é EXATAMENTE essa hauahauah\nhttps://x.com/PawelHuryn/status/2031629378547769446",
+        "text": "A história parece que é EXATAMENTE essa hauahauah",
         "time": "19:57"
       },
       {
@@ -8087,7 +6550,7 @@
       },
       {
         "author": "Sérgio Lopes",
-        "text": "Antes da famosa morte dos saas vem a morte do Excel. Me parece mais plausível tbm\n\nhttps://x.com/andrewchen/status/2031532980032909640",
+        "text": "Antes da famosa morte dos saas vem a morte do Excel. Me parece mais plausível tbm",
         "time": "20:09"
       },
       {
@@ -8101,10 +6564,10 @@
         "time": "20:12"
       }
     ],
-    "messageCount": 18,
-    "authorCount": 6,
+    "messageCount": 17,
+    "authorCount": 5,
     "linkCount": 3,
-    "weight": 42
+    "weight": 46
   },
   {
     "id": "story-whatsapp-clauders-2026-03-11-003",
@@ -8159,50 +6622,7 @@
     "messageCount": 4,
     "authorCount": 3,
     "linkCount": 2,
-    "weight": 17
-  },
-  {
-    "id": "story-whatsapp-clauders-2026-03-11-002",
-    "title": "Discussão sobre controles de qualidade em empresas tech (caso Amazon) e convite para Elite Session StartSe sobre tendências e verticalização de ferramentas de IA com executivos.",
-    "date": "2026-03-11T18:58:25.000Z",
-    "authors": [
-      "Sérgio Lopes",
-      "Rafael Ribeiro"
-    ],
-    "tags": [
-      "inteligência artificial",
-      "ferramentas de ia",
-      "amazon q",
-      "engenharia de software",
-      "startups"
-    ],
-    "sources": [
-      "whatsapp-clauders-2026-03-11-002"
-    ],
-    "links": [
-      {
-        "url": "https://www.techradar.com/pro/amazon-is-making-even-senior-engineers-get-code-signed-off-following-multiple-recent-outages"
-      }
-    ],
-    "sourceGroups": [
-      "Clauders"
-    ],
-    "conversation": [
-      {
-        "author": "Sérgio Lopes",
-        "text": "logico eles usam aquela porcaria de amazon Q",
-        "time": "16:02"
-      },
-      {
-        "author": "Rafael Ribeiro",
-        "text": "Pessoal, amanhã 12/03 teremos uma Elite Session na StartSe as 19h. A ideia é fazer um bate papo sobre Tendências e Verticalização de Ferramentas de IA com 80 executivos. O Léo Cândido ia fazer, mas está no hospital com pedra no rim. Alguém toparia participar com a gente? Ou tem alguma pessoa para indicar que toparia o desafio?",
-        "time": "16:31"
-      }
-    ],
-    "messageCount": 2,
-    "authorCount": 2,
-    "linkCount": 1,
-    "weight": 10
+    "weight": 19
   },
   {
     "id": "story-whatsapp-clauders-2026-03-11-001",
@@ -8269,23 +6689,18 @@
         "time": "13:30"
       },
       {
-        "author": "Fabrício Carraro",
-        "text": "Vão bloquear",
-        "time": "13:30"
-      },
-      {
         "author": "Paulo Silveira",
         "text": "pessoal. dado um PRD bem estruturado, vcs hj em dia so lancam o claude sozinho? ou iriam com esses mecanismos de mila gentes pra atacar etc? eh q acho q sempre ha duvidas q eles rpecisam tirar",
         "time": "13:38"
       },
       {
         "author": "Marcell Almeida",
-        "text": "Eu quase não uso PRD grande mais. Minha experiência é que quando o PRD fica muito longo os modelos começam a ignorar partes ou deixar escapar detalhes.\n\nO fluxo que estou usando hoje é:\n\n1) Debato o problema com o Claude Cowork (uso ele meio como PM).\n\nEle acessa docs, web e coisas da minha máquina e vamos refinando a solução.\n\n2) Quando a ideia está clara, peço para ele gerar o prompt ideal para implementação.\n\n3) Jogo isso no Conductor e peço para rodar /shaping e /tdd antes de começar a codar.\n\n4) Aí debatemos arquitetura rapidamente e ele executa.\n\n5) Depois é só iterar e ajustar as arestas, nunca fica perfeito depois da primeira implementação mas sao ajustes sempre pequenos",
+        "text": "Eu quase não uso PRD grande mais. Minha experiência é que quando o PRD fica muito longo os modelos começam a ignorar partes ou deixar escapar detalhes.\nO fluxo que estou usando hoje é:\n1) Debato o problema com o Claude Cowork (uso ele meio como PM).\nEle acessa docs, web e coisas da minha máquina e vamos refinando a solução.\n2) Quando a ideia está clara, peço para ele gerar o prompt ideal para implementação.\n3) Jogo isso no Conductor e peço para rodar /shaping e /tdd antes de começar a codar.\n4) Aí debatemos arquitetura rapidamente e ele executa.\n5) Depois é só iterar e ajustar as arestas, nunca fica perfeito depois da primeira implementação mas sao ajustes sempre pequenos",
         "time": "13:57"
       },
       {
         "author": "Marcell Almeida",
-        "text": "e o conductor aciona varios agentes de uma vez de maneira orquestrada\n Agent 1 → pensa\nAgent 2 → planeja\nAgent 3 → escreve testes\nAgent 4 → implementa\nAgent 5 → revisa\n\npra mim, nao-dev, é sensacional. e ai fico sempre na superficie de negocio/produto… mto pouco em coisa tecnica",
+        "text": "e o conductor aciona varios agentes de uma vez de maneira orquestrada\n Agent 1 → pensa\nAgent 2 → planeja\nAgent 3 → escreve testes\nAgent 4 → implementa\nAgent 5 → revisa\npra mim, nao-dev, é sensacional. e ai fico sempre na superficie de negocio/produto… mto pouco em coisa tecnica",
         "time": "13:57"
       },
       {
@@ -8319,9 +6734,9 @@
         "time": "14:06"
       }
     ],
-    "messageCount": 16,
+    "messageCount": 15,
     "authorCount": 5,
     "linkCount": 2,
-    "weight": 35
+    "weight": 51
   }
 ]
