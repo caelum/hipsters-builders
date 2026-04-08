@@ -46,13 +46,14 @@ const fmtDate = (d: string) => {
 
   <!-- Graph -->
   {graphData.nodes.length > 0 && (
-    <div style="margin-bottom:2rem;">
-      <div id="builders-graph" style="width:100%;height:50vh;background:#0d1117;border-radius:6px;border:1px solid #d4d0c8;overflow:hidden;position:relative;"></div>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;font-size:11px;color:#8a8a8a;">
-        <span style="display:flex;align-items:center;gap:4px;"><span style="width:8px;height:8px;border-radius:50%;background:#6366f1;"></span> Story</span>
-        <span style="display:flex;align-items:center;gap:4px;"><span style="width:8px;height:8px;border-radius:50%;background:#10b981;"></span> Tag</span>
-        <span style="display:flex;align-items:center;gap:4px;"><span style="width:8px;height:8px;border-radius:50%;background:#ea580c;"></span> Person</span>
+    <div class="graph-wrap" style="margin-bottom:2rem;">
+      <div id="builders-graph" style="width:100%;height:50vh;background:#0d1117;border-radius:6px;overflow:hidden;position:relative;"></div>
+      <div class="graph-legend">
+        <span class="graph-legend-item"><span class="graph-legend-dot" style="background:#6366f1;"></span> Story</span>
+        <span class="graph-legend-item"><span class="graph-legend-dot" style="background:#10b981;"></span> Tag</span>
+        <span class="graph-legend-item"><span class="graph-legend-dot" style="background:#ea580c;"></span> Person</span>
       </div>
+      <div id="graph-info" class="graph-info"></div>
     </div>
   )}
 
@@ -106,64 +107,204 @@ const fmtDate = (d: string) => {
       story: "#6366f1", tag: "#10b981", person: "#ea580c",
     };
 
+    // Adjacency + link maps
     const adj = new Map<string, Set<string>>();
-    for (const n of data.nodes) adj.set(n.id, new Set());
+    const nodeLinks = new Map<string, Set<any>>();
+    for (const n of data.nodes) { adj.set(n.id, new Set()); nodeLinks.set(n.id, new Set()); }
     for (const l of data.links) {
       const s = typeof l.source === "object" ? l.source.id : l.source;
       const t = typeof l.target === "object" ? l.target.id : l.target;
       adj.get(s)?.add(t); adj.get(t)?.add(s);
+      nodeLinks.get(s)?.add(l); nodeLinks.get(t)?.add(l);
     }
+
+    const nodeById = new Map(data.nodes.map((n: any) => [n.id, n]));
 
     let locked: any = null;
     let hovered: any = null;
-    const hl = new Set<string>();
+    const d1 = new Set<string>();
+    const d2 = new Set<string>();
+    const activeLinks = new Set<any>();
 
-    function activate(n: any) {
-      hl.clear();
-      if (!n) return;
-      hl.add(n.id);
-      for (const id of adj.get(n.id) || []) hl.add(id);
+    function setActive(node: any) {
+      d1.clear(); d2.clear(); activeLinks.clear();
+      if (!node) return;
+      d1.add(node.id);
+      for (const id of adj.get(node.id) || []) {
+        d1.add(id);
+        for (const id2 of adj.get(id) || []) if (!d1.has(id2)) d2.add(id2);
+      }
+      for (const id of [...d1, ...d2]) for (const l of nodeLinks.get(id) || []) activeLinks.add(l);
     }
 
     function active() { return locked || hovered; }
 
+    function nR(n: any): number {
+      const deg = adj.get(n.id)?.size || 0;
+      return Math.sqrt((n.type === "story" ? Math.max(4, 2 + deg * 1.5) : Math.max(2, 1 + deg * 1.2))) * 5;
+    }
+
+    function h2r(hex: string): [number, number, number] {
+      const h = hex.replace("#", "");
+      return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
+    }
+
+    function nodeLabel(node: any): string {
+      return node.title || node.id.split("/").pop()?.replace(/-/g, " ") || "";
+    }
+
+    function drawLabel(
+      ctx: CanvasRenderingContext2D, text: string, x: number, y: number,
+      maxWidth: number, fontSize: number, bold: boolean, gs: number,
+    ) {
+      if (!isFinite(x) || !isFinite(y)) return;
+      ctx.font = `${bold ? "600 " : ""}${fontSize}px -apple-system, system-ui, sans-serif`;
+      const words = text.split(" ");
+      const lines: string[] = [];
+      let line = "";
+      for (const word of words) {
+        const test = line ? `${line} ${word}` : word;
+        if (ctx.measureText(test).width > maxWidth && line) {
+          lines.push(line); line = word;
+        } else { line = test; }
+      }
+      if (line) lines.push(line);
+      if (lines.length > 2) lines.splice(2, lines.length, lines[1].slice(0, -1) + "\u2026");
+
+      const lineH = fontSize * 1.25;
+      const totalH = lines.length * lineH;
+      const pad = 3 / gs;
+      const maxW = Math.max(...lines.map(l => ctx.measureText(l).width));
+      ctx.fillStyle = "rgba(13,17,23,0.88)";
+      ctx.beginPath();
+      const bx = x - maxW / 2 - pad, by = y - pad;
+      if ((ctx as any).roundRect) (ctx as any).roundRect(bx, by, maxW + pad * 2, totalH + pad * 2, 3 / gs);
+      else ctx.rect(bx, by, maxW + pad * 2, totalH + pad * 2);
+      ctx.fill();
+
+      ctx.fillStyle = bold ? "#fff" : "rgba(255,255,255,0.75)";
+      ctx.textAlign = "center"; ctx.textBaseline = "top";
+      for (let i = 0; i < lines.length; i++) ctx.fillText(lines[i], x, y + i * lineH);
+    }
+
     const g = ForceGraph()(el)
       .graphData(data).nodeId("id").backgroundColor("#0d1117")
-      .nodeVal((n: any) => {
-        const deg = adj.get(n.id)?.size || 0;
-        return n.type === "story" ? Math.max(3, 1.5 + deg) : Math.max(1.5, 0.5 + deg * 0.5);
-      })
-      .nodeColor((n: any) => {
+      .linkCurvature(0.12)
+      .nodeCanvasObjectMode(() => "replace" as any)
+      .nodeCanvasObject((node: any, ctx: CanvasRenderingContext2D, gs: number) => {
+        if (!isFinite(node.x) || !isFinite(node.y)) return;
+        const r = nR(node);
+        const c = TC[node.type] || "#94a3b8";
+        const [cr, cg, cb] = h2r(c);
         const a = active();
-        if (!a) return TC[n.type] || "#94a3b8";
-        if (hl.has(n.id)) return TC[n.type] || "#94a3b8";
-        return "#222";
-      })
-      .nodeLabel((n: any) => n.title)
-      .linkColor(() => {
-        return active() ? "rgba(255,255,255,0.03)" : "rgba(255,255,255,0.08)";
-      })
-      .linkWidth((l: any) => {
-        const s = typeof l.source === "object" ? l.source.id : l.source;
-        const t = typeof l.target === "object" ? l.target.id : l.target;
-        return (hl.has(s) && hl.has(t)) ? 2 : 0.3;
-      })
-      .onNodeHover((n: any) => {
-        if (locked) return;
-        hovered = n; activate(n);
-        el!.style.cursor = n ? "pointer" : "default";
-      })
-      .onNodeClick((n: any) => {
-        if (locked?.id === n.id) { locked = null; activate(hovered); return; }
-        locked = n; activate(n);
-      })
-      .onBackgroundClick(() => { locked = null; hovered = null; activate(null); })
-      .warmupTicks(60).cooldownTicks(200)
-      .onEngineStop(() => g.zoomToFit(400, 20));
+        const isCenter = a?.id === node.id;
+        const is1 = d1.has(node.id);
+        const is2 = d2.has(node.id);
+        const idle = !a;
 
-    const ch = g.d3Force("charge"); if (ch) (ch as any).strength(-80).distanceMax(250);
-    const cn = g.d3Force("center"); if (cn) (cn as any).strength(0.05);
-    const lf = g.d3Force("link"); if (lf) (lf as any).distance(40);
+        // Glow
+        const glR = r * (isCenter ? 5 : is1 ? 3.5 : is2 ? 2.5 : 1.8);
+        const glA = isCenter ? 0.5 : is1 ? 0.3 : is2 ? 0.15 : (idle ? 0.1 : 0.03);
+        const gl = ctx.createRadialGradient(node.x, node.y, r * 0.3, node.x, node.y, glR);
+        gl.addColorStop(0, `rgba(${cr},${cg},${cb},${glA})`);
+        gl.addColorStop(1, "transparent");
+        ctx.fillStyle = gl;
+        ctx.beginPath(); ctx.arc(node.x, node.y, glR, 0, 2 * Math.PI); ctx.fill();
+
+        // Core
+        const ca = isCenter ? 1 : is1 ? 0.95 : is2 ? 0.55 : (idle ? 0.6 : 0.08);
+        ctx.beginPath(); ctx.arc(node.x, node.y, r, 0, 2 * Math.PI);
+        ctx.fillStyle = `rgba(${cr},${cg},${cb},${ca})`; ctx.fill();
+
+        // Ring on locked center
+        if (isCenter && locked) {
+          ctx.beginPath(); ctx.arc(node.x, node.y, r + 2, 0, 2 * Math.PI);
+          ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.lineWidth = 1.5; ctx.stroke();
+        }
+        if (isCenter) {
+          ctx.beginPath(); ctx.arc(node.x, node.y, r * 0.35, 0, 2 * Math.PI);
+          ctx.fillStyle = "rgba(255,255,255,0.9)"; ctx.fill();
+        }
+
+        // Labels
+        const showBold = isCenter;
+        const showDim = is1 && (locked || gs > 1.5);
+        const showStory = node.type === "story" && (idle || is1 || is2) && gs > 0.8;
+        if (!showBold && !showDim && !showStory) return;
+
+        const label = nodeLabel(node);
+        if (!label) return;
+        const fs = Math.max(10, 12 / gs);
+        const maxW = 160 / gs;
+        const ly = node.y + r + 6 / gs;
+        drawLabel(ctx, label, node.x, ly, maxW, fs, showBold, gs);
+      })
+      .nodePointerAreaPaint((n: any, color: string, ctx: CanvasRenderingContext2D) => {
+        if (!isFinite(n.x) || !isFinite(n.y)) return;
+        ctx.fillStyle = color; ctx.beginPath();
+        ctx.arc(n.x, n.y, Math.max(12, nR(n) * 2.5), 0, 2 * Math.PI); ctx.fill();
+      })
+      .linkCanvasObjectMode(() => "replace" as any)
+      .linkCanvasObject((link: any, ctx: CanvasRenderingContext2D) => {
+        const s = link.source, t = link.target;
+        if (!isFinite(s.x) || !isFinite(t.x) || !isFinite(s.y) || !isFinite(t.y)) return;
+        const a = active();
+        const both1 = d1.has(s.id) && d1.has(t.id);
+        const isAL = activeLinks.has(link);
+        const idle = !a;
+        const dx = t.x - s.x, dy = t.y - s.y;
+        ctx.beginPath(); ctx.moveTo(s.x, s.y);
+        ctx.quadraticCurveTo((s.x + t.x) / 2 - dy * 0.12, (s.y + t.y) / 2 + dx * 0.12, t.x, t.y);
+        if (both1) {
+          const [cr, cg, cb] = h2r(TC[a?.type] || "#6366f1");
+          ctx.strokeStyle = `rgba(${cr},${cg},${cb},0.6)`; ctx.lineWidth = 1.8;
+        } else if (isAL) {
+          ctx.strokeStyle = "rgba(255,255,255,0.12)"; ctx.lineWidth = 0.6;
+        } else if (idle) {
+          ctx.strokeStyle = "rgba(255,255,255,0.08)"; ctx.lineWidth = 0.4;
+        } else {
+          ctx.strokeStyle = "rgba(255,255,255,0.02)"; ctx.lineWidth = 0.2;
+        }
+        ctx.stroke();
+      })
+      .autoPauseRedraw(false)
+      .onNodeHover((node: any) => {
+        if (locked) return;
+        hovered = node; setActive(node);
+        el!.style.cursor = node ? "pointer" : "default";
+      })
+      .onNodeClick((node: any) => {
+        if (locked?.id === node.id) {
+          locked = null; setActive(hovered);
+          const infoEl = document.getElementById("graph-info");
+          if (infoEl) infoEl.style.display = "none";
+          return;
+        }
+        locked = node; setActive(node);
+
+        // Show info panel
+        const infoEl = document.getElementById("graph-info");
+        if (!infoEl) return;
+        const degree = adj.get(node.id)?.size || 0;
+        const typeLabel: Record<string, string> = { story: "Story", tag: "Tag", person: "Person" };
+        const color = TC[node.type] || "#94a3b8";
+        let html = `<span class="graph-info-dot" style="background:${color}"></span>`;
+        html += `<strong>${nodeLabel(node)}</strong>`;
+        html += `<span class="graph-info-meta">${typeLabel[node.type] || node.type} · ${degree} conexões</span>`;
+        infoEl.innerHTML = html;
+        infoEl.style.display = "flex";
+      })
+      .onBackgroundClick(() => {
+        locked = null; hovered = null; setActive(null);
+        const infoEl = document.getElementById("graph-info");
+        if (infoEl) infoEl.style.display = "none";
+      })
+      .warmupTicks(80).cooldownTicks(300)
+      .onEngineStop(() => g.zoomToFit(400, 30));
+
+    const ch = g.d3Force("charge"); if (ch) (ch as any).strength(-100).distanceMax(300);
+    const cn = g.d3Force("center"); if (cn) (cn as any).strength(0.04);
+    const lf = g.d3Force("link"); if (lf) (lf as any).distance(50);
     (g as any).d3VelocityDecay(0.35);
   }
 
@@ -228,5 +369,65 @@ const fmtDate = (d: string) => {
     flex-wrap: wrap;
     gap: 4px;
     margin-top: 0.25rem;
+  }
+
+  /* Graph organic style */
+  .graph-wrap {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #0d1117;
+    border: 1px solid #30363d;
+  }
+
+  .graph-legend {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    font-size: 11px;
+    color: #8b949e;
+    font-family: -apple-system, system-ui, sans-serif;
+    pointer-events: none;
+  }
+
+  .graph-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .graph-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .graph-info {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-top: 1px solid #30363d;
+    font-family: -apple-system, system-ui, sans-serif;
+    font-size: 13px;
+    background: #161b22;
+    color: #e6edf3;
+    min-height: 40px;
+    flex-wrap: wrap;
+  }
+
+  :global(.graph-info-dot) {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  :global(.graph-info-meta) {
+    color: #8b949e;
   }
 </style>
