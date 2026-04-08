@@ -87,6 +87,31 @@ function formatDate(date: Date): string {
       </div>
     </section>
 
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works">
+      <div class="how-it-works__inner">
+        <h2 class="section-label reveal">Como funciona</h2>
+        <div class="how-it-works__content reveal">
+          <p>
+            O Hipsters Builders captura sinais de grupos da comunidade
+            (Telegram, WhatsApp) e os processa com LLMs para criar
+            <a href="/stories">stories</a> com os comentários autênticos
+            de quem participou.
+          </p>
+          <p>
+            Inspirado no <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener">LLM Wiki</a>
+            do Karpathy: sinais brutos s&atilde;o capturados, classificados,
+            conectados em um <a href="/signals">grafo de conhecimento</a>
+            e transformados em conteúdo editorial.
+            Nada é inventado — tudo vem das palavras da comunidade.
+          </p>
+          <p class="how-it-works__meta">
+            <a href="https://paulo.com.br/ideias/pokomos" target="_blank" rel="noopener">Pokomos</a> &mdash; o observatório que alimenta este site
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- LATEST STORIES -->
     {latestStories.length > 0 && (
       <section class="latest-stories">
@@ -591,6 +616,44 @@ function formatDate(date: Date): string {
   /* ===========================================
      FEATURES
      =========================================== */
+  /* --- How It Works --- */
+  .how-it-works {
+    padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .how-it-works__inner {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  .how-it-works__content {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(0.9375rem, 1.6vw, 1rem);
+    line-height: 1.7;
+    color: #4a3f35;
+  }
+
+  .how-it-works__content p {
+    margin-bottom: 1rem;
+  }
+
+  .how-it-works__content a {
+    color: #c56e4a;
+    border-bottom: 1px solid rgba(197, 110, 74, 0.3);
+  }
+
+  .how-it-works__meta {
+    font-size: 0.8125rem;
+    color: #9b8c7a;
+    margin-top: 0.5rem;
+  }
+
+  .how-it-works__meta a {
+    color: #9b8c7a !important;
+    border-bottom-color: rgba(155, 140, 122, 0.3) !important;
+  }
+
   /* --- Latest Stories --- */
   .latest-stories {
     padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
