@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hipsters Builders — preview de formatos de newsletter</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #1a1a1a;
+    color: #e8e8e8;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 64px 32px 96px; }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #c6361b; margin: 0 0 8px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 16px; color: #fdfcf7; font-weight: 700; }
+  .lede { font-size: 17px; color: #b8b8b8; margin: 0 0 8px; max-width: 60ch; }
+  .meta { font-size: 13px; color: #888; font-style: italic; margin: 0 0 48px; }
+
+  .grid { display: grid; gap: 20px; grid-template-columns: 1fr; margin: 0 0 48px; }
+  @media (min-width: 760px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+  .card {
+    background: #262626;
+    border: 1px solid #353535;
+    border-radius: 8px;
+    padding: 28px 24px 24px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .card:hover { border-color: #c6361b; transform: translateY(-2px); }
+
+  .card .num { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #888; margin: 0 0 10px; }
+  .card .num.f1 { color: #c6361b; }
+  .card .num.f2 { color: #0c5b46; }
+  .card .num.f3 { color: #4a7fbf; }
+  .card h2 { font-size: 20px; line-height: 1.3; margin: 0 0 8px; color: #fdfcf7; font-weight: 700; }
+  .card .from { font-size: 12px; color: #888; margin: 0 0 14px; font-style: italic; }
+  .card p { font-size: 14px; line-height: 1.55; color: #c8c8c8; margin: 0 0 14px; flex: 1; }
+  .card .pros { font-size: 13px; line-height: 1.5; color: #9a9a9a; margin: 0 0 16px; padding: 10px 12px; background: #1f1f1f; border-radius: 4px; }
+  .card .pros strong { color: #d4d4d4; }
+  .card .open { font-size: 12px; color: #c6361b; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-top: auto; }
+  .card .open::after { content: " →"; }
+
+  .notes { background: #232323; border-left: 3px solid #555; padding: 22px 28px; border-radius: 0 6px 6px 0; margin: 32px 0 0; }
+  .notes h3 { font-size: 14px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #fdfcf7; margin: 0 0 14px; }
+  .notes ul { margin: 0; padding-left: 18px; font-size: 14px; color: #b0b0b0; }
+  .notes li { margin: 0 0 8px; line-height: 1.55; }
+  .notes li:last-child { margin-bottom: 0; }
+  .notes code { background: #1a1a1a; padding: 1px 6px; border-radius: 3px; font-size: 12px; color: #d4a373; }
+
+  .footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid #353535; font-size: 12px; color: #666; }
+  .footer a { color: #888; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<div class="eyebrow">Hipsters Builders</div>
+<h1>Preview de formatos de newsletter</h1>
+<p class="lede">Três propostas de formato pra newsletter semanal, geradas a partir das mesmas 11 stories reais da semana de 30/mar a 7/abr de 2026 (Telegram + Clauders + IA Sob Controle).</p>
+<p class="meta">Cada uma usa exatamente o mesmo material — muda só a estrutura, a voz e o ritmo de leitura.</p>
+
+<div class="grid">
+
+  <a class="card" href="format-1-money-stuff.html">
+    <div class="num f1">Formato 1</div>
+    <h2>Money Stuff</h2>
+    <div class="from">inspirado em Matt Levine (Bloomberg)</div>
+    <p>Quatro capítulos editoriais com headers que carregam voz, e <strong style="color:#d4d4d4;">footnotes</strong> que são as reações irônicas do grupo. A análise séria fica no corpo, a piada mora no rodapé.</p>
+    <div class="pros"><strong>Risco baixo, originalidade média.</strong> Funciona pra qualquer audiência sofisticada. Pode ficar denso no mobile.</div>
+    <div class="open">abrir preview</div>
+  </a>
+
+  <a class="card" href="format-2-stream.html">
+    <div class="num f2">Formato 2</div>
+    <h2>Stream anotado</h2>
+    <div class="from">inspirado em Today in Tabs / Garbage Day</div>
+    <p>Fluxo contínuo com dias da semana como divisores. Voz única do editor, quotes inline na prosa. Nada de capítulos rígidos. Termina com um convite explícito a responder o email.</p>
+    <div class="pros"><strong>Mais fluido pra ler scrollando.</strong> Depende de uma voz editorial dominante e clara — sem isso, vira newsletter normal.</div>
+    <div class="open">abrir preview</div>
+  </a>
+
+  <a class="card" href="format-3-dialogo-split.html">
+    <div class="num f3">Formato 3</div>
+    <h2>Diálogo split</h2>
+    <div class="from">original — sem precedente direto</div>
+    <p>Cada bloco tem dois sub-blocos: <strong style="color:#d4d4d4;">Editorial</strong> (análise séria) e <strong style="color:#d4d4d4;">No grupo</strong> (mensagens literais com handles). Encerra com seção fixa "A mensagem que ninguém respondeu".</p>
+    <div class="pros"><strong>Mais ousado, mais layout, mais loop compounding.</strong> Transforma o ativo Telegram+WhatsApp num diferencial estrutural. Nenhuma newsletter mainstream faz isso.</div>
+    <div class="open">abrir preview</div>
+  </a>
+
+</div>
+
+<div class="notes">
+<h3>Notas técnicas comuns aos três</h3>
+<ul>
+<li>Largura máxima <code>640px</code>, mobile-first, system fonts (sem web fonts — Outlook quebra).</li>
+<li>Sem imagens. Tudo texto formatado com <code>border-left</code> blockquotes e tabelas com <code>bgcolor</code> (compatível com Gmail, Outlook, Apple Mail).</li>
+<li>Inline CSS pronto pra colar no Resend. Fica abaixo de 50KB cada (Gmail clipa em 102KB).</li>
+<li>O conteúdo é <strong style="color:#d4d4d4;">100% real</strong>: 11 stories da semana, citações literais do grupo, sem invenção de quote ou parágrafo.</li>
+<li>Auto-referência intencional: a story do Karpathy (que menciona ter usado esse próprio sistema pra escrever a newsletter) aparece como assinatura nos três.</li>
+</ul>
+</div>
+
+<div class="notes" style="border-color: #c6361b;">
+<h3>Próximos passos</h3>
+<ul>
+<li>Você abre os 3, lê com calma, escolhe um (ou pede mistura).</li>
+<li>Eu refino o escolhido, ajustando tom, cortes e ritmo conforme seu feedback.</li>
+<li>Crio <code>scripts/send-newsletter.ts</code> que pluga no <code>hipsters</code> CLI: <code>hipsters newsletter send --test --to paulo,vini</code>. Usa <code>RESEND_API_KEY</code> do <code>.env</code> e manda só pros dois destinatários até a gente decidir publicar.</li>
+<li>Depois disso, o passo é gerar o markdown automaticamente a partir das stories, mantendo o template escolhido como invariante.</li>
+</ul>
+</div>
+
+<div class="footer">
+hipsters.builders &nbsp;·&nbsp; <code>public/tmp/</code> &nbsp;·&nbsp; preview interno, não vai pra produção
+</div>
+
+</div>
+
+</body>
+</html>

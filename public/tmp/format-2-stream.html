@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Hipsters Builders nº 1 — F2 Stream anotado</title>
+</head>
+<body style="margin:0;padding:0;background:#f3f1ec;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;color:#1a1a1a;-webkit-font-smoothing:antialiased;">
+
+<table role="presentation" align="center" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:640px;margin:0 auto;background:#ffffff;">
+<tr><td style="padding:56px 40px 48px;">
+
+<!-- masthead -->
+<div style="margin:0 0 4px;font-size:13px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#0c5b46;">Hipsters Builders &nbsp;·&nbsp; nº 1</div>
+<div style="margin:0 0 32px;font-size:14px;color:#6b6b6b;font-style:italic;">A semana que a Anthropic gastou um jeitinho de não entregar.</div>
+
+<!-- cold open -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 36px;">
+<tr>
+<td style="padding:0 0 0 18px;border-left:3px solid #0c5b46;">
+<div style="font-size:21px;line-height:1.45;font-style:italic;color:#1a1a1a;">"Estão sangrando MESMO."</div>
+<div style="margin-top:10px;font-size:13px;color:#888;">— Fabrício Carraro, sobre a Anthropic restringir o Claude em apps third-party.</div>
+</td>
+</tr>
+</table>
+
+<p style="margin:0 0 18px;font-size:17px;line-height:1.7;color:#1a1a1a;">A Anthropic anunciou na quinta o <strong>Claude Mythos</strong>, com vídeo do CEO, system card completo, benchmarks novos — e zero modelo público. O Carraro chamou o gráfico do Mythos de "talvez o gráfico mais significativo" do anúncio. O Marcell, lendo a mesma página, sentenciou: "esse papo de não disponibilizar o modelo, lançar esse projeto com vídeo do CEO etc etc me cheira a marketing stunt". Não chegaram a um acordo. O Paulo deu a leitura mais curta: "bem pertinho do IPO".</p>
+
+<p style="margin:0 0 18px;font-size:17px;line-height:1.7;color:#1a1a1a;">Na sequência veio o <strong>Project Glasswing</strong>, com claim de vulnerabilidades em SOs e browsers descobertas pelo Mythos rodando o SWE-bench Verified zerado. Também sem ferramenta pública. O Guilherme Silveira reagiu na ironia que o Clauders esperava dele: "Ufa. Que bom que as empresas americanas estão com essas armas na mão e vão defender o mundo." O Paulo completou: "Vão hackear nossas apps privadamente kkk".</p>
+
+<p style="margin:0 0 18px;font-size:17px;line-height:1.7;color:#1a1a1a;">E no meio disso tudo — quase como se fosse pra confirmar a tese — a notícia de que a Anthropic vai cortar o uso do Claude em apps third-party como OpenClaw a partir do dia 4. "Para gerenciar melhor a capacidade." É aí que o Carraro solta o "Estão sangrando MESMO". O Mark Zuckerberg, no mesmo dia, voltou a programar depois de duas décadas de pausa, submeteu três diffs ao monorepo da Meta e é "heavy user do Claude Code CLI". Uma nota de rodapé de uma nota de rodapé.</p>
+
+<!-- divider -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:36px 0;">
+<tr><td style="border-top:1px solid #d9d4c5;line-height:0;">&nbsp;</td></tr>
+</table>
+
+<p style="margin:0 0 18px;font-size:17px;line-height:1.7;color:#1a1a1a;"><strong>Quarta. DORA, débito técnico, e o GitHub que enche de verde sem fazer nada.</strong> Rafael Ribeiro reabriu a discussão usando o método DORA adaptado pro Ralph console e levantou a hipótese: "Provavelmente tem haver com o volume de entregas e a falsa sensação de progresso que isso gera". Sem processo bem definido, gera "mto débito técnico". O Paulo reduziu a equação à frase mais útil da semana: "todo mundo com github verdinho mas comitando onde nao precisa". O Aniche complicou: "AI também deixa a pessoa explorar mais, ela abre PR e depois descarta".</p>
+
+<p style="margin:0 0 18px;font-size:17px;line-height:1.7;color:#1a1a1a;">E enquanto a métrica tradicional engasga, a discussão sobre quem é dogmático demais sobre TDD apareceu de canto. O Aniche sobre Jason Gorman: "Está pirando no mundo novo. Da mesma escola do Dave Farley". Não é briga, é desabafo: TDD como religião não sobrevive a 2026.</p>
+
+<p style="margin:0 0 18px;font-size:17px;line-height:1.7;color:#1a1a1a;"><strong>Sobre a tal "superfície de bugs".</strong> Paulo escreveu no canal do Telegram um texto longo sobre o problema do código agêntico inflar a área de contato bugada do software. Os exemplos do mercado fazem barulho: Daniel Stenberg desligou o bug bounty do cURL depois que 20% das submissões viraram IA. Mitchell Hashimoto baniu código gerado de IA do Ghostty. Steve Ruiz fechou todos os PRs externos do tldraw. A defesa do Paulo: "se você for focado naquilo que quer fazer, tiver domínio de conhecimento de boa parte daquele código, daquela infraestrutura, da arquitetura" — funciona. Quando não, "quem paga a conta é o ecossistema". Em outro thread, o Guilherme Silveira já tinha alertado: "O pessoal achando que desalinhamento é algo do futuro. É super presente."</p>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:36px 0;">
+<tr><td style="border-top:1px solid #d9d4c5;line-height:0;">&nbsp;</td></tr>
+</table>
+
+<p style="margin:0 0 18px;font-size:17px;line-height:1.7;color:#1a1a1a;"><strong>Terça. Migração silenciosa pro Codex.</strong> O Marcell começou a semana relutando: "tá horrível mesmo :/ mas n tenho coragem de ir pro codex 🥲". O Carraro já tinha mudado: "Pra programar tô usando o Codex. Tô literalmente com 6 janelas de VS Code abertas, cada uma com um projeto, todas com o codex. E ele tá aguentando". Sérgio Lopes endossou em quatro palavras: "Codex tá bem bom vale testar". Paulo confirmou em cinco: "beeeem bom o codex". Não foi um anúncio, foi um drift.</p>
+
+<p style="margin:0 0 18px;font-size:17px;line-height:1.7;color:#1a1a1a;"><strong>Paperclip também tá no radar.</strong> Sérgio e Marcell testaram pra orquestração de agentes. O Marcell gostou da interface: "ele deixa vc criar issues, goals, os agentes vao pegando as issues e fazendo. parece um pouco o fluxo que ta montando pra lumina no github". O esforço, segundo ele, "está em deixar .md pra cada agente que vc cria… dai vai um tempo". Sérgio começou a especular: "pensando se nao poderia ser o RalphGui".</p>
+
+<p style="margin:0 0 18px;font-size:17px;line-height:1.7;color:#1a1a1a;"><strong>Skills vs plain vanilla, round N.</strong> O Paulo: "Eu tô numa de evitar skill. E ir no plain vanilla em tudo pra dominar melhor essas coisas". O Marcell, do lado oposto: "tô usando além de shaping as skills do garry tan e tem sido incrível pra momentos de planejamento". O grupo dividiu sem discutir. Talvez seja o tipo de decisão que cada um precisa errar sozinho.</p>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:36px 0;">
+<tr><td style="border-top:1px solid #d9d4c5;line-height:0;">&nbsp;</td></tr>
+</table>
+
+<p style="margin:0 0 18px;font-size:17px;line-height:1.7;color:#1a1a1a;"><strong>Segunda. EmDash, Astro, e a tese do Paulo sobre o sucessor do WordPress.</strong> "O Cloudflare e time do Astro criou um 'sucessor' do Wordpress", escreveu o Paulo no Telegram. "Wordpress roda em 40% dos sites do mundo, mas foi desenhado para um universo tech de décadas atrás." O EmDash foi "feito em 2 meses, vibecodado, para um mundo serverless, edge, lambda e afins". Argumento aberto: "tenho usado muito Astro (o Hipsters Builders tá em Astro! o paulo.com.br tá em Astro! o site da alun.com.br também!) e aposto que vai ter bastante espaço". No Clauders, o mesmo Paulo foi mais lacônico: "astro e tauri vao comer tudo". O Guilherme respondeu: "solves security. ate vc deployar seu source code junto hehe". Ninguém defendeu.</p>
+
+<p style="margin:0 0 18px;font-size:17px;line-height:1.7;color:#1a1a1a;"><strong>No mesmo dia, a polêmica do RSA 2026.</strong> O Rafael Ribeiro compartilhou o relatório da vibecoded.vc analisando "o quanto uma empresa poderia ser substituída por um fim de semana de vibe coding". O exemplo escolhido foi recriar o 1Password "com um prompt, principalmente se tratando de segurança". O Paulo notou na hora: "Legal eh q da pra ver que os comentários sobre cada uma são claramente de uma llm". Sérgio Lopes em duas palavras: "Balela demais né". Fim da discussão.</p>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:36px 0;">
+<tr><td style="border-top:1px solid #d9d4c5;line-height:0;">&nbsp;</td></tr>
+</table>
+
+<p style="margin:0 0 18px;font-size:17px;line-height:1.7;color:#1a1a1a;">E pra fechar a semana, uma curiosidade meta. O sistema que escreve essa newsletter foi montado depois que o Karpathy publicou um Gist sobre wiki + LLM. O Paulo escreveu sobre isso no Telegram: "inclusive para criar essa newsletter do hipsters builders (nesse exato instante foi usado esse mecanismo para produzir o texto)". É auto-referência total, e está tudo bem.</p>
+
+<!-- signoff with mailbag invite -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:48px 0 0;">
+<tr><td style="background:#f0ede2;padding:24px 22px;border-radius:4px;">
+<p style="margin:0 0 12px;font-size:15px;line-height:1.6;color:#1a1a1a;"><strong>Esta foi a primeira edição.</strong> Se você quer ver mais isso, menos isso, ou algo diferente, responde esse email. A gente lê tudo, e parte das respostas vira material da próxima.</p>
+<p style="margin:0;font-size:14px;color:#3a3a3a;font-style:italic;">— Paulo e Vinny, Hipsters Builders.</p>
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+
+<div style="text-align:center;padding:24px 16px 48px;font-size:12px;color:#9a9a9a;">
+hipsters.builders &nbsp;·&nbsp; <a href="/tmp/" style="color:#9a9a9a;text-decoration:underline;">voltar ao índice</a>
+</div>
+
+</body>
+</html>
