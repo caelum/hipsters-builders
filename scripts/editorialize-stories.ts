@@ -9,7 +9,15 @@
  * - Splits mixed threads into separate stories
  *
  * Usage:
- *   npx tsx scripts/editorialize-stories.ts [--dry-run] [--limit N] [--force]
+ *   npx tsx scripts/editorialize-stories.ts [options]
+ *
+ * Options:
+ *   --from <date>    Only process stories with date >= YYYY-MM-DD
+ *   --to <date>      Only process stories with date <= YYYY-MM-DD
+ *   --limit <N>      Cap at N stories (after date filter)
+ *   --force          Re-editorialize stories that already have editorial content
+ *   --dry-run        Run the LLM but don't write stories.json
+ *   --help           Show this help
  *
  * The script writes editorial fields back to stories.json.
  * Stories that already have editorial content are skipped (unless --force).
@@ -34,12 +42,23 @@ const getArg = (name: string) => {
 const dryRun = hasFlag("dry-run");
 const force = hasFlag("force");
 const limit = parseInt(getArg("limit") || "0", 10);
+const dateFrom = getArg("from") || "";
+const dateTo = getArg("to") || "";
 const projectRoot = resolve(import.meta.dirname, "..");
 const storiesPath = resolve(projectRoot, "src", "data", "stories.json");
 
 if (hasFlag("help")) {
-  console.log("Usage: npx tsx scripts/editorialize-stories.ts [--dry-run] [--limit N] [--force]");
+  const src = await readFile(import.meta.filename, "utf-8");
+  const help = src.match(/\/\*\*([\s\S]*?)\*\//)?.[1]?.replace(/^[ \t]*\*[ \t]?/gm, "") ?? "";
+  console.log(help.trim());
   process.exit(0);
+}
+
+function inDateRange(storyDate: string): boolean {
+  const d = (storyDate || "").slice(0, 10);
+  if (dateFrom && d < dateFrom) return false;
+  if (dateTo && d > dateTo) return false;
+  return true;
 }
 
 const anthropic = new Anthropic();
@@ -156,9 +175,17 @@ async function main() {
   const stories: Story[] = JSON.parse(await readFile(storiesPath, "utf-8"));
   console.log(`[editorial] Loaded ${stories.length} stories`);
 
-  const toProcess = stories.filter(s => force || !s.editorial);
+  const dateRange = dateFrom || dateTo
+    ? ` (${dateFrom || "..."} → ${dateTo || "..."})`
+    : "";
+  const inRange = stories.filter(s => inDateRange(s.date));
+  if (dateRange) {
+    console.log(`[editorial] Date filter${dateRange}: ${inRange.length}/${stories.length} stories in range`);
+  }
+  const toProcess = inRange.filter(s => force || !s.editorial);
   const batch = limit > 0 ? toProcess.slice(0, limit) : toProcess;
-  console.log(`[editorial] Processing ${batch.length} stories (${stories.length - toProcess.length} already done)`);
+  const skipped = inRange.length - toProcess.length;
+  console.log(`[editorial] Processing ${batch.length} stories (${skipped} already have editorial${force ? ", forced re-process" : ""})`);
 
   let processed = 0;
   let splits = 0;

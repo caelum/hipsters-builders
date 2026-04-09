@@ -7,7 +7,15 @@
  * political content, private/irrelevant conversations.
  *
  * Usage:
- *   npx tsx scripts/classify-stories.ts [--dry-run] [--limit N] [--force]
+ *   npx tsx scripts/classify-stories.ts [options]
+ *
+ * Options:
+ *   --from <date>    Only classify stories with date >= YYYY-MM-DD
+ *   --to <date>      Only classify stories with date <= YYYY-MM-DD
+ *   --limit <N>      Cap at N stories (after date filter)
+ *   --force          Re-classify stories that already have a public verdict
+ *   --dry-run        Run the LLM but don't write stories.json
+ *   --help           Show this help
  */
 
 import { readFile, writeFile } from "node:fs/promises";
@@ -25,10 +33,26 @@ const getArg = (name: string) => {
   return i >= 0 && i + 1 < args.length ? args[i + 1] : undefined;
 };
 
+if (hasFlag("help")) {
+  const src = await readFile(import.meta.filename, "utf-8");
+  const help = src.match(/\/\*\*([\s\S]*?)\*\//)?.[1]?.replace(/^[ \t]*\*[ \t]?/gm, "") ?? "";
+  console.log(help.trim());
+  process.exit(0);
+}
+
 const dryRun = hasFlag("dry-run");
 const force = hasFlag("force");
 const limit = parseInt(getArg("limit") || "0", 10);
+const dateFrom = getArg("from") || "";
+const dateTo = getArg("to") || "";
 const storiesPath = resolve(import.meta.dirname, "..", "src", "data", "stories.json");
+
+function inDateRange(storyDate: string): boolean {
+  const d = (storyDate || "").slice(0, 10);
+  if (dateFrom && d < dateFrom) return false;
+  if (dateTo && d > dateTo) return false;
+  return true;
+}
 
 const anthropic = new Anthropic();
 
@@ -59,6 +83,7 @@ Responda APENAS com JSON: {"public": true, "reason": "motivo em poucas palavras"
 interface Story {
   id: string;
   title: string;
+  date: string;
   conversation: Array<{ author: string; text: string }>;
   public?: boolean;
   sensitivityReason?: string;
@@ -91,10 +116,18 @@ async function classifySensitivity(story: Story): Promise<{ public: boolean; rea
 
 async function main() {
   const stories: Story[] = JSON.parse(await readFile(storiesPath, "utf-8"));
-  const toProcess = stories.filter(s => force || s.public === undefined);
+
+  const dateRange = dateFrom || dateTo
+    ? ` (${dateFrom || "..."} → ${dateTo || "..."})`
+    : "";
+  const inRange = stories.filter(s => inDateRange(s.date || ""));
+  if (dateRange) {
+    console.log(`[classify] Date filter${dateRange}: ${inRange.length}/${stories.length} stories in range`);
+  }
+  const toProcess = inRange.filter(s => force || s.public === undefined);
   const batch = limit > 0 ? toProcess.slice(0, limit) : toProcess;
 
-  console.log(`[classify] ${stories.length} stories, ${batch.length} to classify (${stories.length - toProcess.length} already done)`);
+  console.log(`[classify] ${stories.length} stories, ${batch.length} to classify (${inRange.length - toProcess.length} already done${force ? ", forced re-classify" : ""})`);
 
   let publicCount = 0;
   let privateCount = 0;
