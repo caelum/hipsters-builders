@@ -16,6 +16,7 @@
  *   editorialize  Editorial pass on stories with Sonnet (titles, lede, body)
  *   classify      Sensitivity classification with Haiku (public vs private)
  *   stories       signals + editorialize + classify (the "generate news" flow)
+ *   newsletter    Render the F3 (Diálogo split) newsletter HTML from stories.json
  *   build         sync + stories (full pipeline, ~ what `npm run build` covers)
  *   status        Show counts: signals, stories, editorial, public, private
  *
@@ -223,6 +224,39 @@ Reports on src/data/signals.json and src/data/stories.json:
 
 No options. Reads files only.
 `,
+  newsletter: `hipsters newsletter — Render the F3 (Diálogo split) newsletter HTML
+
+Reads stories.json, picks the top stories by weight inside a date range,
+and writes a single inline-styled HTML file ready to preview in the
+browser or send via Resend. No LLM calls — assembles from the editorial
+fields the editorialize step already produced.
+
+Includes the email best practices: pre-header, "view in browser",
+"forwarded by a friend? subscribe", unsubscribe + preferences footer,
+permission reminder, sender address.
+
+Options:
+  --from <date>          Earliest story date (default: 7 days ago)
+  --to <date>            Latest story date (default: today)
+  --limit <N>            Max number of editorial blocks (default: 4)
+  --edition <N>          Edition number for the masthead (default: auto)
+  --tagline <text>       Subtitle below the masthead
+  --preheader <text>     Inbox preview text (45-110 chars)
+  --cold-open-id <id>    Story id to pull the cold-open quote from
+  --unanswered-id <id>   Story id for "A mensagem que ninguém respondeu"
+  --signoff <text>       Default: "Paulo e Vinny"
+  --base-url <url>       Default: https://builders.hipsters.tech
+  --slug <slug>          Filename slug under /tmp/. Default: newsletter-latest
+  --out <path>           Override the output path
+  --print-data           Print the assembled NewsletterData JSON and exit
+  --dry-run              Print summary, don't write
+
+Examples:
+  hipsters newsletter --from 2026-04-01
+  hipsters newsletter --from 2026-03-30 --to 2026-04-07 --limit 4
+  hipsters newsletter --from 2026-04-01 --slug newsletter-2026-04-07
+  hipsters newsletter --from 2026-04-01 --print-data | jq .blocks
+`,
 };
 
 // ── runner ──
@@ -311,6 +345,17 @@ async function cmdStories(args: Args): Promise<number> {
   }
 
   return 0;
+}
+
+async function cmdNewsletter(args: Args): Promise<number> {
+  return runScript(
+    "generate-newsletter.ts",
+    flagsToArgv(args, [
+      "from", "to", "limit", "edition", "tagline", "preheader",
+      "cold-open-id", "unanswered-id", "signoff", "base-url", "slug",
+      "out", "print-data", "dry-run",
+    ]),
+  );
 }
 
 async function cmdBuild(args: Args): Promise<number> {
@@ -426,6 +471,9 @@ async function main(): Promise<void> {
       break;
     case "stories":
       code = await cmdStories(args);
+      break;
+    case "newsletter":
+      code = await cmdNewsletter(args);
       break;
     case "build":
       code = await cmdBuild(args);

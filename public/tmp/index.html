@@ -65,8 +65,20 @@
 
 <div class="eyebrow">Hipsters Builders</div>
 <h1>Preview de formatos de newsletter</h1>
-<p class="lede">Três propostas de formato pra newsletter semanal, geradas a partir das mesmas 11 stories reais da semana de 30/mar a 7/abr de 2026 (Telegram + Clauders + IA Sob Controle).</p>
-<p class="meta">Cada uma usa exatamente o mesmo material — muda só a estrutura, a voz e o ritmo de leitura.</p>
+<p class="lede">Edição nº 1 abaixo (gerada por Opus a partir do template F3 evoluído), seguida das três propostas iniciais de formato.</p>
+<p class="meta">A edição nº 1 incorpora as melhorias pedidas: itálico em quotes, links inline, mistura de textos longos do Telegram com reações do chat, "Pra fechar" no lugar de "A mensagem que ninguém respondeu".</p>
+
+<a class="card" href="newsletter-edicao-01.html" style="display:block;background:#1d3557;border-color:#1d3557;margin:0 0 32px;padding:32px 28px;text-decoration:none;color:inherit;border-radius:8px;border:1px solid #1d3557;transition:transform 0.15s, border-color 0.15s;">
+  <div class="num" style="color:#f4c542;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 10px;">★ Edição nº 1 &nbsp;·&nbsp; gerada por Opus 4.6</div>
+  <h2 style="margin:0 0 10px;font-size:24px;line-height:1.25;color:#fefdf9;font-weight:700;">Hipsters Builders nº 1</h2>
+  <div style="font-size:14px;color:#a8c5e8;font-style:italic;margin:0 0 16px;">Primeira edição. 9 de abril de 2026.</div>
+  <p style="margin:0 0 14px;font-size:14px;line-height:1.55;color:#d4dde9;">Quatro blocos editoriais com fio condutor, citações literais em itálico, links inline pros materiais reais (anthropic.com/glasswing, theverge, gist do Karpathy, infoq), e a seção fixa <strong style="color:#fefdf9;">"Antes de você fechar isso"</strong> com a quote da semana.</p>
+  <p style="margin:0;font-size:13px;color:#a8c5e8;font-style:italic;">Inclui best practices: pre-header, "Recebeu de um amigo? Inscreva-se", "Ver no navegador", unsubscribe, endereço, permission reminder.</p>
+  <div style="margin-top:18px;font-size:12px;color:#f4c542;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;">abrir edição nº 1 →</div>
+</a>
+
+<h2 style="font-size:18px;color:#fdfcf7;margin:48px 0 8px;font-weight:700;">As três propostas originais (mockups manuais)</h2>
+<p style="font-size:14px;color:#888;margin:0 0 24px;">Para comparação. F3 ficou como base do template gerador.</p>
 
 <div class="grid">
 
@@ -111,12 +123,13 @@
 </div>
 
 <div class="notes" style="border-color: #c6361b;">
-<h3>Próximos passos</h3>
+<h3>Status</h3>
 <ul>
-<li>Você abre os 3, lê com calma, escolhe um (ou pede mistura).</li>
-<li>Eu refino o escolhido, ajustando tom, cortes e ritmo conforme seu feedback.</li>
-<li>Crio <code>scripts/send-newsletter.ts</code> que pluga no <code>hipsters</code> CLI: <code>hipsters newsletter send --test --to paulo,vini</code>. Usa <code>RESEND_API_KEY</code> do <code>.env</code> e manda só pros dois destinatários até a gente decidir publicar.</li>
-<li>Depois disso, o passo é gerar o markdown automaticamente a partir das stories, mantendo o template escolhido como invariante.</li>
+<li>Template F3 está em <code>scripts/newsletter-template.ts</code>. É uma função TypeScript pura que recebe <code>NewsletterData</code> e retorna HTML inline-styled.</li>
+<li>Gerador (Opus 4.6 via tool_use) está em <code>scripts/generate-newsletter.ts</code>. Roda com <code>hipsters newsletter --from YYYY-MM-DD --to YYYY-MM-DD</code>.</li>
+<li>Validação anti-invenção: cada quote do output do LLM precisa existir literalmente em alguma <code>conversation</code> do input. Bloqueia fabricação.</li>
+<li>Custo por edição: ~<code>$0.55</code> com Opus 4.6 (16k tokens in, 4k out).</li>
+<li>Próximo passo: <code>scripts/send-newsletter.ts</code> via Resend, com <code>--test --to paulo,vini</code>.</li>
 </ul>
 </div>
 

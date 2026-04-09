@@ -4,7 +4,7 @@ O **Hipsters Builders** deixa mais explicito o que estamos falando em cada episo
 
 Na pratica: episodios com destaques e quotes, curtas com as melhores frases, e uma newsletter semanal. Todo conteudo vem do [Stromae vault](https://github.com/caelum/stromae-vault-alura) no build.
 
-**Site**: https://hipsters.builders
+**Site**: https://builders.hipsters.tech
 
 ## Quick start
 
