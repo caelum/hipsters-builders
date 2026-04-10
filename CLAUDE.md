@@ -4,7 +4,7 @@
 
 Community portal for the **Hipsters Network** (Alura podcasts + community). Publishes episode summaries with quotes, short-form "curtas" (best quotes from podcasts and WhatsApp groups), and a weekly newsletter. All content comes from the Stromae vault at build time — this is a read-only consumer, not a content producer.
 
-**Site**: https://hipsters.builders
+**Site**: https://builders.hipsters.tech
 
 ## Owner
 
@@ -376,3 +376,87 @@ The vault is the source of truth. This project never writes to it.
 | `caelum/stromae` | Orchestrator that produces the vault content |
 | `caelum/stromae-vault-alura` | The vault itself (signals, drafts, voices) |
 | `peas/paulo.com.br` | Paulo's blog (separate project, same Astro/Tailwind stack) |
+
+## Newsletter pipeline (F3 — Diálogo split)
+
+Independent flow that lives alongside the stories pipeline. Reads `src/data/stories.json` (already classified + editorialized), picks candidates from a date range, and renders an HTML email in the F3 (Diálogo split) format ready for Resend.
+
+### Files
+
+- **`scripts/newsletter-template.ts`** — pure renderer. Function `renderNewsletterF3(data: NewsletterData): string`. Inline-styled, table-based, mobile-first, ~640px max-width, system fonts, no images. Survives Gmail/Outlook/Apple Mail without modification.
+- **`scripts/generate-newsletter.ts`** — LLM-based assembler. Calls `claude-opus-4-6` via **tool_use** to force structured JSON output (avoids fragile JSON-in-text parsing when editorial HTML contains nested quotes). Validates every output quote literally exists in some source `conversation` (anti-fabrication guardrail). Run via `hipsters newsletter`.
+
+### Run
+
+```bash
+hipsters newsletter --from 2026-04-01 --to 2026-04-09 --edition 1 --slug newsletter-edicao-01
+hipsters newsletter --from 2026-04-01 --print-prompt   # see the system+user prompts (no API call)
+hipsters newsletter --from 2026-04-01 --print-data     # see the LLM JSON output (no HTML write)
+hipsters newsletter --from 2026-04-01 --dry-run        # full LLM call but skip the file write
+```
+
+Outputs to `public/tmp/<slug>.html` by default. After deploy, lives at `https://builders.hipsters.tech/tmp/<slug>.html`.
+
+### What's in the F3 template
+
+- **Pre-header** (hidden inbox preview)
+- **Top utility bar**: "Recebeu de um amigo? Inscreva-se" + "Ver no navegador"
+- **Cold open** (literal quote with attribution, no preamble)
+- **Intro paragraph** (default explains the format without naming WhatsApp/Telegram by name)
+- **3-5 editorial blocks**, each with:
+  - Header that carries voice (not a label)
+  - Editorial paragraphs (HTML, with `<em>` on literal quotes and `<a>` on links)
+  - Optional "No grupo" callout with literal community messages (handles + quote text in italic)
+- **Closing dark block** (the blue-bg highlight). Originally "A mensagem que ninguém respondeu" — now generic so the editor can use it for a closing curta, a forgotten note, a small but curious item. Title and eyebrow are configurable per edition.
+- **Sign-off** with footnote
+- **Email footer**: unsubscribe + preferences + view in browser + reply, permission reminder, sender address (CAN-SPAM / LGPD)
+
+### Anti-fabrication rules baked into the prompt
+
+1. NEVER invent quotes, authors, dates, links, numbers, or facts not in the input
+2. Every quote in the output must appear EXACTLY in some `conversation[].text` (validator enforces this post-call and warns)
+3. URLs only from `story.links[].url` or literal URLs in conversation text — never invent
+4. Don't normalize capitalization, fix typos, or "polish" quotes
+5. Skip stories that are confused or short on material
+6. Don't name WhatsApp/Telegram groups by name — use "no canal", "alguém anotou", "Paulo escreveu na semana passada"
+
+### Source priority (telegram-editorial vs chat)
+
+Stories whose `id` starts with `story-tg-` or whose `sourceGroups` matches `/Telegram/i` are tagged `source_kind: "telegram-editorial"` — these are the long editorial texts Paulo and Vinny write on the Telegram broadcast channel and they should anchor the bigger blocks. Chat stories (WhatsApp) provide reaction quotes for the "No grupo" callouts, or anchor smaller blocks when the discussion was rich.
+
+The script sorts candidates with `telegram-editorial` first, then by weight desc, before sending to Opus.
+
+### Cost
+
+~$0.55 per edition with `claude-opus-4-6` (16k input tokens, 4k output tokens). Pricing assumed: $15/M input, $75/M output. The `--print-prompt` and `--dry-run` flags let you iterate without spending.
+
+### Lessons from edition 1 (2026-04-09)
+
+**The manual mockups still beat the LLM on quote curation.** The 3 manual F1/F2/F3 mockups in `public/tmp/format-{1,2,3}-*.html` were written by hand, and Paulo preferred their selection of quotes and phrasing over the Opus-generated edition 1. Reasons to internalize:
+
+- **Manual picks the punchier quotes.** Heuristics like "shortest message between 25-200 chars" miss the punch line. Manual went for "todo mundo com github verdinho mas comitando onde nao precisa", "Estão sangrando MESMO", "balela demais né". Opus picked safer, more obvious quotes.
+- **Opus over-indexes on meta auto-reference.** Edition 1 had a full block on "essa newsletter foi feita pelo sistema do Karpathy" — too much. Cap meta references at 1 brief mention, not a whole block.
+- **Manual mockups have rhythm variation between blocks** (one long + one short + one editorial + one closing). Opus tends to make every block the same length and density.
+- **Opus headers are short and punchy** (good) but sometimes too distant from the content (ex: "Quem paga a conta é o ecossistema" works, but loses the specificity that "todo mundo com github verdinho" had as a header in the manual version).
+- **Opus closing pick was OK but not surprising.** "1bi commits" was the obvious closing. Manual would have picked "Mark Zuckerberg voltou a programar" — more surprising, more "ah, e mais uma".
+- **Manual has explicit thesis per block.** Opus has implicit thesis. Make the prompt require an explicit one-sentence thesis per block before the LLM writes the editorial.
+
+**Iteration ideas for the prompt** (for next time, not a TODO yet):
+- Tell Opus to prefer quotes with slang, irony, or cynical observation over "safe" technical statements
+- Require an explicit one-line thesis per block as scratch reasoning before writing
+- Cap auto-meta references to 1 brief mention max
+- Explicitly ask for rhythm variation: not all blocks the same length
+- Allow human override per block via `--block-1-id`, `--block-2-id`, etc., so the editor can lock the key picks before Opus writes
+
+**Hybrid is the realistic path**: LLM does plumbing (template, structure, validation, links, footer), human does the curation pass on `--print-data` JSON before rendering. Or: LLM proposes 3 versions with different selections, human picks one.
+
+### Files written this session (2026-04-09 → 2026-04-10)
+
+- `scripts/hipsters.ts` — unified CLI (subcommands: sync, signals, editorialize, classify, stories, newsletter, build, status)
+- `scripts/newsletter-template.ts` — F3 renderer
+- `scripts/generate-newsletter.ts` — Opus generator with anti-fabrication validator
+- `public/tmp/format-{1,2,3}-*.html` — 3 manual mockups (kept as canonical reference for tone)
+- `public/tmp/newsletter-edicao-01.html` — first Opus-generated edition
+- `public/tmp/index.html` — preview index
+
+The 3 manual mockups in `public/tmp/format-*.html` are the canonical voice reference. Use them when calibrating future prompt versions.
